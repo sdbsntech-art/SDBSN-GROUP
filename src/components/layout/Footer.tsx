@@ -11,11 +11,11 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-5">
             <Link to="/" className="inline-block">
-              <div className="bg-black/60 p-1 rounded-xl shadow-md border border-[#24403A] inline-flex items-center">
+              <div className="bg-black/60 p-1.5 rounded-xl shadow-md border border-[#24403A] inline-flex items-center hover:border-[#10B981]/50 transition-all">
                 <img
                   src="/logo/sdbsnx-logo.png"
                   alt="SDBSNX Logo"
-                  className="h-8 sm:h-9 w-auto object-contain rounded-lg"
+                  className="h-10 sm:h-11 w-auto object-contain rounded-lg"
                 />
               </div>
             </Link>

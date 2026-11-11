@@ -63,13 +63,13 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo with dark luxury container matching the new black SDBSNX badge */}
+          {/* Logo with cyber emerald container */}
           <Link to="/" className="flex items-center space-x-3 group flex-shrink-0">
-            <div className="bg-black/60 px-1.5 py-1 sm:px-2 sm:py-1 rounded-xl shadow-md border border-[#24403A] flex items-center justify-center transition-all group-hover:border-[#10B981] group-hover:scale-[1.02]">
+            <div className="bg-black/50 px-2 py-1 rounded-xl shadow-md border border-[#24403A] flex items-center justify-center transition-all group-hover:border-[#10B981] group-hover:scale-[1.02]">
               <img
                 src="/logo/sdbsnx-logo.png"
                 alt="SDBSNX Logo"
-                className="h-7 sm:h-8 md:h-9 w-auto object-contain rounded-lg"
+                className="h-8 sm:h-9 md:h-10 w-auto object-contain rounded-lg"
               />
             </div>
           </Link>
