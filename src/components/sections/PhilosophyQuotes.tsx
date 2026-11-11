@@ -31,23 +31,23 @@ export const PhilosophyQuotes: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.3, delay: index * 0.04 }}
-          className="group relative p-5 sm:p-7 rounded-2xl bg-[#050811] border border-white/10 hover:border-brand-blue transition-colors flex flex-col justify-between"
+          className="group relative p-5 sm:p-7 rounded-2xl bg-[#15271F] border border-[#24403A] hover:border-[#10B981] shadow-sm transition-all flex flex-col justify-between"
         >
           {/* Top indicator */}
           <div className="flex items-center justify-between mb-4">
-            <span className="text-[11px] font-mono tracking-wider text-brand-blue uppercase px-2.5 py-0.5 rounded bg-white/5 border border-white/10">
+            <span className="text-[11px] font-mono tracking-wider text-[#6EE7B7] font-bold uppercase px-2.5 py-0.5 rounded bg-[#0E1B17] border border-[#24403A]">
               {item.theme}
             </span>
-            <Quote className="w-5 h-5 text-slate-500 group-hover:text-brand-blue transition-colors" />
+            <Quote className="w-5 h-5 text-[#24403A] group-hover:text-[#10B981] transition-colors" />
           </div>
 
-          <p className="text-base sm:text-lg font-medium text-white leading-relaxed italic">
+          <p className="text-base sm:text-lg font-medium text-[#F4F1EA] leading-relaxed italic">
             &ldquo;{item.text}&rdquo;
           </p>
 
-          <div className="mt-5 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
-            <span className="font-mono text-[11px] text-slate-500">Principe #{String(item.id).padStart(2, '0')}</span>
-            <span className="text-slate-400 font-semibold group-hover:text-brand-blue transition-colors font-mono text-[10px] uppercase">
+          <div className="mt-5 pt-3 border-t border-[#24403A] flex items-center justify-between text-xs text-[#9DB2A8]">
+            <span className="font-mono text-[11px] text-[#9DB2A8] font-semibold">Principe #{String(item.id).padStart(2, '0')}</span>
+            <span className="text-[#9DB2A8] font-semibold group-hover:text-[#6EE7B7] transition-colors font-mono text-[10px] uppercase">
               THE STANDARD WE LIVE BY
             </span>
           </div>

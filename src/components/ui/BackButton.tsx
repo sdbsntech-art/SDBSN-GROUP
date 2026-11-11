@@ -15,13 +15,12 @@ export const BackButton: React.FC<BackButtonProps> = ({
 }) => {
   const navigate = useNavigate();
 
+  const buttonClasses = `inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-xl bg-[#15271F] hover:bg-[#1C332A] text-[#F4F1EA] hover:text-[#6EE7B7] border border-[#24403A] hover:border-[#10B981] text-xs font-semibold shadow-sm transition-all group mb-6 ${className}`;
+
   if (to) {
     return (
-      <Link
-        to={to}
-        className={`inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-xl bg-[#0A0F1D] hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 text-xs font-semibold transition-colors group mb-6 ${className}`}
-      >
-        <ArrowLeft className="w-3.5 h-3.5 text-brand-blue transition-transform group-hover:-translate-x-1" />
+      <Link to={to} className={buttonClasses}>
+        <ArrowLeft className="w-3.5 h-3.5 text-[#10B981] group-hover:text-[#6EE7B7] transition-transform group-hover:-translate-x-1" />
         <span>{label}</span>
       </Link>
     );
@@ -37,11 +36,10 @@ export const BackButton: React.FC<BackButtonProps> = ({
           navigate('/');
         }
       }}
-      className={`inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-xl bg-[#0A0F1D] hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 text-xs font-semibold transition-colors group mb-6 ${className}`}
+      className={buttonClasses}
     >
-      <ArrowLeft className="w-3.5 h-3.5 text-brand-blue transition-transform group-hover:-translate-x-1" />
+      <ArrowLeft className="w-3.5 h-3.5 text-[#10B981] group-hover:text-[#6EE7B7] transition-transform group-hover:-translate-x-1" />
       <span>{label}</span>
     </button>
   );
 };
-

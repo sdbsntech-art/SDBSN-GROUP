@@ -3,29 +3,29 @@ import { BackButton } from '../components/ui/BackButton';
 
 export const TermsPage: React.FC = () => {
   return (
-    <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative">
+    <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-[#0E1B17] text-[#F4F1EA]">
       <div className="max-w-4xl mx-auto space-y-10">
 
         <BackButton to="/" label="Retour à l'accueil" />
 
         {/* Header */}
         <div className="space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-brand-blue/10 border border-brand-blue/30 text-xs font-mono text-brand-cyan uppercase">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-md bg-[#15271F] border border-[#24403A] text-xs font-mono text-[#6EE7B7] uppercase font-bold">
             <span>Réglementation Contractuelle</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-[#F4F1EA] tracking-tight font-display">
             Conditions Générales d&apos;Utilisation (CGU)
           </h1>
-          <p className="text-slate-400 text-sm">
+          <p className="text-[#9DB2A8] text-sm">
             Cadre d&apos;accès et d&apos;utilisation de la plateforme numérique institutionnelle SDBSNX.
           </p>
         </div>
 
         {/* Content Body */}
-        <div className="p-8 sm:p-10 rounded-3xl glass-panel border border-white/10 space-y-8 text-sm text-slate-300 leading-relaxed">
+        <div className="p-8 sm:p-10 rounded-3xl bg-[#15271F] border border-[#24403A] shadow-xl space-y-8 text-sm text-[#9DB2A8] leading-relaxed">
           
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-white font-display">
+            <h2 className="text-lg font-bold text-[#F4F1EA] font-display">
               1. Objet et Champ d&apos;Application
             </h2>
             <p>
@@ -34,7 +34,7 @@ export const TermsPage: React.FC = () => {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-white font-display">
+            <h2 className="text-lg font-bold text-[#F4F1EA] font-display">
               2. Accès à la Plateforme & Sécurité
             </h2>
             <p>
@@ -43,13 +43,13 @@ export const TermsPage: React.FC = () => {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-white font-display">
+            <h2 className="text-lg font-bold text-[#F4F1EA] font-display">
               3. Utilisation Acceptable & Interdictions Strictes
             </h2>
             <p>
               L&apos;utilisateur s&apos;engage à utiliser la plateforme de manière loyale, conforme à l&apos;ordre public et aux lois applicables. Sont expressément interdits :
             </p>
-            <ul className="list-disc pl-5 space-y-1.5 text-slate-300">
+            <ul className="list-disc pl-5 space-y-1.5 text-[#F4F1EA]/90">
               <li>
                 Toute tentative d&apos;intrusion, d&apos;altération de code, de décompilation ou d&apos;injection SQL / XSS sur les formulaires et API de la plateforme.
               </li>
@@ -66,7 +66,7 @@ export const TermsPage: React.FC = () => {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-white font-display">
+            <h2 className="text-lg font-bold text-[#F4F1EA] font-display">
               4. Propriété Intellectuelle & Droits Réservés
             </h2>
             <p>
@@ -75,7 +75,7 @@ export const TermsPage: React.FC = () => {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-white font-display">
+            <h2 className="text-lg font-bold text-[#F4F1EA] font-display">
               5. Limitation de Responsabilité
             </h2>
             <p>
@@ -87,7 +87,7 @@ export const TermsPage: React.FC = () => {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-white font-display">
+            <h2 className="text-lg font-bold text-[#F4F1EA] font-display">
               6. Juridiction & Résolution des Différends
             </h2>
             <p>

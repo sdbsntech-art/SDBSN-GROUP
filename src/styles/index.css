@@ -3,73 +3,92 @@
 @tailwind utilities;
 
 :root {
-  /* SDBSNX Brand Color Tokens - Pure Solid Colors from Official Logo */
-  --sdbsnx-primary: #0055FE;
-  --sdbsnx-primary-hover: #0047D4;
-  
-  --sdbsnx-secondary: #0A0F1D;
-  --sdbsnx-secondary-light: #131C35;
-  
-  --sdbsnx-accent: #0055FE;
-  
-  --sdbsnx-bg-main: #050811;
-  --sdbsnx-bg-secondary: #0A0F1D;
-  --sdbsnx-bg-card: #0E1629;
-  --sdbsnx-bg-card-hover: #131E38;
-  
-  --sdbsnx-text-primary: #FFFFFF;
-  --sdbsnx-text-secondary: #94A3B8;
-  --sdbsnx-text-muted: #64748B;
-  
-  --sdbsnx-border-subtle: rgba(255, 255, 255, 0.1);
-  --sdbsnx-border-active: #0055FE;
-  
-  --sdbsnx-success: #10B981;
-  --sdbsnx-warning: #F59E0B;
-  --sdbsnx-error: #EF4444;
+  /* Exact User Requested Color Palette */
+  --bg: #0E1B17;
+  --surface: #15271F;
+  --surface-elevated: #1C332A;
+  --border: #24403A;
+  --text: #F4F1EA;
+  --text-muted: #9DB2A8;
+  --primary: #10B981;
+  --primary-hover: #059669;
+  --primary-dark: #04231A;
+  --accent: #6EE7B7;
+
+  /* Complementary Accents */
+  --gold-accent: #F59E0B;
+  --cyan-accent: #14B8A6;
 }
 
 /* Base resets & typography */
 html {
   color-scheme: dark;
   -webkit-text-size-adjust: 100%;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 body {
-  background-color: var(--sdbsnx-bg-main);
-  color: var(--sdbsnx-text-primary);
+  background: var(--bg);
+  color: var(--text);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   width: 100%;
+  min-height: 100vh;
 }
 
-/* Custom Scrollbar */
+/* User Defined Functional Utility Classes */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-dark); /* texte foncé sur le bouton vert, lisibilité optimale */
+  font-weight: 700;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.tagline,
+.eyebrow {
+  color: var(--accent);
+}
+
+p, .text-muted {
+  color: var(--text-muted);
+}
+
+/* Custom Scrollbar styled for the dark emerald theme */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #050811;
+  background: var(--bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1E293B;
+  background: var(--border);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0055FE;
+  background: var(--primary);
 }
 
-/* Solid Minimalist Panels - No Gradients */
+/* Solid Minimalist Panels - Senior Dev Pure Solid Standards (Zero Gradients) */
 .glass-panel {
-  background-color: #0A0F1D;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
 }
 
 .glass-panel-glow {
-  background-color: #0E1629;
-  border: 1px solid #0055FE;
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--primary);
 }
 
 /* Respect reduced motion */

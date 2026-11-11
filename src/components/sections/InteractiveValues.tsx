@@ -33,7 +33,7 @@ export const SDBSNX_VALUES: ValueItem[] = [
       'Refus strict des compromis éthiques',
       'Cohérence entre nos paroles et nos réalisations'
     ],
-    icon: <ShieldCheck className="w-7 h-7 text-brand-blue" />,
+    icon: <ShieldCheck className="w-7 h-7 text-[#10B981]" />,
   },
   {
     id: 'service',
@@ -46,7 +46,7 @@ export const SDBSNX_VALUES: ValueItem[] = [
       'Dévouement à l\'émancipation numérique africaine',
       'Écoute active et disponibilité professionnelle'
     ],
-    icon: <HeartHandshake className="w-7 h-7 text-brand-blue" />,
+    icon: <HeartHandshake className="w-7 h-7 text-[#10B981]" />,
   },
   {
     id: 'excellence',
@@ -59,59 +59,59 @@ export const SDBSNX_VALUES: ValueItem[] = [
       'Standards de sécurité rigoureux',
       'Amélioration continue de nos méthodes'
     ],
-    icon: <Award className="w-7 h-7 text-brand-blue" />,
+    icon: <Award className="w-7 h-7 text-[#10B981]" />,
   },
   {
     id: 'discipline',
     number: '04',
     title: 'DISCIPLINE AND RIGOR',
     tagline: 'La discipline et la rigueur dans chaque engagement.',
-    description: 'La méthode prévaut sur l\'improvisation. Chaque projet bénéficie d\'une méthodologie éprouvée et d\'une rigueur opérationnelle constante.',
+    description: 'La méthode et la persévérance surpassent l\'improvisation. Nous appliquons des processus éprouvés et une gouvernance stricte.',
     principles: [
-      'Respect strict des délais et cahiers des charges',
-      'Audits de sécurité méthodiques et documentés',
-      'Suivi régulier et traçabilité exemplaire'
+      'Respect scrupuleux des cahiers des charges et délais',
+      'Audits et revues par les pairs obligatoires',
+      'Culture de la précision documentaire'
     ],
-    icon: <Scale className="w-7 h-7 text-brand-blue" />,
+    icon: <Scale className="w-7 h-7 text-[#10B981]" />,
   },
   {
     id: 'accountability',
     number: '05',
     title: 'ACCOUNTABILITY',
     tagline: 'Assumer nos responsabilités et respecter nos engagements.',
-    description: 'Nous répondons pleinement de la qualité de nos livrables et de la sécurité des solutions conçues pour nos partenaires.',
+    description: 'Nous répondons pleinement de nos livrables, de la sécurité de nos systèmes et de la pérennité de nos partenariats.',
     principles: [
-      'Garantie sur nos développements et architectures',
-      'Responsabilité partagée et communication proactive',
-      'Engagement à résoudre tout aléa sans faux-fuyant'
+      'Responsabilité technique totale de nos développements',
+      'Gestion proactive et transparente des aléas',
+      'Obligation de résultat et de fiabilité'
     ],
-    icon: <CheckCircle2 className="w-7 h-7 text-brand-blue" />,
+    icon: <CheckCircle2 className="w-7 h-7 text-[#10B981]" />,
   },
   {
     id: 'innovation',
     number: '06',
     title: 'INNOVATION WITH PURPOSE',
     tagline: 'Innover pour résoudre des problèmes réels.',
-    description: 'Refuser les effets de mode pour se concentrer sur des innovations technologiques qui résolvent des défis économiques et humains concrets.',
+    description: 'L\'innovation technologique n\'est jamais une fin en soi : elle doit simplifier le droit, sécuriser les flux et créer de la valeur concrète.',
     principles: [
-      'Adéquation technologique ciblée aux réalités locales',
-      'Modernisation des processus juridiques et administratifs',
-      'Valorisation de solutions fiables et durables'
+      'Solutions LegalTech orientées simplification et gain de temps',
+      'Recherche et veille technologique constante',
+      'Architecture logicielle modulaire et évolutive'
     ],
-    icon: <Lightbulb className="w-7 h-7 text-brand-blue" />,
+    icon: <Lightbulb className="w-7 h-7 text-[#10B981]" />,
   },
   {
-    id: 'trust',
+    id: 'confidentiality',
     number: '07',
     title: 'CONFIDENTIALITY AND TRUST',
     tagline: 'Protéger les informations et respecter la confiance accordée.',
-    description: 'La confiance ne se décrète pas, elle se prouve par le strict respect du secret des affaires et la protection absolue des données sensibles.',
+    description: 'Le secret des affaires, la confidentialité des données institutionnelles et judiciaires constituent un impératif non négociable.',
     principles: [
-      'Accords de non-divulgation (NDA) rigoureux',
-      'Cloisonnement étanche des données projets',
-      'Chiffrement et conformité stricte aux lois sur les données'
+      'Chiffrement de bout en bout des données sensibles',
+      'Accords de confidentialité stricts (NDA) sur chaque mission',
+      'Isolement logique des environnements clients'
     ],
-    icon: <LockKeyhole className="w-7 h-7 text-brand-blue" />,
+    icon: <LockKeyhole className="w-7 h-7 text-[#10B981]" />,
   },
 ];
 
@@ -130,29 +130,29 @@ export const InteractiveValues: React.FC = () => {
               <button
                 key={val.id}
                 onClick={() => setActiveValue(val)}
-                className={`w-full text-left p-3.5 sm:p-4 rounded-xl transition-colors flex items-center justify-between border ${
+                className={`w-full text-left p-3.5 sm:p-4 rounded-xl transition-all flex items-center justify-between border ${
                   isSelected
-                    ? 'bg-[#0E1629] border-brand-blue text-white'
-                    : 'bg-[#0A0F1D] border-white/10 hover:border-white/20 text-slate-300'
+                    ? 'bg-[#1C332A] border-[#10B981] text-[#F4F1EA] shadow-sm'
+                    : 'bg-[#15271F] border-[#24403A] hover:border-[#10B981]/50 hover:bg-[#1C332A]/70 text-[#9DB2A8]'
                 }`}
               >
                 <div className="flex items-center space-x-3 min-w-0">
                   <span className={`text-xs font-mono font-bold px-2 py-0.5 rounded flex-shrink-0 ${
-                    isSelected ? 'bg-brand-blue text-white' : 'bg-white/5 text-slate-400'
+                    isSelected ? 'bg-[#10B981] text-[#04231A]' : 'bg-[#0E1B17] text-[#9DB2A8]'
                   }`}>
                     {val.number}
                   </span>
                   <div className="min-w-0">
-                    <h3 className="text-sm font-bold tracking-wide truncate">
+                    <h3 className={`text-sm font-bold tracking-wide truncate ${isSelected ? 'text-[#F4F1EA]' : 'text-[#F4F1EA]/90'}`}>
                       {val.title}
                     </h3>
-                    <p className="text-xs text-slate-400 truncate">
+                    <p className="text-xs text-[#9DB2A8] truncate">
                       {val.tagline}
                     </p>
                   </div>
                 </div>
                 <ArrowRight className={`w-4 h-4 flex-shrink-0 transition-transform ${
-                  isSelected ? 'text-brand-blue translate-x-1' : 'text-slate-600'
+                  isSelected ? 'text-[#10B981] translate-x-1' : 'text-[#24403A]'
                 }`} />
               </button>
             );
@@ -168,45 +168,45 @@ export const InteractiveValues: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="bg-[#0A0F1D] p-6 sm:p-10 rounded-2xl border border-white/10 relative overflow-hidden"
+              className="bg-[#15271F] p-6 sm:p-10 rounded-2xl border border-[#24403A] shadow-sm relative overflow-hidden"
             >
               {/* Watermark number */}
-              <div className="absolute top-4 right-6 text-6xl sm:text-7xl font-mono font-black text-white/[0.03] select-none pointer-events-none">
+              <div className="absolute top-4 right-6 text-6xl sm:text-7xl font-mono font-black text-[#24403A]/40 select-none pointer-events-none">
                 {activeValue.number}
               </div>
 
               <div className="flex items-center space-x-4 mb-6">
-                <div className="p-3 rounded-xl bg-white/5 border border-white/10">
+                <div className="p-3 rounded-xl bg-[#0E1B17] border border-[#24403A]">
                   {activeValue.icon}
                 </div>
                 <div>
-                  <span className="text-xs font-mono text-brand-blue uppercase tracking-wider font-bold">
+                  <span className="text-xs font-mono text-[#6EE7B7] uppercase tracking-wider font-bold">
                     Principe #{activeValue.number}
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight break-words">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#F4F1EA] tracking-tight break-words">
                     {activeValue.title}
                   </h3>
                 </div>
               </div>
 
-              <div className="mb-6 p-4 rounded-xl bg-[#050811] border-l-4 border-brand-blue">
-                <p className="text-sm sm:text-base text-slate-200 font-medium italic">
+              <div className="mb-6 p-4 rounded-xl bg-[#0E1B17] border-l-4 border-[#10B981]">
+                <p className="text-sm sm:text-base text-[#F4F1EA] font-medium italic">
                   &ldquo;{activeValue.tagline}&rdquo;
                 </p>
               </div>
 
-              <p className="text-sm text-slate-300 leading-relaxed mb-6">
+              <p className="text-sm text-[#9DB2A8] leading-relaxed mb-6">
                 {activeValue.description}
               </p>
 
               <div>
-                <h4 className="text-xs uppercase font-mono font-bold text-slate-400 tracking-wider mb-3">
+                <h4 className="text-xs uppercase font-mono font-bold text-[#F4F1EA] tracking-wider mb-3">
                   Engagements Concrets :
                 </h4>
                 <ul className="space-y-2.5">
                   {activeValue.principles.map((principle, idx) => (
-                    <li key={idx} className="flex items-start text-xs sm:text-sm text-slate-300">
-                      <span className="w-1.5 h-1.5 rounded-full bg-brand-blue mt-1.5 mr-3 flex-shrink-0" />
+                    <li key={idx} className="flex items-start text-xs sm:text-sm text-[#F4F1EA]/90">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] mt-1.5 mr-3 flex-shrink-0" />
                       <span>{principle}</span>
                     </li>
                   ))}

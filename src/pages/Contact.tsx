@@ -128,58 +128,58 @@ export const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-[#050811]">
+    <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-[#0E1B17] text-[#F4F1EA]">
       <div className="max-w-4xl mx-auto space-y-12">
 
         <BackButton to="/" label="Retour à l'accueil" />
 
         {/* Header */}
         <div className="text-center space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-[#0A0F1D] border border-white/10 text-xs font-mono text-brand-blue uppercase font-bold">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-md bg-[#15271F] border border-[#24403A] text-xs font-mono text-[#6EE7B7] uppercase font-bold">
             <span>Démarrer un Projet</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-[#F4F1EA] tracking-tight font-display">
             Contact & Consultation Technique
           </h1>
-          <p className="text-slate-400 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
+          <p className="text-[#9DB2A8] max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
             Partagez les contours de vos ambitions numériques. Chaque demande est traitée avec la plus stricte confidentialité professionnelle.
           </p>
         </div>
 
         {/* Success Confirmation Modal / Card */}
         {successRef ? (
-          <div className="p-8 sm:p-12 rounded-3xl bg-[#0A0F1D] border border-brand-blue text-center space-y-6">
-            <div className="w-16 h-16 rounded-full bg-brand-blue text-white flex items-center justify-center mx-auto">
+          <div className="p-8 sm:p-12 rounded-3xl bg-[#15271F] border border-[#24403A] text-center space-y-6 shadow-xl">
+            <div className="w-16 h-16 rounded-full bg-[#10B981] text-[#04231A] flex items-center justify-center mx-auto shadow-sm">
               <CheckCircle className="w-8 h-8" />
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-bold text-white font-display">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#F4F1EA] font-display">
               Demande enregistrée avec succès
             </h2>
 
-            <p className="text-sm text-slate-300 max-w-lg mx-auto leading-relaxed">
+            <p className="text-sm text-[#9DB2A8] max-w-lg mx-auto leading-relaxed">
               Votre dossier a été transmis à nos équipes d&apos;ingénierie et de conseil. Un accusé de réception vous est attribué ci-dessous.
             </p>
 
             {/* Reference Box */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-[#050811] border border-white/10 max-w-md mx-auto space-y-2">
-              <span className="text-xs font-mono text-slate-400 uppercase tracking-widest block font-bold">
+            <div className="p-5 sm:p-6 rounded-2xl bg-[#0E1B17] border border-[#24403A] max-w-md mx-auto space-y-2 shadow-inner">
+              <span className="text-xs font-mono text-[#9DB2A8] uppercase tracking-widest block font-bold">
                 Numéro de référence officiel
               </span>
               <div className="flex items-center justify-center space-x-3">
-                <span className="text-2xl font-mono font-bold text-brand-blue tracking-wider">
+                <span className="text-2xl font-mono font-bold text-[#10B981] tracking-wider">
                   {successRef}
                 </span>
                 <button
                   type="button"
                   onClick={handleCopyRef}
-                  className="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white transition-colors"
+                  className="p-2 rounded-lg bg-[#15271F] hover:bg-[#1C332A] text-[#F4F1EA] transition-colors border border-[#24403A]"
                   title="Copier la référence"
                 >
-                  {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                  {copied ? <Check className="w-4 h-4 text-[#10B981]" /> : <Copy className="w-4 h-4" />}
                 </button>
               </div>
-              <p className="text-[11px] text-slate-400">
+              <p className="text-[11px] text-[#9DB2A8]">
                 Conservez ce numéro pour tout suivi ultérieur de votre demande.
               </p>
             </div>
@@ -203,13 +203,13 @@ export const ContactPage: React.FC = () => {
                     honeypot: '',
                   });
                 }}
-                className="px-6 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-white/5 border border-white/10"
+                className="px-6 py-2.5 rounded-xl text-xs font-semibold text-[#F4F1EA] hover:text-[#6EE7B7] bg-[#15271F] border border-[#24403A] shadow-sm transition-colors"
               >
                 Soumettre une autre demande
               </button>
               <Link
                 to="/"
-                className="px-6 py-2.5 rounded-xl text-xs font-semibold text-white bg-brand-blue hover:bg-brand-blue-hover"
+                className="px-6 py-2.5 rounded-xl text-xs font-bold text-[#04231A] bg-[#10B981] hover:bg-[#059669] shadow-sm transition-colors"
               >
                 Retour à l&apos;accueil
               </Link>
@@ -219,7 +219,7 @@ export const ContactPage: React.FC = () => {
           /* The Contact Form */
           <form
             onSubmit={handleSubmit}
-            className="p-6 sm:p-10 rounded-3xl bg-[#0A0F1D] border border-white/10 space-y-8"
+            className="p-6 sm:p-10 rounded-3xl bg-[#15271F] border border-[#24403A] shadow-xl space-y-8"
           >
             {/* Honeypot hidden input for spam bots */}
             <input
@@ -233,23 +233,23 @@ export const ContactPage: React.FC = () => {
             />
 
             {errorMsg && (
-              <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-xs sm:text-sm text-red-300 flex items-center space-x-2">
-                <AlertCircle className="w-4 h-4 flex-shrink-0" />
+              <div className="p-4 rounded-xl bg-red-950/40 border border-red-800 text-xs sm:text-sm text-red-200 flex items-center space-x-2">
+                <AlertCircle className="w-4 h-4 text-red-400 flex-shrink-0" />
                 <span>{errorMsg}</span>
               </div>
             )}
 
             {/* Section 1: Informations Personnelles & Professionnelles */}
             <div className="space-y-4">
-              <h3 className="text-sm font-mono uppercase tracking-wider text-brand-blue font-bold flex items-center space-x-2">
-                <Lock className="w-3.5 h-3.5" />
+              <h3 className="text-sm font-mono uppercase tracking-wider text-[#6EE7B7] font-bold flex items-center space-x-2">
+                <Lock className="w-3.5 h-3.5 text-[#10B981]" />
                 <span>1. Vos Coordonnées Professionnelles</span>
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">
-                    Nom complet <span className="text-brand-blue font-bold">*</span>
+                  <label className="block text-xs font-semibold text-[#F4F1EA] mb-1.5">
+                    Nom complet <span className="text-[#10B981] font-bold">*</span>
                   </label>
                   <input
                     type="text"
@@ -257,13 +257,13 @@ export const ContactPage: React.FC = () => {
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                     placeholder="Ex: Ibrahima Diallo"
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#050811] border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#0E1B17] border border-[#24403A] text-[#F4F1EA] placeholder-[#9DB2A8]/60 text-sm focus:outline-none focus:border-[#10B981] transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">
-                    Adresse e-mail professionnelle <span className="text-brand-blue font-bold">*</span>
+                  <label className="block text-xs font-semibold text-[#F4F1EA] mb-1.5">
+                    Adresse e-mail professionnelle <span className="text-[#10B981] font-bold">*</span>
                   </label>
                   <input
                     type="email"
@@ -271,33 +271,33 @@ export const ContactPage: React.FC = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="Ex: i.diallo@entreprise.com"
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#050811] border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#0E1B17] border border-[#24403A] text-[#F4F1EA] placeholder-[#9DB2A8]/60 text-sm focus:outline-none focus:border-[#10B981] transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">
-                    Numéro de téléphone <span className="text-slate-500 font-normal">(Facultatif)</span>
+                  <label className="block text-xs font-semibold text-[#F4F1EA] mb-1.5">
+                    Numéro de téléphone <span className="text-[#9DB2A8] font-normal">(Facultatif)</span>
                   </label>
                   <input
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="+221 ..."
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#050811] border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#0E1B17] border border-[#24403A] text-[#F4F1EA] placeholder-[#9DB2A8]/60 text-sm focus:outline-none focus:border-[#10B981] transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">
-                    Organisation / Entreprise <span className="text-slate-500 font-normal">(Facultatif)</span>
+                  <label className="block text-xs font-semibold text-[#F4F1EA] mb-1.5">
+                    Organisation / Entreprise <span className="text-[#9DB2A8] font-normal">(Facultatif)</span>
                   </label>
                   <input
                     type="text"
                     value={formData.organization}
                     onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
                     placeholder="Ex: Société / Cabinet / Institution"
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#050811] border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#0E1B17] border border-[#24403A] text-[#F4F1EA] placeholder-[#9DB2A8]/60 text-sm focus:outline-none focus:border-[#10B981] transition-colors"
                   />
                 </div>
               </div>
@@ -305,20 +305,20 @@ export const ContactPage: React.FC = () => {
 
             {/* Section 2: Objet & Type de Service */}
             <div className="space-y-4">
-              <h3 className="text-sm font-mono uppercase tracking-wider text-brand-blue font-bold flex items-center space-x-2">
-                <FileText className="w-3.5 h-3.5" />
+              <h3 className="text-sm font-mono uppercase tracking-wider text-[#6EE7B7] font-bold flex items-center space-x-2">
+                <FileText className="w-3.5 h-3.5 text-[#10B981]" />
                 <span>2. Nature de Votre Besoin</span>
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">
-                    Domaine d&apos;intervention <span className="text-brand-blue font-bold">*</span>
+                  <label className="block text-xs font-semibold text-[#F4F1EA] mb-1.5">
+                    Domaine d&apos;intervention <span className="text-[#10B981] font-bold">*</span>
                   </label>
                   <select
                     value={formData.serviceCategory}
                     onChange={(e) => setFormData({ ...formData, serviceCategory: e.target.value as ServiceCategory })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#050811] border border-white/10 text-white text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#0E1B17] border border-[#24403A] text-[#F4F1EA] text-sm focus:outline-none focus:border-[#10B981] transition-colors"
                   >
                     <option value="web_development">Développement web</option>
                     <option value="mobile_development">Application mobile</option>
@@ -332,8 +332,8 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">
-                    Objet synthétique de la demande <span className="text-brand-blue font-bold">*</span>
+                  <label className="block text-xs font-semibold text-[#F4F1EA] mb-1.5">
+                    Objet synthétique de la demande <span className="text-[#10B981] font-bold">*</span>
                   </label>
                   <input
                     type="text"
@@ -341,14 +341,14 @@ export const ContactPage: React.FC = () => {
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     placeholder="Ex: Déploiement portail dématérialisation / Audit"
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#050811] border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#0E1B17] border border-[#24403A] text-[#F4F1EA] placeholder-[#9DB2A8]/60 text-sm focus:outline-none focus:border-[#10B981] transition-colors"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1.5">
-                  Description détaillée du besoin <span className="text-brand-blue font-bold">*</span>
+                <label className="block text-xs font-semibold text-[#F4F1EA] mb-1.5">
+                  Description détaillée du besoin <span className="text-[#10B981] font-bold">*</span>
                 </label>
                 <textarea
                   required
@@ -356,21 +356,21 @@ export const ContactPage: React.FC = () => {
                   value={formData.description}
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                   placeholder="Décrivez les objectifs, le contexte technique ou administratif, ainsi que les contraintes éventuelles..."
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#050811] border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#0E1B17] border border-[#24403A] text-[#F4F1EA] placeholder-[#9DB2A8]/60 text-sm focus:outline-none focus:border-[#10B981] transition-colors"
                 />
               </div>
             </div>
 
             {/* Section 3: Cadre Opérationnel Facultatif */}
             <div className="space-y-4">
-              <h3 className="text-sm font-mono uppercase tracking-wider text-brand-blue font-bold flex items-center space-x-2">
-                <Clock className="w-3.5 h-3.5" />
+              <h3 className="text-sm font-mono uppercase tracking-wider text-[#6EE7B7] font-bold flex items-center space-x-2">
+                <Clock className="w-3.5 h-3.5 text-[#10B981]" />
                 <span>3. Modalités Opérationnelles (Facultatif)</span>
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">
+                  <label className="block text-xs font-semibold text-[#F4F1EA] mb-1.5">
                     Budget indicatif envisagé
                   </label>
                   <input
@@ -378,12 +378,12 @@ export const ContactPage: React.FC = () => {
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                     placeholder="Ex: Cadré / À définir / Enveloppe dédiée"
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#050811] border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#0E1B17] border border-[#24403A] text-[#F4F1EA] placeholder-[#9DB2A8]/60 text-sm focus:outline-none focus:border-[#10B981] transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">
+                  <label className="block text-xs font-semibold text-[#F4F1EA] mb-1.5">
                     Délai ou échéance souhaitée
                   </label>
                   <input
@@ -391,7 +391,7 @@ export const ContactPage: React.FC = () => {
                     value={formData.timeline}
                     onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
                     placeholder="Ex: Immédiat / 3 à 6 mois"
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#050811] border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#0E1B17] border border-[#24403A] text-[#F4F1EA] placeholder-[#9DB2A8]/60 text-sm focus:outline-none focus:border-[#10B981] transition-colors"
                   />
                 </div>
               </div>
@@ -405,11 +405,11 @@ export const ContactPage: React.FC = () => {
                   required
                   checked={formData.privacyConsent}
                   onChange={(e) => setFormData({ ...formData, privacyConsent: e.target.checked })}
-                  className="mt-1 h-4 w-4 rounded border-white/20 bg-[#050811] text-brand-blue focus:ring-brand-blue"
+                  className="mt-1 h-4 w-4 rounded border-[#24403A] bg-[#0E1B17] text-[#10B981] focus:ring-[#10B981]"
                 />
-                <span className="text-xs text-slate-300 leading-relaxed">
+                <span className="text-xs text-[#9DB2A8] leading-relaxed">
                   J&apos;accepte que les informations saisies soient traitées par SDBSNX dans le cadre de l&apos;instruction technique de ma demande, conformément à la{' '}
-                  <Link to="/politique-confidentialite" className="text-brand-blue font-semibold hover:underline">
+                  <Link to="/politique-confidentialite" className="text-[#10B981] font-bold hover:underline">
                     Politique de Confidentialité
                   </Link>{' '}
                   et à la législation applicable (Loi n° 2008-12).
@@ -419,15 +419,15 @@ export const ContactPage: React.FC = () => {
 
             {/* Submit Button */}
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="flex items-center space-x-2 text-xs text-slate-400">
-                <ShieldCheck className="w-4 h-4 text-brand-blue" />
+              <div className="flex items-center space-x-2 text-xs text-[#9DB2A8] font-medium">
+                <ShieldCheck className="w-4 h-4 text-[#10B981]" />
                 <span>Transmission chiffrée et numéro de suivi officiel</span>
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-white bg-brand-blue hover:bg-brand-blue-hover disabled:opacity-50 transition-colors flex items-center justify-center space-x-2 text-sm"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-[#04231A] bg-[#10B981] hover:bg-[#059669] disabled:opacity-50 transition-colors shadow-sm flex items-center justify-center space-x-2 text-sm"
               >
                 {loading ? (
                   <span>Enregistrement en cours...</span>

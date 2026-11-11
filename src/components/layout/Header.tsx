@@ -54,32 +54,34 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-200 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         isScrolled || mobileMenuOpen
-          ? 'bg-[#050811] border-b border-white/10 shadow-md py-3'
-          : 'bg-[#050811]/80 backdrop-blur-md border-b border-white/5 py-4'
+          ? 'bg-[#0E1B17]/95 backdrop-blur-md border-b border-[#24403A] shadow-md py-3'
+          : 'bg-[#0E1B17]/90 backdrop-blur-md border-b border-[#24403A]/60 py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo */}
+          {/* Logo with clean white pill badge for perfect contrast & zero clipping */}
           <Link to="/" className="flex items-center space-x-3 group flex-shrink-0">
-            <div className="flex items-center justify-center p-1.5 rounded-lg bg-white/5 border border-white/10 group-hover:border-brand-blue transition-colors">
+            <div className="bg-white px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-xl shadow-sm border border-[#24403A]/40 flex items-center justify-center transition-transform group-hover:scale-[1.02]">
               <img
                 src="/logo/sdbsnx-logo.png"
                 alt="SDBSNX Logo"
-                className="h-8 sm:h-9 w-auto object-contain"
+                className="h-6 sm:h-7 md:h-8 w-auto object-contain"
               />
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          <nav className="hidden lg:flex items-center space-x-1.5">
             <Link
               to="/"
-              className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                isActive('/') ? 'text-white bg-brand-blue' : 'text-slate-300 hover:text-white hover:bg-white/5'
+              className={`px-3.5 py-2 text-sm font-medium rounded-xl transition-colors ${
+                isActive('/') 
+                  ? 'bg-[#10B981] text-[#04231A] font-bold shadow-sm' 
+                  : 'text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#15271F]'
               }`}
             >
               Accueil
@@ -92,49 +94,49 @@ export const Header: React.FC = () => {
               onMouseLeave={() => setAboutOpen(false)}
             >
               <button
-                className={`flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                className={`flex items-center px-3.5 py-2 text-sm font-medium rounded-xl transition-colors ${
                   location.pathname.startsWith('/a-propos') ||
                   location.pathname === '/vision' ||
                   location.pathname === '/mission' ||
                   location.pathname === '/valeurs' ||
                   location.pathname === '/philosophie'
-                    ? 'text-white bg-white/10'
-                    : 'text-slate-300 hover:text-white hover:bg-white/5'
+                    ? 'text-[#6EE7B7] bg-[#15271F] border border-[#24403A] font-semibold'
+                    : 'text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#15271F]'
                 }`}
               >
                 <span>Institution</span>
-                <ChevronDown className="ml-1 w-4 h-4 opacity-70" />
+                <ChevronDown className="ml-1 w-4 h-4 opacity-80" />
               </button>
 
               {aboutOpen && (
-                <div className="absolute left-0 mt-1 w-60 rounded-xl bg-[#0A0F1D] py-2 z-50 border border-white/10 shadow-2xl">
+                <div className="absolute left-0 mt-1 w-64 rounded-xl bg-[#15271F] py-2 z-50 border border-[#24403A] shadow-2xl">
                   <Link
                     to="/a-propos"
-                    className="block px-4 py-2.5 text-sm text-slate-200 hover:text-white hover:bg-brand-blue transition-colors"
+                    className="block px-4 py-2.5 text-sm text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#1C332A] transition-colors"
                   >
                     À propos de SDBSNX
                   </Link>
                   <Link
                     to="/vision"
-                    className="block px-4 py-2.5 text-sm text-slate-200 hover:text-white hover:bg-brand-blue transition-colors"
+                    className="block px-4 py-2.5 text-sm text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#1C332A] transition-colors"
                   >
                     Notre Vision
                   </Link>
                   <Link
                     to="/mission"
-                    className="block px-4 py-2.5 text-sm text-slate-200 hover:text-white hover:bg-brand-blue transition-colors"
+                    className="block px-4 py-2.5 text-sm text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#1C332A] transition-colors"
                   >
                     Notre Mission & Objectifs
                   </Link>
                   <Link
                     to="/valeurs"
-                    className="block px-4 py-2.5 text-sm text-slate-200 hover:text-white hover:bg-brand-blue transition-colors"
+                    className="block px-4 py-2.5 text-sm text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#1C332A] transition-colors"
                   >
                     Nos Valeurs Clés
                   </Link>
                   <Link
                     to="/philosophie"
-                    className="block px-4 py-2.5 text-sm text-slate-200 hover:text-white hover:bg-brand-blue transition-colors"
+                    className="block px-4 py-2.5 text-sm text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#1C332A] transition-colors"
                   >
                     Notre Philosophie
                   </Link>
@@ -150,67 +152,67 @@ export const Header: React.FC = () => {
             >
               <Link
                 to="/services"
-                className={`flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                className={`flex items-center px-3.5 py-2 text-sm font-medium rounded-xl transition-colors ${
                   location.pathname.startsWith('/services')
-                    ? 'text-white bg-white/10'
-                    : 'text-slate-300 hover:text-white hover:bg-white/5'
+                    ? 'text-[#6EE7B7] bg-[#15271F] border border-[#24403A] font-semibold'
+                    : 'text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#15271F]'
                 }`}
               >
                 <span>Solutions & Services</span>
-                <ChevronDown className="ml-1 w-4 h-4 opacity-70" />
+                <ChevronDown className="ml-1 w-4 h-4 opacity-80" />
               </Link>
 
               {servicesOpen && (
-                <div className="absolute left-0 mt-1 w-80 rounded-xl bg-[#0A0F1D] py-2 z-50 border border-white/10 shadow-2xl">
+                <div className="absolute left-0 mt-1 w-80 rounded-xl bg-[#15271F] py-2 z-50 border border-[#24403A] shadow-2xl">
                   <Link
                     to="/services/legaltech"
-                    className="flex flex-col px-4 py-3 hover:bg-white/5 transition-colors border-b border-white/5 group"
+                    className="flex flex-col px-4 py-3 hover:bg-[#1C332A] transition-colors border-b border-[#24403A] group"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-semibold text-white group-hover:text-brand-blue transition-colors">
+                      <span className="text-sm font-semibold text-[#F4F1EA] group-hover:text-[#6EE7B7] transition-colors">
                         Solutions LegalTech
                       </span>
-                      <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-brand-blue text-white">
+                      <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-[#10B981] text-[#04231A] font-bold">
                         Spécialisé
                       </span>
                     </div>
-                    <span className="text-xs text-slate-400 mt-0.5">Bridging Law and Technology</span>
+                    <span className="text-xs text-[#9DB2A8] mt-0.5">Bridging Law and Technology</span>
                   </Link>
 
                   <Link
                     to="/services/cybersecurite"
-                    className="flex flex-col px-4 py-3 hover:bg-white/5 transition-colors border-b border-white/5 group"
+                    className="flex flex-col px-4 py-3 hover:bg-[#1C332A] transition-colors border-b border-[#24403A] group"
                   >
-                    <span className="text-sm font-semibold text-white group-hover:text-brand-blue transition-colors">
+                    <span className="text-sm font-semibold text-[#F4F1EA] group-hover:text-[#6EE7B7] transition-colors">
                       Cybersécurité & Audits
                     </span>
-                    <span className="text-xs text-slate-400 mt-0.5">Évaluation des risques et conformité stricte</span>
+                    <span className="text-xs text-[#9DB2A8] mt-0.5">Évaluation des risques et conformité stricte</span>
                   </Link>
 
                   <Link
                     to="/services/developpement"
-                    className="flex flex-col px-4 py-3 hover:bg-white/5 transition-colors border-b border-white/5 group"
+                    className="flex flex-col px-4 py-3 hover:bg-[#1C332A] transition-colors border-b border-[#24403A] group"
                   >
-                    <span className="text-sm font-semibold text-white group-hover:text-brand-blue transition-colors">
+                    <span className="text-sm font-semibold text-[#F4F1EA] group-hover:text-[#6EE7B7] transition-colors">
                       Développement Web & Mobile
                     </span>
-                    <span className="text-xs text-slate-400 mt-0.5">Plateformes critiques, SaaS & PWA</span>
+                    <span className="text-xs text-[#9DB2A8] mt-0.5">Plateformes critiques, SaaS & PWA</span>
                   </Link>
 
                   <Link
                     to="/services/conseil"
-                    className="flex flex-col px-4 py-3 hover:bg-white/5 transition-colors group"
+                    className="flex flex-col px-4 py-3 hover:bg-[#1C332A] transition-colors group"
                   >
-                    <span className="text-sm font-semibold text-white group-hover:text-brand-blue transition-colors">
+                    <span className="text-sm font-semibold text-[#F4F1EA] group-hover:text-[#6EE7B7] transition-colors">
                       Conseil Technologique
                     </span>
-                    <span className="text-xs text-slate-400 mt-0.5">Architecture & Transformation numérique</span>
+                    <span className="text-xs text-[#9DB2A8] mt-0.5">Architecture & Transformation numérique</span>
                   </Link>
 
-                  <div className="border-t border-white/10 mt-1 pt-1.5 px-4 pb-1">
+                  <div className="border-t border-[#24403A] mt-1 pt-1.5 px-4 pb-1">
                     <Link
                       to="/services"
-                      className="block text-xs font-semibold text-brand-blue hover:underline"
+                      className="block text-xs font-semibold text-[#10B981] hover:text-[#6EE7B7] hover:underline"
                     >
                       Voir tous les services →
                     </Link>
@@ -221,8 +223,10 @@ export const Header: React.FC = () => {
 
             <Link
               to="/contact"
-              className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                isActive('/contact') ? 'text-white bg-brand-blue' : 'text-slate-300 hover:text-white hover:bg-white/5'
+              className={`px-3.5 py-2 text-sm font-medium rounded-xl transition-colors ${
+                isActive('/contact') 
+                  ? 'bg-[#10B981] text-[#04231A] font-bold shadow-sm' 
+                  : 'text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#15271F]'
               }`}
             >
               Contact
@@ -234,7 +238,7 @@ export const Header: React.FC = () => {
             <Link
               to="/admin/login"
               aria-label="Portail Sécurisé"
-              className="p-2 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors border border-transparent hover:border-white/10"
+              className="p-2 text-[#9DB2A8] hover:text-[#F4F1EA] hover:bg-[#15271F] rounded-xl transition-colors border border-[#24403A]"
               title="Portail Administration"
             >
               <Lock className="w-4 h-4" />
@@ -242,18 +246,18 @@ export const Header: React.FC = () => {
 
             <Link
               to="/contact"
-              className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-semibold text-white bg-brand-blue hover:bg-brand-blue-hover transition-colors active:scale-[0.98]"
+              className="inline-flex items-center px-4 py-2 rounded-xl text-sm font-bold bg-[#10B981] hover:bg-[#059669] text-[#04231A] transition-all shadow-sm active:scale-[0.98]"
             >
               <span>Start a Project</span>
               <ArrowRight className="ml-1.5 w-4 h-4" />
             </Link>
           </div>
 
-          {/* Mobile hamburger button */}
+          {/* Mobile buttons */}
           <div className="flex items-center space-x-2 lg:hidden">
             <Link
               to="/admin/login"
-              className="p-2 text-slate-400 hover:text-white"
+              className="p-2 text-[#9DB2A8] hover:text-[#F4F1EA] bg-[#15271F] border border-[#24403A] rounded-lg"
               aria-label="Accès Administration"
             >
               <Lock className="w-4 h-4" />
@@ -261,10 +265,10 @@ export const Header: React.FC = () => {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-lg text-slate-200 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 focus:outline-none"
+              className="p-2.5 rounded-lg text-[#F4F1EA] hover:text-[#6EE7B7] bg-[#15271F] border border-[#24403A] focus:outline-none"
               aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-white" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-[#F4F1EA]" /> : <Menu className="w-5 h-5 text-[#F4F1EA]" />}
             </button>
           </div>
 
@@ -272,13 +276,13 @@ export const Header: React.FC = () => {
       </div>
 
       {/* ========================================================================= */}
-      {/* MOBILE FULL-SCREEN DRAWER (Completely scrollable, zero cut-off)          */}
+      {/* MOBILE FULL-SCREEN DRAWER (Completely responsive, scrollable, no cutoff)  */}
       {/* ========================================================================= */}
       {mobileMenuOpen && (
-        <div className="fixed inset-x-0 top-[57px] sm:top-[65px] bottom-0 z-50 bg-[#050811] flex flex-col border-t border-white/10 lg:hidden">
+        <div className="fixed inset-0 top-[56px] sm:top-[64px] z-50 bg-[#0E1B17] flex flex-col border-t border-[#24403A] lg:hidden">
           
-          {/* Scrollable menu content */}
-          <div className="flex-1 overflow-y-auto overscroll-contain px-5 py-6 space-y-6 pb-28">
+          {/* Scrollable container with plenty of bottom padding */}
+          <div className="flex-1 overflow-y-auto overscroll-contain px-4 py-5 space-y-6 pb-28">
             
             {/* Quick Primary Links */}
             <div className="grid grid-cols-2 gap-2.5">
@@ -287,8 +291,8 @@ export const Header: React.FC = () => {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`p-3 rounded-xl text-center text-sm font-bold border transition-colors ${
                   isActive('/')
-                    ? 'bg-brand-blue text-white border-brand-blue'
-                    : 'bg-[#0A0F1D] text-slate-200 border-white/10 hover:border-white/20'
+                    ? 'bg-[#10B981] text-[#04231A] border-[#10B981]'
+                    : 'bg-[#15271F] text-[#F4F1EA] border-[#24403A] hover:border-[#10B981]'
                 }`}
               >
                 Accueil
@@ -298,8 +302,8 @@ export const Header: React.FC = () => {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`p-3 rounded-xl text-center text-sm font-bold border transition-colors ${
                   isActive('/contact')
-                    ? 'bg-brand-blue text-white border-brand-blue'
-                    : 'bg-[#0A0F1D] text-slate-200 border-white/10 hover:border-white/20'
+                    ? 'bg-[#10B981] text-[#04231A] border-[#10B981]'
+                    : 'bg-[#15271F] text-[#F4F1EA] border-[#24403A] hover:border-[#10B981]'
                 }`}
               >
                 Contact
@@ -308,14 +312,14 @@ export const Header: React.FC = () => {
 
             {/* Group 1: Pôles & Services */}
             <div className="space-y-2">
-              <div className="flex items-center justify-between pb-1 border-b border-white/10">
-                <span className="text-xs font-mono uppercase tracking-wider text-brand-blue font-bold">
+              <div className="flex items-center justify-between pb-1 border-b border-[#24403A]">
+                <span className="text-xs font-mono uppercase tracking-wider text-[#6EE7B7] font-bold">
                   Solutions & Services
                 </span>
                 <Link
                   to="/services"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-[11px] text-slate-400 hover:text-white"
+                  className="text-[11px] text-[#9DB2A8] hover:text-[#10B981] font-medium"
                 >
                   Tous les services →
                 </Link>
@@ -325,16 +329,16 @@ export const Header: React.FC = () => {
                 <Link
                   to="/services/legaltech"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between p-3 rounded-xl bg-[#0A0F1D] border border-white/10 hover:border-brand-blue transition-colors"
+                  className="flex items-center justify-between p-3 rounded-xl bg-[#15271F] border border-[#24403A] hover:border-[#10B981] hover:bg-[#1C332A] transition-colors"
                 >
-                  <div className="flex items-center space-x-3">
-                    <Scale className="w-4 h-4 text-brand-blue flex-shrink-0" />
-                    <div>
-                      <span className="text-sm font-bold text-white block">Solutions LegalTech</span>
-                      <span className="text-xs text-slate-400 block">Bridging Law and Technology</span>
+                  <div className="flex items-center space-x-3 min-w-0">
+                    <Scale className="w-4 h-4 text-[#10B981] flex-shrink-0" />
+                    <div className="min-w-0">
+                      <span className="text-sm font-bold text-[#F4F1EA] block truncate">Solutions LegalTech</span>
+                      <span className="text-xs text-[#9DB2A8] block truncate">Bridging Law and Technology</span>
                     </div>
                   </div>
-                  <span className="text-[10px] font-mono uppercase px-1.5 py-0.5 rounded bg-brand-blue text-white">
+                  <span className="text-[10px] font-mono uppercase px-1.5 py-0.5 rounded bg-[#10B981] text-[#04231A] font-bold flex-shrink-0 ml-2">
                     Pôle
                   </span>
                 </Link>
@@ -342,36 +346,36 @@ export const Header: React.FC = () => {
                 <Link
                   to="/services/cybersecurite"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center space-x-3 p-3 rounded-xl bg-[#0A0F1D] border border-white/10 hover:border-brand-blue transition-colors"
+                  className="flex items-center space-x-3 p-3 rounded-xl bg-[#15271F] border border-[#24403A] hover:border-[#10B981] hover:bg-[#1C332A] transition-colors"
                 >
-                  <Shield className="w-4 h-4 text-brand-blue flex-shrink-0" />
-                  <div>
-                    <span className="text-sm font-bold text-white block">Cybersécurité & Audits</span>
-                    <span className="text-xs text-slate-400 block">Évaluation autorisée & Défense</span>
+                  <Shield className="w-4 h-4 text-[#10B981] flex-shrink-0" />
+                  <div className="min-w-0">
+                    <span className="text-sm font-bold text-[#F4F1EA] block truncate">Cybersécurité & Audits</span>
+                    <span className="text-xs text-[#9DB2A8] block truncate">Évaluation autorisée & Défense</span>
                   </div>
                 </Link>
 
                 <Link
                   to="/services/developpement"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center space-x-3 p-3 rounded-xl bg-[#0A0F1D] border border-white/10 hover:border-brand-blue transition-colors"
+                  className="flex items-center space-x-3 p-3 rounded-xl bg-[#15271F] border border-[#24403A] hover:border-[#10B981] hover:bg-[#1C332A] transition-colors"
                 >
-                  <Code className="w-4 h-4 text-brand-blue flex-shrink-0" />
-                  <div>
-                    <span className="text-sm font-bold text-white block">Développement Web & Mobile</span>
-                    <span className="text-xs text-slate-400 block">Applications métier, SaaS, PWA</span>
+                  <Code className="w-4 h-4 text-[#10B981] flex-shrink-0" />
+                  <div className="min-w-0">
+                    <span className="text-sm font-bold text-[#F4F1EA] block truncate">Développement Web & Mobile</span>
+                    <span className="text-xs text-[#9DB2A8] block truncate">Applications métier, SaaS, PWA</span>
                   </div>
                 </Link>
 
                 <Link
                   to="/services/conseil"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center space-x-3 p-3 rounded-xl bg-[#0A0F1D] border border-white/10 hover:border-brand-blue transition-colors"
+                  className="flex items-center space-x-3 p-3 rounded-xl bg-[#15271F] border border-[#24403A] hover:border-[#10B981] hover:bg-[#1C332A] transition-colors"
                 >
-                  <Compass className="w-4 h-4 text-brand-blue flex-shrink-0" />
-                  <div>
-                    <span className="text-sm font-bold text-white block">Conseil Technologique</span>
-                    <span className="text-xs text-slate-400 block">Architecture & Urbanisation</span>
+                  <Compass className="w-4 h-4 text-[#10B981] flex-shrink-0" />
+                  <div className="min-w-0">
+                    <span className="text-sm font-bold text-[#F4F1EA] block truncate">Conseil Technologique</span>
+                    <span className="text-xs text-[#9DB2A8] block truncate">Architecture & Urbanisation</span>
                   </div>
                 </Link>
               </div>
@@ -379,7 +383,7 @@ export const Header: React.FC = () => {
 
             {/* Group 2: Institution */}
             <div className="space-y-2">
-              <span className="text-xs font-mono uppercase tracking-wider text-brand-blue font-bold pb-1 block border-b border-white/10">
+              <span className="text-xs font-mono uppercase tracking-wider text-[#6EE7B7] font-bold pb-1 block border-b border-[#24403A]">
                 Institution & Valeurs
               </span>
 
@@ -387,52 +391,52 @@ export const Header: React.FC = () => {
                 <Link
                   to="/a-propos"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#0A0F1D] border border-white/10 hover:border-brand-blue text-sm text-slate-200"
+                  className="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#15271F] border border-[#24403A] hover:border-[#10B981] text-sm text-[#F4F1EA]"
                 >
-                  <Sparkles className="w-3.5 h-3.5 text-brand-blue" />
+                  <Sparkles className="w-3.5 h-3.5 text-[#10B981]" />
                   <span>À propos de SDBSNX</span>
                 </Link>
                 <Link
                   to="/vision"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#0A0F1D] border border-white/10 hover:border-brand-blue text-sm text-slate-200"
+                  className="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#15271F] border border-[#24403A] hover:border-[#10B981] text-sm text-[#F4F1EA]"
                 >
-                  <Target className="w-3.5 h-3.5 text-brand-blue" />
+                  <Target className="w-3.5 h-3.5 text-[#10B981]" />
                   <span>Notre Vision</span>
                 </Link>
                 <Link
                   to="/mission"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#0A0F1D] border border-white/10 hover:border-brand-blue text-sm text-slate-200"
+                  className="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#15271F] border border-[#24403A] hover:border-[#10B981] text-sm text-[#F4F1EA]"
                 >
-                  <Layers className="w-3.5 h-3.5 text-brand-blue" />
+                  <Layers className="w-3.5 h-3.5 text-[#10B981]" />
                   <span>Notre Mission</span>
                 </Link>
                 <Link
                   to="/valeurs"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#0A0F1D] border border-white/10 hover:border-brand-blue text-sm text-slate-200"
+                  className="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#15271F] border border-[#24403A] hover:border-[#10B981] text-sm text-[#F4F1EA]"
                 >
-                  <Award className="w-3.5 h-3.5 text-brand-blue" />
+                  <Award className="w-3.5 h-3.5 text-[#10B981]" />
                   <span>Nos Valeurs Clés</span>
                 </Link>
                 <Link
                   to="/philosophie"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#0A0F1D] border border-white/10 hover:border-brand-blue text-sm text-slate-200 sm:col-span-2"
+                  className="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#15271F] border border-[#24403A] hover:border-[#10B981] text-sm text-[#F4F1EA] sm:col-span-2"
                 >
-                  <span className="text-brand-blue font-bold">#</span>
+                  <span className="text-[#10B981] font-bold">#</span>
                   <span>Notre Philosophie (The Standard We Live By)</span>
                 </Link>
               </div>
             </div>
 
-            {/* Bottom Actions inside drawer */}
-            <div className="pt-2 space-y-3">
+            {/* Bottom Actions inside drawer - Fully visible & accessible */}
+            <div className="pt-2 space-y-3 pb-6">
               <Link
                 to="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center py-3.5 rounded-xl text-sm font-bold text-white bg-brand-blue hover:bg-brand-blue-hover block transition-colors shadow-md"
+                className="w-full text-center py-3.5 rounded-xl text-sm font-bold bg-[#10B981] hover:bg-[#059669] text-[#04231A] block transition-colors shadow-md"
               >
                 Start a Project →
               </Link>
@@ -440,7 +444,7 @@ export const Header: React.FC = () => {
               <Link
                 to="/admin/login"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center space-x-2 py-2.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white bg-white/5 border border-white/10"
+                className="w-full flex items-center justify-center space-x-2 py-2.5 rounded-xl text-xs font-semibold text-[#9DB2A8] hover:text-[#F4F1EA] bg-[#15271F] border border-[#24403A]"
               >
                 <Lock className="w-3.5 h-3.5" />
                 <span>Portail Administrateur Sécurisé</span>
