@@ -176,7 +176,7 @@ export const InteractiveValues: React.FC = () => {
               </div>
 
               <div className="flex items-center space-x-4 mb-6">
-                <div className="p-3 rounded-xl bg-[#0E1B17] border border-[#24403A]">
+                <div className="p-3 rounded-xl bg-[#0E1B17] border border-[#24403A] text-[#10B981] [&_svg]:text-[#10B981] [&_svg]:stroke-[#10B981] shadow-inner">
                   {activeValue.icon}
                 </div>
                 <div>

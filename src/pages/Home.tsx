@@ -23,18 +23,18 @@ export const HomePage: React.FC = () => {
       <section className="relative min-h-[85vh] flex items-center justify-center pt-8 pb-16 px-4 sm:px-6 lg:px-8 bg-[#0E1B17]">
         <div className="max-w-5xl mx-auto text-center relative z-10 space-y-8">
           
-          {/* Official Logo Display - Crisp White Badge against dark background */}
+          {/* Official Logo Display - New SDBSNX emblem in dark luxury frame */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}
             className="inline-flex items-center justify-center p-2 mb-2"
           >
-            <div className="bg-white px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl shadow-md border border-[#24403A] flex items-center justify-center">
+            <div className="bg-black/60 p-2 sm:p-2.5 rounded-2xl shadow-xl border border-[#24403A] flex items-center justify-center">
               <img
                 src="/logo/sdbsnx-logo.png"
                 alt="SDBSNX Official Logo"
-                className="h-12 sm:h-14 md:h-16 w-auto object-contain"
+                className="h-16 sm:h-20 md:h-24 w-auto object-contain rounded-xl"
               />
             </div>
           </motion.div>
