@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* SDBSNX Brand Color Tokens - Pure Solid Colors from Official Logo */
+  --sdbsnx-primary: #0055FE;
+  --sdbsnx-primary-hover: #0047D4;
+  
+  --sdbsnx-secondary: #0A0F1D;
+  --sdbsnx-secondary-light: #131C35;
+  
+  --sdbsnx-accent: #0055FE;
+  
+  --sdbsnx-bg-main: #050811;
+  --sdbsnx-bg-secondary: #0A0F1D;
+  --sdbsnx-bg-card: #0E1629;
+  --sdbsnx-bg-card-hover: #131E38;
+  
+  --sdbsnx-text-primary: #FFFFFF;
+  --sdbsnx-text-secondary: #94A3B8;
+  --sdbsnx-text-muted: #64748B;
+  
+  --sdbsnx-border-subtle: rgba(255, 255, 255, 0.1);
+  --sdbsnx-border-active: #0055FE;
+  
+  --sdbsnx-success: #10B981;
+  --sdbsnx-warning: #F59E0B;
+  --sdbsnx-error: #EF4444;
+}
+
+/* Base resets & typography */
+html {
+  color-scheme: dark;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--sdbsnx-bg-main);
+  color: var(--sdbsnx-text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050811;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0055FE;
+}
+
+/* Solid Minimalist Panels - No Gradients */
+.glass-panel {
+  background-color: #0A0F1D;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-glow {
+  background-color: #0E1629;
+  border: 1px solid #0055FE;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>SDBSNX — Digital Innovation, Cybersecurity & LegalTech</title>
+    <meta name="title" content="SDBSNX — Official Digital Platform" />
+    <meta name="description" content="SDBSNX accompagne les entreprises et organisations dans leur transformation numérique avec des solutions technologiques innovantes, hautement sécurisées et durables en Afrique et à l'international." />
+    <meta name="keywords" content="SDBSNX, agence digitale, cybersécurité, LegalTech, développement web, développement mobile, transformation numérique Sénégal, audit sécurité informatique" />
+    <meta name="author" content="SDBSNX" />
+    <meta name="theme-color" content="#0A0F1D" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sdbsnx.com/" />
+    <meta property="og:title" content="SDBSNX — Building the Future. Securing What Matters." />
+    <meta property="og:description" content="Agence de solutions numériques : Développement Web & Mobile, Cybersécurité, LegalTech et Conseil Technologique." />
+    <meta property="og:image" content="/logo/sdbsnx-logo.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sdbsnx.com/" />
+    <meta property="twitter:title" content="SDBSNX — Building the Future. Securing What Matters." />
+    <meta property="twitter:description" content="Agence de solutions numériques : Développement Web & Mobile, Cybersécurité, LegalTech et Conseil Technologique." />
+    <meta property="twitter:image" content="/logo/sdbsnx-logo.png" />
+
+    <!-- Favicon & PWA Icons -->
+    <link rel="icon" type="image/png" href="/logo/sdbsnx-logo.png" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SDBSNX",
+        "alternateName": "SDBSNX Digital Solutions",
+        "url": "https://sdbsnx.com",
+        "logo": "https://sdbsnx.com/logo/sdbsnx-logo.png",
+        "slogan": "Building the Future. Securing What Matters.",
+        "description": "Agence de solutions numériques de pointe : Développement Web & Mobile, Cybersécurité, LegalTech et Conseil Technologique.",
+        "foundingLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "SN"
+          }
+        },
+        "knowsAbout": [
+          "Web Development",
+          "Mobile Application Development",
+          "Cybersecurity Audits",
+          "LegalTech Solutions",
+          "Digital Consulting"
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-[#050811] text-slate-100 font-sans antialiased selection:bg-brand-blue selection:text-white min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Register service worker for PWA
+      if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch((err) => {
+            console.log('SW registration error:', err);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
+
