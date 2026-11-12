@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { CookieBanner } from '../ui/CookieBanner';
+import { WhatsAppButton } from '../ui/WhatsAppButton';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -23,6 +24,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         {children}
       </main>
       <Footer />
+      <WhatsAppButton />
       <CookieBanner />
     </div>
   );

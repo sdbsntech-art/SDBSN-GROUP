@@ -9,10 +9,13 @@ import {
   Copy, 
   Check, 
   Clock, 
-  FileText 
+  FileText,
+  MessageCircle,
+  ArrowUpRight
 } from 'lucide-react';
 import { submitContactToWeb3Forms } from '../lib/web3forms';
 import { generateReferenceNumber } from '../lib/utils';
+import { WHATSAPP_CONFIG, getWhatsAppUrl } from '../lib/whatsapp';
 import type { ServiceCategory } from '../types';
 import { BackButton } from '../components/ui/BackButton';
 
@@ -197,11 +200,44 @@ export const ContactPage: React.FC = () => {
             </div>
           </div>
         ) : (
-          /* The Contact Form */
-          <form
-            onSubmit={handleSubmit}
-            className="p-6 sm:p-10 rounded-3xl bg-[#15271F] border border-[#24403A] shadow-xl space-y-8"
-          >
+          <div className="space-y-6">
+            {/* Direct WhatsApp Consultation Banner */}
+            <div className="p-5 sm:p-6 rounded-2xl bg-[#15271F] border border-[#24403A] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-md">
+              <div className="flex items-center space-x-3.5">
+                <div className="w-11 h-11 rounded-xl bg-[#10B981]/15 border border-[#10B981]/30 flex items-center justify-center text-[#10B981] flex-shrink-0">
+                  <MessageCircle className="w-6 h-6" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-sm font-bold text-[#F4F1EA] font-display">
+                      Ligne directe WhatsApp SDBSNX
+                    </h3>
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-[#10B981]/15 text-[#6EE7B7] border border-[#10B981]/30">
+                      En ligne
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#9DB2A8] mt-0.5">
+                    Échangez immédiatement avec notre équipe au <span className="text-[#F4F1EA] font-mono font-semibold">{WHATSAPP_CONFIG.displayNumber}</span>
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href={getWhatsAppUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-xl font-bold text-xs text-[#04231A] bg-[#10B981] hover:bg-[#059669] transition-all flex items-center justify-center gap-2 shadow-sm flex-shrink-0"
+              >
+                <span>Démarrer la discussion</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+
+            {/* The Contact Form */}
+            <form
+              onSubmit={handleSubmit}
+              className="p-6 sm:p-10 rounded-3xl bg-[#15271F] border border-[#24403A] shadow-xl space-y-8"
+            >
             {/* Honeypot hidden input for spam bots */}
             <input
               type="text"
@@ -421,6 +457,7 @@ export const ContactPage: React.FC = () => {
               </button>
             </div>
           </form>
+          </div>
         )}
 
       </div>

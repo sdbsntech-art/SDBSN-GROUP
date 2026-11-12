@@ -46,9 +46,10 @@ export const LegalNoticePage: React.FC = () => {
               <li><strong>Forme juridique :</strong> [À COMPLÉTER — ex: SARL / SAS / En cours d&apos;immatriculation]</li>
               <li><strong>Numéro d&apos;immatriculation (RCCM) :</strong> [À COMPLÉTER]</li>
               <li><strong>Numéro d&apos;Identification Fiscale (NINEA) :</strong> [À COMPLÉTER]</li>
-              <li><strong>Siège social / Adresse professionnelle :</strong> [À COMPLÉTER — Dakar, Sénégal]</li>
+              <li><strong>Siège social / Adresse professionnelle :</strong> Dakar, Sénégal</li>
               <li><strong>Contact électronique :</strong> contact@sdbsnx.com</li>
-              <li><strong>Responsable de la publication :</strong> La Direction de SDBSNX [Nom du représentant légal À COMPLÉTER]</li>
+              <li><strong>Ligne directe / WhatsApp :</strong> +221 76 624 24 58</li>
+              <li><strong>Responsable de la publication :</strong> La Direction de SDBSNX</li>
             </ul>
           </section>
 

@@ -19,7 +19,7 @@ Ce document explique comment activer les alertes WhatsApp discrètes destinées 
 4. Dans **WhatsApp > API Setup** :
    - Récupérez votre **Phone Number ID**.
    - Générez un **Access Token** permanent via un *System User* dans votre Meta Business Manager avec la permission `whatsapp_business_messaging`.
-5. Définissez le numéro destinataire interne dans `WHATSAPP_ADMIN_RECIPIENT` au format international sans signe `+` (ex: `221770000000`).
+5. Définissez le numéro destinataire interne dans `WHATSAPP_ADMIN_RECIPIENT` au format international sans signe `+` (ex: `221766242458`).
 
 ---
 
@@ -30,7 +30,8 @@ Ajoutez ces variables dans vos paramètres Vercel :
 ```env
 WHATSAPP_CLOUD_API_TOKEN=EAAG...
 WHATSAPP_PHONE_NUMBER_ID=123456789012345
-WHATSAPP_ADMIN_RECIPIENT=221770000000
+WHATSAPP_ADMIN_RECIPIENT=221766242458
+VITE_WHATSAPP_NUMBER=221766242458
 ```
 
 ---

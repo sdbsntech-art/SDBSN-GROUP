@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Mail, MapPin, ArrowUpRight, Lock } from 'lucide-react';
+import { ShieldCheck, Mail, MapPin, ArrowUpRight, Lock, MessageCircle } from 'lucide-react';
+import { WHATSAPP_CONFIG, getWhatsAppUrl } from '../../lib/whatsapp';
 
 export const Footer: React.FC = () => {
   return (
@@ -42,10 +43,23 @@ export const Footer: React.FC = () => {
                 Sénégal & International
               </span>
               <span className="text-[#24403A] hidden sm:inline">•</span>
-              <span className="flex items-center text-[#F4F1EA] font-medium">
+              <a
+                href="mailto:contact@sdbsnx.com"
+                className="flex items-center text-[#F4F1EA] font-medium hover:text-[#6EE7B7] transition-colors"
+              >
                 <Mail className="w-3.5 h-3.5 mr-1 text-[#10B981]" />
                 contact@sdbsnx.com
-              </span>
+              </a>
+              <span className="text-[#24403A] hidden sm:inline">•</span>
+              <a
+                href={getWhatsAppUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-[#F4F1EA] font-medium hover:text-[#6EE7B7] transition-colors"
+              >
+                <MessageCircle className="w-3.5 h-3.5 mr-1 text-[#10B981]" />
+                WhatsApp: {WHATSAPP_CONFIG.displayNumber}
+              </a>
             </div>
           </div>
 

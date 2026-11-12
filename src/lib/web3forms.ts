@@ -123,3 +123,4 @@ export function deleteLocalSubmission(idOrRef: string): void {
     console.warn('Could not delete local submission:', err);
   }
 }
+
