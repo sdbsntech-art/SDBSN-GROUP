@@ -34,15 +34,15 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Fetch: Never cache admin routes, API endpoints, or Supabase calls
+// Fetch: Never cache admin routes, API endpoints, or Web3Forms calls
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  // STRICT EXCLUSION: Do not cache admin, API, or external DB calls
+  // STRICT EXCLUSION: Do not cache admin, API, or external submission calls
   if (
     url.pathname.startsWith('/admin') ||
     url.pathname.startsWith('/api/') ||
-    url.hostname.includes('supabase.co') ||
+    url.hostname.includes('web3forms.com') ||
     event.request.method !== 'GET'
   ) {
     return;

@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { 
-  supabase, 
-  isSupabaseConfigured, 
-  getFallbackSubmissions, 
-  updateFallbackSubmissionStatus, 
-  deleteFallbackSubmission 
-} from '../../lib/supabase';
+  getLocalSubmissions, 
+  updateLocalSubmissionStatus, 
+  deleteLocalSubmission 
+} from '../../lib/web3forms';
 import { formatDate } from '../../lib/utils';
 import type { ContactSubmission, RequestStatus } from '../../types';
 import { 
@@ -38,25 +36,13 @@ export const AdminDashboardPage: React.FC = () => {
 
   const navigate = useNavigate();
 
-  const loadSubmissions = async () => {
+  const loadSubmissions = () => {
     setLoading(true);
     try {
-      if (isSupabaseConfigured && supabase) {
-        const { data, error } = await supabase
-          .from('contact_submissions')
-          .select('*')
-          .order('created_at', { ascending: false });
-
-        if (!error && data) {
-          setSubmissions(data as ContactSubmission[]);
-        } else {
-          setSubmissions(getFallbackSubmissions());
-        }
-      } else {
-        setSubmissions(getFallbackSubmissions());
-      }
+      const data = getLocalSubmissions();
+      setSubmissions(data);
     } catch {
-      setSubmissions(getFallbackSubmissions());
+      setSubmissions([]);
     } finally {
       setLoading(false);
     }
@@ -66,58 +52,28 @@ export const AdminDashboardPage: React.FC = () => {
     loadSubmissions();
   }, []);
 
-  const handleLogout = async () => {
-    if (isSupabaseConfigured && supabase) {
-      await supabase.auth.signOut();
-    }
+  const handleLogout = () => {
     localStorage.removeItem('sdbsnx_admin_token');
     navigate('/admin/login');
   };
 
-  const handleStatusChange = async (id: string, newStatus: RequestStatus) => {
-    if (isSupabaseConfigured && supabase) {
-      const { error } = await supabase
-        .from('contact_submissions')
-        .update({ status: newStatus, updated_at: new Date().toISOString() })
-        .eq('id', id);
-
-      if (!error) {
-        setSubmissions((prev) =>
-          prev.map((s) => (s.id === id ? { ...s, status: newStatus } : s))
-        );
-        if (selectedSubmission?.id === id) {
-          setSelectedSubmission({ ...selectedSubmission, status: newStatus });
-        }
-      }
-    } else {
-      updateFallbackSubmissionStatus(id, newStatus);
-      setSubmissions((prev) =>
-        prev.map((s) => (s.id === id ? { ...s, status: newStatus } : s))
-      );
-      if (selectedSubmission?.id === id) {
-        setSelectedSubmission({ ...selectedSubmission, status: newStatus });
-      }
+  const handleStatusChange = (idOrRef: string, newStatus: RequestStatus) => {
+    updateLocalSubmissionStatus(idOrRef, newStatus);
+    setSubmissions((prev) =>
+      prev.map((s) => (s.id === idOrRef || s.reference_number === idOrRef ? { ...s, status: newStatus } : s))
+    );
+    if (selectedSubmission && (selectedSubmission.id === idOrRef || selectedSubmission.reference_number === idOrRef)) {
+      setSelectedSubmission({ ...selectedSubmission, status: newStatus });
     }
   };
 
-  const handleDelete = async (id: string) => {
-    if (isSupabaseConfigured && supabase) {
-      const { error } = await supabase
-        .from('contact_submissions')
-        .delete()
-        .eq('id', id);
-
-      if (!error) {
-        setSubmissions((prev) => prev.filter((s) => s.id !== id));
-        if (selectedSubmission?.id === id) setSelectedSubmission(null);
-        setDeleteConfirmId(null);
-      }
-    } else {
-      deleteFallbackSubmission(id);
-      setSubmissions((prev) => prev.filter((s) => s.id !== id));
-      if (selectedSubmission?.id === id) setSelectedSubmission(null);
-      setDeleteConfirmId(null);
+  const handleDelete = (idOrRef: string) => {
+    deleteLocalSubmission(idOrRef);
+    setSubmissions((prev) => prev.filter((s) => s.id !== idOrRef && s.reference_number !== idOrRef));
+    if (selectedSubmission && (selectedSubmission.id === idOrRef || selectedSubmission.reference_number === idOrRef)) {
+      setSelectedSubmission(null);
     }
+    setDeleteConfirmId(null);
   };
 
   // Metrics
@@ -163,7 +119,7 @@ export const AdminDashboardPage: React.FC = () => {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-[#24403A]">
         <div>
           <span className="text-[11px] font-mono uppercase tracking-widest text-[#6EE7B7] font-bold block">
-            SDBSNX INTERNAL SECURE CONSOLE
+            SDBSNX INTERNAL SECURE CONSOLE (WEB3FORMS SYNC)
           </span>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-[#F4F1EA] font-display">
             Gestion des Requêtes Clients
@@ -203,7 +159,7 @@ export const AdminDashboardPage: React.FC = () => {
             <Inbox className="w-4 h-4 text-[#10B981]" />
           </div>
           <p className="text-2xl sm:text-3xl font-bold text-[#F4F1EA] font-mono">{totalSubmissions}</p>
-          <span className="text-[11px] text-[#9DB2A8]">Toutes catégories confondues</span>
+          <span className="text-[11px] text-[#9DB2A8]">Transmises par Web3Forms</span>
         </div>
 
         <div className="p-5 rounded-2xl bg-[#15271F] border border-[#10B981]/50 shadow-sm space-y-1">
@@ -313,7 +269,7 @@ export const AdminDashboardPage: React.FC = () => {
               ) : filteredSubmissions.length === 0 ? (
                 <tr>
                   <td colSpan={6} className="p-8 text-center text-[#9DB2A8]">
-                    Aucune demande ne correspond aux critères de recherche.
+                    Aucune demande enregistrée pour le moment.
                   </td>
                 </tr>
               ) : (
@@ -363,7 +319,7 @@ export const AdminDashboardPage: React.FC = () => {
                         Consulter
                       </button>
                       <button
-                        onClick={() => setDeleteConfirmId(sub.id || null)}
+                        onClick={() => setDeleteConfirmId(sub.id || sub.reference_number || null)}
                         className="p-1.5 rounded-lg text-[#9DB2A8] hover:text-red-400 hover:bg-red-950/40 transition-colors"
                         title="Supprimer ce dossier"
                       >
@@ -408,7 +364,7 @@ export const AdminDashboardPage: React.FC = () => {
                 {(['New', 'In Review', 'In Progress', 'Completed', 'Archived'] as RequestStatus[]).map((st) => (
                   <button
                     key={st}
-                    onClick={() => selectedSubmission.id && handleStatusChange(selectedSubmission.id, st)}
+                    onClick={() => handleStatusChange(selectedSubmission.id || selectedSubmission.reference_number || '', st)}
                     className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all border ${
                       selectedSubmission.status === st
                         ? 'bg-[#10B981] text-[#04231A] font-bold border-[#10B981] shadow-sm'
@@ -468,7 +424,7 @@ export const AdminDashboardPage: React.FC = () => {
             {/* Timestamp & Consent */}
             <div className="flex items-center justify-between text-[11px] text-[#9DB2A8] pt-2 border-t border-[#24403A]">
               <span>Date : {selectedSubmission.created_at ? formatDate(selectedSubmission.created_at) : 'N/A'}</span>
-              <span>Consentement RGPD/CDP : Accordé (Vérifié)</span>
+              <span>Transmission : Web3Forms API chiffrée</span>
             </div>
 
             <div className="flex justify-end pt-2">
@@ -493,7 +449,7 @@ export const AdminDashboardPage: React.FC = () => {
             </div>
             <h4 className="text-base font-bold text-[#F4F1EA]">Confirmer la suppression</h4>
             <p className="text-xs text-[#9DB2A8] leading-relaxed">
-              Cette action est irréversible et supprimera définitivement le dossier de la base de données.
+              Cette action supprimera ce dossier de votre liste locale.
             </p>
             <div className="flex items-center justify-center space-x-3 pt-2">
               <button

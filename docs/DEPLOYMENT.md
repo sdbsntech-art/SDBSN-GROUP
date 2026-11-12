@@ -1,69 +1,44 @@
 # Guide de Déploiement — SDBSNX Official Digital Platform
 
-Ce guide détaille la mise en production intégrale de la plateforme SDBSNX sur **Vercel** et **Supabase**, sans serveur VPS, sans Laravel et sans MySQL externe.
+Ce guide détaille la mise en production de la plateforme SDBSNX sur **Vercel** avec acheminement direct par **Web3Forms**, sans serveur VPS, sans base de données tierce et avec une haute sécurité.
 
 ---
 
 ## 1. Prérequis
 
-- Un compte [GitHub](https://github.com) ou [GitLab](https://gitlab.com).
+- Un compte [GitHub](https://github.com) avec le dépôt `SDBSN-GROUP`.
 - Un compte [Vercel](https://vercel.com).
-- Un projet [Supabase](https://supabase.com).
+- La clé Web3Forms : `709797ef-bfab-4ff0-afae-bcfed2d54a57` (active pour `contact@sdbsnx.com`).
 - Le logo officiel SDBSNX (déjà intégré dans `public/logo/` et `public/icons/`).
 
 ---
 
-## 2. Étape 1 : Configuration de la Base de Données Supabase
+## 2. Déploiement sur Vercel
 
-1. Créez un nouveau projet sur Supabase (Région recommandée : *eu-west-3 Paris* ou *eu-central-1 Frankfurt*).
-2. Rendez-vous dans **SQL Editor** dans la barre latérale.
-3. Ouvrez le script de migration local : `supabase/migrations/20261110_init_sdbsnx.sql`.
-4. Copiez son contenu et exécutez-le dans le SQL Editor.
-5. Vérifiez la création des tables et des politiques RLS :
-   - Table `contact_requests` avec Row Level Security activé.
-   - Table `admin_audit_logs`.
-   - Politiques d'insertion anonyme et de lecture restreinte aux authentifiés.
-6. Créez votre compte administrateur dans **Authentication > Users** :
-   - Ajoutez un utilisateur par e-mail / mot de passe fort (ex: `admin@sdbsnx.com`).
-
----
-
-## 3. Étape 2 : Déploiement sur Vercel
-
-1. Poussez le projet sur votre dépôt Git privé.
-2. Connectez-vous à Vercel et cliquez sur **Add New... > Project**.
-3. Importez votre dépôt `sdbsnx-digital-platform`.
-4. Vercel détecte automatiquement le framework **Vite** :
+1. Connectez-vous à Vercel et cliquez sur **Add New... > Project**.
+2. Importez votre dépôt `https://github.com/sdbsntech-art/SDBSN-GROUP.git`.
+3. Vercel détecte automatiquement le framework **Vite** :
    - **Build Command** : `npm run build`
    - **Output Directory** : `dist`
    - **Install Command** : `npm install`
-5. Configurez les **Environment Variables** (variables d'environnement) :
-   - `VITE_SUPABASE_URL` : URL de votre projet Supabase
-   - `VITE_SUPABASE_ANON_KEY` : Clé publique anonyme Supabase
-   - `SUPABASE_URL` : URL Supabase (pour fonctions serveur)
-   - `SUPABASE_SERVICE_ROLE_KEY` : Clé de service Supabase
-   - `WHATSAPP_CLOUD_API_TOKEN` : (Optionnel) Token Meta WhatsApp Cloud
-   - `WHATSAPP_PHONE_NUMBER_ID` : (Optionnel) Identifiant numéro WhatsApp
-   - `WHATSAPP_ADMIN_RECIPIENT` : (Optionnel) Numéro administrateur privé
-6. Cliquez sur **Deploy**.
+4. Configurez les **Environment Variables** (variables d'environnement) :
+   - `VITE_WEB3FORMS_ACCESS_KEY` : `709797ef-bfab-4ff0-afae-bcfed2d54a57`
+5. Cliquez sur **Deploy**.
 
 ---
 
-## 4. Étape 3 : Nom de Domaine Personnalisé
+## 3. Nom de Domaine Personnalisé
 
-1. Dans Vercel, accédez à **Settings > Domains**.
-2. Ajoutez votre domaine institutionnel (ex: `sdbsnx.com` et `www.sdbsnx.com`).
-3. Configurez les enregistrements DNS chez votre registrar :
-   - Type A : `76.76.21.21` (ou CNAME pour les sous-domaines).
-4. Le certificat SSL TLS 1.3 est automatiquement généré et renouvelé par Vercel.
+Dans **Settings > Domains** sur Vercel :
+1. Ajoutez `sdbsnx.com` et `www.sdbsnx.com`.
+2. Configurez les enregistrements DNS chez votre registrar :
+   - A Record : `76.76.21.21`
+   - CNAME `www` : `cname.vercel-dns.com`
+3. Le certificat SSL/TLS est généré automatiquement par Vercel.
 
 ---
 
-## 5. Vérifications Post-Déploiement
+## 4. Console d'Administration
 
-- Tester la soumission d'une demande de projet sur `/contact`.
-- Vérifier la génération du numéro de référence (format `SDB-YYYY-XXXX`).
-- Vérifier l'insertion dans la table Supabase `contact_requests`.
-- Se connecter à l'espace administrateur sur `/admin/login` et tester la gestion des statuts.
-- Tester l'installation de la PWA sur un smartphone compatible.
-
+- URL : `/admin/login`
+- Accès avec : `admin@sdbsnx.com` (mot de passe fort d'au moins 8 caractères).

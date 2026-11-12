@@ -12,17 +12,17 @@ Plateforme numérique institutionnelle haut de gamme de **SDBSNX**, agence de so
 
 ## 🏛️ Caractéristiques Fondamentales
 
-- **Identité Visuelle & Couleurs Officielles** : Couleurs exactes extraites du logo officiel SDBSNX (Cobalt Electric Blue `#0055FE`, Deep Midnight Navy `#0A0F1D`, Dark Slate `#050811`, Vivid Cyan `#38BDF8`).
-- **Stack Moderne & Sans VPS** : React 18, TypeScript strict, Vite, Tailwind CSS, Framer Motion, Supabase PostgreSQL & Auth, Vercel Serverless Functions.
+- **Identité Visuelle & Couleurs Officielles** : Cyber Emerald (`#10B981`), Dark Pine Forest (`#0E1B17`), Surface (`#15271F`), Mint Accent (`#6EE7B7`), Ivory Text (`#F4F1EA`).
+- **Stack Moderne & Performante** : React 18, TypeScript strict, Vite, Tailwind CSS, Framer Motion, Web3Forms API.
 - **Pôle Stratégique LegalTech** : Présentation complète de la convergence du droit et du numérique (GED, dématérialisation, automatisation, conformité) avec réserve réglementaire claire.
 - **Pôle Cybersécurité Défensive** : Audits techniques, cartographie de vulnérabilités et sensibilisation strictement encadrés par des conventions formelles d'autorisation préalable.
 - **Socle Éthique & Philosophie** :
   - *THE SDBSNX CORE VALUES* : Composant interactif présentant les 7 valeurs cardinales (Integrity First, Service Before Self, Excellence in All We Do, Discipline & Rigor, Accountability, Innovation with Purpose, Confidentiality & Trust).
   - *THE STANDARD WE LIVE BY* : Les 10 maximes d'action et de gouvernance.
-- **Section Contact & Générateur de Référence** : Formulaire professionnel complet avec protection anti-spam (honeypot + limitation serveur), génération d'un numéro officiel `SDB-YYYY-XXXX`, stockage Supabase avec RLS et dispatcher WhatsApp Business Cloud API avec repli gracieux.
-- **Espace Administrateur Sécurisé (`/admin`)** : Tableau de bord, comptage en direct des demandes, historique, consultation complète, modification des statuts (*New, In Review, In Progress, Completed, Archived*), recherche multicritères et suppression contrôlée.
-- **Conformité Juridique Sénégalaise** : Mentions légales, Politique de confidentialité conforme à la **Loi n° 2008-12**, Gestionnaire de préférences de cookies et Conditions Générales d'Utilisation avec mentions à compléter clairement signalées.
-- **Progressive Web App (PWA)** : Manifest, Service Worker avec mode déconnecté pour les pages publiques et exclusion formelle des données administratives et privées.
+- **Section Contact & Web3Forms** : Formulaire professionnel complet avec protection anti-spam (honeypot), génération d'un numéro officiel `SDB-YYYY-XXXX`, acheminement direct par **Web3Forms API** vers la messagerie officielle.
+- **Espace Administrateur Sécurisé (`/admin`)** : Tableau de bord, consultation des demandes, historique local, modification des statuts (*New, In Review, In Progress, Completed, Archived*), recherche multicritères et suppression.
+- **Conformité Juridique Sénégalaise** : Mentions légales, Politique de confidentialité conforme à la **Loi n° 2008-12**, Gestionnaire de préférences de cookies et Conditions Générales d'Utilisation.
+- **Progressive Web App (PWA)** : Manifest, Service Worker avec mode déconnecté pour les pages publiques.
 
 ---
 
@@ -30,18 +30,10 @@ Plateforme numérique institutionnelle haut de gamme de **SDBSNX**, agence de so
 
 ```text
 sdbsnx group/
-├── api/                           # Vercel Serverless API Functions
-│   ├── admin/
-│   │   └── metrics.ts             # Statistiques et métriques admin
-│   ├── notifications/
-│   │   └── whatsapp.ts            # Dispatcher WhatsApp Cloud API
-│   ├── contact.ts                 # Handler contact, validation & anti-spam
-│   └── types.d.ts                 # Déclarations Vercel
-├── docs/                          # Guides opérationnels complets
-│   ├── DEPLOYMENT.md              # Déploiement Vercel & Supabase pas à pas
+├── docs/                          # Guides opérationnels
+│   ├── DEPLOYMENT.md              # Déploiement Vercel & Web3Forms
 │   ├── PWA.md                     # Architecture et configuration PWA
-│   ├── SUPABASE.md                # Schéma et politiques de sécurité RLS
-│   └── WHATSAPP.md                # Guide Meta WhatsApp Business API
+│   └── WHATSAPP.md                # Guide WhatsApp Business
 ├── public/
 │   ├── icons/                     # Icônes PWA 192x192 et 512x512
 │   ├── logo/                      # Logo officiel SDBSNX
@@ -56,23 +48,20 @@ sdbsnx group/
 │   │   ├── admin/                 # Composants protégés console admin
 │   │   ├── layout/                # Header, Footer, Layout global
 │   │   ├── sections/              # InteractiveValues, PhilosophyQuotes
-│   │   └── ui/                    # CookieBanner, Boutons, Cartes
+│   │   └── ui/                    # CookieBanner, BackButton, Cartes
 │   ├── data/                      # Données de services (LegalTech, Cyber, etc.)
-│   ├── lib/                       # Supabase client, utilitaires de référence
+│   ├── lib/                       # Web3Forms client, utilitaires de référence
 │   ├── pages/                     # 17 pages institutionnelles + Admin
 │   ├── routes/                    # Router React
 │   ├── styles/                    # Variables CSS de la palette et Tailwind
 │   ├── types/                     # Typages TypeScript stricts
 │   ├── App.tsx                    # Racine applicative
 │   └── main.tsx                   # Point d'entrée Vite
-├── supabase/
-│   └── migrations/
-│       └── 20261110_init_sdbsnx.sql # Script SQL complet avec RLS
-├── .env.example                   # Exemple exhaustif de configuration
+├── .env.example                   # Exemple de configuration
 ├── package.json                   # Dépendances et scripts de build
 ├── tailwind.config.js             # Configuration de la charte graphique
 ├── tsconfig.json                  # Configuration TypeScript stricte
-├── vercel.json                    # Configuration de routage et en-têtes Vercel
+├── vercel.json                    # Configuration de routage Vercel
 └── vite.config.ts                 # Configuration du bundler Vite
 ```
 
@@ -102,8 +91,7 @@ npm run build   # Génère le bundle de production optimisé dans /dist
 ## 🔐 Identifiants et Accès Administrateur
 
 - **Portail d'Administration** : `/admin/login`
-- **En mode initialisation (avant configuration Supabase)** : Connectez-vous avec `admin@sdbsnx.com` et un mot de passe d'au moins 8 caractères.
-- **En production** : L'accès repose exclusivement sur Supabase Auth avec politiques RLS (aucune fuite de données possible côté client).
+- **Connexion** : `admin@sdbsnx.com` avec un mot de passe d'au moins 8 caractères.
 
 ---
 
@@ -111,5 +99,3 @@ npm run build   # Génère le bundle de production optimisé dans /dist
 
 © 2026 SDBSNX. Tous droits réservés.  
 *SDBSNX — Digital Innovation, Cybersecurity & LegalTech Solutions.*
-
-# SDBSN-GROUP

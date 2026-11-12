@@ -7,7 +7,7 @@ Ce document explique comment activer les alertes WhatsApp discrètes destinées 
 ## 1. Principe de Confidentialité Absolue
 
 - **Le numéro WhatsApp officiel SDBSNX n'est jamais exposé sur le site public** afin de préserver l'entreprise du spam automatisé et de protéger les coordonnées de contact direct.
-- **Fonctionnement résilient (Graceful Fallback)** : Si les identifiants WhatsApp ne sont pas renseignés ou si l'API de Meta subit une indisponibilité, la demande est tout de même enregistrée dans Supabase et le client reçoit immédiatement son accusé avec son numéro de référence sans blocage.
+- **Fonctionnement résilient (Graceful Fallback)** : Si les identifiants WhatsApp ne sont pas renseignés ou si l'API de Meta subit une indisponibilité, la demande est tout de même transmise par Web3Forms et le client reçoit immédiatement son accusé avec son numéro de référence sans blocage.
 
 ---
 

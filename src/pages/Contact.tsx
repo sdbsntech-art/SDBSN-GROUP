@@ -11,7 +11,7 @@ import {
   Clock, 
   FileText 
 } from 'lucide-react';
-import { submitContactRequest } from '../lib/supabase';
+import { submitContactToWeb3Forms } from '../lib/web3forms';
 import { generateReferenceNumber } from '../lib/utils';
 import type { ServiceCategory } from '../types';
 import { BackButton } from '../components/ui/BackButton';
@@ -73,8 +73,8 @@ export const ContactPage: React.FC = () => {
     try {
       const generatedRef = generateReferenceNumber();
 
-      // Submit through our supabase / API client
-      const res = await submitContactRequest({
+      // Submit through Web3Forms
+      const res = await submitContactToWeb3Forms({
         reference_number: generatedRef,
         full_name: formData.fullName.trim(),
         email: formData.email.trim().toLowerCase(),
@@ -90,25 +90,6 @@ export const ContactPage: React.FC = () => {
 
       if (res.success) {
         setSuccessRef(res.referenceNumber);
-        // Optional backend webhook notification to Vercel api/contact if available
-        fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            full_name: formData.fullName.trim(),
-            email: formData.email.trim(),
-            phone: formData.phone.trim(),
-            organization: formData.organization.trim(),
-            service_category: formData.serviceCategory,
-            subject: formData.subject.trim(),
-            description: formData.description.trim(),
-            budget: formData.budget.trim(),
-            timeline: formData.timeline.trim(),
-            privacy_consent: formData.privacyConsent,
-          }),
-        }).catch(() => {
-          // Graceful fallback
-        });
       } else {
         setErrorMsg(res.error || 'Une erreur est survenue lors de l\'envoi. Veuillez réessayer.');
       }

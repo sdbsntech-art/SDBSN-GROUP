@@ -26,7 +26,7 @@ Conformément au cahier des charges :
 Le Service Worker applique une exclusion explicite :
 - Les routes commençant par `/admin` ne sont **JAMAIS** mises en cache.
 - Les appels d'API `/api/*` ne sont **JAMAIS** mis en cache.
-- Les requêtes adressées à Supabase (`*.supabase.co`) sont exclues du cache navigateur.
+- Les requêtes adressées à Web3Forms (`api.web3forms.com`) sont exclues du cache navigateur.
 
 ---
 

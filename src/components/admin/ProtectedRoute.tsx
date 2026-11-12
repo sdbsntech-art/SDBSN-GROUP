@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { supabase, isSupabaseConfigured } from '../../lib/supabase';
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -11,20 +10,10 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    // Check fallback dev admin session in localStorage if Supabase is not configured or in offline dev mode
-    const checkAuth = async () => {
-      if (isSupabaseConfigured && supabase) {
-        const { data: { session } } = await supabase.auth.getSession();
-        setIsAuthenticated(Boolean(session));
-      } else {
-        // Fallback local session
-        const localAdminSession = localStorage.getItem('sdbsnx_admin_token');
-        setIsAuthenticated(Boolean(localAdminSession));
-      }
-      setLoading(false);
-    };
-
-    checkAuth();
+    // Check local admin session token
+    const token = localStorage.getItem('sdbsnx_admin_token');
+    setIsAuthenticated(Boolean(token));
+    setLoading(false);
   }, []);
 
   if (loading) {

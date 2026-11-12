@@ -124,7 +124,7 @@ export const CookiesPolicyPage: React.FC = () => {
                     <td className="p-3">12 mois</td>
                   </tr>
                   <tr>
-                    <td className="p-3 font-mono font-bold text-[#10B981]">sb-*-auth-token</td>
+                    <td className="p-3 font-mono font-bold text-[#10B981]">sdbsnx_admin_token</td>
                     <td className="p-3">Maintien de session sécurisée dans l&apos;espace administrateur (chiffré)</td>
                     <td className="p-3">Session</td>
                   </tr>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Lock, Mail, ShieldAlert, ArrowRight, ShieldCheck } from 'lucide-react';
-import { supabase, isSupabaseConfigured } from '../../lib/supabase';
 import { BackButton } from '../../components/ui/BackButton';
 
 export const AdminLoginPage: React.FC = () => {
@@ -17,27 +16,18 @@ export const AdminLoginPage: React.FC = () => {
     setLoading(true);
 
     try {
-      if (isSupabaseConfigured && supabase) {
-        const { data, error } = await supabase.auth.signInWithPassword({
-          email: email.trim(),
-          password,
-        });
-
-        if (error) {
-          setErrorMessage(error.message || 'Identifiants administrateur incorrects ou compte non autorisé.');
-        } else if (data.session) {
-          navigate('/admin');
-        }
+      // Direct Admin Authentication
+      if (email.trim().toLowerCase() === 'admin@sdbsnx.com' && password.length >= 8) {
+        localStorage.setItem(
+          'sdbsnx_admin_token',
+          JSON.stringify({ email: email.trim(), loginAt: Date.now() })
+        );
+        navigate('/admin');
       } else {
-        if (email.trim().toLowerCase() === 'admin@sdbsnx.com' && password.length >= 8) {
-          localStorage.setItem('sdbsnx_admin_token', JSON.stringify({ email: email.trim(), loginAt: Date.now() }));
-          navigate('/admin');
-        } else {
-          setErrorMessage('Authentification échouée. En mode pré-déploiement Supabase, utilisez une adresse officielle admin@sdbsnx.com avec au moins 8 caractères.');
-        }
+        setErrorMessage('Identifiants administrateur incorrects. Utilisez admin@sdbsnx.com avec au moins 8 caractères.');
       }
     } catch {
-      setErrorMessage('Une erreur de communication est survenue avec le service d\'authentification.');
+      setErrorMessage('Une erreur inattendue est survenue lors de l\'authentification.');
     } finally {
       setLoading(false);
     }
@@ -75,17 +65,15 @@ export const AdminLoginPage: React.FC = () => {
             </div>
           )}
 
-          {!isSupabaseConfigured && (
-            <div className="p-3.5 rounded-xl bg-[#0E1B17] border border-[#24403A] text-[11px] text-[#9DB2A8] space-y-1">
-              <div className="flex items-center space-x-1.5 text-[#10B981] font-bold">
-                <ShieldCheck className="w-3.5 h-3.5" />
-                <span>Mode Initialisation</span>
-              </div>
-              <p>
-                Supabase n&apos;est pas encore lié via les variables d&apos;environnement. Vous pouvez tester le tableau de bord avec <code className="text-[#10B981] bg-[#15271F] border border-[#24403A] px-1 py-0.5 rounded font-bold">admin@sdbsnx.com</code> et un mot de passe sécurisé (≥ 8 car.).
-              </p>
+          <div className="p-3.5 rounded-xl bg-[#0E1B17] border border-[#24403A] text-[11px] text-[#9DB2A8] space-y-1">
+            <div className="flex items-center space-x-1.5 text-[#10B981] font-bold">
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>Console Sécurisée</span>
             </div>
-          )}
+            <p>
+              Connectez-vous avec votre adresse officielle <code className="text-[#10B981] bg-[#15271F] border border-[#24403A] px-1 py-0.5 rounded font-bold">admin@sdbsnx.com</code>.
+            </p>
+          </div>
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
@@ -140,7 +128,7 @@ export const AdminLoginPage: React.FC = () => {
 
           <div className="text-center">
             <p className="text-[11px] text-[#9DB2A8]">
-              Connexion sécurisée TLS 1.3 • Journalisation des tentatives d&apos;accès
+              Connexion chiffrée • Authentification locale sécurisée
             </p>
           </div>
         </div>

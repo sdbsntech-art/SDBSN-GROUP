@@ -64,7 +64,7 @@ export const LegalNoticePage: React.FC = () => {
                 <strong>Frontend et Fonctions Serverless :</strong> Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis. (Réseau de distribution mondial et haute disponibilité).
               </li>
               <li>
-                <strong>Base de données et Services d&apos;Authentification :</strong> Supabase Inc., 970 Toa Payoh North #07-04, Singapour. (Données hébergées en environnement infogéré avec chiffrement au repos et en transit).
+                <strong>Acheminement des Formulaires :</strong> Web3Forms (Acheminement chiffré TLS 1.3 vers la messagerie professionnelle sécurisée de SDBSNX).
               </li>
             </ul>
           </section>

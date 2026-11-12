@@ -104,7 +104,7 @@ export const PrivacyPolicyPage: React.FC = () => {
             </p>
             <ul className="list-disc pl-5 space-y-1 text-[#F4F1EA]/90">
               <li>Les collaborateurs internes de SDBSNX spécifiquement habilités et tenus au secret professionnel.</li>
-              <li>Nos sous-traitants d&apos;infrastructure sécurisée (hébergement Vercel et base de données infogérée Supabase), dans le respect strict des garanties contractuelles de sécurité.</li>
+              <li>Nos sous-traitants d&apos;infrastructure sécurisée (hébergement Vercel et passerelle d&apos;acheminement Web3Forms), dans le respect strict des garanties contractuelles de sécurité.</li>
             </ul>
           </section>
 
