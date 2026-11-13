@@ -4,44 +4,44 @@ import { BackButton } from '../components/ui/BackButton';
 
 export const LegalNoticePage: React.FC = () => {
   return (
-    <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-[#0E1B17] text-[#F4F1EA]">
+    <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <div className="max-w-4xl mx-auto space-y-10">
 
         <BackButton to="/" label="Retour à l'accueil" />
 
         {/* Header */}
         <div className="space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-md bg-[#15271F] border border-[#24403A] text-xs font-mono text-[#6EE7B7] uppercase font-bold">
-            <span>Conformité & Légal</span>
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-md bg-emerald-50 border border-emerald-200 text-xs font-mono text-emerald-700 uppercase font-bold">
+            <span>Conformité &amp; Légal</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-[#F4F1EA] tracking-tight font-display">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-[#0B1B3D] tracking-tight font-display">
             Mentions Légales
           </h1>
-          <p className="text-[#9DB2A8] text-sm">
+          <p className="text-slate-500 text-sm">
             Dernière mise à jour : Novembre 2026
           </p>
         </div>
 
         {/* Legal Disclaimer Box */}
-        <div className="p-5 rounded-2xl bg-[#0E1B17] border border-[#F59E0B]/40 text-xs sm:text-sm text-[#F59E0B] flex items-start space-x-3 leading-relaxed shadow-sm">
-          <ShieldAlert className="w-5 h-5 text-[#F59E0B] flex-shrink-0 mt-0.5" />
+        <div className="p-5 rounded-2xl bg-amber-50 border border-amber-200 text-xs sm:text-sm text-amber-700 flex items-start space-x-3 leading-relaxed shadow-sm">
+          <ShieldAlert className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
           <div>
-            <strong className="text-[#F59E0B] block mb-0.5 font-bold">Note d&apos;information juridique :</strong>
+            <strong className="text-amber-700 block mb-0.5 font-bold">Note d&apos;information juridique :</strong>
             Ce document constitue un modèle d&apos;information institutionnelle établi conformément aux obligations d&apos;identification prévues par la législation sénégalaise (notamment la Loi n° 2008-08 sur les transactions électroniques). Les mentions indiquées [À COMPLÉTER] doivent faire l&apos;objet d&apos;une validation formelle auprès des instances compétentes de la structure lors de son immatriculation définitive.
           </div>
         </div>
 
         {/* Content Body */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-[#15271F] border border-[#24403A] shadow-xl space-y-8 text-sm text-[#9DB2A8] leading-relaxed">
+        <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-8 text-sm text-slate-600 leading-relaxed">
           
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-[#F4F1EA] font-display">
+            <h2 className="text-lg font-bold text-[#0B1B3D] font-display">
               1. Éditeur de la Plateforme
             </h2>
             <p>
-              Le site internet officiel accessible à l&apos;adresse <span className="text-[#10B981] font-semibold">https://sdbsnx.com</span> est édité par la structure commerciale et technologique :
+              Le site internet officiel accessible à l&apos;adresse <span className="text-emerald-600 font-semibold">https://sdbsnx.com</span> est édité par la structure commerciale et technologique :
             </p>
-            <ul className="list-disc pl-5 space-y-1.5 text-[#F4F1EA]/90">
+            <ul className="list-disc pl-5 space-y-1.5 text-[#0B1B3D]/80">
               <li><strong>Nom commercial :</strong> SDBSNX</li>
               <li><strong>Forme juridique :</strong> [À COMPLÉTER — ex: SARL / SAS / En cours d&apos;immatriculation]</li>
               <li><strong>Numéro d&apos;immatriculation (RCCM) :</strong> [À COMPLÉTER]</li>
@@ -54,13 +54,13 @@ export const LegalNoticePage: React.FC = () => {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-[#F4F1EA] font-display">
+            <h2 className="text-lg font-bold text-[#0B1B3D] font-display">
               2. Hébergement de la Plateforme
             </h2>
             <p>
               L&apos;infrastructure technique et applicative est hébergée auprès des prestataires certifiés suivants :
             </p>
-            <ul className="list-disc pl-5 space-y-1.5 text-[#F4F1EA]/90">
+            <ul className="list-disc pl-5 space-y-1.5 text-[#0B1B3D]/80">
               <li>
                 <strong>Frontend et Fonctions Serverless :</strong> Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis. (Réseau de distribution mondial et haute disponibilité).
               </li>
@@ -71,7 +71,7 @@ export const LegalNoticePage: React.FC = () => {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-[#F4F1EA] font-display">
+            <h2 className="text-lg font-bold text-[#0B1B3D] font-display">
               3. Propriété Intellectuelle
             </h2>
             <p>
@@ -83,7 +83,7 @@ export const LegalNoticePage: React.FC = () => {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-[#F4F1EA] font-display">
+            <h2 className="text-lg font-bold text-[#0B1B3D] font-display">
               4. Encadrement des Prestations de Cybersécurité et Audits
             </h2>
             <p>
@@ -95,8 +95,8 @@ export const LegalNoticePage: React.FC = () => {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-[#F4F1EA] font-display">
-              5. Pôle LegalTech & Réserve Réglementaire
+            <h2 className="text-lg font-bold text-[#0B1B3D] font-display">
+              5. Pôle LegalTech &amp; Réserve Réglementaire
             </h2>
             <p>
               Les solutions et progiciels développés dans le cadre du pôle LegalTech constituent des outils logiciels d&apos;assistance, de dématérialisation et d&apos;automatisation organisationnelle. Ils ne constituent pas des actes de conseil juridique au sens des textes réglementant la profession d&apos;avocat ou de conseil juridique.
@@ -104,7 +104,7 @@ export const LegalNoticePage: React.FC = () => {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-[#F4F1EA] font-display">
+            <h2 className="text-lg font-bold text-[#0B1B3D] font-display">
               6. Droit Applicable
             </h2>
             <p>

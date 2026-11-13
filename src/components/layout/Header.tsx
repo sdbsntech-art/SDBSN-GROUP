@@ -56,16 +56,16 @@ export const Header: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         isScrolled || mobileMenuOpen
-          ? 'bg-[#0E1B17]/95 backdrop-blur-md border-b border-[#24403A] shadow-md py-3'
-          : 'bg-[#0E1B17]/90 backdrop-blur-md border-b border-[#24403A]/60 py-4'
+          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm py-3'
+          : 'bg-white/90 backdrop-blur-md border-b border-slate-100 py-3.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo with cyber emerald container */}
+          {/* Logo with modern crisp container */}
           <Link to="/" className="flex items-center space-x-3 group flex-shrink-0">
-            <div className="bg-black/50 px-2 py-1 rounded-xl shadow-md border border-[#24403A] flex items-center justify-center transition-all group-hover:border-[#10B981] group-hover:scale-[1.02]">
+            <div className="bg-slate-900 px-2 py-1.5 rounded-xl shadow-sm border border-slate-800 flex items-center justify-center transition-all group-hover:border-[#10B981] group-hover:scale-[1.02]">
               <img
                 src="/logo/sdbsnx-logo.png"
                 alt="SDBSNX Logo"
@@ -74,14 +74,14 @@ export const Header: React.FC = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation (Force-N Clean Style) */}
           <nav className="hidden lg:flex items-center space-x-1.5">
             <Link
               to="/"
-              className={`px-3.5 py-2 text-sm font-medium rounded-xl transition-colors ${
+              className={`px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors ${
                 isActive('/') 
-                  ? 'bg-[#10B981] text-[#04231A] font-bold shadow-sm' 
-                  : 'text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#15271F]'
+                  ? 'bg-emerald-50 text-[#059669] font-bold border border-emerald-200/80 shadow-xs' 
+                  : 'text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50'
               }`}
             >
               Accueil
@@ -94,49 +94,49 @@ export const Header: React.FC = () => {
               onMouseLeave={() => setAboutOpen(false)}
             >
               <button
-                className={`flex items-center px-3.5 py-2 text-sm font-medium rounded-xl transition-colors ${
+                className={`flex items-center px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors ${
                   location.pathname.startsWith('/a-propos') ||
                   location.pathname === '/vision' ||
                   location.pathname === '/mission' ||
                   location.pathname === '/valeurs' ||
                   location.pathname === '/philosophie'
-                    ? 'text-[#6EE7B7] bg-[#15271F] border border-[#24403A] font-semibold'
-                    : 'text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#15271F]'
+                    ? 'text-[#059669] bg-emerald-50 border border-emerald-200/80 font-bold'
+                    : 'text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50'
                 }`}
               >
                 <span>Institution</span>
-                <ChevronDown className="ml-1 w-4 h-4 opacity-80" />
+                <ChevronDown className="ml-1 w-4 h-4 opacity-70" />
               </button>
 
               {aboutOpen && (
-                <div className="absolute left-0 mt-1 w-64 rounded-xl bg-[#15271F] py-2 z-50 border border-[#24403A] shadow-2xl">
+                <div className="absolute left-0 mt-1 w-64 rounded-2xl bg-white py-2 z-50 border border-slate-200 shadow-xl">
                   <Link
                     to="/a-propos"
-                    className="block px-4 py-2.5 text-sm text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#1C332A] transition-colors"
+                    className="block px-4 py-2.5 text-sm font-medium text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50 transition-colors"
                   >
                     À propos de SDBSNX
                   </Link>
                   <Link
                     to="/vision"
-                    className="block px-4 py-2.5 text-sm text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#1C332A] transition-colors"
+                    className="block px-4 py-2.5 text-sm font-medium text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50 transition-colors"
                   >
                     Notre Vision
                   </Link>
                   <Link
                     to="/mission"
-                    className="block px-4 py-2.5 text-sm text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#1C332A] transition-colors"
+                    className="block px-4 py-2.5 text-sm font-medium text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50 transition-colors"
                   >
                     Notre Mission & Objectifs
                   </Link>
                   <Link
                     to="/valeurs"
-                    className="block px-4 py-2.5 text-sm text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#1C332A] transition-colors"
+                    className="block px-4 py-2.5 text-sm font-medium text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50 transition-colors"
                   >
                     Nos Valeurs Clés
                   </Link>
                   <Link
                     to="/philosophie"
-                    className="block px-4 py-2.5 text-sm text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#1C332A] transition-colors"
+                    className="block px-4 py-2.5 text-sm font-medium text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50 transition-colors"
                   >
                     Notre Philosophie
                   </Link>
@@ -152,69 +152,74 @@ export const Header: React.FC = () => {
             >
               <Link
                 to="/services"
-                className={`flex items-center px-3.5 py-2 text-sm font-medium rounded-xl transition-colors ${
+                className={`flex items-center px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors ${
                   location.pathname.startsWith('/services')
-                    ? 'text-[#6EE7B7] bg-[#15271F] border border-[#24403A] font-semibold'
-                    : 'text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#15271F]'
+                    ? 'text-[#059669] bg-emerald-50 border border-emerald-200/80 font-bold'
+                    : 'text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50'
                 }`}
               >
                 <span>Solutions & Services</span>
-                <ChevronDown className="ml-1 w-4 h-4 opacity-80" />
+                <ChevronDown className="ml-1 w-4 h-4 opacity-70" />
               </Link>
 
               {servicesOpen && (
-                <div className="absolute left-0 mt-1 w-80 rounded-xl bg-[#15271F] py-2 z-50 border border-[#24403A] shadow-2xl">
+                <div className="absolute left-0 mt-1 w-80 rounded-2xl bg-white py-2 z-50 border border-slate-200 shadow-xl">
                   <Link
                     to="/services/legaltech"
-                    className="flex flex-col px-4 py-3 hover:bg-[#1C332A] transition-colors border-b border-[#24403A] group"
+                    className="flex flex-col px-4 py-3 hover:bg-slate-50 transition-colors border-b border-slate-100 group"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-semibold text-[#F4F1EA] group-hover:text-[#6EE7B7] transition-colors">
+                      <span className="text-sm font-bold text-[#0B1B3D] group-hover:text-[#10B981] transition-colors">
                         Solutions LegalTech
                       </span>
-                      <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-[#10B981] text-[#04231A] font-bold">
+                      <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-emerald-100 text-[#047857] font-bold">
                         Spécialisé
                       </span>
                     </div>
-                    <span className="text-xs text-[#9DB2A8] mt-0.5">Bridging Law and Technology</span>
+                    <span className="text-xs text-slate-500 mt-0.5">Bridging Law and Technology</span>
                   </Link>
 
                   <Link
                     to="/services/cybersecurite"
-                    className="flex flex-col px-4 py-3 hover:bg-[#1C332A] transition-colors border-b border-[#24403A] group"
+                    className="flex flex-col px-4 py-3 hover:bg-slate-50 transition-colors border-b border-slate-100 group"
                   >
-                    <span className="text-sm font-semibold text-[#F4F1EA] group-hover:text-[#6EE7B7] transition-colors">
-                      Cybersécurité & Audits
-                    </span>
-                    <span className="text-xs text-[#9DB2A8] mt-0.5">Évaluation des risques et conformité stricte</span>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-bold text-[#0B1B3D] group-hover:text-[#10B981] transition-colors">
+                        Cybersécurité & Audits
+                      </span>
+                      <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-blue-100 text-[#1D4ED8] font-bold">
+                        Certifié
+                      </span>
+                    </div>
+                    <span className="text-xs text-slate-500 mt-0.5">Évaluation des risques et conformité stricte</span>
                   </Link>
 
                   <Link
                     to="/services/developpement"
-                    className="flex flex-col px-4 py-3 hover:bg-[#1C332A] transition-colors border-b border-[#24403A] group"
+                    className="flex flex-col px-4 py-3 hover:bg-slate-50 transition-colors border-b border-slate-100 group"
                   >
-                    <span className="text-sm font-semibold text-[#F4F1EA] group-hover:text-[#6EE7B7] transition-colors">
+                    <span className="text-sm font-bold text-[#0B1B3D] group-hover:text-[#10B981] transition-colors">
                       Développement Web & Mobile
                     </span>
-                    <span className="text-xs text-[#9DB2A8] mt-0.5">Plateformes critiques, SaaS & PWA</span>
+                    <span className="text-xs text-slate-500 mt-0.5">Plateformes critiques, SaaS & PWA</span>
                   </Link>
 
                   <Link
                     to="/services/conseil"
-                    className="flex flex-col px-4 py-3 hover:bg-[#1C332A] transition-colors group"
+                    className="flex flex-col px-4 py-3 hover:bg-slate-50 transition-colors group"
                   >
-                    <span className="text-sm font-semibold text-[#F4F1EA] group-hover:text-[#6EE7B7] transition-colors">
+                    <span className="text-sm font-bold text-[#0B1B3D] group-hover:text-[#10B981] transition-colors">
                       Conseil Technologique
                     </span>
-                    <span className="text-xs text-[#9DB2A8] mt-0.5">Architecture & Transformation numérique</span>
+                    <span className="text-xs text-slate-500 mt-0.5">Architecture & Transformation numérique</span>
                   </Link>
 
-                  <div className="border-t border-[#24403A] mt-1 pt-1.5 px-4 pb-1">
+                  <div className="border-t border-slate-100 mt-1 pt-2 px-4 pb-1">
                     <Link
                       to="/services"
-                      className="block text-xs font-semibold text-[#10B981] hover:text-[#6EE7B7] hover:underline"
+                      className="block text-xs font-bold text-[#10B981] hover:text-[#059669] hover:underline"
                     >
-                      Voir tous les services →
+                      Voir tous les pôles de solutions →
                     </Link>
                   </div>
                 </div>
@@ -223,10 +228,10 @@ export const Header: React.FC = () => {
 
             <Link
               to="/contact"
-              className={`px-3.5 py-2 text-sm font-medium rounded-xl transition-colors ${
+              className={`px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors ${
                 isActive('/contact') 
-                  ? 'bg-[#10B981] text-[#04231A] font-bold shadow-sm' 
-                  : 'text-[#F4F1EA] hover:text-[#6EE7B7] hover:bg-[#15271F]'
+                  ? 'bg-emerald-50 text-[#059669] font-bold border border-emerald-200/80 shadow-xs' 
+                  : 'text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50'
               }`}
             >
               Contact
@@ -238,7 +243,7 @@ export const Header: React.FC = () => {
             <Link
               to="/admin/login"
               aria-label="Portail Sécurisé"
-              className="p-2 text-[#9DB2A8] hover:text-[#F4F1EA] hover:bg-[#15271F] rounded-xl transition-colors border border-[#24403A]"
+              className="p-2 text-slate-600 hover:text-[#0B1B3D] hover:bg-slate-100 rounded-xl transition-colors border border-slate-200"
               title="Portail Administration"
             >
               <Lock className="w-4 h-4" />
@@ -246,9 +251,9 @@ export const Header: React.FC = () => {
 
             <Link
               to="/contact"
-              className="inline-flex items-center px-4 py-2 rounded-xl text-sm font-bold bg-[#10B981] hover:bg-[#059669] text-[#04231A] transition-all shadow-sm active:scale-[0.98]"
+              className="inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-bold bg-[#10B981] hover:bg-[#059669] text-white transition-all shadow-sm hover:shadow-md active:scale-[0.98]"
             >
-              <span>Start a Project</span>
+              <span>Démarrer un Projet</span>
               <ArrowRight className="ml-1.5 w-4 h-4" />
             </Link>
           </div>
@@ -257,7 +262,7 @@ export const Header: React.FC = () => {
           <div className="flex items-center space-x-2 lg:hidden">
             <Link
               to="/admin/login"
-              className="p-2 text-[#9DB2A8] hover:text-[#F4F1EA] bg-[#15271F] border border-[#24403A] rounded-lg"
+              className="p-2 text-slate-600 hover:text-[#0B1B3D] bg-slate-50 border border-slate-200 rounded-xl"
               aria-label="Accès Administration"
             >
               <Lock className="w-4 h-4" />
@@ -265,10 +270,10 @@ export const Header: React.FC = () => {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-lg text-[#F4F1EA] hover:text-[#6EE7B7] bg-[#15271F] border border-[#24403A] focus:outline-none"
+              className="p-2.5 rounded-xl text-[#0B1B3D] hover:text-[#10B981] bg-slate-50 border border-slate-200 focus:outline-none"
               aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-[#F4F1EA]" /> : <Menu className="w-5 h-5 text-[#F4F1EA]" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-[#0B1B3D]" /> : <Menu className="w-5 h-5 text-[#0B1B3D]" />}
             </button>
           </div>
 
@@ -276,12 +281,11 @@ export const Header: React.FC = () => {
       </div>
 
       {/* ========================================================================= */}
-      {/* MOBILE FULL-SCREEN DRAWER (Completely responsive, scrollable, no cutoff)  */}
+      {/* MOBILE FULL-SCREEN DRAWER (Clean, Force-N Style)                          */}
       {/* ========================================================================= */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[56px] sm:top-[64px] z-50 bg-[#0E1B17] flex flex-col border-t border-[#24403A] lg:hidden">
+        <div className="fixed inset-0 top-[56px] sm:top-[64px] z-50 bg-white flex flex-col border-t border-slate-200 lg:hidden">
           
-          {/* Scrollable container with plenty of bottom padding */}
           <div className="flex-1 overflow-y-auto overscroll-contain px-4 py-5 space-y-6 pb-28">
             
             {/* Quick Primary Links */}
@@ -291,8 +295,8 @@ export const Header: React.FC = () => {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`p-3 rounded-xl text-center text-sm font-bold border transition-colors ${
                   isActive('/')
-                    ? 'bg-[#10B981] text-[#04231A] border-[#10B981]'
-                    : 'bg-[#15271F] text-[#F4F1EA] border-[#24403A] hover:border-[#10B981]'
+                    ? 'bg-emerald-50 text-[#059669] border-emerald-200'
+                    : 'bg-slate-50 text-[#0B1B3D] border-slate-200 hover:border-[#10B981]'
                 }`}
               >
                 Accueil
@@ -302,8 +306,8 @@ export const Header: React.FC = () => {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`p-3 rounded-xl text-center text-sm font-bold border transition-colors ${
                   isActive('/contact')
-                    ? 'bg-[#10B981] text-[#04231A] border-[#10B981]'
-                    : 'bg-[#15271F] text-[#F4F1EA] border-[#24403A] hover:border-[#10B981]'
+                    ? 'bg-emerald-50 text-[#059669] border-emerald-200'
+                    : 'bg-slate-50 text-[#0B1B3D] border-slate-200 hover:border-[#10B981]'
                 }`}
               >
                 Contact
@@ -312,14 +316,14 @@ export const Header: React.FC = () => {
 
             {/* Group 1: Pôles & Services */}
             <div className="space-y-2">
-              <div className="flex items-center justify-between pb-1 border-b border-[#24403A]">
-                <span className="text-xs font-mono uppercase tracking-wider text-[#6EE7B7] font-bold">
+              <div className="flex items-center justify-between pb-1 border-b border-slate-200">
+                <span className="text-xs font-mono uppercase tracking-wider text-[#059669] font-bold">
                   Solutions & Services
                 </span>
                 <Link
                   to="/services"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-[11px] text-[#9DB2A8] hover:text-[#10B981] font-medium"
+                  className="text-[11px] text-slate-500 hover:text-[#10B981] font-semibold"
                 >
                   Tous les services →
                 </Link>
@@ -329,16 +333,16 @@ export const Header: React.FC = () => {
                 <Link
                   to="/services/legaltech"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between p-3 rounded-xl bg-[#15271F] border border-[#24403A] hover:border-[#10B981] hover:bg-[#1C332A] transition-colors"
+                  className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#10B981] transition-colors"
                 >
                   <div className="flex items-center space-x-3 min-w-0">
                     <Scale className="w-4 h-4 text-[#10B981] flex-shrink-0" />
                     <div className="min-w-0">
-                      <span className="text-sm font-bold text-[#F4F1EA] block truncate">Solutions LegalTech</span>
-                      <span className="text-xs text-[#9DB2A8] block truncate">Bridging Law and Technology</span>
+                      <span className="text-sm font-bold text-[#0B1B3D] block truncate">Solutions LegalTech</span>
+                      <span className="text-xs text-slate-500 block truncate">Bridging Law and Technology</span>
                     </div>
                   </div>
-                  <span className="text-[10px] font-mono uppercase px-1.5 py-0.5 rounded bg-[#10B981] text-[#04231A] font-bold flex-shrink-0 ml-2">
+                  <span className="text-[10px] font-mono uppercase px-1.5 py-0.5 rounded bg-emerald-100 text-[#047857] font-bold flex-shrink-0 ml-2">
                     Pôle
                   </span>
                 </Link>
@@ -346,36 +350,36 @@ export const Header: React.FC = () => {
                 <Link
                   to="/services/cybersecurite"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center space-x-3 p-3 rounded-xl bg-[#15271F] border border-[#24403A] hover:border-[#10B981] hover:bg-[#1C332A] transition-colors"
+                  className="flex items-center space-x-3 p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#10B981] transition-colors"
                 >
-                  <Shield className="w-4 h-4 text-[#10B981] flex-shrink-0" />
+                  <Shield className="w-4 h-4 text-[#2563EB] flex-shrink-0" />
                   <div className="min-w-0">
-                    <span className="text-sm font-bold text-[#F4F1EA] block truncate">Cybersécurité & Audits</span>
-                    <span className="text-xs text-[#9DB2A8] block truncate">Évaluation autorisée & Défense</span>
+                    <span className="text-sm font-bold text-[#0B1B3D] block truncate">Cybersécurité & Audits</span>
+                    <span className="text-xs text-slate-500 block truncate">Évaluation autorisée & Défense</span>
                   </div>
                 </Link>
 
                 <Link
                   to="/services/developpement"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center space-x-3 p-3 rounded-xl bg-[#15271F] border border-[#24403A] hover:border-[#10B981] hover:bg-[#1C332A] transition-colors"
+                  className="flex items-center space-x-3 p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#10B981] transition-colors"
                 >
                   <Code className="w-4 h-4 text-[#10B981] flex-shrink-0" />
                   <div className="min-w-0">
-                    <span className="text-sm font-bold text-[#F4F1EA] block truncate">Développement Web & Mobile</span>
-                    <span className="text-xs text-[#9DB2A8] block truncate">Applications métier, SaaS, PWA</span>
+                    <span className="text-sm font-bold text-[#0B1B3D] block truncate">Développement Web & Mobile</span>
+                    <span className="text-xs text-slate-500 block truncate">Applications métier, SaaS, PWA</span>
                   </div>
                 </Link>
 
                 <Link
                   to="/services/conseil"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center space-x-3 p-3 rounded-xl bg-[#15271F] border border-[#24403A] hover:border-[#10B981] hover:bg-[#1C332A] transition-colors"
+                  className="flex items-center space-x-3 p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#10B981] transition-colors"
                 >
-                  <Compass className="w-4 h-4 text-[#10B981] flex-shrink-0" />
+                  <Compass className="w-4 h-4 text-[#2563EB] flex-shrink-0" />
                   <div className="min-w-0">
-                    <span className="text-sm font-bold text-[#F4F1EA] block truncate">Conseil Technologique</span>
-                    <span className="text-xs text-[#9DB2A8] block truncate">Architecture & Urbanisation</span>
+                    <span className="text-sm font-bold text-[#0B1B3D] block truncate">Conseil Technologique</span>
+                    <span className="text-xs text-slate-500 block truncate">Architecture & Urbanisation</span>
                   </div>
                 </Link>
               </div>
@@ -383,7 +387,7 @@ export const Header: React.FC = () => {
 
             {/* Group 2: Institution */}
             <div className="space-y-2">
-              <span className="text-xs font-mono uppercase tracking-wider text-[#6EE7B7] font-bold pb-1 block border-b border-[#24403A]">
+              <span className="text-xs font-mono uppercase tracking-wider text-[#059669] font-bold pb-1 block border-b border-slate-200">
                 Institution & Valeurs
               </span>
 
@@ -391,7 +395,7 @@ export const Header: React.FC = () => {
                 <Link
                   to="/a-propos"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#15271F] border border-[#24403A] hover:border-[#10B981] text-sm text-[#F4F1EA]"
+                  className="flex items-center space-x-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#10B981] text-sm text-[#0B1B3D]"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-[#10B981]" />
                   <span>À propos de SDBSNX</span>
@@ -399,15 +403,15 @@ export const Header: React.FC = () => {
                 <Link
                   to="/vision"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#15271F] border border-[#24403A] hover:border-[#10B981] text-sm text-[#F4F1EA]"
+                  className="flex items-center space-x-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#10B981] text-sm text-[#0B1B3D]"
                 >
-                  <Target className="w-3.5 h-3.5 text-[#10B981]" />
+                  <Target className="w-3.5 h-3.5 text-[#2563EB]" />
                   <span>Notre Vision</span>
                 </Link>
                 <Link
                   to="/mission"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#15271F] border border-[#24403A] hover:border-[#10B981] text-sm text-[#F4F1EA]"
+                  className="flex items-center space-x-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#10B981] text-sm text-[#0B1B3D]"
                 >
                   <Layers className="w-3.5 h-3.5 text-[#10B981]" />
                   <span>Notre Mission</span>
@@ -415,15 +419,15 @@ export const Header: React.FC = () => {
                 <Link
                   to="/valeurs"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#15271F] border border-[#24403A] hover:border-[#10B981] text-sm text-[#F4F1EA]"
+                  className="flex items-center space-x-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#10B981] text-sm text-[#0B1B3D]"
                 >
-                  <Award className="w-3.5 h-3.5 text-[#10B981]" />
+                  <Award className="w-3.5 h-3.5 text-[#2563EB]" />
                   <span>Nos Valeurs Clés</span>
                 </Link>
                 <Link
                   to="/philosophie"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#15271F] border border-[#24403A] hover:border-[#10B981] text-sm text-[#F4F1EA] sm:col-span-2"
+                  className="flex items-center space-x-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#10B981] text-sm text-[#0B1B3D] sm:col-span-2"
                 >
                   <span className="text-[#10B981] font-bold">#</span>
                   <span>Notre Philosophie (The Standard We Live By)</span>
@@ -431,20 +435,20 @@ export const Header: React.FC = () => {
               </div>
             </div>
 
-            {/* Bottom Actions inside drawer - Fully visible & accessible */}
+            {/* Bottom Actions inside drawer */}
             <div className="pt-2 space-y-3 pb-6">
               <Link
                 to="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center py-3.5 rounded-xl text-sm font-bold bg-[#10B981] hover:bg-[#059669] text-[#04231A] block transition-colors shadow-md"
+                className="w-full text-center py-3.5 rounded-xl text-sm font-bold bg-[#10B981] hover:bg-[#059669] text-white block transition-colors shadow-md"
               >
-                Start a Project →
+                Démarrer un Projet →
               </Link>
 
               <Link
                 to="/admin/login"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center space-x-2 py-2.5 rounded-xl text-xs font-semibold text-[#9DB2A8] hover:text-[#F4F1EA] bg-[#15271F] border border-[#24403A]"
+                className="w-full flex items-center justify-center space-x-2 py-2.5 rounded-xl text-xs font-semibold text-slate-600 hover:text-[#0B1B3D] bg-slate-50 border border-slate-200"
               >
                 <Lock className="w-3.5 h-3.5" />
                 <span>Portail Administrateur Sécurisé</span>

@@ -15,12 +15,12 @@ export const BackButton: React.FC<BackButtonProps> = ({
 }) => {
   const navigate = useNavigate();
 
-  const buttonClasses = `inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-xl bg-[#15271F] hover:bg-[#1C332A] text-[#F4F1EA] hover:text-[#6EE7B7] border border-[#24403A] hover:border-[#10B981] text-xs font-semibold shadow-sm transition-all group mb-6 ${className}`;
+  const buttonClasses = `inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-xl bg-white hover:bg-slate-50 text-[#0B1B3D] hover:text-[#10B981] border border-slate-200 hover:border-[#10B981] text-xs font-semibold shadow-xs transition-all group mb-6 ${className}`;
 
   if (to) {
     return (
       <Link to={to} className={buttonClasses}>
-        <ArrowLeft className="w-3.5 h-3.5 text-[#10B981] group-hover:text-[#6EE7B7] transition-transform group-hover:-translate-x-1" />
+        <ArrowLeft className="w-3.5 h-3.5 text-[#10B981] transition-transform group-hover:-translate-x-1" />
         <span>{label}</span>
       </Link>
     );
@@ -38,7 +38,7 @@ export const BackButton: React.FC<BackButtonProps> = ({
       }}
       className={buttonClasses}
     >
-      <ArrowLeft className="w-3.5 h-3.5 text-[#10B981] group-hover:text-[#6EE7B7] transition-transform group-hover:-translate-x-1" />
+      <ArrowLeft className="w-3.5 h-3.5 text-[#10B981] transition-transform group-hover:-translate-x-1" />
       <span>{label}</span>
     </button>
   );

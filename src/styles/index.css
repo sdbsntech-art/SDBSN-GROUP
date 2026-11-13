@@ -3,26 +3,41 @@
 @tailwind utilities;
 
 :root {
-  /* Exact User Requested Color Palette */
-  --bg: #0E1B17;
-  --surface: #15271F;
-  --surface-elevated: #1C332A;
-  --border: #24403A;
-  --text: #F4F1EA;
-  --text-muted: #9DB2A8;
+  /* Force-N Inspired Light & Prestigious Tech Theme */
+  --bg: #FFFFFF;
+  --bg-subtle: #F8FAFC;
+  --surface: #FFFFFF;
+  --surface-subtle: #F8FAFC;
+  --surface-elevated: #FFFFFF;
+  --border: #E2E8F0;
+  --border-subtle: #F1F5F9;
+  
+  /* Text: Deep Midnight Navy and Crisp Slate */
+  --text: #0B1B3D;
+  --text-muted: #64748B;
+  --text-dim: #94A3B8;
+
+  /* Primary Accent: Vibrant Tech Emerald Green (replacing Orange) */
   --primary: #10B981;
   --primary-hover: #059669;
-  --primary-dark: #04231A;
-  --accent: #6EE7B7;
+  --primary-dark: #047857;
+  --primary-light: #ECFDF5;
+  --accent: #10B981;
 
-  /* Complementary Accents */
-  --gold-accent: #F59E0B;
-  --cyan-accent: #14B8A6;
+  /* Secondary Harmonious Color: Royal / Electric Blue */
+  --secondary: #2563EB;
+  --secondary-hover: #1D4ED8;
+  --secondary-light: #EFF6FF;
+
+  /* Institutional Midnight Navy (for dark header/footer accents) */
+  --navy: #0B1B3D;
+  --navy-dark: #071228;
+  --navy-surface: #0F172A;
 }
 
 /* Base resets & typography */
 html {
-  color-scheme: dark;
+  color-scheme: light;
   -webkit-text-size-adjust: 100%;
   background-color: var(--bg);
   color: var(--text);
@@ -31,64 +46,83 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   width: 100%;
   min-height: 100vh;
 }
 
-/* User Defined Functional Utility Classes */
+/* Functional Utility Classes */
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+}
+
+.card:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 10px 25px -5px rgba(11, 27, 61, 0.08), 0 8px 10px -6px rgba(11, 27, 61, 0.05);
 }
 
 .btn-primary {
   background: var(--primary);
-  color: var(--primary-dark); /* texte foncé sur le bouton vert, lisibilité optimale */
+  color: #FFFFFF;
   font-weight: 700;
-  transition: background-color 0.15s ease, transform 0.1s ease;
+  transition: all 0.2s ease;
 }
 .btn-primary:hover {
   background: var(--primary-hover);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: #FFFFFF;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+.btn-secondary:hover {
+  background: var(--secondary-hover);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
 }
 
 .tagline,
 .eyebrow {
-  color: var(--accent);
+  color: var(--primary);
 }
 
 p, .text-muted {
   color: var(--text-muted);
 }
 
-/* Custom Scrollbar styled for the dark emerald theme */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg);
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 3px;
+  background: #CBD5E1;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
 }
 
-/* Solid Minimalist Panels - Senior Dev Pure Solid Standards (Zero Gradients) */
+/* Glass & Solid Panels */
 .glass-panel {
   background-color: var(--surface);
   border: 1px solid var(--border);
 }
 
 .glass-panel-glow {
-  background-color: var(--surface-elevated);
+  background-color: #FFFFFF;
   border: 1px solid var(--primary);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
 }
 
 /* Respect reduced motion */

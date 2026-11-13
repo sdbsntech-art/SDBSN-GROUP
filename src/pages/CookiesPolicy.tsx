@@ -21,36 +21,36 @@ export const CookiesPolicyPage: React.FC = () => {
   };
 
   return (
-    <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-[#0E1B17] text-[#F4F1EA]">
+    <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <div className="max-w-4xl mx-auto space-y-10">
 
         <BackButton to="/" label="Retour à l'accueil" />
 
         {/* Header */}
         <div className="space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-md bg-[#15271F] border border-[#24403A] text-xs font-mono text-[#6EE7B7] uppercase font-bold">
-            <span>Gestion des Traceurs & Confidentialité</span>
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-md bg-emerald-50 border border-emerald-200 text-xs font-mono text-emerald-700 uppercase font-bold">
+            <span>Gestion des Traceurs &amp; Confidentialité</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-[#F4F1EA] tracking-tight font-display">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-[#0B1B3D] tracking-tight font-display">
             Politique Relative aux Cookies
           </h1>
-          <p className="text-[#9DB2A8] text-sm">
+          <p className="text-slate-500 text-sm">
             Transparence totale sur les technologies de stockage local et cookies techniques.
           </p>
         </div>
 
         {/* Interactive Preferences Panel */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-[#15271F] border border-[#24403A] shadow-xl space-y-6">
+        <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center space-x-3">
-              <div className="p-2.5 rounded-xl bg-[#0E1B17] border border-[#24403A] text-[#10B981]">
+              <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600">
                 <Cookie className="w-6 h-6" />
               </div>
               <div>
-                <h2 className="text-lg font-bold text-[#F4F1EA]">Vos Préférences Actuelles</h2>
-                <p className="text-xs text-[#9DB2A8]">
+                <h2 className="text-lg font-bold text-[#0B1B3D]">Vos Préférences Actuelles</h2>
+                <p className="text-xs text-slate-500">
                   État enregistré :{' '}
-                  <span className="font-semibold text-[#10B981] uppercase font-mono">
+                  <span className="font-semibold text-emerald-600 uppercase font-mono">
                     {currentPreference === 'accepted' ? 'Tous les cookies acceptés' : 'Cookies strictement nécessaires uniquement'}
                   </span>
                 </p>
@@ -70,8 +70,8 @@ export const CookiesPolicyPage: React.FC = () => {
               onClick={() => updatePreference('essential_only')}
               className={`px-5 py-2.5 rounded-xl text-xs font-semibold transition-all border ${
                 currentPreference === 'essential_only'
-                  ? 'bg-[#10B981] text-[#04231A] font-bold border-[#10B981] shadow-sm'
-                  : 'bg-[#0E1B17] text-[#F4F1EA] hover:text-[#6EE7B7] border-[#24403A] hover:bg-[#1C332A]'
+                  ? 'bg-[#10B981] text-[#04231A] font-bold border-emerald-500 shadow-sm'
+                  : 'bg-slate-50 text-[#0B1B3D] hover:text-emerald-700 border-slate-200 hover:bg-slate-100'
               }`}
             >
               Uniquement les cookies essentiels
@@ -80,20 +80,20 @@ export const CookiesPolicyPage: React.FC = () => {
               onClick={() => updatePreference('accepted')}
               className={`px-5 py-2.5 rounded-xl text-xs font-semibold transition-all border ${
                 currentPreference === 'accepted'
-                  ? 'bg-[#10B981] text-[#04231A] font-bold border-[#10B981] shadow-sm'
-                  : 'bg-[#0E1B17] text-[#F4F1EA] hover:text-[#6EE7B7] border-[#24403A] hover:bg-[#1C332A]'
+                  ? 'bg-[#10B981] text-[#04231A] font-bold border-emerald-500 shadow-sm'
+                  : 'bg-slate-50 text-[#0B1B3D] hover:text-emerald-700 border-slate-200 hover:bg-slate-100'
               }`}
             >
-              Accepter tous les cookies (Essentiels & Mesures)
+              Accepter tous les cookies (Essentiels &amp; Mesures)
             </button>
           </div>
         </div>
 
         {/* Detailed Explanations */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-[#15271F] border border-[#24403A] shadow-xl space-y-8 text-sm text-[#9DB2A8] leading-relaxed">
+        <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-8 text-sm text-slate-600 leading-relaxed">
           
           <section className="space-y-3">
-            <h3 className="text-lg font-bold text-[#F4F1EA] font-display">
+            <h3 className="text-lg font-bold text-[#0B1B3D] font-display">
               1. Qu&apos;est-ce qu&apos;un cookie ?
             </h3>
             <p>
@@ -102,29 +102,29 @@ export const CookiesPolicyPage: React.FC = () => {
           </section>
 
           <section className="space-y-3">
-            <h3 className="text-lg font-bold text-[#F4F1EA] font-display">
+            <h3 className="text-lg font-bold text-[#0B1B3D] font-display">
               2. Cookies Strictement Nécessaires (Non désactivables)
             </h3>
             <p>
               Ces cookies et éléments de stockage local garantissent le fonctionnement technique et la sécurité fondamentale de la plateforme SDBSNX. Sans eux, le site ne peut fonctionner de manière fiable.
             </p>
             <div className="overflow-x-auto pt-2">
-              <table className="w-full text-left text-xs border border-[#24403A] rounded-xl overflow-hidden">
-                <thead className="bg-[#0E1B17] text-[#F4F1EA] font-bold">
+              <table className="w-full text-left text-xs border border-slate-200 rounded-xl overflow-hidden">
+                <thead className="bg-slate-50 text-[#0B1B3D] font-bold">
                   <tr>
                     <th className="p-3">Nom</th>
                     <th className="p-3">Finalité</th>
                     <th className="p-3">Durée</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#24403A] text-[#9DB2A8]">
+                <tbody className="divide-y divide-slate-200 text-slate-600">
                   <tr>
-                    <td className="p-3 font-mono font-bold text-[#10B981]">sdbsnx_cookie_consent</td>
+                    <td className="p-3 font-mono font-bold text-emerald-600">sdbsnx_cookie_consent</td>
                     <td className="p-3">Mémorise votre choix relatif aux cookies</td>
                     <td className="p-3">12 mois</td>
                   </tr>
                   <tr>
-                    <td className="p-3 font-mono font-bold text-[#10B981]">sdbsnx_admin_token</td>
+                    <td className="p-3 font-mono font-bold text-emerald-600">sdbsnx_admin_token</td>
                     <td className="p-3">Maintien de session sécurisée dans l&apos;espace administrateur (chiffré)</td>
                     <td className="p-3">Session</td>
                   </tr>
@@ -134,7 +134,7 @@ export const CookiesPolicyPage: React.FC = () => {
           </section>
 
           <section className="space-y-3">
-            <h3 className="text-lg font-bold text-[#F4F1EA] font-display">
+            <h3 className="text-lg font-bold text-[#0B1B3D] font-display">
               3. Absence de Traceurs Publicitaires Tiers
             </h3>
             <p>
@@ -143,7 +143,7 @@ export const CookiesPolicyPage: React.FC = () => {
           </section>
 
           <section className="space-y-3">
-            <h3 className="text-lg font-bold text-[#F4F1EA] font-display">
+            <h3 className="text-lg font-bold text-[#0B1B3D] font-display">
               4. Gestion via votre Navigateur
             </h3>
             <p>

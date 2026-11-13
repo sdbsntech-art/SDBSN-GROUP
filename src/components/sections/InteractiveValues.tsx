@@ -5,7 +5,6 @@ import {
   HeartHandshake, 
   Award, 
   Scale, 
-  CheckCircle2, 
   Lightbulb, 
   LockKeyhole,
   ArrowRight
@@ -46,7 +45,7 @@ export const SDBSNX_VALUES: ValueItem[] = [
       'Dévouement à l\'émancipation numérique africaine',
       'Écoute active et disponibilité professionnelle'
     ],
-    icon: <HeartHandshake className="w-7 h-7 text-[#10B981]" />,
+    icon: <HeartHandshake className="w-7 h-7 text-[#2563EB]" />,
   },
   {
     id: 'excellence',
@@ -62,56 +61,43 @@ export const SDBSNX_VALUES: ValueItem[] = [
     icon: <Award className="w-7 h-7 text-[#10B981]" />,
   },
   {
-    id: 'discipline',
+    id: 'purpose',
     number: '04',
-    title: 'DISCIPLINE AND RIGOR',
-    tagline: 'La discipline et la rigueur dans chaque engagement.',
-    description: 'La méthode et la persévérance surpassent l\'improvisation. Nous appliquons des processus éprouvés et une gouvernance stricte.',
+    title: 'BUILDING WITH PURPOSE',
+    tagline: 'Construire avec intention et utilité.',
+    description: 'Refuser les technologies gadgets. Chaque brique logicielle développée doit répondre à un besoin réel et mesurable.',
     principles: [
-      'Respect scrupuleux des cahiers des charges et délais',
-      'Audits et revues par les pairs obligatoires',
-      'Culture de la précision documentaire'
+      'Chaque fonctionnalité répond à un besoin métier',
+      'Création de valeur durable pour nos partenaires',
+      'Développement raisonné et soutenable'
     ],
-    icon: <Scale className="w-7 h-7 text-[#10B981]" />,
+    icon: <Lightbulb className="w-7 h-7 text-[#2563EB]" />,
   },
   {
-    id: 'accountability',
+    id: 'security',
     number: '05',
-    title: 'ACCOUNTABILITY',
-    tagline: 'Assumer nos responsabilités et respecter nos engagements.',
-    description: 'Nous répondons pleinement de nos livrables, de la sécurité de nos systèmes et de la pérennité de nos partenariats.',
+    title: 'SECURING THE FUTURE',
+    tagline: 'Sécuriser durablement l\'avenir.',
+    description: 'Intégrer la résilience, la confidentialité et la sécurité dès la conception de chaque produit ou infrastructure.',
     principles: [
-      'Responsabilité technique totale de nos développements',
-      'Gestion proactive et transparente des aléas',
-      'Obligation de résultat et de fiabilité'
-    ],
-    icon: <CheckCircle2 className="w-7 h-7 text-[#10B981]" />,
-  },
-  {
-    id: 'innovation',
-    number: '06',
-    title: 'INNOVATION WITH PURPOSE',
-    tagline: 'Innover pour résoudre des problèmes réels.',
-    description: 'L\'innovation technologique n\'est jamais une fin en soi : elle doit simplifier le droit, sécuriser les flux et créer de la valeur concrète.',
-    principles: [
-      'Solutions LegalTech orientées simplification et gain de temps',
-      'Recherche et veille technologique constante',
-      'Architecture logicielle modulaire et évolutive'
-    ],
-    icon: <Lightbulb className="w-7 h-7 text-[#10B981]" />,
-  },
-  {
-    id: 'confidentiality',
-    number: '07',
-    title: 'CONFIDENTIALITY AND TRUST',
-    tagline: 'Protéger les informations et respecter la confiance accordée.',
-    description: 'Le secret des affaires, la confidentialité des données institutionnelles et judiciaires constituent un impératif non négociable.',
-    principles: [
-      'Chiffrement de bout en bout des données sensibles',
-      'Accords de confidentialité stricts (NDA) sur chaque mission',
-      'Isolement logique des environnements clients'
+      'Approche défensive proactive (Security by Design)',
+      'Protection absolue des données et de la vie privée',
+      'Résilience face aux menaces numériques émergentes'
     ],
     icon: <LockKeyhole className="w-7 h-7 text-[#10B981]" />,
+  },
+  {
+    id: 'responsibility',
+    number: '06',
+    title: 'RESPONSIBILITY & ETHICS',
+    tagline: 'Responsabilité sociétale et rigueur déontologique.',
+    description: 'Assumer le rôle d\'acteur numérique de confiance, promoteur de bonnes pratiques et du respect strict des lois en vigueur.',
+    principles: [
+      'Respect scrupuleux du cadre juridique et déontologique',
+      'Audits de sécurité strictement autorisés et encadrés',
+      'Contribution active à l\'écosystème numérique africain'
+    ],
+    icon: <Scale className="w-7 h-7 text-[#2563EB]" />,
   },
 ];
 
@@ -123,36 +109,36 @@ export const InteractiveValues: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
         
         {/* Left Column: Interactive Value Selector list */}
-        <div className="lg:col-span-5 space-y-2">
+        <div className="lg:col-span-5 space-y-2.5">
           {SDBSNX_VALUES.map((val) => {
             const isSelected = activeValue.id === val.id;
             return (
               <button
                 key={val.id}
                 onClick={() => setActiveValue(val)}
-                className={`w-full text-left p-3.5 sm:p-4 rounded-xl transition-all flex items-center justify-between border ${
+                className={`w-full text-left p-4 rounded-2xl transition-all flex items-center justify-between border ${
                   isSelected
-                    ? 'bg-[#1C332A] border-[#10B981] text-[#F4F1EA] shadow-sm'
-                    : 'bg-[#15271F] border-[#24403A] hover:border-[#10B981]/50 hover:bg-[#1C332A]/70 text-[#9DB2A8]'
+                    ? 'bg-emerald-50 border-[#10B981] text-[#0B1B3D] shadow-sm'
+                    : 'bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-600'
                 }`}
               >
-                <div className="flex items-center space-x-3 min-w-0">
-                  <span className={`text-xs font-mono font-bold px-2 py-0.5 rounded flex-shrink-0 ${
-                    isSelected ? 'bg-[#10B981] text-[#04231A]' : 'bg-[#0E1B17] text-[#9DB2A8]'
+                <div className="flex items-center space-x-3.5 min-w-0">
+                  <span className={`text-xs font-mono font-bold px-2 py-0.5 rounded-md flex-shrink-0 ${
+                    isSelected ? 'bg-[#10B981] text-white' : 'bg-slate-100 text-slate-600'
                   }`}>
                     {val.number}
                   </span>
                   <div className="min-w-0">
-                    <h3 className={`text-sm font-bold tracking-wide truncate ${isSelected ? 'text-[#F4F1EA]' : 'text-[#F4F1EA]/90'}`}>
+                    <h3 className={`text-sm font-bold tracking-wide truncate ${isSelected ? 'text-[#0B1B3D]' : 'text-slate-800'}`}>
                       {val.title}
                     </h3>
-                    <p className="text-xs text-[#9DB2A8] truncate">
+                    <p className="text-xs text-slate-500 truncate">
                       {val.tagline}
                     </p>
                   </div>
                 </div>
                 <ArrowRight className={`w-4 h-4 flex-shrink-0 transition-transform ${
-                  isSelected ? 'text-[#10B981] translate-x-1' : 'text-[#24403A]'
+                  isSelected ? 'text-[#10B981] translate-x-1' : 'text-slate-300'
                 }`} />
               </button>
             );
@@ -168,44 +154,44 @@ export const InteractiveValues: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="bg-[#15271F] p-6 sm:p-10 rounded-2xl border border-[#24403A] shadow-sm relative overflow-hidden"
+              className="bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm relative overflow-hidden"
             >
               {/* Watermark number */}
-              <div className="absolute top-4 right-6 text-6xl sm:text-7xl font-mono font-black text-[#24403A]/40 select-none pointer-events-none">
+              <div className="absolute top-4 right-6 text-6xl sm:text-7xl font-mono font-black text-slate-100 select-none pointer-events-none">
                 {activeValue.number}
               </div>
 
               <div className="flex items-center space-x-4 mb-6">
-                <div className="p-3 rounded-xl bg-[#0E1B17] border border-[#24403A] text-[#10B981] [&_svg]:text-[#10B981] [&_svg]:stroke-[#10B981] shadow-inner">
+                <div className="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-100 text-[#10B981]">
                   {activeValue.icon}
                 </div>
                 <div>
-                  <span className="text-xs font-mono text-[#6EE7B7] uppercase tracking-wider font-bold">
+                  <span className="text-xs font-mono text-[#059669] uppercase tracking-wider font-bold">
                     Principe #{activeValue.number}
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#F4F1EA] tracking-tight break-words">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#0B1B3D] tracking-tight break-words font-display">
                     {activeValue.title}
                   </h3>
                 </div>
               </div>
 
-              <div className="mb-6 p-4 rounded-xl bg-[#0E1B17] border-l-4 border-[#10B981]">
-                <p className="text-sm sm:text-base text-[#F4F1EA] font-medium italic">
+              <div className="mb-6 p-4 rounded-2xl bg-slate-50 border-l-4 border-[#10B981]">
+                <p className="text-sm sm:text-base text-[#0B1B3D] font-medium italic">
                   &ldquo;{activeValue.tagline}&rdquo;
                 </p>
               </div>
 
-              <p className="text-sm text-[#9DB2A8] leading-relaxed mb-6">
+              <p className="text-sm text-slate-600 leading-relaxed mb-6">
                 {activeValue.description}
               </p>
 
               <div>
-                <h4 className="text-xs uppercase font-mono font-bold text-[#F4F1EA] tracking-wider mb-3">
+                <h4 className="text-xs uppercase font-mono font-bold text-[#0B1B3D] tracking-wider mb-3">
                   Engagements Concrets :
                 </h4>
                 <ul className="space-y-2.5">
                   {activeValue.principles.map((principle, idx) => (
-                    <li key={idx} className="flex items-start text-xs sm:text-sm text-[#F4F1EA]/90">
+                    <li key={idx} className="flex items-start text-xs sm:text-sm text-slate-700">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] mt-1.5 mr-3 flex-shrink-0" />
                       <span>{principle}</span>
                     </li>

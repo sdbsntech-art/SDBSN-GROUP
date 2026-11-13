@@ -18,48 +18,48 @@ export const MissionPage: React.FC = () => {
       num: '01',
       title: 'Développer des plateformes numériques de qualité',
       desc: 'Livrer des logiciels et applications fiables, maintenables, sécurisés et évolutifs qui respectent scrupuleusement les exigences métier.',
-      icon: <Code2 className="w-5 h-5 text-[#10B981]" />,
+      icon: <Code2 className="w-5 h-5 text-emerald-600" />,
     },
     {
       num: '02',
       title: 'Promouvoir les bonnes pratiques de cybersécurité',
       desc: 'Défendre le patrimoine informationnel des organisations par la sensibilisation, la rigueur technique et les audits préventifs autorisés.',
-      icon: <ShieldCheck className="w-5 h-5 text-[#10B981]" />,
+      icon: <ShieldCheck className="w-5 h-5 text-emerald-600" />,
     },
     {
       num: '03',
       title: 'Accompagner les entreprises dans leur digitalisation',
       desc: 'Fournir un conseil avisé et impartial pour moderniser les processus organisationnels sans rupture d\'activité ni complexité inutile.',
-      icon: <Target className="w-5 h-5 text-[#10B981]" />,
+      icon: <Target className="w-5 h-5 text-emerald-600" />,
     },
     {
       num: '04',
       title: 'Développer des solutions LegalTech pionnières',
       desc: 'Faire converger le droit et les technologies de l\'information afin de fluidifier, tracer et dématérialiser les formalités juridiques et administratives.',
-      icon: <Scale className="w-5 h-5 text-[#10B981]" />,
+      icon: <Scale className="w-5 h-5 text-emerald-600" />,
     },
     {
       num: '05',
       title: 'Encourager une innovation responsable',
       desc: 'Privilégier les technologies durables, économes et adaptées aux réalités économiques locales plutôt que les artifices éphémères.',
-      icon: <Sparkles className="w-5 h-5 text-[#10B981]" />,
+      icon: <Sparkles className="w-5 h-5 text-emerald-600" />,
     },
     {
       num: '06',
       title: 'Construire des partenariats durables',
       desc: 'Établir des relations de confiance pérennes fondées sur la transparence contractuelle, l\'écoute mutuelle et le succès partagé.',
-      icon: <Handshake className="w-5 h-5 text-[#10B981]" />,
+      icon: <Handshake className="w-5 h-5 text-emerald-600" />,
     },
     {
       num: '07',
       title: 'Placer l\'éthique et la transparence au centre',
       desc: 'Faire de l\'intégrité la règle inconditionnelle de chaque échange technique, financier et institutionnel.',
-      icon: <Award className="w-5 h-5 text-[#10B981]" />,
+      icon: <Award className="w-5 h-5 text-emerald-600" />,
     },
   ];
 
   return (
-    <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-[#0E1B17] text-[#F4F1EA]">
+    <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <div className="max-w-5xl mx-auto space-y-12">
         
         {/* Navigation retour */}
@@ -69,26 +69,26 @@ export const MissionPage: React.FC = () => {
 
         {/* Header */}
         <div className="text-center space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-md bg-[#15271F] border border-[#24403A] text-xs font-mono text-[#6EE7B7] uppercase font-bold">
-            <span>Mandat & Objectifs Stratégiques</span>
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-md bg-emerald-50 border border-emerald-200 text-xs font-mono text-emerald-700 uppercase font-bold">
+            <span>Mandat &amp; Objectifs Stratégiques</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-[#F4F1EA] tracking-tight font-display">
-            Notre Mission & Objectifs
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-[#0B1B3D] tracking-tight font-display">
+            Notre Mission &amp; Objectifs
           </h1>
-          <p className="text-[#9DB2A8] max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
             Ce que nous accomplissons chaque jour avec rigueur, méthode et dévouement au service de l&apos;écosystème.
           </p>
         </div>
 
         {/* Mission Statement */}
-        <div className="p-6 sm:p-12 rounded-3xl bg-[#15271F] border border-[#24403A] border-l-4 border-l-[#10B981] space-y-4 shadow-md">
-          <span className="text-xs font-mono text-[#6EE7B7] uppercase tracking-widest font-bold block">
+        <div className="p-6 sm:p-12 rounded-3xl bg-white border border-slate-200 border-l-4 border-l-emerald-500 space-y-4 shadow-sm">
+          <span className="text-xs font-mono text-emerald-600 uppercase tracking-widest font-bold block">
             DÉCLARATION DE MISSION
           </span>
-          <h2 className="text-xl sm:text-3xl font-bold text-[#F4F1EA] italic leading-snug">
+          <h2 className="text-xl sm:text-3xl font-bold text-[#0B1B3D] italic leading-snug">
             &ldquo;Mettre nos compétences technologiques au service des entreprises, des organisations et des populations.&rdquo;
           </h2>
-          <p className="text-xs sm:text-base text-[#9DB2A8] leading-relaxed">
+          <p className="text-xs sm:text-base text-slate-500 leading-relaxed">
             La mission de SDBSNX ne s&apos;arrête pas à la fourniture de code source : elle consiste à donner aux dirigeants, professionnels du droit et organisations les moyens techniques de protéger leurs opérations et de se développer en toute confiance.
           </p>
         </div>
@@ -96,10 +96,10 @@ export const MissionPage: React.FC = () => {
         {/* Objectives Section */}
         <div className="space-y-8">
           <div className="text-center max-w-xl mx-auto">
-            <h3 className="text-xl sm:text-3xl font-bold text-[#F4F1EA] font-display">
+            <h3 className="text-xl sm:text-3xl font-bold text-[#0B1B3D] font-display">
               Nos 7 Objectifs Stratégiques
             </h3>
-            <p className="text-xs sm:text-sm text-[#9DB2A8] mt-2">
+            <p className="text-xs sm:text-sm text-slate-500 mt-2">
               Les axes directeurs qui orientent nos investissements en recherche, ingénierie et gouvernance.
             </p>
           </div>
@@ -108,20 +108,20 @@ export const MissionPage: React.FC = () => {
             {objectives.map((obj) => (
               <div
                 key={obj.num}
-                className="p-5 sm:p-6 rounded-2xl bg-[#15271F] border border-[#24403A] hover:border-[#10B981] shadow-sm transition-all space-y-3"
+                className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 hover:border-emerald-400 shadow-sm transition-all space-y-3"
               >
                 <div className="flex items-center justify-between">
-                  <div className="p-2.5 rounded-xl bg-[#0E1B17] border border-[#24403A]">
+                  <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
                     {obj.icon}
                   </div>
-                  <span className="text-xs font-mono font-bold text-[#9DB2A8]">
+                  <span className="text-xs font-mono font-bold text-slate-400">
                     {obj.num}
                   </span>
                 </div>
-                <h4 className="text-sm sm:text-base font-bold text-[#F4F1EA] tracking-wide">
+                <h4 className="text-sm sm:text-base font-bold text-[#0B1B3D] tracking-wide">
                   {obj.title}
                 </h4>
-                <p className="text-xs text-[#9DB2A8] leading-relaxed">
+                <p className="text-xs text-slate-500 leading-relaxed">
                   {obj.desc}
                 </p>
               </div>
@@ -130,10 +130,10 @@ export const MissionPage: React.FC = () => {
         </div>
 
         {/* Call to action */}
-        <div className="p-6 sm:p-8 rounded-2xl bg-[#15271F] border border-[#24403A] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+        <div className="p-6 sm:p-8 rounded-2xl bg-[#0B1B3D] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
           <div className="text-center sm:text-left">
-            <h4 className="text-base sm:text-lg font-bold text-[#F4F1EA]">Prêt à collaborer autour de ces objectifs ?</h4>
-            <p className="text-xs text-[#9DB2A8]">Démarrez votre projet avec notre équipe d&apos;ingénieurs et consultants.</p>
+            <h4 className="text-base sm:text-lg font-bold text-white">Prêt à collaborer autour de ces objectifs ?</h4>
+            <p className="text-xs text-slate-300">Démarrez votre projet avec notre équipe d&apos;ingénieurs et consultants.</p>
           </div>
           <Link
             to="/contact"

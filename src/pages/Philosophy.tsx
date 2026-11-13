@@ -6,7 +6,7 @@ import { BackButton } from '../components/ui/BackButton';
 
 export const PhilosophyPage: React.FC = () => {
   return (
-    <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-[#0E1B17] text-[#F4F1EA]">
+    <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <div className="max-w-6xl mx-auto space-y-12">
         
         {/* Navigation retour */}
@@ -16,26 +16,26 @@ export const PhilosophyPage: React.FC = () => {
 
         {/* Header */}
         <div className="text-center space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-md bg-[#15271F] border border-[#24403A] text-xs font-mono text-[#6EE7B7] uppercase font-bold">
-            <span>Principes Directeurs & Maximes</span>
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-md bg-emerald-50 border border-emerald-200 text-xs font-mono text-emerald-700 uppercase font-bold">
+            <span>Principes Directeurs &amp; Maximes</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-[#F4F1EA] tracking-tight font-display">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-[#0B1B3D] tracking-tight font-display">
             THE STANDARD WE LIVE BY
           </h1>
-          <p className="text-[#9DB2A8] max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
             La rigueur d&apos;action et la constance d&apos;esprit qui guident nos ingénieurs, nos consultants et nos dirigeants au quotidien.
           </p>
         </div>
 
         {/* Philosophy Intro Banner */}
-        <div className="p-6 sm:p-10 rounded-2xl bg-[#15271F] border border-[#24403A] border-l-4 border-l-[#10B981] space-y-3 shadow-md">
-          <div className="flex items-center space-x-2 text-[#6EE7B7]">
-            <Sparkles className="w-5 h-5 text-[#10B981]" />
+        <div className="p-6 sm:p-10 rounded-2xl bg-white border border-slate-200 border-l-4 border-l-emerald-500 space-y-3 shadow-sm">
+          <div className="flex items-center space-x-2 text-emerald-600">
+            <Sparkles className="w-5 h-5 text-emerald-600" />
             <span className="text-xs font-mono uppercase tracking-wider font-bold">
               Notre Philosophie Fondamentale
             </span>
           </div>
-          <p className="text-sm sm:text-lg text-[#F4F1EA] leading-relaxed">
+          <p className="text-sm sm:text-lg text-[#0B1B3D] leading-relaxed">
             La technologie sans éthique est une fragilité. Chez SDBSNX, nous cultivons une discipline intellectuelle et opérationnelle où chaque réalisation est mesurée à l&apos;aune de son utilité réelle, de sa robustesse et du respect strict de la parole donnée.
           </p>
         </div>
@@ -44,10 +44,10 @@ export const PhilosophyPage: React.FC = () => {
         <PhilosophyQuotes />
 
         {/* Bottom Banner */}
-        <div className="p-6 sm:p-8 rounded-2xl bg-[#15271F] border border-[#24403A] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+        <div className="p-6 sm:p-8 rounded-2xl bg-[#0B1B3D] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
           <div className="text-center sm:text-left">
-            <h4 className="text-base sm:text-lg font-bold text-[#F4F1EA]">Adhérer à cette exigence pour vos projets</h4>
-            <p className="text-xs text-[#9DB2A8]">Échangeons en toute franchise sur vos défis numériques et réglementaires.</p>
+            <h4 className="text-base sm:text-lg font-bold text-white">Adhérer à cette exigence pour vos projets</h4>
+            <p className="text-xs text-slate-300">Échangeons en toute franchise sur vos défis numériques et réglementaires.</p>
           </div>
           <Link
             to="/contact"
