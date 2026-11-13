@@ -15,7 +15,8 @@ import {
   MessageCircle,
   X,
   Award,
-  Zap
+  Zap,
+  ExternalLink
 } from 'lucide-react';
 import { InteractiveValues } from '../components/sections/InteractiveValues';
 import { PhilosophyQuotes } from '../components/sections/PhilosophyQuotes';
@@ -28,11 +29,14 @@ interface VlogStory {
   title: string;
   speaker: string;
   role: string;
+  speakerImage: string;
   category: string;
   categoryColor: 'emerald' | 'blue';
   duration: string;
   views: string;
   thumbnail: string;
+  youtubeId: string;
+  youtubeUrl: string;
   summary: string;
   metric: string;
   quote: string;
@@ -45,12 +49,15 @@ const VLOG_STORIES: VlogStory[] = [
     title: 'Comment un cabinet d\'avocats à Dakar a dématérialisé 5 000 dossiers',
     speaker: 'Me Aïssatou Diop',
     role: 'Avocate Associée • Cabinet Diop & Partenaires (Dakar)',
+    speakerImage: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
     category: 'LegalTech & Automatisation',
     categoryColor: 'emerald',
-    duration: '04:15 min',
+    duration: '03:45 min',
     views: '2.8k vues',
     thumbnail: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
-    summary: 'Conception d\'un portail LegalTech souverain sur-mesure pour la gestion électronique, l\'archivage chiffré et la signature certifiée d\'actes juridiques en conformité avec la loi n° 2008-08.',
+    youtubeId: 'CqEsIDrEASs',
+    youtubeUrl: 'https://www.youtube.com/watch?v=CqEsIDrEASs',
+    summary: 'Conception d\'un portail LegalTech souverain sur-mesure pour la gestion électronique, l\'archivage chiffré et la signature certifiée d\'actes juridiques en conformité avec la loi sénégalaise n° 2008-08.',
     metric: 'Temps de traitement contractuel divisé par 4',
     quote: '« SDBSNX ne s\'est pas contenté de coder : ils ont compris notre déontologie juridique et ont livré une plateforme intuitive et imprenable. »'
   },
@@ -60,11 +67,14 @@ const VLOG_STORIES: VlogStory[] = [
     title: 'Audit d\'infrastructure et résilience d\'une Fintech ouest-africaine',
     speaker: 'Amadou Diallo',
     role: 'Directeur Technique • PayAfrique Solution',
+    speakerImage: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&q=80',
     category: 'Cybersécurité & Défense',
     categoryColor: 'blue',
     duration: '05:30 min',
     views: '3.4k vues',
     thumbnail: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
+    youtubeId: 'xUmf-aGC5qc',
+    youtubeUrl: 'https://www.youtube.com/watch?v=xUmf-aGC5qc',
     summary: 'Mission d\'évaluation technique autorisée, tests d\'intrusion rigoureux et durcissement des API bancaires traitant plusieurs millions de FCFA de flux transactionnels quotidiens.',
     metric: '100% des vulnérabilités critiques colmatées',
     quote: '« Grâce à l\'audit approfondi de SDBSNX, notre plateforme a obtenu sa certification de conformité en toute sérénité. »'
@@ -75,11 +85,14 @@ const VLOG_STORIES: VlogStory[] = [
     title: 'Déploiement d\'une plateforme SaaS Supply Chain en 45 jours',
     speaker: 'Fatou Binetou Ndiaye',
     role: 'Fondatrice & Directrice Générale • Sahel Logix',
+    speakerImage: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80',
     category: 'Développement Web & Mobile',
     categoryColor: 'emerald',
-    duration: '03:50 min',
+    duration: '04:12 min',
     views: '2.1k vues',
     thumbnail: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80',
+    youtubeId: 'oFRfMkxCoss',
+    youtubeUrl: 'https://www.youtube.com/watch?v=oFRfMkxCoss',
     summary: 'Création d\'une application web progressive (PWA) synchronisée en temps réel pour le suivi logistique de flottes de transport de marchandises à travers le Sénégal et la sous-région.',
     metric: 'Livraison en 6 semaines chrono',
     quote: '« L\'approche agile de SDBSNX a permis de lancer notre solution sans retard budgétaire, avec une interface moderne appréciée de nos équipes. »'
@@ -90,11 +103,14 @@ const VLOG_STORIES: VlogStory[] = [
     title: 'Modernisation numérique et portail de services aux usagers',
     speaker: 'Moussa Ba',
     role: 'Responsable SI • Organisation Internationale',
+    speakerImage: 'https://images.unsplash.com/photo-1573497491765-dccce02b29df?auto=format&fit=crop&w=400&q=80',
     category: 'Conseil & Architecture SI',
     categoryColor: 'blue',
     duration: '04:40 min',
     views: '1.9k vues',
     thumbnail: 'https://images.unsplash.com/photo-1573497491765-dccce02b29df?auto=format&fit=crop&w=800&q=80',
+    youtubeId: 'f-ugxtNzbCY',
+    youtubeUrl: 'https://www.youtube.com/watch?v=f-ugxtNzbCY',
     summary: 'Accompagnement stratégique et refonte d\'architectures logicielles pour dématérialiser les demandes citoyennes et interconnecter des bases de données hétérogènes.',
     metric: '98% de satisfaction usagers dès le 1er trimestre',
     quote: '« Une rigueur méthodologique rare, une écoute exemplaire et un accompagnement humain à chaque étape du déploiement. »'
@@ -239,7 +255,7 @@ export const HomePage: React.FC = () => {
                   <img
                     src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80"
                     alt="Équipe d'ingénieurs et talents technologiques africains SDBSNX"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-top sm:object-center group-hover:scale-105 transition-transform duration-700"
                     loading="eager"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B3D]/80 via-transparent to-transparent" />
@@ -420,25 +436,31 @@ export const HomePage: React.FC = () => {
                   <img
                     src={vlog.thumbnail}
                     alt={vlog.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-95"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B3D]/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B3D]/85 via-[#0B1B3D]/25 to-transparent" />
                   
                   {/* Episode Badge */}
-                  <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-[#0B1B3D]/90 backdrop-blur-xs text-white text-[10px] font-mono font-bold">
+                  <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-[#0B1B3D]/90 backdrop-blur-xs text-white text-[10px] font-mono font-bold flex items-center gap-1.5 shadow-xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
                     {vlog.episode}
                   </span>
 
+                  {/* YouTube HD Pill */}
+                  <span className="absolute top-3 right-3 px-2 py-0.5 rounded-md bg-red-600/90 text-white text-[10px] font-bold tracking-wider uppercase shadow-xs">
+                    YouTube HD
+                  </span>
+
                   {/* Duration Pill */}
-                  <span className="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/80 text-white text-[10px] font-mono flex items-center gap-1">
+                  <span className="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/80 backdrop-blur-xs text-white text-[10px] font-mono flex items-center gap-1">
                     <Clock className="w-3 h-3 text-[#10B981]" />
                     {vlog.duration}
                   </span>
 
                   {/* Play Button Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-[#10B981] group-hover:bg-[#059669] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-200 pl-0.5">
+                    <div className="w-12 h-12 rounded-full bg-[#10B981] group-hover:bg-[#059669] text-white flex items-center justify-center shadow-xl group-hover:scale-115 transition-all duration-200 pl-0.5 border-2 border-white/40">
                       <Play className="w-5 h-5 fill-current" />
                     </div>
                   </div>
@@ -464,14 +486,24 @@ export const HomePage: React.FC = () => {
                     </h3>
                   </div>
 
-                  <div className="pt-2 border-t border-slate-100">
-                    <p className="text-xs font-semibold text-slate-800">{vlog.speaker}</p>
-                    <p className="text-[11px] text-slate-500 truncate">{vlog.role}</p>
-
-                    <div className="mt-3 flex items-center justify-between text-xs font-bold text-[#10B981] group-hover:text-[#059669]">
-                      <span>Voir le cas client</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  <div className="pt-3 border-t border-slate-100 flex items-center gap-3">
+                    <img
+                      src={vlog.speakerImage}
+                      alt={vlog.speaker}
+                      className="w-9 h-9 rounded-full object-cover object-top border-2 border-slate-200 flex-shrink-0"
+                    />
+                    <div className="min-w-0 flex-1">
+                      <p className="text-xs font-bold text-slate-800 truncate">{vlog.speaker}</p>
+                      <p className="text-[11px] text-slate-500 truncate">{vlog.role}</p>
                     </div>
+                  </div>
+
+                  <div className="flex items-center justify-between text-xs font-bold text-[#10B981] group-hover:text-[#059669] pt-1">
+                    <span className="flex items-center gap-1.5">
+                      <Play className="w-3.5 h-3.5 fill-current" />
+                      Regarder la vidéo
+                    </span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
 
@@ -514,57 +546,102 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* VLOG INTERACTIVE DETAIL MODAL                                             */}
+      {/* VLOG INTERACTIVE DETAIL MODAL WITH LIVE YOUTUBE PLAYER                     */}
       {/* ========================================================================= */}
       <AnimatePresence>
         {activeVlog && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-900/80 backdrop-blur-xs">
+          <div 
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-900/85 backdrop-blur-sm animate-in fade-in duration-200"
+            onClick={() => setActiveVlog(null)}
+          >
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-white rounded-3xl max-w-2xl w-full border border-slate-200 shadow-2xl overflow-hidden relative"
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 15 }}
+              transition={{ duration: 0.25 }}
+              className="bg-white rounded-3xl max-w-3xl w-full border border-slate-200 shadow-2xl overflow-hidden relative max-h-[92vh] flex flex-col"
+              onClick={(e) => e.stopPropagation()}
             >
-              {/* Modal Top Header with Video Thumbnail */}
-              <div className="relative aspect-video w-full bg-slate-900">
-                <img
-                  src={activeVlog.thumbnail}
-                  alt={activeVlog.title}
-                  className="w-full h-full object-cover opacity-85"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B3D] via-[#0B1B3D]/30 to-transparent" />
-                
-                {/* Close Button */}
+              {/* Modal Top Bar */}
+              <div className="px-5 py-3.5 bg-[#0B1B3D] text-white flex items-center justify-between gap-3 border-b border-slate-800 flex-shrink-0">
+                <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+                  <span className="px-2.5 py-1 rounded-md bg-[#10B981] text-white text-[11px] font-mono font-bold uppercase flex items-center gap-1.5 shadow-xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                    {activeVlog.episode}
+                  </span>
+                  <span className="text-xs text-slate-300 font-medium">
+                    {activeVlog.category}
+                  </span>
+                  <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded bg-red-600/90 text-white text-[10px] font-bold uppercase">
+                    YouTube
+                  </span>
+                </div>
+
                 <button
                   onClick={() => setActiveVlog(null)}
-                  className="absolute top-4 right-4 p-2 rounded-full bg-black/60 text-white hover:bg-black/90 transition-colors"
+                  className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors flex items-center justify-center cursor-pointer"
                   aria-label="Fermer la modal"
                 >
                   <X className="w-5 h-5" />
                 </button>
-
-                <div className="absolute bottom-4 left-5 right-5 text-white">
-                  <span className="px-2.5 py-0.5 rounded-md bg-[#10B981] text-white text-[11px] font-mono font-bold uppercase inline-block mb-1">
-                    {activeVlog.episode} • {activeVlog.category}
-                  </span>
-                  <h3 className="text-lg sm:text-xl font-extrabold leading-tight">
-                    {activeVlog.title}
-                  </h3>
-                </div>
               </div>
 
-              {/* Modal Body */}
-              <div className="p-6 sm:p-8 space-y-5 text-sm text-slate-600">
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                  <p className="text-xs font-mono uppercase text-[#059669] font-bold">Intervenant</p>
-                  <p className="text-sm font-bold text-[#0B1B3D] mt-0.5">{activeVlog.speaker}</p>
-                  <p className="text-xs text-slate-500">{activeVlog.role}</p>
+              {/* YouTube Live Player Embed */}
+              <div className="relative aspect-video w-full bg-black flex-shrink-0">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${activeVlog.youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
+                  title={activeVlog.title}
+                  className="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+
+              {/* Modal Scrollable Body */}
+              <div className="p-5 sm:p-7 space-y-5 text-sm text-slate-600 overflow-y-auto">
+                {/* Title */}
+                <div>
+                  <h3 className="text-lg sm:text-2xl font-extrabold text-[#0B1B3D] leading-snug font-display">
+                    {activeVlog.title}
+                  </h3>
+                  <div className="flex items-center gap-4 text-xs text-slate-500 mt-2 font-medium">
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3.5 h-3.5 text-[#10B981]" />
+                      Durée : {activeVlog.duration}
+                    </span>
+                    <span>•</span>
+                    <span className="flex items-center gap-1">
+                      <Eye className="w-3.5 h-3.5 text-[#2563EB]" />
+                      {activeVlog.views}
+                    </span>
+                  </div>
                 </div>
 
+                {/* Speaker Card with Portrait */}
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/90 flex items-center gap-4">
+                  <img
+                    src={activeVlog.speakerImage}
+                    alt={activeVlog.speaker}
+                    className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl object-cover object-top border-2 border-[#10B981] shadow-sm flex-shrink-0"
+                  />
+                  <div>
+                    <span className="text-[10px] font-mono uppercase text-[#059669] font-bold tracking-wider block">
+                      Témoignage &amp; Retour d&apos;Expérience
+                    </span>
+                    <h4 className="text-base sm:text-lg font-bold text-[#0B1B3D]">
+                      {activeVlog.speaker}
+                    </h4>
+                    <p className="text-xs sm:text-sm text-slate-500 font-medium">
+                      {activeVlog.role}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Project Context & Solution */}
                 <div className="space-y-2">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono">
-                    Contexte & Déploiement
-                  </h4>
+                  <h5 className="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono">
+                    Contexte Opérationnel &amp; Déploiement
+                  </h5>
                   <p className="text-slate-700 leading-relaxed text-sm">
                     {activeVlog.summary}
                   </p>
@@ -573,29 +650,41 @@ export const HomePage: React.FC = () => {
                 {/* Key Metric Highlight */}
                 <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200/80 flex items-center space-x-3 text-[#064E3B]">
                   <CheckCircle2 className="w-5 h-5 text-[#10B981] flex-shrink-0" />
-                  <span className="font-bold text-sm">{activeVlog.metric}</span>
+                  <span className="font-bold text-sm sm:text-base">{activeVlog.metric}</span>
                 </div>
 
                 {/* Quote */}
-                <blockquote className="italic text-slate-700 border-l-4 border-[#10B981] pl-4 text-xs sm:text-sm">
+                <blockquote className="italic text-slate-700 border-l-4 border-[#10B981] pl-4 py-1 text-xs sm:text-sm bg-slate-50/70 rounded-r-lg">
                   {activeVlog.quote}
                 </blockquote>
 
                 {/* Modal Footer CTAs */}
-                <div className="pt-3 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
-                  <a
-                    href={getWhatsAppUrl(`Bonjour, je souhaite un projet similaire au ${activeVlog.episode} (${activeVlog.title})`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:w-auto px-5 py-2.5 rounded-xl font-bold text-xs bg-[#10B981] hover:bg-[#059669] text-white flex items-center justify-center gap-2 transition-all shadow-sm"
-                  >
-                    <MessageCircle className="w-4 h-4" />
-                    <span>Lancer un projet similaire sur WhatsApp</span>
-                  </a>
+                <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+                  <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full sm:w-auto">
+                    <a
+                      href={getWhatsAppUrl(`Bonjour, j'ai visionné le ${activeVlog.episode} (${activeVlog.title}) et je souhaite échanger sur une solution équivalente pour ma structure.`)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto px-5 py-2.5 rounded-xl font-bold text-xs bg-[#10B981] hover:bg-[#059669] text-white flex items-center justify-center gap-2 transition-all shadow-sm"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      <span>Échanger sur WhatsApp</span>
+                    </a>
+
+                    <a
+                      href={activeVlog.youtubeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto px-4 py-2.5 rounded-xl font-semibold text-xs text-slate-700 hover:text-red-600 bg-slate-100 hover:bg-slate-200 flex items-center justify-center gap-1.5 transition-colors border border-slate-200"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      <span>Voir sur YouTube</span>
+                    </a>
+                  </div>
 
                   <button
                     onClick={() => setActiveVlog(null)}
-                    className="w-full sm:w-auto px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 bg-slate-100 transition-colors"
+                    className="w-full sm:w-auto px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 transition-colors cursor-pointer"
                   >
                     Fermer
                   </button>
