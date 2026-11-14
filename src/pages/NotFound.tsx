@@ -2,10 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ShieldAlert, Home, Compass } from 'lucide-react';
 import { BackButton } from '../components/ui/BackButton';
+import { SEO } from '../components/common/SEO';
 
 export const NotFoundPage: React.FC = () => {
   return (
     <div className="min-h-[75vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 bg-slate-50 text-[#0B1B3D]">
+      <SEO 
+        title="Page Non Trouvée (404) | SDBSNX" 
+        description="La page que vous recherchez est introuvable." 
+        noindex={true}
+      />
       <div className="max-w-md w-full text-center space-y-6">
         
         <div>

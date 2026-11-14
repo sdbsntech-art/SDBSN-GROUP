@@ -26,6 +26,7 @@ import { InteractiveValues } from '../components/sections/InteractiveValues';
 import { PhilosophyQuotes } from '../components/sections/PhilosophyQuotes';
 import { SERVICES_DATA } from '../data/services';
 import { getWhatsAppUrl, WHATSAPP_CONFIG } from '../lib/whatsapp';
+import { SEO } from '../components/common/SEO';
 
 interface TechDemoSolution {
   id: string;
@@ -136,6 +137,12 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="relative overflow-hidden w-full bg-white text-[#0B1B3D]">
+      <SEO
+        title="SDBSNX — Plateforme LegalTech, Cybersécurité & Ingénierie Numérique au Sénégal"
+        description="Éditeur de solutions LegalTech souveraines et cabinet d'ingénierie logicielle à Dakar : Parapheur électronique certifié (Loi 2008-08), GED juridique pour cabinets d'avocats & notaires, audits de cybersécurité offensive et applications cloud sur-mesure."
+        keywords="LegalTech Sénégal, LegalTech Dakar, signature électronique Sénégal loi 2008-08, logiciel cabinet avocat Dakar, dématérialisation actes juridiques, coffre-fort numérique OHADA, GED juridique, audit cybersécurité Sénégal, pentest Dakar, développement application web mobile Dakar, ingénierie logicielle Sénégal"
+        canonicalPath="/"
+      />
       
       {/* ========================================================================= */}
       {/* HERO SECTION (Force-N Style: Clean White Base, Navy, Emerald & African Visual) */}

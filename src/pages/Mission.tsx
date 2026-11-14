@@ -11,6 +11,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { BackButton } from '../components/ui/BackButton';
+import { SEO } from '../components/common/SEO';
 
 export const MissionPage: React.FC = () => {
   const objectives = [
@@ -60,6 +61,12 @@ export const MissionPage: React.FC = () => {
 
   return (
     <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
+      <SEO 
+        title="Notre Mission & Objectifs Stratégiques | SDBSNX" 
+        description="Découvrez la mission de SDBSNX : mettre la technologie, la cybersécurité et la LegalTech au service des entreprises et institutions en Afrique." 
+        canonicalPath="/mission" 
+        keywords="mission SDBSNX, objectifs stratégiques, transformation numérique Sénégal, ingénierie informatique Dakar, souveraineté numérique, LegalTech Afrique"
+      />
       <div className="max-w-5xl mx-auto space-y-12">
         
         {/* Navigation retour */}

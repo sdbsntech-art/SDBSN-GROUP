@@ -1,10 +1,17 @@
 import React from 'react';
 import { AlertTriangle } from 'lucide-react';
 import { BackButton } from '../components/ui/BackButton';
+import { SEO } from '../components/common/SEO';
 
 export const PrivacyPolicyPage: React.FC = () => {
   return (
     <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
+      <SEO 
+        title="Politique de Confidentialité & Protection des Données | SDBSNX" 
+        description="Politique de protection des données à caractère personnel de SDBSNX, en conformité avec la loi sénégalaise n° 2008-12 et les standards de la CDP." 
+        canonicalPath="/politique-confidentialite" 
+        keywords="confidentialité SDBSNX, protection données personnelles Sénégal, loi 2008-12 CDP, RGPD Sénégal, sécurité des données"
+      />
       <div className="max-w-4xl mx-auto space-y-10">
 
         <BackButton to="/" label="Retour à l'accueil" />

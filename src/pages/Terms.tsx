@@ -1,9 +1,16 @@
 import React from 'react';
 import { BackButton } from '../components/ui/BackButton';
+import { SEO } from '../components/common/SEO';
 
 export const TermsPage: React.FC = () => {
   return (
     <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
+      <SEO 
+        title="Conditions Générales d'Utilisation (CGU) | SDBSNX" 
+        description="Conditions générales d'utilisation du portail SDBSNX. Règles régissant l'utilisation des contenus, services en ligne et droits de propriété intellectuelle." 
+        canonicalPath="/conditions-utilisation" 
+        keywords="CGU SDBSNX, conditions utilisation, propriété intellectuelle, services en ligne Sénégal"
+      />
       <div className="max-w-4xl mx-auto space-y-10">
 
         <BackButton to="/" label="Retour à l'accueil" />

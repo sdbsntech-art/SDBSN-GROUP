@@ -12,6 +12,7 @@ import {
   Layers
 } from 'lucide-react';
 import { BackButton } from '../components/ui/BackButton';
+import { SEO } from '../components/common/SEO';
 
 export const ServiceDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -38,6 +39,27 @@ export const ServiceDetailPage: React.FC = () => {
 
   return (
     <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
+      <SEO 
+        title={`${service.title} | Expertises SDBSNX`}
+        description={service.shortDescription}
+        canonicalPath={`/services/${service.slug}`}
+        keywords={`${service.title}, ${service.categoryName}, SDBSNX Sénégal, services numériques Dakar, expertise informatique`}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: service.title,
+          description: service.fullDescription,
+          provider: {
+            '@type': 'Organization',
+            name: 'SDBSNX',
+            url: 'https://sdbsnx.com'
+          },
+          areaServed: {
+            '@type': 'Country',
+            name: 'Sénégal'
+          }
+        }}
+      />
       <div className="max-w-5xl mx-auto space-y-12">
         
         {/* Navigation retour */}

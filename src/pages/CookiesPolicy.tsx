@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Cookie, Check } from 'lucide-react';
 import { BackButton } from '../components/ui/BackButton';
+import { SEO } from '../components/common/SEO';
 
 export const CookiesPolicyPage: React.FC = () => {
   const [currentPreference, setCurrentPreference] = useState<'accepted' | 'essential_only' | 'unset'>('unset');
@@ -22,6 +23,12 @@ export const CookiesPolicyPage: React.FC = () => {
 
   return (
     <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
+      <SEO 
+        title="Politique relative aux Cookies & Traceurs | SDBSNX" 
+        description="Gestion des cookies et du stockage local sur la plateforme SDBSNX. Respect strict de la vie privée sans traceurs intrusifs." 
+        canonicalPath="/politique-cookies" 
+        keywords="cookies SDBSNX, traceurs web, consentement cookies Sénégal, respect de la vie privée"
+      />
       <div className="max-w-4xl mx-auto space-y-10">
 
         <BackButton to="/" label="Retour à l'accueil" />

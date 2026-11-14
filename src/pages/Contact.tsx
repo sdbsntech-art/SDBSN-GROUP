@@ -18,6 +18,7 @@ import { generateReferenceNumber } from '../lib/utils';
 import { WHATSAPP_CONFIG, getWhatsAppUrl } from '../lib/whatsapp';
 import type { ServiceCategory } from '../types';
 import { BackButton } from '../components/ui/BackButton';
+import { SEO } from '../components/common/SEO';
 
 export const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -96,6 +97,12 @@ export const ContactPage: React.FC = () => {
 
   return (
     <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
+      <SEO 
+        title="Contactez SDBSNX | Consultation Technique & Devis Numérique Dakar" 
+        description="Prenez contact avec les experts SDBSNX à Dakar : LegalTech, Cybersécurité, Développement d'applications web & mobiles, Conseil en gouvernance des SI. Devis confidentiel sous 24h-48h." 
+        canonicalPath="/contact" 
+        keywords="contact SDBSNX, devis informatique Sénégal, cabinet cybersécurité Dakar, agence web Dakar, WhatsApp 766242458, consultation technique Dakar"
+      />
       <div className="max-w-4xl mx-auto space-y-10">
 
         <BackButton to="/" label="Retour à l'accueil" />

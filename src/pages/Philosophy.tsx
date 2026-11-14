@@ -3,10 +3,17 @@ import { Link } from 'react-router-dom';
 import { PhilosophyQuotes } from '../components/sections/PhilosophyQuotes';
 import { Sparkles, ArrowRight } from 'lucide-react';
 import { BackButton } from '../components/ui/BackButton';
+import { SEO } from '../components/common/SEO';
 
 export const PhilosophyPage: React.FC = () => {
   return (
     <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
+      <SEO 
+        title="Notre Philosophie & Maximes Directrices | SDBSNX" 
+        description="The Standard We Live By : découvrez la philosophie opérationnelle et les maximes directrices qui animent le travail des équipes SDBSNX." 
+        canonicalPath="/philosophie" 
+        keywords="philosophie SDBSNX, rigueur technologique, standard d'excellence informatique, intégrité numérique, ingénierie logicielle éthique"
+      />
       <div className="max-w-6xl mx-auto space-y-12">
         
         {/* Navigation retour */}

@@ -10,10 +10,17 @@ import {
   ArrowRight 
 } from 'lucide-react';
 import { BackButton } from '../components/ui/BackButton';
+import { SEO } from '../components/common/SEO';
 
 export const AboutPage: React.FC = () => {
   return (
     <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
+      <SEO
+        title="À Propos de SDBSNX — Cabinet d'Ingénierie & d'Innovation Numérique à Dakar"
+        description="Découvrez SDBSNX, son expertise de pointe en LegalTech, cybersécurité et génie logiciel, et sa mission d'impact au service des organisations au Sénégal et en Afrique."
+        keywords="à propos SDBSNX, cabinet ingénierie Dakar, entreprise tech Sénégal, équipe informatique Sénégal, innovation numérique Afrique"
+        canonicalPath="/a-propos"
+      />
       <div className="max-w-5xl mx-auto space-y-12">
         
         {/* Navigation retour */}

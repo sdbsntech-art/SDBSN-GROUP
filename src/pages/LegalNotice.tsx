@@ -1,10 +1,17 @@
 import React from 'react';
 import { ShieldAlert } from 'lucide-react';
 import { BackButton } from '../components/ui/BackButton';
+import { SEO } from '../components/common/SEO';
 
 export const LegalNoticePage: React.FC = () => {
   return (
     <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
+      <SEO 
+        title="Mentions Légales & Identification Éditeur | SDBSNX" 
+        description="Informations légales et réglementaires régissant la plateforme SDBSNX conformément à la loi sénégalaise n° 2008-08 sur les transactions électroniques." 
+        canonicalPath="/mentions-legales" 
+        keywords="mentions légales SDBSNX, éditeur site web Sénégal, loi 2008-08 Sénégal, hébergement web Dakar"
+      />
       <div className="max-w-4xl mx-auto space-y-10">
 
         <BackButton to="/" label="Retour à l'accueil" />
