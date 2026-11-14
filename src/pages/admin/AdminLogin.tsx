@@ -17,14 +17,15 @@ export const AdminLoginPage: React.FC = () => {
 
     try {
       // Direct Admin Authentication
-      if (email.trim().toLowerCase() === 'admin@sdbsnx.com' && password.length >= 8) {
+      const validAdmin = email.trim().toLowerCase() === 'admin@sdbsnx.site' || email.trim().toLowerCase() === 'admin@sdbsnx.com';
+      if (validAdmin && password.length >= 8) {
         localStorage.setItem(
           'sdbsnx_admin_token',
           JSON.stringify({ email: email.trim(), loginAt: Date.now() })
         );
         navigate('/admin');
       } else {
-        setErrorMessage('Identifiants administrateur incorrects. Utilisez admin@sdbsnx.com avec au moins 8 caractères.');
+        setErrorMessage('Identifiants administrateur incorrects. Utilisez admin@sdbsnx.site avec au moins 8 caractères.');
       }
     } catch {
       setErrorMessage('Une erreur inattendue est survenue lors de l\'authentification.');
@@ -71,7 +72,7 @@ export const AdminLoginPage: React.FC = () => {
               <span>Console Sécurisée</span>
             </div>
             <p>
-              Connectez-vous avec votre adresse officielle <code className="text-emerald-400 bg-white/10 border border-white/10 px-1 py-0.5 rounded font-bold">admin@sdbsnx.com</code>.
+              Connectez-vous avec votre adresse officielle <code className="text-emerald-400 bg-white/10 border border-white/10 px-1 py-0.5 rounded font-bold">admin@sdbsnx.site</code>.
             </p>
           </div>
 
@@ -87,7 +88,7 @@ export const AdminLoginPage: React.FC = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@sdbsnx.com"
+                  placeholder="admin@sdbsnx.site"
                   className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-emerald-500 transition-colors"
                 />
               </div>

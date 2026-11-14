@@ -52,7 +52,7 @@ export const ServiceDetailPage: React.FC = () => {
           provider: {
             '@type': 'Organization',
             name: 'SDBSNX',
-            url: 'https://sdbsnx.com'
+            url: 'https://sdbsnx.site'
           },
           areaServed: {
             '@type': 'Country',

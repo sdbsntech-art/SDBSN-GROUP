@@ -8,7 +8,7 @@ Ce guide détaille la mise en production de la plateforme SDBSNX sur **Vercel** 
 
 - Un compte [GitHub](https://github.com) avec le dépôt `SDBSN-GROUP`.
 - Un compte [Vercel](https://vercel.com).
-- La clé Web3Forms : `709797ef-bfab-4ff0-afae-bcfed2d54a57` (active pour `contact@sdbsnx.com`).
+- La clé Web3Forms : `709797ef-bfab-4ff0-afae-bcfed2d54a57` (active pour `contact@sdbsnx.site`).
 - Le logo officiel SDBSNX (déjà intégré dans `public/logo/` et `public/icons/`).
 
 ---
@@ -30,7 +30,7 @@ Ce guide détaille la mise en production de la plateforme SDBSNX sur **Vercel** 
 ## 3. Nom de Domaine Personnalisé
 
 Dans **Settings > Domains** sur Vercel :
-1. Ajoutez `sdbsnx.com` et `www.sdbsnx.com`.
+1. Ajoutez `sdbsnx.site` et `www.sdbsnx.site`.
 2. Configurez les enregistrements DNS chez votre registrar :
    - A Record : `76.76.21.21`
    - CNAME `www` : `cname.vercel-dns.com`
@@ -41,4 +41,4 @@ Dans **Settings > Domains** sur Vercel :
 ## 4. Console d'Administration
 
 - URL : `/admin/login`
-- Accès avec : `admin@sdbsnx.com` (mot de passe fort d'au moins 8 caractères).
+- Accès avec : `admin@sdbsnx.site` (mot de passe fort d'au moins 8 caractères).

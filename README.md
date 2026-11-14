@@ -91,7 +91,7 @@ npm run build   # Génère le bundle de production optimisé dans /dist
 ## 🔐 Identifiants et Accès Administrateur
 
 - **Portail d'Administration** : `/admin/login`
-- **Connexion** : `admin@sdbsnx.com` avec un mot de passe d'au moins 8 caractères.
+- **Connexion** : `admin@sdbsnx.site` avec un mot de passe d'au moins 8 caractères.
 
 ---
 

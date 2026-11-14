@@ -144,7 +144,7 @@ export const PrivacyPolicyPage: React.FC = () => {
               <li><strong>Droit d&apos;opposition :</strong> Vous opposer au traitement pour motifs légitimes.</li>
             </ul>
             <p className="mt-3">
-              Pour exercer vos droits, vous pouvez contacter notre référent protection des données par courrier électronique à l&apos;adresse : <span className="text-emerald-600 font-semibold">privacy@sdbsnx.com</span> (ou contact@sdbsnx.com), en mentionnant votre numéro de référence le cas échéant.
+              Pour exercer vos droits, vous pouvez contacter notre référent protection des données par courrier électronique à l&apos;adresse : <span className="text-emerald-600 font-semibold">privacy@sdbsnx.site</span> (ou contact@sdbsnx.site), en mentionnant votre numéro de référence le cas échéant.
             </p>
           </section>
 

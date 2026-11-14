@@ -46,7 +46,7 @@ export const LegalNoticePage: React.FC = () => {
               1. Éditeur de la Plateforme
             </h2>
             <p>
-              Le site internet officiel accessible à l&apos;adresse <span className="text-emerald-600 font-semibold">https://sdbsnx.com</span> est édité par la structure commerciale et technologique :
+              Le site internet officiel accessible à l&apos;adresse <span className="text-emerald-600 font-semibold">https://sdbsnx.site</span> est édité par la structure commerciale et technologique :
             </p>
             <ul className="list-disc pl-5 space-y-1.5 text-[#0B1B3D]/80">
               <li><strong>Nom commercial :</strong> SDBSNX</li>
@@ -54,7 +54,7 @@ export const LegalNoticePage: React.FC = () => {
               <li><strong>Numéro d&apos;immatriculation (RCCM) :</strong> [À COMPLÉTER]</li>
               <li><strong>Numéro d&apos;Identification Fiscale (NINEA) :</strong> [À COMPLÉTER]</li>
               <li><strong>Siège social / Adresse professionnelle :</strong> Dakar, Sénégal</li>
-              <li><strong>Contact électronique :</strong> contact@sdbsnx.com</li>
+              <li><strong>Contact électronique :</strong> contact@sdbsnx.site</li>
               <li><strong>Ligne directe / WhatsApp :</strong> +221 76 624 24 58</li>
               <li><strong>Responsable de la publication :</strong> La Direction de SDBSNX</li>
             </ul>
