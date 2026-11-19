@@ -62,10 +62,10 @@ export const MissionPage: React.FC = () => {
   return (
     <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO 
-        title="Notre Mission & Objectifs Stratégiques | SDBSNX" 
-        description="Découvrez la mission de SDBSNX : mettre la technologie, la cybersécurité et la LegalTech au service des entreprises et institutions en Afrique." 
+        title="Notre Mission & Objectifs Stratégiques | Alkeb.dev"
+        description="Découvrez la mission de Alkeb.dev : mettre la technologie, la cybersécurité et la LegalTech au service des entreprises et institutions en Afrique."
         canonicalPath="/mission" 
-        keywords="mission SDBSNX, objectifs stratégiques, transformation numérique Sénégal, ingénierie informatique Dakar, souveraineté numérique, LegalTech Afrique"
+        keywords="mission Alkeb.dev, objectifs stratégiques, transformation numérique Sénégal, ingénierie informatique Dakar, souveraineté numérique, LegalTech Afrique"
       />
       <div className="max-w-5xl mx-auto space-y-12">
         
@@ -96,7 +96,7 @@ export const MissionPage: React.FC = () => {
             &ldquo;Mettre nos compétences technologiques au service des entreprises, des organisations et des populations.&rdquo;
           </h2>
           <p className="text-xs sm:text-base text-slate-500 leading-relaxed">
-            La mission de SDBSNX ne s&apos;arrête pas à la fourniture de code source : elle consiste à donner aux dirigeants, professionnels du droit et organisations les moyens techniques de protéger leurs opérations et de se développer en toute confiance.
+            La mission de Alkeb.dev ne s&apos;arrête pas à la fourniture de code source : elle consiste à donner aux dirigeants, professionnels du droit et organisations les moyens techniques de protéger leurs opérations et de se développer en toute confiance.
           </p>
         </div>
 

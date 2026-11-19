@@ -24,10 +24,10 @@ export const CookiesPolicyPage: React.FC = () => {
   return (
     <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO 
-        title="Politique relative aux Cookies & Traceurs | SDBSNX" 
-        description="Gestion des cookies et du stockage local sur la plateforme SDBSNX. Respect strict de la vie privée sans traceurs intrusifs." 
+        title="Politique relative aux Cookies & Traceurs | Alkeb.dev"
+        description="Gestion des cookies et du stockage local sur la plateforme Alkeb.dev. Respect strict de la vie privée sans traceurs intrusifs."
         canonicalPath="/politique-cookies" 
-        keywords="cookies SDBSNX, traceurs web, consentement cookies Sénégal, respect de la vie privée"
+        keywords="cookies Alkeb.dev, traceurs web, consentement cookies Sénégal, respect de la vie privée"
       />
       <div className="max-w-4xl mx-auto space-y-10">
 
@@ -113,7 +113,7 @@ export const CookiesPolicyPage: React.FC = () => {
               2. Cookies Strictement Nécessaires (Non désactivables)
             </h3>
             <p>
-              Ces cookies et éléments de stockage local garantissent le fonctionnement technique et la sécurité fondamentale de la plateforme SDBSNX. Sans eux, le site ne peut fonctionner de manière fiable.
+              Ces cookies et éléments de stockage local garantissent le fonctionnement technique et la sécurité fondamentale de la plateforme Alkeb.dev. Sans eux, le site ne peut fonctionner de manière fiable.
             </p>
             <div className="overflow-x-auto pt-2">
               <table className="w-full text-left text-xs border border-slate-200 rounded-xl overflow-hidden">
@@ -145,7 +145,7 @@ export const CookiesPolicyPage: React.FC = () => {
               3. Absence de Traceurs Publicitaires Tiers
             </h3>
             <p>
-              Fidèle à son engagement pour la souveraineté numérique et le respect de la vie privée, <strong>SDBSNX ne dépose aucun cookie publicitaire tiers, ni tracker de reciblage commercial</strong> sur vos appareils.
+              Fidèle à son engagement pour la souveraineté numérique et le respect de la vie privée, <strong>Alkeb.dev ne dépose aucun cookie publicitaire tiers, ni tracker de reciblage commercial</strong> sur vos appareils.
             </p>
           </section>
 

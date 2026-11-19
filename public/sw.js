@@ -1,11 +1,14 @@
-const CACHE_NAME = 'sdbsnx-static-v1';
+const CACHE_NAME = 'alkeb-static-v3';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/logo/sdbsnx-logo.png',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png',
+  '/alkeb-social.png',
+  '/logo/alkeb-logo.png',
+  '/icons/alkeb-icon-32.png',
+  '/icons/alkeb-touch-icon.png',
+  '/icons/alkeb-icon-192.png',
+  '/icons/alkeb-icon-512.png',
 ];
 
 // Install: pre-cache static shell
@@ -78,4 +81,3 @@ self.addEventListener('fetch', (event) => {
       })
   );
 });
-

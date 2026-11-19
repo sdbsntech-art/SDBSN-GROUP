@@ -52,7 +52,7 @@ export const AdminLoginPage: React.FC = () => {
             Portail d&apos;Administration
           </h1>
           <p className="text-xs text-white/60">
-            Espace d&apos;instruction et de suivi confidentiel des requêtes clients SDBSNX.
+            Espace d&apos;instruction et de suivi confidentiel des requêtes clients Alkeb.dev.
           </p>
         </div>
 

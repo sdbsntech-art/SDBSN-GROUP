@@ -119,7 +119,7 @@ export const AdminDashboardPage: React.FC = () => {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
         <div>
           <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-400 font-bold block">
-            SDBSNX INTERNAL SECURE CONSOLE (WEB3FORMS SYNC)
+            Alkeb.dev INTERNAL SECURE CONSOLE (WEB3FORMS SYNC)
           </span>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white font-display">
             Gestion des Requêtes Clients

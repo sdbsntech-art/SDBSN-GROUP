@@ -8,8 +8,8 @@ export const VisionPage: React.FC = () => {
   return (
     <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO
-        title="Notre Vision Technologique pour le Sénégal & l'Afrique | SDBSNX"
-        description="Bâtir un écosystème numérique africain souverain, protecteur et technologiquement exemplaire. Découvrez la vision prospective et les engagements durables de SDBSNX."
+        title="Notre Vision Technologique pour le Sénégal & l'Afrique | Alkeb.dev"
+        description="Bâtir un écosystème numérique africain souverain, protecteur et technologiquement exemplaire. Découvrez la vision prospective et les engagements durables de Alkeb.dev."
         keywords="vision technologique Afrique, souveraineté numérique Sénégal, transformation digitale Dakar, innovation logicielle Afrique"
         canonicalPath="/vision"
       />

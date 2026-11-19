@@ -6,10 +6,10 @@ export const TermsPage: React.FC = () => {
   return (
     <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO 
-        title="Conditions Générales d'Utilisation (CGU) | SDBSNX" 
-        description="Conditions générales d'utilisation du portail SDBSNX. Règles régissant l'utilisation des contenus, services en ligne et droits de propriété intellectuelle." 
+        title="Conditions Générales d'Utilisation (CGU) | Alkeb.dev"
+        description="Conditions générales d'utilisation du portail Alkeb.dev. Règles régissant l'utilisation des contenus, services en ligne et droits de propriété intellectuelle."
         canonicalPath="/conditions-utilisation" 
-        keywords="CGU SDBSNX, conditions utilisation, propriété intellectuelle, services en ligne Sénégal"
+        keywords="CGU Alkeb.dev, conditions utilisation, propriété intellectuelle, services en ligne Sénégal"
       />
       <div className="max-w-4xl mx-auto space-y-10">
 
@@ -24,7 +24,7 @@ export const TermsPage: React.FC = () => {
             Conditions Générales d&apos;Utilisation (CGU)
           </h1>
           <p className="text-slate-500 text-sm">
-            Cadre d&apos;accès et d&apos;utilisation de la plateforme numérique institutionnelle SDBSNX.
+            Cadre d&apos;accès et d&apos;utilisation de la plateforme numérique institutionnelle Alkeb.dev.
           </p>
         </div>
 
@@ -36,7 +36,7 @@ export const TermsPage: React.FC = () => {
               1. Objet et Champ d&apos;Application
             </h2>
             <p>
-              Les présentes Conditions Générales d&apos;Utilisation (ci-après les &ldquo;CGU&rdquo;) régissent l&apos;accès et l&apos;utilisation du site internet et des services numériques édités par SDBSNX. Toute navigation sur le site emporte acceptation sans réserve des présentes conditions.
+              Les présentes Conditions Générales d&apos;Utilisation (ci-après les &ldquo;CGU&rdquo;) régissent l&apos;accès et l&apos;utilisation du site internet et des services numériques édités par Alkeb.dev. Toute navigation sur le site emporte acceptation sans réserve des présentes conditions.
             </p>
           </section>
 
@@ -45,7 +45,7 @@ export const TermsPage: React.FC = () => {
               2. Accès à la Plateforme &amp; Sécurité
             </h2>
             <p>
-              SDBSNX met en œuvre tous les moyens raisonnables pour assurer un accès sécurisé et ininterrompu à sa plateforme. Toutefois, SDBSNX ne saurait être tenue responsable des interruptions de service dues à des opérations de maintenance, des pannes d&apos;infrastructure réseau ou des cas de force majeure.
+              Alkeb.dev met en œuvre tous les moyens raisonnables pour assurer un accès sécurisé et ininterrompu à sa plateforme. Toutefois, Alkeb.dev ne saurait être tenue responsable des interruptions de service dues à des opérations de maintenance, des pannes d&apos;infrastructure réseau ou des cas de force majeure.
             </p>
           </section>
 
@@ -61,7 +61,7 @@ export const TermsPage: React.FC = () => {
                 Toute tentative d&apos;intrusion, d&apos;altération de code, de décompilation ou d&apos;injection SQL / XSS sur les formulaires et API de la plateforme.
               </li>
               <li>
-                Tout test d&apos;intrusion ou scan de vulnérabilités automatisé à l&apos;encontre des serveurs SDBSNX sans mandat contractuel écrit et signé par la direction.
+                Tout test d&apos;intrusion ou scan de vulnérabilités automatisé à l&apos;encontre des serveurs Alkeb.dev sans mandat contractuel écrit et signé par la direction.
               </li>
               <li>
                 L&apos;extraction automatisée non autorisée de données (scraping) ou la surcharge délibérée des infrastructures (attaques par déni de service).
@@ -77,7 +77,7 @@ export const TermsPage: React.FC = () => {
               4. Propriété Intellectuelle &amp; Droits Réservés
             </h2>
             <p>
-              L&apos;ensemble des éléments composant le site (marques, logos, textes, structures de données, chartes graphiques, illustrations et logiciels) demeurent la propriété exclusive de SDBSNX. Aucune licence d&apos;exploitation ni droit d&apos;usage commercial n&apos;est concédé à l&apos;utilisateur en dehors de la consultation normale du site.
+              L&apos;ensemble des éléments composant le site (marques, logos, textes, structures de données, chartes graphiques, illustrations et logiciels) demeurent la propriété exclusive de Alkeb.dev. Aucune licence d&apos;exploitation ni droit d&apos;usage commercial n&apos;est concédé à l&apos;utilisateur en dehors de la consultation normale du site.
             </p>
           </section>
 
@@ -86,10 +86,10 @@ export const TermsPage: React.FC = () => {
               5. Limitation de Responsabilité
             </h2>
             <p>
-              Les informations et descriptifs de solutions figurant sur le site sont fournis à titre indicatif et institutionnel. Bien que SDBSNX s&apos;efforce de diffuser des informations vérifiées et actualisées, elle ne peut garantir l&apos;exhaustivité immédiate des contenus.
+              Les informations et descriptifs de solutions figurant sur le site sont fournis à titre indicatif et institutionnel. Bien que Alkeb.dev s&apos;efforce de diffuser des informations vérifiées et actualisées, elle ne peut garantir l&apos;exhaustivité immédiate des contenus.
             </p>
             <p>
-              Seuls les contrats, devis et cahiers des charges formellement signés entre SDBSNX et ses clients ont valeur d&apos;engagement contractuel juridique et technique.
+              Seuls les contrats, devis et cahiers des charges formellement signés entre Alkeb.dev et ses clients ont valeur d&apos;engagement contractuel juridique et technique.
             </p>
           </section>
 

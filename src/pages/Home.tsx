@@ -54,7 +54,7 @@ const TECH_DEMO_SOLUTIONS: TechDemoSolution[] = [
     id: 'solution-legaltech',
     episode: 'DÉMO #01',
     title: 'Plateforme LegalTech, Parapheur & Signature Électronique Certifiée',
-    department: 'Pôle Ingénierie LegalTech SDBSNX',
+    department: 'Pôle Ingénierie LegalTech Alkeb.dev',
     targetAudience: 'Cabinets d\'Avocats, Études Notariales & Directions Juridiques',
     category: 'LegalTech & Dématérialisation',
     categoryColor: 'emerald',
@@ -66,7 +66,7 @@ const TECH_DEMO_SOLUTIONS: TechDemoSolution[] = [
     youtubeUrl: 'https://www.youtube.com/watch?v=CqEsIDrEASs',
     videoSourceAuthor: 'Rootstack Technology Insights (Licence libre de diffusion API)',
     videoTopic: 'Architecture des technologies juridiques et automatisation documentaire',
-    summary: 'Présentation des principes d\'architecture logicielle développés en interne chez SDBSNX : gestion électronique de documents (GED) juridique, archivage à valeur probante conforme à la loi sénégalaise n° 2008-08, et signature électronique sécurisée par empreinte cryptographique SHA-256.',
+    summary: 'Présentation des principes d\'architecture logicielle développés en interne chez Alkeb.dev : gestion électronique de documents (GED) juridique, archivage à valeur probante conforme à la loi sénégalaise n° 2008-08, et signature électronique sécurisée par empreinte cryptographique SHA-256.',
     metric: 'Traçabilité probatoire 100% infalsifiable & réduction drastique des délais administratifs',
     inHousePillar: 'Conception logicielle souveraine conforme aux règles déontologiques et réglementations OHADA & Sénégal.'
   },
@@ -74,7 +74,7 @@ const TECH_DEMO_SOLUTIONS: TechDemoSolution[] = [
     id: 'solution-cybersecurity',
     episode: 'DÉMO #02',
     title: 'Suite Cybersécurité Offensive, Audit de Code & Résilience des SI',
-    department: 'Laboratoire Cybersécurité SDBSNX',
+    department: 'Laboratoire Cybersécurité Alkeb.dev',
     targetAudience: 'Banques, Fintechs, Opérateurs & Systèmes d\'Information Critiques',
     category: 'Cybersécurité & Défense',
     categoryColor: 'blue',
@@ -86,7 +86,7 @@ const TECH_DEMO_SOLUTIONS: TechDemoSolution[] = [
     youtubeUrl: 'https://www.youtube.com/watch?v=xUmf-aGC5qc',
     videoSourceAuthor: 'Lumiverse Security Lab (Licence libre de diffusion API)',
     videoTopic: 'Défense des flux financiers, détection des menaces et résilience des plateformes bancaires',
-    summary: 'Méthodologie d\'audit et d\'évaluation technique appliquée par SDBSNX : détection des vecteurs d\'intrusion selon les standards OWASP, tests de pénétration des endpoints, sécurisation des API transactionnelles et surveillance continue de la conformité.',
+    summary: 'Méthodologie d\'audit et d\'évaluation technique appliquée par Alkeb.dev : détection des vecteurs d\'intrusion selon les standards OWASP, tests de pénétration des endpoints, sécurisation des API transactionnelles et surveillance continue de la conformité.',
     metric: 'Neutralisation préventive de 100% des vulnérabilités critiques identifiées',
     inHousePillar: 'Missions d\'audit exécutées sous convention formelle d\'autorisation écrite avec protocole d\'accord préalable.'
   },
@@ -94,7 +94,7 @@ const TECH_DEMO_SOLUTIONS: TechDemoSolution[] = [
     id: 'solution-software-saas',
     episode: 'DÉMO #03',
     title: 'Développement d\'Applications Web, Mobiles PWA & Plateformes SaaS',
-    department: 'Pôle Développement Applicatif SDBSNX',
+    department: 'Pôle Développement Applicatif Alkeb.dev',
     targetAudience: 'Startups à fort volume, Entreprises en expansion & PME',
     category: 'Ingénierie Logicielle',
     categoryColor: 'emerald',
@@ -106,7 +106,7 @@ const TECH_DEMO_SOLUTIONS: TechDemoSolution[] = [
     youtubeUrl: 'https://www.youtube.com/watch?v=oFRfMkxCoss',
     videoSourceAuthor: 'Uplatz Enterprise Architecture (Licence libre de diffusion API)',
     videoTopic: 'Conception d\'architectures cloud distribuées pour plateformes métiers à fort trafic',
-    summary: 'Démonstration des modèles d\'ingénierie logicielle conçus chez SDBSNX : découplage micro-services, applications progressives (PWA) synchronisées hors-ligne, persistance des états en temps réel et performances optimisées pour les environnements réseau africains.',
+    summary: 'Démonstration des modèles d\'ingénierie logicielle conçus chez Alkeb.dev : découplage micro-services, applications progressives (PWA) synchronisées hors-ligne, persistance des états en temps réel et performances optimisées pour les environnements réseau africains.',
     metric: 'Temps de réponse inférieur à 200ms sur réseaux mobiles & évolutivité prouvée',
     inHousePillar: 'Code source proprietary ou open-source audité, zéro dépendance opaque, tests automatisés continus.'
   },
@@ -114,7 +114,7 @@ const TECH_DEMO_SOLUTIONS: TechDemoSolution[] = [
     id: 'solution-consulting-govtech',
     episode: 'DÉMO #04',
     title: 'Schéma Directeur SI, Modernisation Institutionnelle & Urbanisation',
-    department: 'Pôle Conseil & Architecture SI SDBSNX',
+    department: 'Pôle Conseil & Architecture SI Alkeb.dev',
     targetAudience: 'Institutions Publiques, Agences d\'État & Organisations Régionales',
     category: 'Conseil & Urbanisation SI',
     categoryColor: 'blue',
@@ -126,7 +126,7 @@ const TECH_DEMO_SOLUTIONS: TechDemoSolution[] = [
     youtubeUrl: 'https://www.youtube.com/watch?v=f-ugxtNzbCY',
     videoSourceAuthor: 'techUK Digital Insights (Licence libre de diffusion API)',
     videoTopic: 'Impact et méthodologies de transformation numérique des organisations et services publics',
-    summary: 'Approche stratégique éprouvée de SDBSNX pour moderniser les processus administratifs : cartographie des systèmes hérités (legacy), dématérialisation des démarches citoyennes, gouvernance sécurisée des données et conduite du changement.',
+    summary: 'Approche stratégique éprouvée de Alkeb.dev pour moderniser les processus administratifs : cartographie des systèmes hérités (legacy), dématérialisation des démarches citoyennes, gouvernance sécurisée des données et conduite du changement.',
     metric: 'Dématérialisation complète des flux documentaires et satisfaction usagers certifiée',
     inHousePillar: 'Gouvernance alignée sur la souveraineté numérique et le strict respect des lois de protection des données.'
   }
@@ -138,9 +138,8 @@ export const HomePage: React.FC = () => {
   return (
     <div className="relative overflow-hidden w-full bg-white text-[#0B1B3D]">
       <SEO
-        title="SDBSNX — Plateforme LegalTech, Cybersécurité & Ingénierie Numérique au Sénégal"
-        description="Éditeur de solutions LegalTech souveraines et cabinet d'ingénierie logicielle à Dakar : Parapheur électronique certifié (Loi 2008-08), GED juridique pour cabinets d'avocats & notaires, audits de cybersécurité offensive et applications cloud sur-mesure."
-        keywords="LegalTech Sénégal, LegalTech Dakar, signature électronique Sénégal loi 2008-08, logiciel cabinet avocat Dakar, dématérialisation actes juridiques, coffre-fort numérique OHADA, GED juridique, audit cybersécurité Sénégal, pentest Dakar, développement application web mobile Dakar, ingénierie logicielle Sénégal"
+        title="Alkeb.dev — Solutions numériques au Sénégal"
+        description="Alkeb.dev accompagne les organisations au Sénégal en LegalTech, cybersécurité, développement web et mobile, et conseil numérique."
         canonicalPath="/"
       />
       
@@ -186,7 +185,7 @@ export const HomePage: React.FC = () => {
                 </h1>
 
                 <p className="text-base sm:text-xl font-medium text-slate-700 leading-relaxed max-w-2xl">
-                  SDBSNX propulse les entreprises, startups et institutions d&apos;Afrique avec des solutions logicielles d&apos;excellence, des audits de cybersécurité stricts et des plateformes LegalTech de pointe.
+                  Alkeb.dev propulse les entreprises, startups et institutions d&apos;Afrique avec des solutions logicielles d&apos;excellence, des audits de cybersécurité stricts et des plateformes LegalTech de pointe.
                 </p>
               </motion.div>
 
@@ -231,7 +230,7 @@ export const HomePage: React.FC = () => {
                 </Link>
 
                 <a
-                  href={getWhatsAppUrl('Bonjour SDBSNX, je souhaite échanger au sujet de mon projet.')}
+                  href={getWhatsAppUrl('Bonjour Alkeb.dev, je souhaite échanger au sujet de mon projet.')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-bold text-[#0B1B3D] hover:text-[#059669] bg-white hover:bg-slate-50 border border-slate-300 shadow-sm flex items-center justify-center space-x-2 text-sm transition-all"
@@ -275,7 +274,7 @@ export const HomePage: React.FC = () => {
                 <div className="relative aspect-[4/3] sm:aspect-[16/11] overflow-hidden">
                   <img
                     src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80"
-                    alt="Équipe d'ingénieurs et talents technologiques africains SDBSNX"
+                    alt="Équipe d'ingénieurs et talents technologiques africains Alkeb.dev"
                     className="w-full h-full object-cover object-top sm:object-center group-hover:scale-105 transition-transform duration-700"
                     loading="eager"
                   />
@@ -445,11 +444,11 @@ export const HomePage: React.FC = () => {
             </h2>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              SDBSNX développe en interne des progiciels haute sécurité pour équiper les cabinets d&apos;avocats, études notariales, directions juridiques d&apos;entreprises et institutions en Afrique. Conforme à la loi sénégalaise n° 2008-08 et aux standards OHADA.
+              Alkeb.dev développe en interne des progiciels haute sécurité pour équiper les cabinets d&apos;avocats, études notariales, directions juridiques d&apos;entreprises et institutions en Afrique. Conforme à la loi sénégalaise n° 2008-08 et aux standards OHADA.
             </p>
           </div>
 
-          {/* 4 Pillars Grid of SDBSNX LegalTech */}
+          {/* 4 Pillars Grid of Alkeb.dev LegalTech */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
             {/* Pillar 1 */}
@@ -538,7 +537,7 @@ export const HomePage: React.FC = () => {
                   Une conformité rigoureuse avec la Loi n° 2008-08 &amp; la CDP
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Toutes les solutions LegalTech conçues par SDBSNX s&apos;articulent autour du respect strict des textes de la République du Sénégal régissant les transactions électroniques, la protection des données à caractère personnel (Loi 2008-12) et les actes uniformes OHADA.
+                  Toutes les solutions LegalTech conçues par Alkeb.dev s&apos;articulent autour du respect strict des textes de la République du Sénégal régissant les transactions électroniques, la protection des données à caractère personnel (Loi 2008-12) et les actes uniformes OHADA.
                 </p>
               </div>
 
@@ -550,7 +549,7 @@ export const HomePage: React.FC = () => {
                   Découvrir l&apos;Offre LegalTech
                 </Link>
                 <a
-                  href={getWhatsAppUrl('Bonjour SDBSNX, je souhaite une démonstration privée de votre suite LegalTech pour mon cabinet ou mon entreprise.')}
+                  href={getWhatsAppUrl('Bonjour Alkeb.dev, je souhaite une démonstration privée de votre suite LegalTech pour mon cabinet ou mon entreprise.')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-xs text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-all text-center flex items-center justify-center gap-2"
@@ -581,7 +580,7 @@ export const HomePage: React.FC = () => {
               Nos Solutions &amp; Démonstrations en Vidéo
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Explorez les architectures logicielles, standards de sécurité et méthodologies appliqués par SDBSNX dans la conception de ses plateformes métiers.
+              Explorez les architectures logicielles, standards de sécurité et méthodologies appliqués par Alkeb.dev dans la conception de ses plateformes métiers.
             </p>
           </div>
 
@@ -680,7 +679,7 @@ export const HomePage: React.FC = () => {
           <div className="mt-8 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-500 leading-relaxed text-center sm:text-left flex items-start gap-3">
             <ShieldAlert className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
             <p>
-              <strong>Transparence &amp; Déontologie :</strong> Les capsules vidéo ci-dessus sont des démonstrations et synthèses technologiques présentées à titre pédagogique pour illustrer les principes d&apos;ingénierie que SDBSNX applique. L&apos;ensemble de nos solutions, progiciels et plateformes sont conçus, développés et sécurisés sur-mesure dans nos laboratoires à Dakar pour chaque client et partenaire.
+              <strong>Transparence &amp; Déontologie :</strong> Les capsules vidéo ci-dessus sont des démonstrations et synthèses technologiques présentées à titre pédagogique pour illustrer les principes d&apos;ingénierie que Alkeb.dev applique. L&apos;ensemble de nos solutions, progiciels et plateformes sont conçus, développés et sécurisés sur-mesure dans nos laboratoires à Dakar pour chaque client et partenaire.
             </p>
           </div>
 
@@ -804,7 +803,7 @@ export const HomePage: React.FC = () => {
                 {/* Architecture Summary */}
                 <div className="space-y-2">
                   <h5 className="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono">
-                    Architecture &amp; Capacités Techniques SDBSNX
+                    Architecture &amp; Capacités Techniques Alkeb.dev
                   </h5>
                   <p className="text-slate-700 leading-relaxed text-sm">
                     {activeSolution.summary}
@@ -820,7 +819,7 @@ export const HomePage: React.FC = () => {
                 {/* In-House Commitment */}
                 <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
                   <span className="text-[11px] font-mono uppercase text-slate-400 font-bold block">
-                    Garantie d&apos;Ingénierie Interne SDBSNX
+                    Garantie d&apos;Ingénierie Interne Alkeb.dev
                   </span>
                   <p className="text-xs sm:text-sm text-slate-700 font-medium">
                     {activeSolution.inHousePillar}
@@ -829,14 +828,14 @@ export const HomePage: React.FC = () => {
 
                 {/* Video Origin & Legal Notice */}
                 <div className="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200/80 text-[11px] text-amber-800 leading-relaxed">
-                  <strong>Notice de diffusion :</strong> {activeSolution.videoSourceAuthor}. Thématique : {activeSolution.videoTopic}. Vidéo de référence technique partagée via l&apos;API officielle YouTube. SDBSNX conçoit et déploie ses propres progiciels propriétaires de façon autonome.
+                  <strong>Notice de diffusion :</strong> {activeSolution.videoSourceAuthor}. Thématique : {activeSolution.videoTopic}. Vidéo de référence technique partagée via l&apos;API officielle YouTube. Alkeb.dev conçoit et déploie ses propres progiciels propriétaires de façon autonome.
                 </div>
 
                 {/* Modal Footer CTAs */}
                 <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
                   <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full sm:w-auto">
                     <a
-                      href={getWhatsAppUrl(`Bonjour SDBSNX, je souhaite une démonstration personnalisée pour la solution : ${activeSolution.title}`)}
+                      href={getWhatsAppUrl(`Bonjour Alkeb.dev, je souhaite une démonstration personnalisée pour la solution : ${activeSolution.title}`)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto px-5 py-2.5 rounded-xl font-bold text-xs bg-[#10B981] hover:bg-[#059669] text-[#04231A] flex items-center justify-center gap-2 transition-all shadow-sm"
@@ -879,7 +878,7 @@ export const HomePage: React.FC = () => {
             
             <div className="lg:col-span-6 space-y-6">
               <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs text-[#059669] font-mono uppercase font-bold">
-                <span>À propos de SDBSNX</span>
+                <span>À propos de Alkeb.dev</span>
               </div>
 
               <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0B1B3D] tracking-tight font-display">
@@ -887,7 +886,7 @@ export const HomePage: React.FC = () => {
               </h2>
 
               <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                SDBSNX est une agence technologique d&apos;un genre nouveau. Nous ne concevons pas le numérique comme un simple effet de mode, mais comme un levier fondamental de souveraineté, de transformation économique et d&apos;efficacité organisationnelle au Sénégal et en Afrique.
+                Alkeb.dev est une agence technologique d&apos;un genre nouveau. Nous ne concevons pas le numérique comme un simple effet de mode, mais comme un levier fondamental de souveraineté, de transformation économique et d&apos;efficacité organisationnelle au Sénégal et en Afrique.
               </p>
 
               <div className="p-5 rounded-2xl bg-white border-l-4 border-[#10B981] my-4 border border-slate-200 shadow-xs">
@@ -895,7 +894,7 @@ export const HomePage: React.FC = () => {
                   &ldquo;La technologie n&apos;a de valeur que lorsqu&apos;elle répond à un besoin réel, améliore une situation et crée un impact positif.&rdquo;
                 </p>
                 <span className="block mt-2 text-xs text-[#059669] uppercase tracking-wider font-mono font-bold">
-                  — Conviction Fondatrice SDBSNX
+                  — Conviction Fondatrice Alkeb.dev
                 </span>
               </div>
 
@@ -1054,7 +1053,7 @@ export const HomePage: React.FC = () => {
               Socle Éthique
             </span>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0B1B3D] font-display">
-              THE SDBSNX CORE VALUES
+              THE Alkeb.dev CORE VALUES
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">
               Nos valeurs ne sont pas des slogans. Elles constituent la boussole incontournable de chacun de nos engagements techniques et humains.
@@ -1078,7 +1077,7 @@ export const HomePage: React.FC = () => {
               THE STANDARD WE LIVE BY
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">
-              Les principes cardinaux qui forgent la culture de rigueur, de discipline et de loyauté de l&apos;équipe SDBSNX.
+              Les principes cardinaux qui forgent la culture de rigueur, de discipline et de loyauté de l&apos;équipe Alkeb.dev.
             </p>
           </div>
 
@@ -1119,7 +1118,7 @@ export const HomePage: React.FC = () => {
               </Link>
               
               <a
-                href={getWhatsAppUrl('Bonjour SDBSNX, je souhaite démarrer un projet technologique.')}
+                href={getWhatsAppUrl('Bonjour Alkeb.dev, je souhaite démarrer un projet technologique.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 shadow-sm transition-all text-sm flex items-center justify-center space-x-2"

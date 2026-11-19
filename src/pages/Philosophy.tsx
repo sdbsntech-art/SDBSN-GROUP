@@ -9,10 +9,10 @@ export const PhilosophyPage: React.FC = () => {
   return (
     <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO 
-        title="Notre Philosophie & Maximes Directrices | SDBSNX" 
-        description="The Standard We Live By : découvrez la philosophie opérationnelle et les maximes directrices qui animent le travail des équipes SDBSNX." 
+        title="Notre Philosophie & Maximes Directrices | Alkeb.dev"
+        description="The Standard We Live By : découvrez la philosophie opérationnelle et les maximes directrices qui animent le travail des équipes Alkeb.dev."
         canonicalPath="/philosophie" 
-        keywords="philosophie SDBSNX, rigueur technologique, standard d'excellence informatique, intégrité numérique, ingénierie logicielle éthique"
+        keywords="philosophie Alkeb.dev, rigueur technologique, standard d'excellence informatique, intégrité numérique, ingénierie logicielle éthique"
       />
       <div className="max-w-6xl mx-auto space-y-12">
         
@@ -43,7 +43,7 @@ export const PhilosophyPage: React.FC = () => {
             </span>
           </div>
           <p className="text-sm sm:text-lg text-[#0B1B3D] leading-relaxed">
-            La technologie sans éthique est une fragilité. Chez SDBSNX, nous cultivons une discipline intellectuelle et opérationnelle où chaque réalisation est mesurée à l&apos;aune de son utilité réelle, de sa robustesse et du respect strict de la parole donnée.
+            La technologie sans éthique est une fragilité. Chez Alkeb.dev, nous cultivons une discipline intellectuelle et opérationnelle où chaque réalisation est mesurée à l&apos;aune de son utilité réelle, de sa robustesse et du respect strict de la parole donnée.
           </p>
         </div>
 

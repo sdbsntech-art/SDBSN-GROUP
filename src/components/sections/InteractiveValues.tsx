@@ -20,7 +20,7 @@ interface ValueItem {
   icon: React.ReactNode;
 }
 
-export const SDBSNX_VALUES: ValueItem[] = [
+export const ALKEB_VALUES: ValueItem[] = [
   {
     id: 'integrity',
     number: '01',
@@ -102,7 +102,7 @@ export const SDBSNX_VALUES: ValueItem[] = [
 ];
 
 export const InteractiveValues: React.FC = () => {
-  const [activeValue, setActiveValue] = useState<ValueItem>(SDBSNX_VALUES[0]);
+  const [activeValue, setActiveValue] = useState<ValueItem>(ALKEB_VALUES[0]);
 
   return (
     <div className="relative w-full">
@@ -110,7 +110,7 @@ export const InteractiveValues: React.FC = () => {
         
         {/* Left Column: Interactive Value Selector list */}
         <div className="lg:col-span-5 space-y-2.5">
-          {SDBSNX_VALUES.map((val) => {
+          {ALKEB_VALUES.map((val) => {
             const isSelected = activeValue.id === val.id;
             return (
               <button

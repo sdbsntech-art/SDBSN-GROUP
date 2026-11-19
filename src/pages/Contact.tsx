@@ -98,10 +98,10 @@ export const ContactPage: React.FC = () => {
   return (
     <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO 
-        title="Contactez SDBSNX | Consultation Technique & Devis Numérique Dakar" 
-        description="Prenez contact avec les experts SDBSNX à Dakar : LegalTech, Cybersécurité, Développement d'applications web & mobiles, Conseil en gouvernance des SI. Devis confidentiel sous 24h-48h." 
+        title="Contactez Alkeb.dev | Consultation Technique & Devis Numérique Dakar"
+        description="Prenez contact avec les experts Alkeb.dev à Dakar : LegalTech, Cybersécurité, Développement d'applications web & mobiles, Conseil en gouvernance des SI. Devis confidentiel sous 24h-48h."
         canonicalPath="/contact" 
-        keywords="contact SDBSNX, devis informatique Sénégal, cabinet cybersécurité Dakar, agence web Dakar, WhatsApp 766242458, consultation technique Dakar"
+        keywords="contact Alkeb.dev, devis informatique Sénégal, cabinet cybersécurité Dakar, agence web Dakar, WhatsApp 766242458, consultation technique Dakar"
       />
       <div className="max-w-4xl mx-auto space-y-10">
 
@@ -201,7 +201,7 @@ export const ContactPage: React.FC = () => {
                 <div>
                   <div className="flex items-center gap-2">
                     <h3 className="text-sm font-bold text-[#0B1B3D] font-display">
-                      Ligne directe WhatsApp SDBSNX
+                      Ligne directe WhatsApp Alkeb.dev
                     </h3>
                     <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-100 text-[#047857]">
                       En ligne
@@ -416,7 +416,7 @@ export const ContactPage: React.FC = () => {
                     className="mt-1 h-4 w-4 rounded border-slate-300 text-[#10B981] focus:ring-[#10B981]"
                   />
                   <span className="text-xs text-slate-600 leading-relaxed">
-                    J&apos;accepte que les informations saisies soient traitées par SDBSNX dans le cadre de l&apos;instruction technique de ma demande, conformément à la{' '}
+                    J&apos;accepte que les informations saisies soient traitées par Alkeb.dev dans le cadre de l&apos;instruction technique de ma demande, conformément à la{' '}
                     <Link to="/politique-confidentialite" className="text-[#10B981] font-bold hover:underline">
                       Politique de Confidentialité
                     </Link>{' '}

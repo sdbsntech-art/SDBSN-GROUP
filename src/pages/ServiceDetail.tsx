@@ -40,10 +40,10 @@ export const ServiceDetailPage: React.FC = () => {
   return (
     <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO 
-        title={`${service.title} | Expertises SDBSNX`}
+        title={`${service.title} | Expertises Alkeb.dev`}
         description={service.shortDescription}
         canonicalPath={`/services/${service.slug}`}
-        keywords={`${service.title}, ${service.categoryName}, SDBSNX Sénégal, services numériques Dakar, expertise informatique`}
+        keywords={`${service.title}, ${service.categoryName}, Alkeb.dev Sénégal, services numériques Dakar, expertise informatique`}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',
@@ -51,8 +51,8 @@ export const ServiceDetailPage: React.FC = () => {
           description: service.fullDescription,
           provider: {
             '@type': 'Organization',
-            name: 'SDBSNX',
-            url: 'https://sdbsnx.site'
+            name: 'Alkeb.dev',
+            url: 'https://alkeb.dev'
           },
           areaServed: {
             '@type': 'Country',

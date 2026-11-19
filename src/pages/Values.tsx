@@ -9,10 +9,10 @@ export const ValuesPage: React.FC = () => {
   return (
     <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO 
-        title="Nos Valeurs & Éthique Professionnelle | SDBSNX" 
-        description="Les 7 piliers éthiques et opérationnels de SDBSNX : Intégrité, Confidentialité absolue, Rigueur technique, Souveraineté et Respect de la déontologie juridique." 
+        title="Nos Valeurs & Éthique Professionnelle | Alkeb.dev"
+        description="Les 7 piliers éthiques et opérationnels de Alkeb.dev : Intégrité, Confidentialité absolue, Rigueur technique, Souveraineté et Respect de la déontologie juridique."
         canonicalPath="/valeurs" 
-        keywords="valeurs SDBSNX, éthique informatique, cybersécurité Sénégal, déontologie juridique, conformité RGPD CDP Sénégal, secret professionnel"
+        keywords="valeurs Alkeb.dev, éthique informatique, cybersécurité Sénégal, déontologie juridique, conformité RGPD CDP Sénégal, secret professionnel"
       />
       <div className="max-w-6xl mx-auto space-y-12">
         
@@ -27,10 +27,10 @@ export const ValuesPage: React.FC = () => {
             <span>Code d&apos;Éthique &amp; Culture</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-[#0B1B3D] tracking-tight font-display">
-            THE SDBSNX CORE VALUES
+            THE Alkeb.dev CORE VALUES
           </h1>
           <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-            Les sept piliers éthiques et opérationnels qui définissent l&apos;identité et la rigueur de SDBSNX dans chaque engagement.
+            Les sept piliers éthiques et opérationnels qui définissent l&apos;identité et la rigueur de Alkeb.dev dans chaque engagement.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export const ValuesPage: React.FC = () => {
             <h3 className="text-base sm:text-lg font-bold text-[#0B1B3D]">Notre Règle d&apos;Or Opérationnelle</h3>
           </div>
           <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-            Chez SDBSNX, ces valeurs ne sont pas de simples déclarations d&apos;intention : elles sont inscrites dans nos procédures de contrôle qualité, dans nos revues de code, dans notre approche contractuelle et dans la relation avec chacun de nos collaborateurs et clients.
+            Chez Alkeb.dev, ces valeurs ne sont pas de simples déclarations d&apos;intention : elles sont inscrites dans nos procédures de contrôle qualité, dans nos revues de code, dans notre approche contractuelle et dans la relation avec chacun de nos collaborateurs et clients.
           </p>
           <div className="pt-2">
             <Link

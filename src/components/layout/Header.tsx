@@ -65,11 +65,11 @@ export const Header: React.FC = () => {
           
           {/* Logo with modern crisp container */}
           <Link to="/" className="flex items-center space-x-3 group flex-shrink-0">
-            <div className="bg-slate-900 px-2 py-1.5 rounded-xl shadow-sm border border-slate-800 flex items-center justify-center transition-all group-hover:border-[#10B981] group-hover:scale-[1.02]">
+            <div className="flex items-center justify-center rounded-md bg-white transition-all group-hover:scale-[1.02]">
               <img
-                src="/logo/sdbsnx-logo.png"
-                alt="SDBSNX Logo"
-                className="h-8 sm:h-9 md:h-10 w-auto object-contain rounded-lg"
+                src="/logo/alkeb-logo.png"
+                alt="Alkeb.dev"
+                className="h-11 sm:h-12 md:h-14 w-auto object-contain"
               />
             </div>
           </Link>
@@ -114,7 +114,7 @@ export const Header: React.FC = () => {
                     to="/a-propos"
                     className="block px-4 py-2.5 text-sm font-medium text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50 transition-colors"
                   >
-                    À propos de SDBSNX
+                    À propos de Alkeb.dev
                   </Link>
                   <Link
                     to="/vision"
@@ -398,7 +398,7 @@ export const Header: React.FC = () => {
                   className="flex items-center space-x-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#10B981] text-sm text-[#0B1B3D]"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-[#10B981]" />
-                  <span>À propos de SDBSNX</span>
+                  <span>À propos de Alkeb.dev</span>
                 </Link>
                 <Link
                   to="/vision"

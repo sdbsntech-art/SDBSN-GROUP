@@ -7,10 +7,10 @@ export const LegalNoticePage: React.FC = () => {
   return (
     <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO 
-        title="Mentions Légales & Identification Éditeur | SDBSNX" 
-        description="Informations légales et réglementaires régissant la plateforme SDBSNX conformément à la loi sénégalaise n° 2008-08 sur les transactions électroniques." 
+        title="Mentions Légales & Identification Éditeur | Alkeb.dev"
+        description="Informations légales et réglementaires régissant la plateforme Alkeb.dev conformément à la loi sénégalaise n° 2008-08 sur les transactions électroniques."
         canonicalPath="/mentions-legales" 
-        keywords="mentions légales SDBSNX, éditeur site web Sénégal, loi 2008-08 Sénégal, hébergement web Dakar"
+        keywords="mentions légales Alkeb.dev, éditeur site web Sénégal, loi 2008-08 Sénégal, hébergement web Dakar"
       />
       <div className="max-w-4xl mx-auto space-y-10">
 
@@ -46,17 +46,17 @@ export const LegalNoticePage: React.FC = () => {
               1. Éditeur de la Plateforme
             </h2>
             <p>
-              Le site internet officiel accessible à l&apos;adresse <span className="text-emerald-600 font-semibold">https://sdbsnx.site</span> est édité par la structure commerciale et technologique :
+              Le site internet officiel accessible à l&apos;adresse <span className="text-emerald-600 font-semibold">https://alkeb.dev</span> est édité par la structure commerciale et technologique :
             </p>
             <ul className="list-disc pl-5 space-y-1.5 text-[#0B1B3D]/80">
-              <li><strong>Nom commercial :</strong> SDBSNX</li>
+              <li><strong>Nom commercial :</strong> Alkeb.dev</li>
               <li><strong>Forme juridique :</strong> [À COMPLÉTER — ex: SARL / SAS / En cours d&apos;immatriculation]</li>
               <li><strong>Numéro d&apos;immatriculation (RCCM) :</strong> [À COMPLÉTER]</li>
               <li><strong>Numéro d&apos;Identification Fiscale (NINEA) :</strong> [À COMPLÉTER]</li>
               <li><strong>Siège social / Adresse professionnelle :</strong> Dakar, Sénégal</li>
               <li><strong>Contact électronique :</strong> contact@sdbsnx.site</li>
               <li><strong>Ligne directe / WhatsApp :</strong> +221 76 624 24 58</li>
-              <li><strong>Responsable de la publication :</strong> La Direction de SDBSNX</li>
+              <li><strong>Responsable de la publication :</strong> La Direction de Alkeb.dev</li>
             </ul>
           </section>
 
@@ -72,7 +72,7 @@ export const LegalNoticePage: React.FC = () => {
                 <strong>Frontend et Fonctions Serverless :</strong> Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis. (Réseau de distribution mondial et haute disponibilité).
               </li>
               <li>
-                <strong>Acheminement des Formulaires :</strong> Web3Forms (Acheminement chiffré TLS 1.3 vers la messagerie professionnelle sécurisée de SDBSNX).
+                <strong>Acheminement des Formulaires :</strong> Web3Forms (Acheminement chiffré TLS 1.3 vers la messagerie professionnelle sécurisée de Alkeb.dev).
               </li>
             </ul>
           </section>
@@ -82,10 +82,10 @@ export const LegalNoticePage: React.FC = () => {
               3. Propriété Intellectuelle
             </h2>
             <p>
-              L&apos;ensemble des contenus de la plateforme SDBSNX — incluant sans s&apos;y limiter le logo officiel SDBSNX, les monogrammes, les chartes graphiques, les textes institutionnels, les architectures logicielles, les devises, la sélection &ldquo;THE STANDARD WE LIVE BY&rdquo; et le code source — sont protégés au titre du droit d&apos;auteur, du droit des marques et de la propriété intellectuelle.
+              L&apos;ensemble des contenus de la plateforme Alkeb.dev — incluant sans s&apos;y limiter le logo officiel Alkeb.dev, les monogrammes, les chartes graphiques, les textes institutionnels, les architectures logicielles, les devises, la sélection &ldquo;THE STANDARD WE LIVE BY&rdquo; et le code source — sont protégés au titre du droit d&apos;auteur, du droit des marques et de la propriété intellectuelle.
             </p>
             <p>
-              Toute reproduction, représentation, altération, diffusion ou exploitation totale ou partielle sans autorisation expresse et préalable de SDBSNX est strictement prohibée.
+              Toute reproduction, représentation, altération, diffusion ou exploitation totale ou partielle sans autorisation expresse et préalable de Alkeb.dev est strictement prohibée.
             </p>
           </section>
 
@@ -94,10 +94,10 @@ export const LegalNoticePage: React.FC = () => {
               4. Encadrement des Prestations de Cybersécurité et Audits
             </h2>
             <p>
-              Les activités d&apos;évaluation de sécurité, tests de résistance, audits de code et analyses de vulnérabilités proposés par SDBSNX s&apos;inscrivent exclusivement dans le cadre d&apos;un mandat contractuel bilatéral préalablement signé avec l&apos;entité légalement habilitée à autoriser l&apos;audit.
+              Les activités d&apos;évaluation de sécurité, tests de résistance, audits de code et analyses de vulnérabilités proposés par Alkeb.dev s&apos;inscrivent exclusivement dans le cadre d&apos;un mandat contractuel bilatéral préalablement signé avec l&apos;entité légalement habilitée à autoriser l&apos;audit.
             </p>
             <p>
-              SDBSNX applique une politique de tolérance zéro envers les activités informatiques illégitimes ou non autorisées.
+              Alkeb.dev applique une politique de tolérance zéro envers les activités informatiques illégitimes ou non autorisées.
             </p>
           </section>
 

@@ -32,8 +32,8 @@ export const ServicesIndexPage: React.FC = () => {
   return (
     <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO 
-        title="Solutions & Services d'Ingénierie, Cybersécurité & LegalTech | SDBSNX" 
-        description="Catalogue complet des services SDBSNX : LegalTech & Dématérialisation certifiée, Audit de Cybersécurité défensive, Développement logiciel sur-mesure et Conseil IT stratégique." 
+        title="Solutions & Services d'Ingénierie, Cybersécurité & LegalTech | Alkeb.dev"
+        description="Catalogue complet des services Alkeb.dev : LegalTech & Dématérialisation certifiée, Audit de Cybersécurité défensive, Développement logiciel sur-mesure et Conseil IT stratégique."
         canonicalPath="/services" 
         keywords="services informatiques Dakar, LegalTech Sénégal, audit cybersécurité, développement application web Dakar, conseil DSI, transformation numérique"
       />

@@ -34,7 +34,7 @@ export const CookieBanner: React.FC = () => {
         </div>
         
         <p className="text-xs text-slate-600 leading-relaxed">
-          SDBSNX utilise des cookies essentiels au bon fonctionnement de la plateforme et à la sécurité de vos sessions. Aucun cookie publicitaire intrusif n&apos;est déposé sans votre accord.
+          Alkeb.dev utilise des cookies essentiels au bon fonctionnement de la plateforme et à la sécurité de vos sessions. Aucun cookie publicitaire intrusif n&apos;est déposé sans votre accord.
         </p>
 
         <div className="flex items-center justify-between pt-1">

@@ -1,12 +1,12 @@
 /**
- * SDBSNX WhatsApp Official Integration Helper
+ * Alkeb.dev WhatsApp Official Integration Helper
  * Numéro officiel : +221 76 624 24 58 (format international : 221766242458)
  */
 
 export const WHATSAPP_CONFIG = {
   rawNumber: (import.meta.env.VITE_WHATSAPP_NUMBER as string | undefined) || '221766242458',
   displayNumber: '+221 76 624 24 58',
-  defaultMessage: 'Bonjour SDBSNX, je souhaite échanger au sujet d\'un projet technologique.',
+  defaultMessage: 'Bonjour Alkeb.dev, je souhaite échanger au sujet d\'un projet technologique.',
 };
 
 /**

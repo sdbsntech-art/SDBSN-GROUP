@@ -12,17 +12,17 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-5">
             <Link to="/" className="inline-block">
-              <div className="bg-slate-900/90 p-2 rounded-xl shadow-md border border-slate-700 inline-flex items-center hover:border-[#10B981] transition-all">
+              <div className="bg-white p-1.5 rounded-xl shadow-md border border-slate-700 inline-flex items-center hover:border-[#10B981] transition-all">
                 <img
-                  src="/logo/sdbsnx-logo.png"
-                  alt="SDBSNX Logo"
-                  className="h-10 sm:h-11 w-auto object-contain rounded-lg"
+                  src="/logo/alkeb-logo.png"
+                  alt="Alkeb.dev"
+                  className="h-12 sm:h-14 w-auto object-contain"
                 />
               </div>
             </Link>
 
             <p className="text-sm text-slate-300 leading-relaxed max-w-sm">
-              SDBSNX accompagne les entreprises, les entrepreneurs et les organisations dans leur transformation numérique grâce à des solutions technologiques innovantes, hautement sécurisées et adaptées à leurs ambitions au Sénégal et en Afrique.
+              Alkeb.dev accompagne les entreprises, les entrepreneurs et les organisations dans leur transformation numérique grâce à des solutions technologiques innovantes, hautement sécurisées et adaptées à leurs ambitions au Sénégal et en Afrique.
             </p>
 
             <div className="space-y-1.5 text-xs text-slate-400">
@@ -71,7 +71,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link to="/a-propos" className="hover:text-[#10B981] transition-colors">
-                  À propos de SDBSNX
+                  À propos de Alkeb.dev
                 </Link>
               </li>
               <li>
@@ -188,9 +188,9 @@ export const Footer: React.FC = () => {
 
         {/* Bottom bar */}
         <div className="mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <p>© {new Date().getFullYear()} SDBSNX. Tous droits réservés.</p>
+          <p>© {new Date().getFullYear()} Alkeb.dev. Tous droits réservés.</p>
           <p className="text-slate-400 text-center sm:text-right font-mono text-[11px] font-semibold">
-            SDBSNX — DIGITAL INNOVATION • CYBERSECURITY • EXCELLENCE
+            Alkeb.dev — DIGITAL INNOVATION • CYBERSECURITY • EXCELLENCE
           </p>
         </div>
       </div>

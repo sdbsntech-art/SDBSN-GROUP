@@ -19,8 +19,8 @@ export async function submitContactToWeb3Forms(data: ContactSubmission): Promise
   try {
     const formData = new FormData();
     formData.append('access_key', WEB3FORMS_ACCESS_KEY);
-    formData.append('from_name', 'SDBSNX Digital Platform');
-    formData.append('subject', `[SDBSNX] Nouvelle demande - ${data.subject || data.service_category} (${referenceNumber})`);
+    formData.append('from_name', 'Alkeb.dev Digital Platform');
+    formData.append('subject', `[Alkeb.dev] Nouvelle demande - ${data.subject || data.service_category} (${referenceNumber})`);
     
     // Core user contact info
     formData.append('name', data.full_name);

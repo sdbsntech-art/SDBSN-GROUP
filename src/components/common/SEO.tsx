@@ -11,8 +11,8 @@ export interface SEOProps {
   noindex?: boolean;
 }
 
-const BASE_URL = 'https://sdbsnx.site';
-const DEFAULT_IMAGE = 'https://sdbsnx.site/logo/sdbsnx-logo.png';
+const BASE_URL = 'https://alkeb.dev';
+const DEFAULT_IMAGE = 'https://alkeb.dev/alkeb-social.png';
 
 export const SEO: React.FC<SEOProps> = ({
   title,
@@ -26,7 +26,7 @@ export const SEO: React.FC<SEOProps> = ({
 }) => {
   useEffect(() => {
     // 1. Update document title
-    const fullTitle = title.includes('SDBSNX') ? title : `${title} | SDBSNX`;
+    const fullTitle = title.includes('Alkeb.dev') ? title : `${title} | Alkeb.dev`;
     document.title = fullTitle;
 
     // Helper to update or create meta tag
@@ -67,7 +67,7 @@ export const SEO: React.FC<SEOProps> = ({
     setMetaTag('property', 'og:url', fullCanonicalUrl);
     setMetaTag('property', 'og:type', ogType);
     setMetaTag('property', 'og:image', ogImage);
-    setMetaTag('property', 'og:site_name', 'SDBSNX Digital Platform');
+    setMetaTag('property', 'og:site_name', 'Alkeb.dev');
     setMetaTag('property', 'og:locale', 'fr_SN');
 
     // 5. Twitter Meta Tags
