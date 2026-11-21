@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 :root {
+  /* Alkeb.dev Signature Dark & Warm Prestige Theme */
+  --ink: #0B2B2A;
+  --ink-2: #123D3A;
+  --sand: #F3E3C3;
+  --gold: #F2B134;
+  --emerald: #10B981;
+
+  /* Interactive pointer coordinates for smooth CSS-driven spotlight */
+  --mx: 50%;
+  --my: 50%;
+
   /* Force-N Inspired Light & Prestigious Tech Theme */
   --bg: #FFFFFF;
   --bg-subtle: #F8FAFC;
@@ -17,7 +28,7 @@
   --text-muted: #64748B;
   --text-dim: #94A3B8;
 
-  /* Primary Accent: Vibrant Tech Emerald Green (replacing Orange) */
+  /* Primary Accent: Vibrant Tech Emerald Green */
   --primary: #10B981;
   --primary-hover: #059669;
   --primary-dark: #047857;
@@ -46,10 +57,72 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'DM Sans', 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   width: 100%;
   min-height: 100vh;
+}
+
+h1, h2, h3, h4, .font-display, .font-heading {
+  font-family: 'Bricolage Grotesque', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Ambient Slow Drifting Glows (GPU Accelerated via transform/opacity only) */
+.glow-drift-gold {
+  will-change: transform, opacity;
+  animation: driftGold 18s ease-in-out infinite alternate;
+}
+
+.glow-drift-emerald {
+  will-change: transform, opacity;
+  animation: driftEmerald 22s ease-in-out infinite alternate;
+}
+
+@keyframes driftGold {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate3d(60px, -40px, 0) scale(1.12);
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate3d(-40px, 30px, 0) scale(0.95);
+    opacity: 0.5;
+  }
+}
+
+@keyframes driftEmerald {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1.05);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate3d(-50px, 50px, 0) scale(0.92);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(40px, -30px, 0) scale(1.1);
+    opacity: 0.45;
+  }
+}
+
+/* Dynamic Interactive Mouse Light (Follows cursor via CSS Variables --mx and --my without React re-render) */
+.mouse-glow-spotlight {
+  background: radial-gradient(
+    650px circle at var(--mx) var(--my),
+    rgba(16, 185, 129, 0.16),
+    rgba(242, 177, 52, 0.08) 35%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Premium Focus States */
+:focus-visible {
+  outline: 2px solid var(--emerald);
+  outline-offset: 3px;
 }
 
 /* Functional Utility Classes */

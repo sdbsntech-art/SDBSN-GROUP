@@ -52,12 +52,18 @@ export const Header: React.FC = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const isHome = location.pathname === '/';
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
-        isScrolled || mobileMenuOpen
-          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm py-3'
-          : 'bg-white/90 backdrop-blur-md border-b border-slate-100 py-3.5'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isHome
+          ? isScrolled || mobileMenuOpen
+            ? 'bg-[#0B2B2A]/90 backdrop-blur-md border-b border-[#10B981]/30 shadow-lg py-3 text-[#F3E3C3]'
+            : 'bg-[#0B2B2A]/40 backdrop-blur-sm border-b border-white/10 py-3.5 text-[#F3E3C3]'
+          : isScrolled || mobileMenuOpen
+          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm py-3 text-[#0B1B3D]'
+          : 'bg-white/90 backdrop-blur-md border-b border-slate-100 py-3.5 text-[#0B1B3D]'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,11 +71,11 @@ export const Header: React.FC = () => {
           
           {/* Logo with modern crisp container */}
           <Link to="/" className="flex items-center space-x-3 group flex-shrink-0">
-            <div className="flex items-center justify-center rounded-md bg-white transition-all group-hover:scale-[1.02]">
+            <div className={`flex items-center justify-center rounded-md p-1 transition-all group-hover:scale-[1.02] ${isHome ? 'bg-white/10 border border-white/15' : 'bg-white'}`}>
               <img
                 src="/logo/alkeb-logo.png"
                 alt="Alkeb.dev"
-                className="h-11 sm:h-12 md:h-14 w-auto object-contain"
+                className="h-10 sm:h-11 md:h-12 w-auto object-contain"
               />
             </div>
           </Link>
@@ -80,7 +86,11 @@ export const Header: React.FC = () => {
               to="/"
               className={`px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors ${
                 isActive('/') 
-                  ? 'bg-emerald-50 text-[#059669] font-bold border border-emerald-200/80 shadow-xs' 
+                  ? isHome
+                    ? 'bg-[#10B981]/20 text-[#10B981] font-bold border border-[#10B981]/40'
+                    : 'bg-emerald-50 text-[#059669] font-bold border border-emerald-200/80 shadow-xs' 
+                  : isHome
+                  ? 'text-[#F3E3C3] hover:text-[#10B981] hover:bg-white/5'
                   : 'text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50'
               }`}
             >
@@ -100,7 +110,11 @@ export const Header: React.FC = () => {
                   location.pathname === '/mission' ||
                   location.pathname === '/valeurs' ||
                   location.pathname === '/philosophie'
-                    ? 'text-[#059669] bg-emerald-50 border border-emerald-200/80 font-bold'
+                    ? isHome
+                      ? 'text-[#10B981] bg-[#10B981]/20 border border-[#10B981]/40 font-bold'
+                      : 'text-[#059669] bg-emerald-50 border border-emerald-200/80 font-bold'
+                    : isHome
+                    ? 'text-[#F3E3C3] hover:text-[#10B981] hover:bg-white/5'
                     : 'text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50'
                 }`}
               >
@@ -154,7 +168,11 @@ export const Header: React.FC = () => {
                 to="/services"
                 className={`flex items-center px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors ${
                   location.pathname.startsWith('/services')
-                    ? 'text-[#059669] bg-emerald-50 border border-emerald-200/80 font-bold'
+                    ? isHome
+                      ? 'text-[#10B981] bg-[#10B981]/20 border border-[#10B981]/40 font-bold'
+                      : 'text-[#059669] bg-emerald-50 border border-emerald-200/80 font-bold'
+                    : isHome
+                    ? 'text-[#F3E3C3] hover:text-[#10B981] hover:bg-white/5'
                     : 'text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50'
                 }`}
               >
@@ -163,7 +181,7 @@ export const Header: React.FC = () => {
               </Link>
 
               {servicesOpen && (
-                <div className="absolute left-0 mt-1 w-80 rounded-2xl bg-white py-2 z-50 border border-slate-200 shadow-xl">
+                <div className="absolute left-0 mt-1 w-80 rounded-2xl bg-white py-2 z-50 border border-slate-200 shadow-xl text-[#0B1B3D]">
                   <Link
                     to="/services/legaltech"
                     className="flex flex-col px-4 py-3 hover:bg-slate-50 transition-colors border-b border-slate-100 group"
@@ -230,7 +248,11 @@ export const Header: React.FC = () => {
               to="/contact"
               className={`px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors ${
                 isActive('/contact') 
-                  ? 'bg-emerald-50 text-[#059669] font-bold border border-emerald-200/80 shadow-xs' 
+                  ? isHome
+                    ? 'bg-[#10B981]/20 text-[#10B981] font-bold border border-[#10B981]/40'
+                    : 'bg-emerald-50 text-[#059669] font-bold border border-emerald-200/80 shadow-xs' 
+                  : isHome
+                  ? 'text-[#F3E3C3] hover:text-[#10B981] hover:bg-white/5'
                   : 'text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50'
               }`}
             >
@@ -243,7 +265,11 @@ export const Header: React.FC = () => {
             <Link
               to="/admin/login"
               aria-label="Portail Sécurisé"
-              className="p-2 text-slate-600 hover:text-[#0B1B3D] hover:bg-slate-100 rounded-xl transition-colors border border-slate-200"
+              className={`p-2 rounded-xl transition-colors border ${
+                isHome
+                  ? 'text-[#F3E3C3] hover:text-white hover:bg-white/10 border-white/15'
+                  : 'text-slate-600 hover:text-[#0B1B3D] hover:bg-slate-100 border-slate-200'
+              }`}
               title="Portail Administration"
             >
               <Lock className="w-4 h-4" />
@@ -251,7 +277,7 @@ export const Header: React.FC = () => {
 
             <Link
               to="/contact"
-              className="inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-bold bg-[#10B981] hover:bg-[#059669] text-white transition-all shadow-sm hover:shadow-md active:scale-[0.98]"
+              className="inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-bold bg-[#10B981] hover:bg-[#059669] text-[#0B2B2A] hover:text-white transition-all shadow-sm hover:shadow-md active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[#F2B134]"
             >
               <span>Démarrer un Projet</span>
               <ArrowRight className="ml-1.5 w-4 h-4" />
@@ -262,7 +288,11 @@ export const Header: React.FC = () => {
           <div className="flex items-center space-x-2 lg:hidden">
             <Link
               to="/admin/login"
-              className="p-2 text-slate-600 hover:text-[#0B1B3D] bg-slate-50 border border-slate-200 rounded-xl"
+              className={`p-2 rounded-xl border ${
+                isHome
+                  ? 'text-[#F3E3C3] bg-white/5 border-white/15'
+                  : 'text-slate-600 hover:text-[#0B1B3D] bg-slate-50 border-slate-200'
+              }`}
               aria-label="Accès Administration"
             >
               <Lock className="w-4 h-4" />
@@ -270,10 +300,14 @@ export const Header: React.FC = () => {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl text-[#0B1B3D] hover:text-[#10B981] bg-slate-50 border border-slate-200 focus:outline-none"
+              className={`p-2.5 rounded-xl border focus:outline-none ${
+                isHome
+                  ? 'text-[#F3E3C3] bg-white/5 border-white/15'
+                  : 'text-[#0B1B3D] hover:text-[#10B981] bg-slate-50 border-slate-200'
+              }`}
               aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-[#0B1B3D]" /> : <Menu className="w-5 h-5 text-[#0B1B3D]" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
 

@@ -8,6 +8,28 @@ export default {
   theme: {
     extend: {
       colors: {
+        ink: {
+          DEFAULT: '#0B2B2A',
+          2: '#123D3A',
+          dark: '#071F1E',
+          light: '#174B47',
+        },
+        sand: {
+          DEFAULT: '#F3E3C3',
+          light: '#FAF3E3',
+          dark: '#E2CDA2',
+        },
+        gold: {
+          DEFAULT: '#F2B134',
+          hover: '#DDA02A',
+          light: '#F8C86A',
+        },
+        emerald: {
+          DEFAULT: '#10B981',
+          hover: '#059669',
+          dark: '#047857',
+          light: '#34D399',
+        },
         brand: {
           primary: {
             DEFAULT: '#10B981',
@@ -76,9 +98,10 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+        sans: ['"DM Sans"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['"Bricolage Grotesque"', '"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+        heading: ['"Bricolage Grotesque"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'Fira Code', 'monospace'],
       },
       boxShadow: {
         'card': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)',
