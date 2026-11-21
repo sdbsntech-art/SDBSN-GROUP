@@ -133,3 +133,4 @@ export const IntroSplash: React.FC<IntroSplashProps> = ({ onComplete }) => {
     </AnimatePresence>
   );
 };
+

@@ -96,3 +96,4 @@ export const HomeAboutSection: React.FC = () => {
     </section>
   );
 };
+

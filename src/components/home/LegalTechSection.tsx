@@ -144,3 +144,4 @@ export const LegalTechSection: React.FC = () => {
     </section>
   );
 };
+

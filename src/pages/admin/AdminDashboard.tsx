@@ -6,6 +6,7 @@ import {
   deleteLocalSubmission 
 } from '../../lib/web3forms';
 import { formatDate } from '../../lib/utils';
+import { supabase, isSupabaseConfigured } from '../../lib/supabase';
 import type { ContactSubmission, RequestStatus } from '../../types';
 import { 
   Inbox, 
@@ -36,6 +37,8 @@ export const AdminDashboardPage: React.FC = () => {
 
   const navigate = useNavigate();
 
+  const [adminEmail, setAdminEmail] = useState<string>('sdbsntech@gmail.com');
+
   const loadSubmissions = () => {
     setLoading(true);
     try {
@@ -50,9 +53,37 @@ export const AdminDashboardPage: React.FC = () => {
 
   useEffect(() => {
     loadSubmissions();
+
+    // Récupérer l'email de session Supabase ou local
+    const fetchUser = async () => {
+      if (isSupabaseConfigured()) {
+        const { data } = await supabase.auth.getUser();
+        if (data.user?.email) {
+          setAdminEmail(data.user.email);
+          return;
+        }
+      }
+      try {
+        const local = localStorage.getItem('sdbsnx_admin_token');
+        if (local) {
+          const parsed = JSON.parse(local);
+          if (parsed.email) setAdminEmail(parsed.email);
+        }
+      } catch {
+        // Fallback default
+      }
+    };
+    fetchUser();
   }, []);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    try {
+      if (isSupabaseConfigured()) {
+        await supabase.auth.signOut();
+      }
+    } catch {
+      // Ignorer
+    }
     localStorage.removeItem('sdbsnx_admin_token');
     navigate('/admin/login');
   };
@@ -119,11 +150,17 @@ export const AdminDashboardPage: React.FC = () => {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
         <div>
           <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-400 font-bold block">
-            Alkeb.dev INTERNAL SECURE CONSOLE (WEB3FORMS SYNC)
+            Alkeb.dev INTERNAL SECURE CONSOLE (SUPABASE &amp; WEB3FORMS SYNC)
           </span>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white font-display">
             Gestion des Requêtes Clients
           </h1>
+          <p className="text-xs text-white/60 mt-1 flex items-center gap-1.5">
+            <span>Connecté en tant que :</span>
+            <span className="text-emerald-400 font-mono font-bold bg-white/5 px-2 py-0.5 rounded border border-white/10">
+              {adminEmail}
+            </span>
+          </p>
         </div>
 
         <div className="flex items-center space-x-3">
