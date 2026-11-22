@@ -10,7 +10,7 @@ interface StatItem {
   label: string;
   sublabel: string;
   icon: React.ElementType;
-  accentColor: 'emerald' | 'gold';
+  accentColor: 'emerald' | 'blue';
 }
 
 const STATS_DATA: StatItem[] = [
@@ -30,7 +30,7 @@ const STATS_DATA: StatItem[] = [
     label: 'Données Souveraines',
     sublabel: 'Hébergement sécurisé & conformité CDP / RGPD',
     icon: ShieldCheck,
-    accentColor: 'gold',
+    accentColor: 'blue',
   },
   {
     id: 'compliance',
@@ -49,11 +49,10 @@ const STATS_DATA: StatItem[] = [
     label: 'Disponibilité & SLA',
     sublabel: 'Surveillance et résilience continue des architectures',
     icon: Users,
-    accentColor: 'gold',
+    accentColor: 'blue',
   },
 ];
 
-// Sous-composant compteur individuel
 const AnimatedCounter: React.FC<{
   target: number;
   prefix?: string;
@@ -65,7 +64,6 @@ const AnimatedCounter: React.FC<{
   useEffect(() => {
     if (!isInView) return;
 
-    // Détection prefers-reduced-motion
     const prefersReduced =
       typeof window !== 'undefined' &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -75,14 +73,12 @@ const AnimatedCounter: React.FC<{
       return;
     }
 
-    const duration = 1600; // ms
+    const duration = 1600;
     const startTime = performance.now();
 
     const updateCounter = (currentTime: number) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      
-      // Easing cubic out
       const easeOut = 1 - Math.pow(1 - progress, 3);
       const currentVal = Math.floor(easeOut * target);
 
@@ -110,34 +106,30 @@ const AnimatedCounter: React.FC<{
 
 export const KeyFigures: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-80px' });
+  const isInView = useInView(sectionRef, { once: true, margin: '-60px' });
 
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#123D3A] text-[#F3E3C3] border-y border-[#10B981]/20 overflow-hidden"
+      className="relative py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-slate-50 text-[#0B1B3D] border-b border-slate-200/80 overflow-hidden"
     >
-      {/* Lueurs décoratives d'ambiance */}
-      <div className="absolute top-0 right-1/4 w-80 h-80 rounded-full bg-[#10B981]/15 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-80 h-80 rounded-full bg-[#F2B134]/10 blur-3xl pointer-events-none" />
-
       <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* Titre de la section */}
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-3">
-          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-mono uppercase tracking-widest text-[#F2B134] bg-white/5 border border-[#F2B134]/30 font-semibold">
+        {/* En-tête */}
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 space-y-2">
+          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-mono uppercase tracking-widest text-[#059669] bg-emerald-50 border border-emerald-200 font-bold">
             Impact Mesurable &amp; Rigueur
           </span>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#F3E3C3] font-display">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1B3D] font-display">
             Des chiffres qui attestent de notre engagement.
           </h2>
-          <p className="text-sm sm:text-base text-[#F3E3C3]/75">
-            Chaque réalisation d&apos;Alkeb.dev vise la pérennité, la sécurité absolue et la conformité stricte aux exigences de souveraineté.
+          <p className="text-xs sm:text-sm text-slate-600">
+            Chaque réalisation d&apos;Alkeb.dev vise la pérennité, la sécurité absolue et la souveraineté technologique.
           </p>
         </div>
 
-        {/* Grille des 4 chiffres clés en cascade */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Grille des 4 chiffres clés en cascade avec animation au scroll */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {STATS_DATA.map((item, index) => {
             const Icon = item.icon;
             const isEmerald = item.accentColor === 'emerald';
@@ -145,33 +137,31 @@ export const KeyFigures: React.FC = () => {
             return (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 25 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 25 }}
                 transition={{
-                  duration: 0.6,
-                  delay: index * 0.12,
+                  duration: 0.55,
+                  delay: index * 0.1,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="relative p-6 sm:p-7 rounded-2xl bg-[#0B2B2A]/90 border border-white/10 hover:border-[#10B981]/60 shadow-xl transition-all duration-300 group hover:-translate-y-1"
+                className="relative p-6 rounded-2xl bg-white border border-slate-200 shadow-xs hover:shadow-md hover:border-[#10B981] transition-all duration-300 group hover:-translate-y-1"
               >
-                {/* Icône de statut */}
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3">
                   <div
-                    className={`w-11 h-11 rounded-xl flex items-center justify-center transition-colors ${
+                    className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
                       isEmerald
-                        ? 'bg-[#10B981]/20 text-[#10B981] group-hover:bg-[#10B981] group-hover:text-[#0B2B2A]'
-                        : 'bg-[#F2B134]/20 text-[#F2B134] group-hover:bg-[#F2B134] group-hover:text-[#0B2B2A]'
+                        ? 'bg-emerald-50 text-[#059669] group-hover:bg-[#10B981] group-hover:text-white'
+                        : 'bg-blue-50 text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white'
                     }`}
                   >
                     <Icon className="w-5 h-5" />
                   </div>
-                  <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
+                  <span className={`w-2 h-2 rounded-full ${isEmerald ? 'bg-[#10B981]' : 'bg-[#2563EB]'}`} />
                 </div>
 
-                {/* Valeur numérique animée */}
                 <div
-                  className={`text-3xl sm:text-4xl font-extrabold font-display tracking-tight mb-2 ${
-                    isEmerald ? 'text-[#10B981]' : 'text-[#F2B134]'
+                  className={`text-3xl sm:text-4xl font-extrabold font-display tracking-tight mb-1.5 ${
+                    isEmerald ? 'text-[#059669]' : 'text-[#2563EB]'
                   }`}
                 >
                   <AnimatedCounter
@@ -182,11 +172,10 @@ export const KeyFigures: React.FC = () => {
                   />
                 </div>
 
-                {/* Libellé et description */}
-                <h3 className="text-base font-bold text-[#F3E3C3] group-hover:text-white transition-colors">
+                <h3 className="text-sm font-bold text-[#0B1B3D] group-hover:text-[#10B981] transition-colors">
                   {item.label}
                 </h3>
-                <p className="text-xs text-[#F3E3C3]/70 mt-1 leading-relaxed">
+                <p className="text-xs text-slate-500 mt-1 leading-relaxed">
                   {item.sublabel}
                 </p>
               </motion.div>
