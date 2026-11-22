@@ -15,14 +15,14 @@ export const Footer: React.FC = () => {
               <div className="bg-white p-1.5 rounded-xl shadow-md border border-slate-700 inline-flex items-center hover:border-[#10B981] transition-all">
                 <img
                   src="/logo/alkeb-logo.png"
-                  alt="Alkeb.dev"
+                  alt="Alkeb.lab"
                   className="h-12 sm:h-14 w-auto object-contain"
                 />
               </div>
             </Link>
 
             <p className="text-sm text-slate-300 leading-relaxed max-w-sm">
-              Alkeb.dev accompagne les entreprises, les entrepreneurs et les organisations dans leur transformation numérique grâce à des solutions technologiques innovantes, hautement sécurisées et adaptées à leurs ambitions au Sénégal et en Afrique.
+              Alkeb.lab accompagne les entreprises, les entrepreneurs et les organisations dans leur transformation numérique grâce à des solutions technologiques innovantes, hautement sécurisées et adaptées à leurs ambitions au Sénégal et en Afrique.
             </p>
 
             <div className="space-y-1.5 text-xs text-slate-400">
@@ -71,7 +71,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link to="/a-propos" className="hover:text-[#10B981] transition-colors">
-                  À propos de Alkeb.dev
+                  À propos de Alkeb.lab
                 </Link>
               </li>
               <li>
@@ -188,9 +188,9 @@ export const Footer: React.FC = () => {
 
         {/* Bottom bar */}
         <div className="mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <p>© {new Date().getFullYear()} Alkeb.dev. Tous droits réservés.</p>
+          <p>© {new Date().getFullYear()} Alkeb.lab. Tous droits réservés.</p>
           <p className="text-slate-400 text-center sm:text-right font-mono text-[11px] font-semibold">
-            Alkeb.dev — DIGITAL INNOVATION • CYBERSECURITY • EXCELLENCE
+            Alkeb.lab — DIGITAL INNOVATION • CYBERSECURITY • EXCELLENCE
           </p>
         </div>
       </div>

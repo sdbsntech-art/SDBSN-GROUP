@@ -55,9 +55,9 @@ export const Hero: React.FC = () => {
         aria-hidden="true"
       />
 
-      {/* 2. Lueur bleue dérivante lente */}
+      {/* 2. Lueur d'ambiance dérivante lente */}
       <div
-        className="absolute bottom-0 left-10 w-80 h-80 bg-blue-100/50 rounded-full blur-3xl pointer-events-none glow-drift-gold"
+        className="absolute bottom-0 left-10 w-80 h-80 bg-emerald-100/40 rounded-full blur-3xl pointer-events-none glow-drift-gold"
         aria-hidden="true"
       />
 
@@ -115,7 +115,7 @@ export const Hero: React.FC = () => {
             {/* Sous-titre avec mot qui change automatiquement (AnimatePresence) */}
             <div className="space-y-3">
               <p className="text-base sm:text-xl font-medium text-slate-700 leading-relaxed max-w-2xl">
-                Alkeb.dev propulse les organisations avec des solutions expertes en{' '}
+                Alkeb.lab propulse les organisations avec des solutions expertes en{' '}
                 <span className="inline-block relative min-w-[200px] sm:min-w-[230px] font-bold text-[#10B981]">
                   <AnimatePresence mode="wait">
                     <motion.span
@@ -150,7 +150,7 @@ export const Hero: React.FC = () => {
                 <span>Conception sur-mesure &amp; souveraine</span>
               </div>
               <div className="flex items-center space-x-2">
-                <CheckCircle2 className="w-4 h-4 text-[#2563EB] flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#059669] flex-shrink-0" />
                 <span>Audits de sécurité &amp; conformité RGPD/CDP</span>
               </div>
               <div className="flex items-center space-x-2">
@@ -158,7 +158,7 @@ export const Hero: React.FC = () => {
                 <span>Pôle spécialisé LegalTech &amp; Dématérialisation</span>
               </div>
               <div className="flex items-center space-x-2">
-                <CheckCircle2 className="w-4 h-4 text-[#2563EB] flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#059669] flex-shrink-0" />
                 <span>Équipe d&apos;ingénieurs basés à Dakar</span>
               </div>
             </motion.div>
@@ -179,7 +179,7 @@ export const Hero: React.FC = () => {
               </Link>
 
               <a
-                href={getWhatsAppUrl('Bonjour Alkeb.dev, je souhaite échanger au sujet de mon projet.')}
+                href={getWhatsAppUrl('Bonjour Alkeb.lab, je souhaite échanger au sujet de mon projet.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-bold text-[#0B1B3D] hover:text-[#059669] bg-white hover:bg-slate-50 border border-slate-300 shadow-sm hover:-translate-y-0.5 flex items-center justify-center space-x-2 text-sm transition-all focus-visible:ring-2 focus-visible:ring-[#10B981]"
@@ -202,7 +202,7 @@ export const Hero: React.FC = () => {
               </div>
               <div className="h-7 w-px bg-slate-200" />
               <div>
-                <span className="font-extrabold text-[#2563EB] text-base block font-display">Dakar &amp; International</span>
+                <span className="font-extrabold text-[#059669] text-base block font-display">Dakar &amp; International</span>
                 <span>Accompagnement continu</span>
               </div>
             </div>
@@ -221,7 +221,7 @@ export const Hero: React.FC = () => {
               <div className="relative aspect-[4/3] sm:aspect-[16/11] overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80"
-                  alt="Équipe d'ingénieurs et talents technologiques africains Alkeb.dev"
+                  alt="Équipe d'ingénieurs et talents technologiques africains Alkeb.lab"
                   className="w-full h-full object-cover object-top sm:object-center group-hover:scale-105 transition-transform duration-700"
                   width="1200"
                   height="825"
@@ -252,7 +252,7 @@ export const Hero: React.FC = () => {
 
                 <Link
                   to="/services"
-                  className="text-xs font-bold text-[#2563EB] hover:text-[#1D4ED8] flex items-center"
+                  className="text-xs font-bold text-[#10B981] hover:text-[#059669] flex items-center"
                 >
                   <span>Explorer</span>
                   <ArrowRight className="w-3.5 h-3.5 ml-1" />

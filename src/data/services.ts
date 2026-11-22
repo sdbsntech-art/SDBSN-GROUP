@@ -24,7 +24,7 @@ export const SERVICES_DATA: ServiceData[] = [
     shortDescription: 'L\'alliance du droit et des technologies numériques pour simplifier, fluidifier et sécuriser la gestion documentaire et les procédures juridico-administratives.',
     fullDescription: 'Notre département LegalTech conçoit des plateformes numériques innovantes dédiées aux cabinets juridiques, directions juridiques d\'entreprises, notaires, administrations et auxiliaires de justice. Nous optimisons le cycle de vie documentaire, automatisons les flux administratifs récurrents et garantissons une traçabilité inviolable.',
     iconName: 'Scale',
-    regulatoryDisclaimer: 'Important : Alkeb.dev est un éditeur et intégrateur de solutions technologiques. Nos outils numériques assistent les professionnels mais ne constituent en aucun cas une prestation de conseil juridique réglementé, ni ne se substituent au ministère d\'avocat ou aux professions juridiques assermentées.',
+    regulatoryDisclaimer: 'Important : Alkeb.lab est un éditeur et intégrateur de solutions technologiques. Nos outils numériques assistent les professionnels mais ne constituent en aucun cas une prestation de conseil juridique réglementé, ni ne se substituent au ministère d\'avocat ou aux professions juridiques assermentées.',
     features: [
       'Plateformes de gestion électronique de documents (GED)',
       'Dématérialisation et certification des flux documentaires',
@@ -61,9 +61,9 @@ export const SERVICES_DATA: ServiceData[] = [
     tagline: 'Securing What Matters.',
     categoryName: 'Défense & Résilience',
     shortDescription: 'Audits techniques rigoureux, évaluation des risques et accompagnement pour ériger des défenses numériques imperméables.',
-    fullDescription: 'Dans un contexte de menaces cybernétiques croissantes en Afrique et à l\'échelle mondiale, Alkeb.dev apporte une méthodologie stricte pour évaluer, corriger et fortifier la posture défensive de vos systèmes informatiques.',
+    fullDescription: 'Dans un contexte de menaces cybernétiques croissantes en Afrique et à l\'échelle mondiale, Alkeb.lab apporte une méthodologie stricte pour évaluer, corriger et fortifier la posture défensive de vos systèmes informatiques.',
     iconName: 'Shield',
-    regulatoryDisclaimer: 'Les missions d\'audit, analyses de vulnérabilités et tests techniques menés par Alkeb.dev sont strictement encadrés par une convention formelle d\'autorisation écrite et un protocole d\'accord préalable. Aucune opération n\'est exécutée sans mandatement légal explicite.',
+    regulatoryDisclaimer: 'Les missions d\'audit, analyses de vulnérabilités et tests techniques menés par Alkeb.lab sont strictement encadrés par une convention formelle d\'autorisation écrite et un protocole d\'accord préalable. Aucune opération n\'est exécutée sans mandatement légal explicite.',
     features: [
       'Audits de sécurité autorisés et contrôlés',
       'Évaluation exhaustive des risques et de l\'exposition',
@@ -136,7 +136,7 @@ export const SERVICES_DATA: ServiceData[] = [
     tagline: 'Strategic Innovation & Alignment.',
     categoryName: 'Stratégie Numérique',
     shortDescription: 'Accompagnement stratégique, urbanisation des systèmes d\'information et cadrage de projets de transformation digitale durable.',
-    fullDescription: 'L\'innovation technologique doit répondre à des objectifs d\'affaires tangibles. Alkeb.dev conseille les dirigeants et directions informatiques dans la sélection des architectures, la gouvernance de données et la conduite de projets stratégiques.',
+    fullDescription: 'L\'innovation technologique doit répondre à des objectifs d\'affaires tangibles. Alkeb.lab conseille les dirigeants et directions informatiques dans la sélection des architectures, la gouvernance de données et la conduite de projets stratégiques.',
     iconName: 'Compass',
     features: [
       'Cadrage stratégique et formalisation des besoins',

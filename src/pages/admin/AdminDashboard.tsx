@@ -133,7 +133,7 @@ export const AdminDashboardPage: React.FC = () => {
       case 'In Review':
         return <span className="px-2.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-700 border border-amber-300">En Examen</span>;
       case 'In Progress':
-        return <span className="px-2.5 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-700 border border-blue-300">En Cours</span>;
+        return <span className="px-2.5 py-0.5 rounded text-[10px] font-bold bg-teal-100 text-teal-800 border border-teal-300">En Cours</span>;
       case 'Completed':
         return <span className="px-2.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-700 border border-emerald-300">Traité</span>;
       case 'Archived':
@@ -150,7 +150,7 @@ export const AdminDashboardPage: React.FC = () => {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
         <div>
           <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-400 font-bold block">
-            Alkeb.dev INTERNAL SECURE CONSOLE (SUPABASE &amp; WEB3FORMS SYNC)
+            Alkeb.lab INTERNAL SECURE CONSOLE (SUPABASE &amp; WEB3FORMS SYNC)
           </span>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white font-display">
             Gestion des Requêtes Clients
@@ -209,9 +209,9 @@ export const AdminDashboardPage: React.FC = () => {
         </div>
 
         <div className="p-5 rounded-2xl bg-white/5 border border-white/10 shadow-sm space-y-1">
-          <div className="flex items-center justify-between text-blue-400">
+          <div className="flex items-center justify-between text-teal-400">
             <span className="text-xs font-semibold uppercase font-mono">En Instruction</span>
-            <AlertCircle className="w-4 h-4 text-blue-400" />
+            <AlertCircle className="w-4 h-4 text-teal-400" />
           </div>
           <p className="text-2xl sm:text-3xl font-bold text-white font-mono">{inProgressCount}</p>
           <span className="text-[11px] text-white/50">En cours d&apos;analyse ou de cadrage</span>

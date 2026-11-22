@@ -16,9 +16,9 @@ export const AboutPage: React.FC = () => {
   return (
     <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO
-        title="À Propos de Alkeb.dev — Cabinet d'Ingénierie & d'Innovation Numérique à Dakar"
-        description="Découvrez Alkeb.dev, son expertise de pointe en LegalTech, cybersécurité et génie logiciel, et sa mission d'impact au service des organisations au Sénégal et en Afrique."
-        keywords="à propos Alkeb.dev, cabinet ingénierie Dakar, entreprise tech Sénégal, équipe informatique Sénégal, innovation numérique Afrique"
+        title="À Propos de Alkeb.lab — Cabinet d'Ingénierie & d'Innovation Numérique à Dakar"
+        description="Découvrez Alkeb.lab, son expertise de pointe en LegalTech, cybersécurité et génie logiciel, et sa mission d'impact au service des organisations au Sénégal et en Afrique."
+        keywords="à propos Alkeb.lab, cabinet ingénierie Dakar, entreprise tech Sénégal, équipe informatique Sénégal, innovation numérique Afrique"
         canonicalPath="/a-propos"
       />
       <div className="max-w-5xl mx-auto space-y-12">
@@ -34,7 +34,7 @@ export const AboutPage: React.FC = () => {
             <span>Présentation Institutionnelle</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-[#0B1B3D] tracking-tight font-display">
-            À propos de Alkeb.dev
+            À propos de Alkeb.lab
           </h1>
           <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
             Une agence de solutions numériques guidée par la rigueur, la cybersécurité et l&apos;impact concret au service du progrès économique et sociétal en Afrique.
@@ -50,7 +50,7 @@ export const AboutPage: React.FC = () => {
             &ldquo;La technologie n&apos;a de valeur que lorsqu&apos;elle répond à un besoin réel, améliore une situation et crée un impact positif.&rdquo;
           </blockquote>
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Chez Alkeb.dev, nous refusons l&apos;artifice et les promesses technologiques creuses. Chaque ligne de code et chaque architecture répondent à des impératifs d&apos;utilité, de sécurité et d&apos;efficacité mesurable.
+            Chez Alkeb.lab, nous refusons l&apos;artifice et les promesses technologiques creuses. Chaque ligne de code et chaque architecture répondent à des impératifs d&apos;utilité, de sécurité et d&apos;efficacité mesurable.
           </p>
         </div>
 
@@ -61,7 +61,7 @@ export const AboutPage: React.FC = () => {
               Résoudre des problèmes concrets par l&apos;ingénierie
             </h2>
             <p>
-              Fondée avec la volonté de rehausser les standards de qualité et de sécurité des services numériques au Sénégal et sur le marché africain, Alkeb.dev réunit des compétences spécialisées en génie logiciel, en cybersécurité et en LegalTech.
+              Fondée avec la volonté de rehausser les standards de qualité et de sécurité des services numériques au Sénégal et sur le marché africain, Alkeb.lab réunit des compétences spécialisées en génie logiciel, en cybersécurité et en LegalTech.
             </p>
             <p>
               Nous accompagnons aussi bien les administrations publiques, les directions juridiques et les grands groupes que les entrepreneurs visionnaires désireux de bâtir des plateformes durables.
@@ -100,8 +100,8 @@ export const AboutPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 hover:border-[#2563EB] shadow-xs hover:shadow-md transition-all space-y-3">
-              <div className="p-2.5 w-fit rounded-xl bg-blue-50 text-[#2563EB]">
+            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 hover:border-[#10B981] shadow-xs hover:shadow-md transition-all space-y-3">
+              <div className="p-2.5 w-fit rounded-xl bg-emerald-50 text-[#059669]">
                 <Target className="w-5 h-5" />
               </div>
               <h4 className="text-base font-bold text-[#0B1B3D]">La Transformation Numérique</h4>
@@ -120,8 +120,8 @@ export const AboutPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 hover:border-[#2563EB] shadow-xs hover:shadow-md transition-all space-y-3">
-              <div className="p-2.5 w-fit rounded-xl bg-blue-50 text-[#2563EB]">
+            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 hover:border-[#10B981] shadow-xs hover:shadow-md transition-all space-y-3">
+              <div className="p-2.5 w-fit rounded-xl bg-emerald-50 text-[#059669]">
                 <Cpu className="w-5 h-5" />
               </div>
               <h4 className="text-base font-bold text-[#0B1B3D]">L&apos;Entrepreneuriat Tech</h4>
@@ -140,8 +140,8 @@ export const AboutPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 hover:border-[#2563EB] shadow-xs hover:shadow-md transition-all space-y-3">
-              <div className="p-2.5 w-fit rounded-xl bg-blue-50 text-[#2563EB]">
+            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 hover:border-[#10B981] shadow-xs hover:shadow-md transition-all space-y-3">
+              <div className="p-2.5 w-fit rounded-xl bg-emerald-50 text-[#059669]">
                 <Users className="w-5 h-5" />
               </div>
               <h4 className="text-base font-bold text-[#0B1B3D]">L&apos;Accessibilité Numérique</h4>

@@ -8,8 +8,8 @@ export const VisionPage: React.FC = () => {
   return (
     <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO
-        title="Notre Vision Technologique pour le Sénégal & l'Afrique | Alkeb.dev"
-        description="Bâtir un écosystème numérique africain souverain, protecteur et technologiquement exemplaire. Découvrez la vision prospective et les engagements durables de Alkeb.dev."
+        title="Notre Vision Technologique pour le Sénégal & l'Afrique | Alkeb.lab"
+        description="Bâtir un écosystème numérique africain souverain, protecteur et technologiquement exemplaire. Découvrez la vision prospective et les engagements durables de Alkeb.lab."
         keywords="vision technologique Afrique, souveraineté numérique Sénégal, transformation digitale Dakar, innovation logicielle Afrique"
         canonicalPath="/vision"
       />
@@ -75,8 +75,8 @@ export const VisionPage: React.FC = () => {
             </ul>
           </div>
 
-          <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 space-y-4 hover:border-[#2563EB] shadow-xs hover:shadow-md transition-all">
-            <div className="p-3 w-fit rounded-xl bg-blue-50 text-[#2563EB]">
+          <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 space-y-4 hover:border-[#10B981] shadow-xs hover:shadow-md transition-all">
+            <div className="p-3 w-fit rounded-xl bg-emerald-50 text-[#059669]">
               <Shield className="w-6 h-6" />
             </div>
             <h3 className="text-lg sm:text-xl font-bold text-[#0B1B3D] font-display">Plus Sécurisé</h3>
@@ -85,11 +85,11 @@ export const VisionPage: React.FC = () => {
             </p>
             <ul className="space-y-2 pt-2 border-t border-slate-100 text-xs text-slate-600">
               <li className="flex items-center">
-                <Check className="w-3.5 h-3.5 mr-2 text-[#2563EB] flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 mr-2 text-[#10B981] flex-shrink-0" />
                 <span>Audits autorisés & remédiation</span>
               </li>
               <li className="flex items-center">
-                <Check className="w-3.5 h-3.5 mr-2 text-[#2563EB] flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 mr-2 text-[#10B981] flex-shrink-0" />
                 <span>Protection des actifs critiques</span>
               </li>
             </ul>

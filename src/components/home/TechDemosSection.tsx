@@ -11,7 +11,7 @@ export interface TechDemoSolution {
   department: string;
   targetAudience: string;
   category: string;
-  categoryColor: 'emerald' | 'blue';
+  categoryColor: 'emerald' | 'navy';
   duration: string;
   views: string;
   thumbnail: string;
@@ -30,7 +30,7 @@ const TECH_DEMO_SOLUTIONS: TechDemoSolution[] = [
     id: 'solution-legaltech',
     episode: 'DÉMO #01',
     title: 'Plateforme LegalTech, Parapheur & Signature Électronique Certifiée',
-    department: 'Pôle Ingénierie LegalTech Alkeb.dev',
+    department: 'Pôle Ingénierie LegalTech Alkeb.lab',
     targetAudience: 'Cabinets d\'Avocats, Études Notariales & Directions Juridiques',
     category: 'LegalTech & Dématérialisation',
     categoryColor: 'emerald',
@@ -42,7 +42,7 @@ const TECH_DEMO_SOLUTIONS: TechDemoSolution[] = [
     youtubeUrl: 'https://www.youtube.com/watch?v=CqEsIDrEASs',
     videoSourceAuthor: 'Rootstack Technology Insights (Licence libre de diffusion API)',
     videoTopic: 'Architecture des technologies juridiques et automatisation documentaire',
-    summary: 'Présentation des principes d\'architecture logicielle développés en interne chez Alkeb.dev : gestion électronique de documents (GED) juridique, archivage à valeur probante conforme à la loi sénégalaise n° 2008-08, et signature électronique sécurisée par empreinte cryptographique SHA-256.',
+    summary: 'Présentation des principes d\'architecture logicielle développés en interne chez Alkeb.lab : gestion électronique de documents (GED) juridique, archivage à valeur probante conforme à la loi sénégalaise n° 2008-08, et signature électronique sécurisée par empreinte cryptographique SHA-256.',
     metric: 'Traçabilité probatoire 100% infalsifiable & réduction drastique des délais administratifs',
     inHousePillar: 'Conception logicielle souveraine conforme aux règles déontologiques et réglementations OHADA & Sénégal.'
   },
@@ -50,10 +50,10 @@ const TECH_DEMO_SOLUTIONS: TechDemoSolution[] = [
     id: 'solution-cybersecurity',
     episode: 'DÉMO #02',
     title: 'Suite Cybersécurité Offensive, Audit de Code & Résilience des SI',
-    department: 'Laboratoire Cybersécurité Alkeb.dev',
+    department: 'Laboratoire Cybersécurité Alkeb.lab',
     targetAudience: 'Banques, Fintechs, Opérateurs & Systèmes d\'Information Critiques',
     category: 'Cybersécurité & Défense',
-    categoryColor: 'blue',
+    categoryColor: 'navy',
     duration: '05:30 min',
     views: 'Audit & Pentesting',
     thumbnail: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80',
@@ -62,7 +62,7 @@ const TECH_DEMO_SOLUTIONS: TechDemoSolution[] = [
     youtubeUrl: 'https://www.youtube.com/watch?v=xUmf-aGC5qc',
     videoSourceAuthor: 'Lumiverse Security Lab (Licence libre de diffusion API)',
     videoTopic: 'Défense des flux financiers, détection des menaces et résilience des plateformes bancaires',
-    summary: 'Méthodologie d\'audit et d\'évaluation technique appliquée par Alkeb.dev : détection des vecteurs d\'intrusion selon les standards OWASP, tests de pénétration des endpoints, sécurisation des API transactionnelles et surveillance continue de la conformité.',
+    summary: 'Méthodologie d\'audit et d\'évaluation technique appliquée par Alkeb.lab : détection des vecteurs d\'intrusion selon les standards OWASP, tests de pénétration des endpoints, sécurisation des API transactionnelles et surveillance continue de la conformité.',
     metric: 'Neutralisation préventive de 100% des vulnérabilités critiques identifiées',
     inHousePillar: 'Missions d\'audit exécutées sous convention formelle d\'autorisation écrite avec protocole d\'accord préalable.'
   },
@@ -70,7 +70,7 @@ const TECH_DEMO_SOLUTIONS: TechDemoSolution[] = [
     id: 'solution-software-saas',
     episode: 'DÉMO #03',
     title: 'Développement d\'Applications Web, Mobiles PWA & Plateformes SaaS',
-    department: 'Pôle Développement Applicatif Alkeb.dev',
+    department: 'Pôle Développement Applicatif Alkeb.lab',
     targetAudience: 'Startups à fort volume, Entreprises en expansion & PME',
     category: 'Ingénierie Logicielle',
     categoryColor: 'emerald',
@@ -82,7 +82,7 @@ const TECH_DEMO_SOLUTIONS: TechDemoSolution[] = [
     youtubeUrl: 'https://www.youtube.com/watch?v=oFRfMkxCoss',
     videoSourceAuthor: 'Uplatz Enterprise Architecture (Licence libre de diffusion API)',
     videoTopic: 'Conception d\'architectures cloud distribuées pour plateformes métiers à fort trafic',
-    summary: 'Démonstration des modèles d\'ingénierie logicielle conçus chez Alkeb.dev : découplage micro-services, applications progressives (PWA) synchronisées hors-ligne, persistance des états en temps réel et performances optimisées pour les environnements réseau africains.',
+    summary: 'Démonstration des modèles d\'ingénierie logicielle conçus chez Alkeb.lab : découplage micro-services, applications progressives (PWA) synchronisées hors-ligne, persistance des états en temps réel et performances optimisées pour les environnements réseau africains.',
     metric: 'Temps de réponse inférieur à 200ms sur réseaux mobiles & évolutivité prouvée',
     inHousePillar: 'Code source proprietary ou open-source audité, zéro dépendance opaque, tests automatisés continus.'
   },
@@ -90,10 +90,10 @@ const TECH_DEMO_SOLUTIONS: TechDemoSolution[] = [
     id: 'solution-consulting-govtech',
     episode: 'DÉMO #04',
     title: 'Schéma Directeur SI, Modernisation Institutionnelle & Urbanisation',
-    department: 'Pôle Conseil & Architecture SI Alkeb.dev',
+    department: 'Pôle Conseil & Architecture SI Alkeb.lab',
     targetAudience: 'Institutions Publiques, Agences d\'État & Organisations Régionales',
     category: 'Conseil & Urbanisation SI',
-    categoryColor: 'blue',
+    categoryColor: 'navy',
     duration: '04:40 min',
     views: 'Modernisation & GovTech',
     thumbnail: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80',
@@ -102,7 +102,7 @@ const TECH_DEMO_SOLUTIONS: TechDemoSolution[] = [
     youtubeUrl: 'https://www.youtube.com/watch?f-ugxtNzbCY',
     videoSourceAuthor: 'techUK Digital Insights (Licence libre de diffusion API)',
     videoTopic: 'Impact et méthodologies de transformation numérique des organisations et services publics',
-    summary: 'Approche stratégique éprouvée de Alkeb.dev pour moderniser les processus administratifs : cartographie des systèmes hérités (legacy), dématérialisation des démarches citoyennes, gouvernance sécurisée des données et conduite du changement.',
+    summary: 'Approche stratégique éprouvée de Alkeb.lab pour moderniser les processus administratifs : cartographie des systèmes hérités (legacy), dématérialisation des démarches citoyennes, gouvernance sécurisée des données et conduite du changement.',
     metric: 'Dématérialisation complète des flux documentaires et satisfaction usagers certifiée',
     inHousePillar: 'Gouvernance alignée sur la souveraineté numérique et le strict respect des lois de protection des données.'
   }
@@ -125,7 +125,7 @@ export const TechDemosSection: React.FC = () => {
             Nos Solutions &amp; Démonstrations en Vidéo
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Explorez les architectures logicielles, standards de sécurité et méthodologies appliqués par Alkeb.dev dans la conception de ses plateformes métiers.
+            Explorez les architectures logicielles, standards de sécurité et méthodologies appliqués par Alkeb.lab dans la conception de ses plateformes métiers.
           </p>
         </div>
 
@@ -178,7 +178,7 @@ export const TechDemosSection: React.FC = () => {
                 <div>
                   <div className="flex items-center justify-between text-xs mb-2">
                     <span className={`font-mono text-[11px] font-bold uppercase ${
-                      sol.categoryColor === 'emerald' ? 'text-[#059669]' : 'text-[#2563EB]'
+                      sol.categoryColor === 'emerald' ? 'text-[#059669]' : 'text-[#0B1B3D]'
                     }`}>
                       {sol.category}
                     </span>
@@ -223,12 +223,12 @@ export const TechDemosSection: React.FC = () => {
         <div className="mt-8 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-500 leading-relaxed text-center sm:text-left flex items-start gap-3">
           <ShieldAlert className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
           <p>
-            <strong>Transparence &amp; Déontologie :</strong> Les capsules vidéo ci-dessus sont des démonstrations présentées à titre pédagogique pour illustrer les principes d&apos;ingénierie que Alkeb.dev applique. L&apos;ensemble de nos solutions, progiciels et plateformes sont conçus, développés et sécurisés sur-mesure dans nos laboratoires à Dakar pour chaque client et partenaire.
+            <strong>Transparence &amp; Déontologie :</strong> Les capsules vidéo ci-dessus sont des démonstrations présentées à titre pédagogique pour illustrer les principes d&apos;ingénierie que Alkeb.lab applique. L&apos;ensemble de nos solutions, progiciels et plateformes sont conçus, développés et sécurisés sur-mesure dans nos laboratoires à Dakar pour chaque client et partenaire.
           </p>
         </div>
 
         {/* Bannière d'appel à l'action */}
-        <div className="mt-8 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-emerald-50 via-white to-blue-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-5">
+        <div className="mt-8 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-emerald-50 via-white to-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-5">
           <div className="space-y-1 text-center sm:text-left">
             <h3 className="text-base sm:text-lg font-bold text-[#0B1B3D] font-display">
               Vous souhaitez déployer l&apos;une de ces solutions pour votre structure ?
@@ -334,7 +334,7 @@ export const TechDemosSection: React.FC = () => {
 
                 <div className="pt-3 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
                   <a
-                    href={getWhatsAppUrl(`Bonjour Alkeb.dev, je souhaite une démonstration personnalisée : ${activeSolution.title}`)}
+                    href={getWhatsAppUrl(`Bonjour Alkeb.lab, je souhaite une démonstration personnalisée : ${activeSolution.title}`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto px-5 py-2.5 rounded-xl font-bold text-xs bg-[#10B981] hover:bg-[#059669] text-white flex items-center justify-center gap-2 transition-all shadow-sm"

@@ -23,11 +23,11 @@ export const LegalTechSection: React.FC = () => {
           </h2>
 
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Alkeb.dev développe en interne des progiciels haute sécurité pour équiper les cabinets d&apos;avocats, études notariales, directions juridiques d&apos;entreprises et institutions en Afrique. Conforme à la loi sénégalaise n° 2008-08 et aux standards OHADA.
+            Alkeb.lab développe en interne des progiciels haute sécurité pour équiper les cabinets d&apos;avocats, études notariales, directions juridiques d&apos;entreprises et institutions en Afrique. Conforme à la loi sénégalaise n° 2008-08 et aux standards OHADA.
           </p>
         </div>
 
-        {/* 4 Piliers de la LegalTech Alkeb.dev */}
+        {/* 4 Piliers de la LegalTech Alkeb.lab */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
           {/* Pilier 1 */}
@@ -49,11 +49,11 @@ export const LegalTechSection: React.FC = () => {
           </div>
 
           {/* Pilier 2 */}
-          <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-[#2563EB] transition-all space-y-4 group hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#2563EB] flex items-center justify-center border border-blue-200 group-hover:scale-110 transition-transform">
+          <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-[#10B981] transition-all space-y-4 group hover:-translate-y-1">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-[#059669] flex items-center justify-center border border-emerald-200 group-hover:scale-110 transition-transform">
               <FileText className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-bold text-[#0B1B3D] group-hover:text-[#2563EB] transition-colors font-display">
+            <h3 className="text-lg font-bold text-[#0B1B3D] group-hover:text-[#10B981] transition-colors font-display">
               GED &amp; Gestion de Cabinet
             </h3>
             <p className="text-xs text-slate-600 leading-relaxed">
@@ -62,7 +62,7 @@ export const LegalTechSection: React.FC = () => {
             <div className="pt-2 border-t border-slate-100 flex flex-wrap gap-1.5">
               <span className="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-mono font-semibold text-slate-700">Indexation OCR</span>
               <span className="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-mono font-semibold text-slate-700">Dossiers Cloisonnés</span>
-              <span className="px-2 py-0.5 rounded bg-blue-50 text-[10px] font-mono font-semibold text-blue-700">Rappels Audiences</span>
+              <span className="px-2 py-0.5 rounded bg-emerald-50 text-[10px] font-mono font-semibold text-emerald-700">Rappels Audiences</span>
             </div>
           </div>
 
@@ -85,11 +85,11 @@ export const LegalTechSection: React.FC = () => {
           </div>
 
           {/* Pilier 4 */}
-          <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-[#2563EB] transition-all space-y-4 group hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#2563EB] flex items-center justify-center border border-blue-200 group-hover:scale-110 transition-transform">
+          <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-[#10B981] transition-all space-y-4 group hover:-translate-y-1">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-[#059669] flex items-center justify-center border border-emerald-200 group-hover:scale-110 transition-transform">
               <Layers className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-bold text-[#0B1B3D] group-hover:text-[#2563EB] transition-colors font-display">
+            <h3 className="text-lg font-bold text-[#0B1B3D] group-hover:text-[#10B981] transition-colors font-display">
               Cycle des Contrats (CLM)
             </h3>
             <p className="text-xs text-slate-600 leading-relaxed">
@@ -98,7 +98,7 @@ export const LegalTechSection: React.FC = () => {
             <div className="pt-2 border-t border-slate-100 flex flex-wrap gap-1.5">
               <span className="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-mono font-semibold text-slate-700">Workflows CLM</span>
               <span className="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-mono font-semibold text-slate-700">Espace Sécurisé</span>
-              <span className="px-2 py-0.5 rounded bg-blue-50 text-[10px] font-mono font-semibold text-blue-700">Portail Client</span>
+              <span className="px-2 py-0.5 rounded bg-emerald-50 text-[10px] font-mono font-semibold text-emerald-700">Portail Client</span>
             </div>
           </div>
 
@@ -116,7 +116,7 @@ export const LegalTechSection: React.FC = () => {
                 Une conformité rigoureuse avec la Loi n° 2008-08 &amp; la CDP
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Toutes les solutions LegalTech conçues par Alkeb.dev s&apos;articulent autour du respect strict des textes de la République du Sénégal régissant les transactions électroniques, la protection des données à caractère personnel (Loi 2008-12) et les actes uniformes OHADA.
+                Toutes les solutions LegalTech conçues par Alkeb.lab s&apos;articulent autour du respect strict des textes de la République du Sénégal régissant les transactions électroniques, la protection des données à caractère personnel (Loi 2008-12) et les actes uniformes OHADA.
               </p>
             </div>
 
@@ -128,7 +128,7 @@ export const LegalTechSection: React.FC = () => {
                 Découvrir l&apos;Offre LegalTech
               </Link>
               <a
-                href={getWhatsAppUrl('Bonjour Alkeb.dev, je souhaite une démonstration privée de votre suite LegalTech pour mon cabinet ou mon entreprise.')}
+                href={getWhatsAppUrl('Bonjour Alkeb.lab, je souhaite une démonstration privée de votre suite LegalTech pour mon cabinet ou mon entreprise.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-xs text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-all text-center flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-[#10B981]"

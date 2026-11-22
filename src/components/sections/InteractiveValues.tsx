@@ -45,7 +45,7 @@ export const ALKEB_VALUES: ValueItem[] = [
       'Dévouement à l\'émancipation numérique africaine',
       'Écoute active et disponibilité professionnelle'
     ],
-    icon: <HeartHandshake className="w-7 h-7 text-[#2563EB]" />,
+    icon: <HeartHandshake className="w-7 h-7 text-[#059669]" />,
   },
   {
     id: 'excellence',
@@ -71,7 +71,7 @@ export const ALKEB_VALUES: ValueItem[] = [
       'Création de valeur durable pour nos partenaires',
       'Développement raisonné et soutenable'
     ],
-    icon: <Lightbulb className="w-7 h-7 text-[#2563EB]" />,
+    icon: <Lightbulb className="w-7 h-7 text-[#059669]" />,
   },
   {
     id: 'security',
@@ -97,7 +97,7 @@ export const ALKEB_VALUES: ValueItem[] = [
       'Audits de sécurité strictement autorisés et encadrés',
       'Contribution active à l\'écosystème numérique africain'
     ],
-    icon: <Scale className="w-7 h-7 text-[#2563EB]" />,
+    icon: <Scale className="w-7 h-7 text-[#10B981]" />,
   },
 ];
 

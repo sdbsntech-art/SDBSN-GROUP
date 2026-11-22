@@ -85,7 +85,7 @@ export const AdminLoginPage: React.FC = () => {
             Portail d&apos;Administration
           </h1>
           <p className="text-xs text-[#F3E3C3]/70">
-            Console sécurisée pour la gestion et le suivi des requêtes d&apos;Alkeb.dev.
+            Console sécurisée pour la gestion et le suivi des requêtes d&apos;Alkeb.lab.
           </p>
         </div>
 

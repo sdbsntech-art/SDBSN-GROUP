@@ -27,7 +27,7 @@ export const WhatsAppButton: React.FC = () => {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Contacter Alkeb.dev sur WhatsApp (${WHATSAPP_CONFIG.displayNumber})`}
+        aria-label={`Contacter Alkeb.lab sur WhatsApp (${WHATSAPP_CONFIG.displayNumber})`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className="group relative flex items-center justify-center w-14 h-14 rounded-full bg-[#10B981] text-[#04231A] shadow-lg shadow-[#10B981]/25 hover:bg-[#059669] hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#10B981] focus:ring-offset-2 focus:ring-offset-[#0E1B17]"

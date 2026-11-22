@@ -1,5 +1,5 @@
 /**
- * Alkeb.dev Digital Platform — Client-side Security & Anti-Inspection Module
+ * Alkeb.lab Digital Platform — Client-side Security & Anti-Inspection Module
  * Disables context menu (right click), DevTools shortcuts (F12, Ctrl+Shift+I/J/C, Ctrl+U),
  * image dragging, and warns unauthorized inspectors.
  */
@@ -56,7 +56,7 @@ export function initSecurityProtection(): () => void {
   // 1. Disable Right Click (Context Menu)
   const handleContextMenu = (e: MouseEvent) => {
     e.preventDefault();
-    showSecurityNotice("Clic droit désactivé sur la plateforme Alkeb.dev.");
+    showSecurityNotice("Clic droit désactivé sur la plateforme Alkeb.lab.");
   };
 
   // 2. Disable DevTools Shortcuts (F12, Ctrl+Shift+I, etc.)
@@ -132,11 +132,11 @@ export function initSecurityProtection(): () => void {
   try {
     console.clear();
     console.log(
-      '%cAlkeb.dev SECURITY — ACCÈS PROTÉGÉ',
+      '%cAlkeb.lab SECURITY — ACCÈS PROTÉGÉ',
       'color: #10B981; font-size: 20px; font-weight: bold; background: #0B1B3D; padding: 6px 14px; border-radius: 6px;'
     );
     console.log(
-      '%cLa plateforme Alkeb.dev applique une politique stricte de confidentialité et de protection des données.',
+      '%cLa plateforme Alkeb.lab applique une politique stricte de confidentialité et de protection des données.',
       'color: #64748B; font-size: 12px; margin-top: 4px;'
     );
   } catch {

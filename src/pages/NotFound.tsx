@@ -8,7 +8,7 @@ export const NotFoundPage: React.FC = () => {
   return (
     <div className="min-h-[75vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 bg-slate-50 text-[#0B1B3D]">
       <SEO 
-        title="Page Non Trouvée (404) | Alkeb.dev"
+        title="Page Non Trouvée (404) | Alkeb.lab"
         description="La page que vous recherchez est introuvable." 
         noindex={true}
       />

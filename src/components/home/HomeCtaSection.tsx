@@ -11,7 +11,7 @@ export const HomeCtaSection: React.FC = () => {
           
           {/* Lueurs décoratives */}
           <div className="absolute -top-24 -right-24 w-72 h-72 bg-[#10B981]/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-[#2563EB]/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-[#059669]/20 rounded-full blur-3xl pointer-events-none" />
 
           <span className="text-xs font-mono uppercase tracking-widest text-white px-3.5 py-1 rounded-full bg-[#10B981] inline-block font-bold">
             Collaboration &amp; Partenariat
@@ -35,7 +35,7 @@ export const HomeCtaSection: React.FC = () => {
             </Link>
             
             <a
-              href={getWhatsAppUrl('Bonjour Alkeb.dev, je souhaite démarrer un projet technologique.')}
+              href={getWhatsAppUrl('Bonjour Alkeb.lab, je souhaite démarrer un projet technologique.')}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 shadow-sm transition-all text-sm flex items-center justify-center space-x-2 focus-visible:ring-2 focus-visible:ring-[#10B981]"

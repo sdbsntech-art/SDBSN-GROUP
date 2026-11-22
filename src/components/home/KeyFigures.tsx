@@ -10,7 +10,7 @@ interface StatItem {
   label: string;
   sublabel: string;
   icon: React.ElementType;
-  accentColor: 'emerald' | 'blue';
+  accentColor: 'emerald' | 'navy';
 }
 
 const STATS_DATA: StatItem[] = [
@@ -30,7 +30,7 @@ const STATS_DATA: StatItem[] = [
     label: 'Données Souveraines',
     sublabel: 'Hébergement sécurisé & conformité CDP / RGPD',
     icon: ShieldCheck,
-    accentColor: 'blue',
+    accentColor: 'navy',
   },
   {
     id: 'compliance',
@@ -49,7 +49,7 @@ const STATS_DATA: StatItem[] = [
     label: 'Disponibilité & SLA',
     sublabel: 'Surveillance et résilience continue des architectures',
     icon: Users,
-    accentColor: 'blue',
+    accentColor: 'navy',
   },
 ];
 
@@ -124,7 +124,7 @@ export const KeyFigures: React.FC = () => {
             Des chiffres qui attestent de notre engagement.
           </h2>
           <p className="text-xs sm:text-sm text-slate-600">
-            Chaque réalisation d&apos;Alkeb.dev vise la pérennité, la sécurité absolue et la souveraineté technologique.
+            Chaque réalisation d&apos;Alkeb.lab vise la pérennité, la sécurité absolue et la souveraineté technologique.
           </p>
         </div>
 
@@ -151,17 +151,17 @@ export const KeyFigures: React.FC = () => {
                     className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
                       isEmerald
                         ? 'bg-emerald-50 text-[#059669] group-hover:bg-[#10B981] group-hover:text-white'
-                        : 'bg-blue-50 text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white'
+                        : 'bg-slate-100 text-[#0B1B3D] group-hover:bg-[#0B1B3D] group-hover:text-white'
                     }`}
                   >
                     <Icon className="w-5 h-5" />
                   </div>
-                  <span className={`w-2 h-2 rounded-full ${isEmerald ? 'bg-[#10B981]' : 'bg-[#2563EB]'}`} />
+                  <span className={`w-2 h-2 rounded-full ${isEmerald ? 'bg-[#10B981]' : 'bg-[#0B1B3D]'}`} />
                 </div>
 
                 <div
                   className={`text-3xl sm:text-4xl font-extrabold font-display tracking-tight mb-1.5 ${
-                    isEmerald ? 'text-[#059669]' : 'text-[#2563EB]'
+                    isEmerald ? 'text-[#059669]' : 'text-[#0B1B3D]'
                   }`}
                 >
                   <AnimatedCounter

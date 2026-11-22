@@ -19,11 +19,11 @@ export const ServicesIndexPage: React.FC = () => {
       case 'Scale':
         return <Scale className="w-7 h-7 text-[#10B981]" />;
       case 'Shield':
-        return <Shield className="w-7 h-7 text-[#2563EB]" />;
+        return <Shield className="w-7 h-7 text-[#10B981]" />;
       case 'Code':
         return <Code className="w-7 h-7 text-[#10B981]" />;
       case 'Compass':
-        return <Compass className="w-7 h-7 text-[#2563EB]" />;
+        return <Compass className="w-7 h-7 text-[#059669]" />;
       default:
         return <Code className="w-7 h-7 text-[#10B981]" />;
     }
@@ -32,8 +32,8 @@ export const ServicesIndexPage: React.FC = () => {
   return (
     <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO 
-        title="Solutions & Services d'Ingénierie, Cybersécurité & LegalTech | Alkeb.dev"
-        description="Catalogue complet des services Alkeb.dev : LegalTech & Dématérialisation certifiée, Audit de Cybersécurité défensive, Développement logiciel sur-mesure et Conseil IT stratégique."
+        title="Solutions & Services d'Ingénierie, Cybersécurité & LegalTech | Alkeb.lab"
+        description="Catalogue complet des services Alkeb.lab : LegalTech & Dématérialisation certifiée, Audit de Cybersécurité défensive, Développement logiciel sur-mesure et Conseil IT stratégique."
         canonicalPath="/services" 
         keywords="services informatiques Dakar, LegalTech Sénégal, audit cybersécurité, développement application web Dakar, conseil DSI, transformation numérique"
       />

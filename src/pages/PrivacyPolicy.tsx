@@ -7,10 +7,10 @@ export const PrivacyPolicyPage: React.FC = () => {
   return (
     <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO 
-        title="Politique de Confidentialité & Protection des Données | Alkeb.dev"
-        description="Politique de protection des données à caractère personnel de Alkeb.dev, en conformité avec la loi sénégalaise n° 2008-12 et les standards de la CDP."
+        title="Politique de Confidentialité & Protection des Données | Alkeb.lab"
+        description="Politique de protection des données à caractère personnel de Alkeb.lab, en conformité avec la loi sénégalaise n° 2008-12 et les standards de la CDP."
         canonicalPath="/politique-confidentialite" 
-        keywords="confidentialité Alkeb.dev, protection données personnelles Sénégal, loi 2008-12 CDP, RGPD Sénégal, sécurité des données"
+        keywords="confidentialité Alkeb.lab, protection données personnelles Sénégal, loi 2008-12 CDP, RGPD Sénégal, sécurité des données"
       />
       <div className="max-w-4xl mx-auto space-y-10">
 
@@ -34,7 +34,7 @@ export const PrivacyPolicyPage: React.FC = () => {
           <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
           <div>
             <strong className="text-amber-700 block mb-0.5 font-bold">Avertissement de conformité :</strong>
-            La présente politique constitue un modèle d&apos;information précontractuelle établi pour Alkeb.dev. Elle devra être formellement auditée et enregistrée auprès de la Commission de Protection des Données Personnelles (CDP) du Sénégal selon la procédure de déclaration requise dès la mise en service commerciale définitive.
+            La présente politique constitue un modèle d&apos;information précontractuelle établi pour Alkeb.lab. Elle devra être formellement auditée et enregistrée auprès de la Commission de Protection des Données Personnelles (CDP) du Sénégal selon la procédure de déclaration requise dès la mise en service commerciale définitive.
           </div>
         </div>
 
@@ -43,10 +43,10 @@ export const PrivacyPolicyPage: React.FC = () => {
           
           <section className="space-y-3">
             <h2 className="text-lg font-bold text-[#0B1B3D] font-display">
-              1. Engagement de Alkeb.dev en matière de Vie Privée
+              1. Engagement de Alkeb.lab en matière de Vie Privée
             </h2>
             <p>
-              Pour Alkeb.dev, la protection des données personnelles et de la vie privée n&apos;est pas une simple obligation administrative mais un prolongement direct de notre valeur cardinale : <em>CONFIDENTIALITY AND TRUST</em>.
+              Pour Alkeb.lab, la protection des données personnelles et de la vie privée n&apos;est pas une simple obligation administrative mais un prolongement direct de notre valeur cardinale : <em>CONFIDENTIALITY AND TRUST</em>.
             </p>
             <p>
               Nous nous engageons à respecter scrupuleusement les dispositions de la <strong>Loi n° 2008-12 du 25 janvier 2008</strong> portant sur la protection des données à caractère personnel en République du Sénégal ainsi que les bonnes pratiques internationales.
@@ -58,7 +58,7 @@ export const PrivacyPolicyPage: React.FC = () => {
               2. Données Collectées &amp; Origine
             </h2>
             <p>
-              Alkeb.dev applique le principe de minimisation : nous ne collectons que les données strictement indispensables à l&apos;exécution de nos services.
+              Alkeb.lab applique le principe de minimisation : nous ne collectons que les données strictement indispensables à l&apos;exécution de nos services.
             </p>
             <ul className="list-disc pl-5 space-y-1 text-[#0B1B3D]/80">
               <li><strong>Données d&apos;identification :</strong> Nom, prénom, fonction ou statut organisationnel.</li>
@@ -104,13 +104,13 @@ export const PrivacyPolicyPage: React.FC = () => {
               5. Destinataires et Non-Divulgation
             </h2>
             <p>
-              Alkeb.dev <strong>ne vend, ne loue, ni ne cède jamais</strong> vos données personnelles à des tiers à des fins publicitaires ou de prospection.
+              Alkeb.lab <strong>ne vend, ne loue, ni ne cède jamais</strong> vos données personnelles à des tiers à des fins publicitaires ou de prospection.
             </p>
             <p>
               Les seules entités susceptibles d&apos;accéder à certaines données sont :
             </p>
             <ul className="list-disc pl-5 space-y-1 text-[#0B1B3D]/80">
-              <li>Les collaborateurs internes de Alkeb.dev spécifiquement habilités et tenus au secret professionnel.</li>
+              <li>Les collaborateurs internes de Alkeb.lab spécifiquement habilités et tenus au secret professionnel.</li>
               <li>Nos sous-traitants d&apos;infrastructure sécurisée (hébergement Vercel et passerelle d&apos;acheminement Web3Forms), dans le respect strict des garanties contractuelles de sécurité.</li>
             </ul>
           </section>

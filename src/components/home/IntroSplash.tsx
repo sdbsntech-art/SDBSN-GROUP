@@ -71,14 +71,14 @@ export const IntroSplash: React.FC<IntroSplashProps> = ({ onComplete }) => {
     <AnimatePresence>
       {isVisible && (
         <motion.aside
-          aria-label="Écran d'accueil Alkeb.dev"
+          aria-label="Écran d'accueil Alkeb.lab"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } }}
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0B1B3D] text-white select-none overflow-hidden"
         >
           {/* Lueurs décoratives */}
           <div className="absolute top-1/4 left-1/3 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-[#10B981]/20 blur-3xl pointer-events-none glow-drift-emerald" />
-          <div className="absolute bottom-1/4 right-1/3 w-72 sm:w-80 h-72 sm:h-80 rounded-full bg-[#2563EB]/25 blur-3xl pointer-events-none glow-drift-gold" />
+          <div className="absolute bottom-1/4 right-1/3 w-72 sm:w-80 h-72 sm:h-80 rounded-full bg-[#059669]/25 blur-3xl pointer-events-none glow-drift-gold" />
 
           {/* Bouton Passer */}
           <button
@@ -105,7 +105,7 @@ export const IntroSplash: React.FC<IntroSplashProps> = ({ onComplete }) => {
                 </span>
 
                 <span className="mt-3 text-xs sm:text-sm font-mono tracking-widest uppercase text-[#10B981] font-semibold">
-                  Alkeb.dev • {currentGreeting.label}
+                  Alkeb.lab • {currentGreeting.label}
                 </span>
               </motion.div>
             </AnimatePresence>

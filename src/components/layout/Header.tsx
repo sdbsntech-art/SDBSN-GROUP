@@ -51,6 +51,7 @@ export const Header: React.FC = () => {
   }, [location.pathname]);
 
   const isActive = (path: string) => location.pathname === path;
+  const isHome = location.pathname === '/';
 
   return (
     <header
@@ -68,8 +69,8 @@ export const Header: React.FC = () => {
             <div className="flex items-center justify-center rounded-md bg-white transition-all group-hover:scale-[1.02]">
               <img
                 src="/logo/alkeb-logo.png"
-                alt="Alkeb.dev"
-                className="h-11 sm:h-12 md:h-14 w-auto object-contain"
+                alt="Alkeb.lab"
+                className="h-10 sm:h-11 md:h-12 w-auto object-contain"
               />
             </div>
           </Link>
@@ -114,7 +115,7 @@ export const Header: React.FC = () => {
                     to="/a-propos"
                     className="block px-4 py-2.5 text-sm font-medium text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50 transition-colors"
                   >
-                    À propos de Alkeb.dev
+                    À propos de Alkeb.lab
                   </Link>
                   <Link
                     to="/vision"
@@ -154,7 +155,11 @@ export const Header: React.FC = () => {
                 to="/services"
                 className={`flex items-center px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors ${
                   location.pathname.startsWith('/services')
-                    ? 'text-[#059669] bg-emerald-50 border border-emerald-200/80 font-bold'
+                    ? isHome
+                      ? 'text-[#10B981] bg-[#10B981]/20 border border-[#10B981]/40 font-bold'
+                      : 'text-[#059669] bg-emerald-50 border border-emerald-200/80 font-bold'
+                    : isHome
+                    ? 'text-[#F3E3C3] hover:text-[#10B981] hover:bg-white/5'
                     : 'text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50'
                 }`}
               >
@@ -163,7 +168,7 @@ export const Header: React.FC = () => {
               </Link>
 
               {servicesOpen && (
-                <div className="absolute left-0 mt-1 w-80 rounded-2xl bg-white py-2 z-50 border border-slate-200 shadow-xl">
+                <div className="absolute left-0 mt-1 w-80 rounded-2xl bg-white py-2 z-50 border border-slate-200 shadow-xl text-[#0B1B3D]">
                   <Link
                     to="/services/legaltech"
                     className="flex flex-col px-4 py-3 hover:bg-slate-50 transition-colors border-b border-slate-100 group"
@@ -187,7 +192,7 @@ export const Header: React.FC = () => {
                       <span className="text-sm font-bold text-[#0B1B3D] group-hover:text-[#10B981] transition-colors">
                         Cybersécurité & Audits
                       </span>
-                      <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-blue-100 text-[#1D4ED8] font-bold">
+                      <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-emerald-100 text-[#047857] font-bold">
                         Certifié
                       </span>
                     </div>
@@ -230,7 +235,11 @@ export const Header: React.FC = () => {
               to="/contact"
               className={`px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors ${
                 isActive('/contact') 
-                  ? 'bg-emerald-50 text-[#059669] font-bold border border-emerald-200/80 shadow-xs' 
+                  ? isHome
+                    ? 'bg-[#10B981]/20 text-[#10B981] font-bold border border-[#10B981]/40'
+                    : 'bg-emerald-50 text-[#059669] font-bold border border-emerald-200/80 shadow-xs' 
+                  : isHome
+                  ? 'text-[#F3E3C3] hover:text-[#10B981] hover:bg-white/5'
                   : 'text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50'
               }`}
             >
@@ -243,7 +252,11 @@ export const Header: React.FC = () => {
             <Link
               to="/admin/login"
               aria-label="Portail Sécurisé"
-              className="p-2 text-slate-600 hover:text-[#0B1B3D] hover:bg-slate-100 rounded-xl transition-colors border border-slate-200"
+              className={`p-2 rounded-xl transition-colors border ${
+                isHome
+                  ? 'text-[#F3E3C3] hover:text-white hover:bg-white/10 border-white/15'
+                  : 'text-slate-600 hover:text-[#0B1B3D] hover:bg-slate-100 border-slate-200'
+              }`}
               title="Portail Administration"
             >
               <Lock className="w-4 h-4" />
@@ -251,7 +264,7 @@ export const Header: React.FC = () => {
 
             <Link
               to="/contact"
-              className="inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-bold bg-[#10B981] hover:bg-[#059669] text-white transition-all shadow-sm hover:shadow-md active:scale-[0.98]"
+              className="inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-bold bg-[#10B981] hover:bg-[#059669] text-[#0B2B2A] hover:text-white transition-all shadow-sm hover:shadow-md active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[#F2B134]"
             >
               <span>Démarrer un Projet</span>
               <ArrowRight className="ml-1.5 w-4 h-4" />
@@ -262,7 +275,11 @@ export const Header: React.FC = () => {
           <div className="flex items-center space-x-2 lg:hidden">
             <Link
               to="/admin/login"
-              className="p-2 text-slate-600 hover:text-[#0B1B3D] bg-slate-50 border border-slate-200 rounded-xl"
+              className={`p-2 rounded-xl border ${
+                isHome
+                  ? 'text-[#F3E3C3] bg-white/5 border-white/15'
+                  : 'text-slate-600 hover:text-[#0B1B3D] bg-slate-50 border-slate-200'
+              }`}
               aria-label="Accès Administration"
             >
               <Lock className="w-4 h-4" />
@@ -270,10 +287,14 @@ export const Header: React.FC = () => {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl text-[#0B1B3D] hover:text-[#10B981] bg-slate-50 border border-slate-200 focus:outline-none"
+              className={`p-2.5 rounded-xl border focus:outline-none ${
+                isHome
+                  ? 'text-[#F3E3C3] bg-white/5 border-white/15'
+                  : 'text-[#0B1B3D] hover:text-[#10B981] bg-slate-50 border-slate-200'
+              }`}
               aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-[#0B1B3D]" /> : <Menu className="w-5 h-5 text-[#0B1B3D]" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
 
@@ -352,7 +373,7 @@ export const Header: React.FC = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center space-x-3 p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#10B981] transition-colors"
                 >
-                  <Shield className="w-4 h-4 text-[#2563EB] flex-shrink-0" />
+                  <Shield className="w-4 h-4 text-[#10B981] flex-shrink-0" />
                   <div className="min-w-0">
                     <span className="text-sm font-bold text-[#0B1B3D] block truncate">Cybersécurité & Audits</span>
                     <span className="text-xs text-slate-500 block truncate">Évaluation autorisée & Défense</span>
@@ -376,7 +397,7 @@ export const Header: React.FC = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center space-x-3 p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#10B981] transition-colors"
                 >
-                  <Compass className="w-4 h-4 text-[#2563EB] flex-shrink-0" />
+                  <Compass className="w-4 h-4 text-[#059669] flex-shrink-0" />
                   <div className="min-w-0">
                     <span className="text-sm font-bold text-[#0B1B3D] block truncate">Conseil Technologique</span>
                     <span className="text-xs text-slate-500 block truncate">Architecture & Urbanisation</span>
@@ -398,14 +419,14 @@ export const Header: React.FC = () => {
                   className="flex items-center space-x-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#10B981] text-sm text-[#0B1B3D]"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-[#10B981]" />
-                  <span>À propos de Alkeb.dev</span>
+                  <span>À propos de Alkeb.lab</span>
                 </Link>
                 <Link
                   to="/vision"
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center space-x-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#10B981] text-sm text-[#0B1B3D]"
                 >
-                  <Target className="w-3.5 h-3.5 text-[#2563EB]" />
+                  <Target className="w-3.5 h-3.5 text-[#10B981]" />
                   <span>Notre Vision</span>
                 </Link>
                 <Link
@@ -421,7 +442,7 @@ export const Header: React.FC = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center space-x-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#10B981] text-sm text-[#0B1B3D]"
                 >
-                  <Award className="w-3.5 h-3.5 text-[#2563EB]" />
+                  <Award className="w-3.5 h-3.5 text-[#F2B134]" />
                   <span>Nos Valeurs Clés</span>
                 </Link>
                 <Link
