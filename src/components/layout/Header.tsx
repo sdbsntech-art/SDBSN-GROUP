@@ -51,7 +51,6 @@ export const Header: React.FC = () => {
   }, [location.pathname]);
 
   const isActive = (path: string) => location.pathname === path;
-  const isHome = location.pathname === '/';
 
   return (
     <header
@@ -155,11 +154,7 @@ export const Header: React.FC = () => {
                 to="/services"
                 className={`flex items-center px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors ${
                   location.pathname.startsWith('/services')
-                    ? isHome
-                      ? 'text-[#10B981] bg-[#10B981]/20 border border-[#10B981]/40 font-bold'
-                      : 'text-[#059669] bg-emerald-50 border border-emerald-200/80 font-bold'
-                    : isHome
-                    ? 'text-[#F3E3C3] hover:text-[#10B981] hover:bg-white/5'
+                    ? 'text-[#059669] bg-emerald-50 border border-emerald-200/80 font-bold'
                     : 'text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50'
                 }`}
               >
@@ -235,11 +230,7 @@ export const Header: React.FC = () => {
               to="/contact"
               className={`px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors ${
                 isActive('/contact') 
-                  ? isHome
-                    ? 'bg-[#10B981]/20 text-[#10B981] font-bold border border-[#10B981]/40'
-                    : 'bg-emerald-50 text-[#059669] font-bold border border-emerald-200/80 shadow-xs' 
-                  : isHome
-                  ? 'text-[#F3E3C3] hover:text-[#10B981] hover:bg-white/5'
+                  ? 'bg-emerald-50 text-[#059669] font-bold border border-emerald-200/80 shadow-xs' 
                   : 'text-[#0B1B3D] hover:text-[#10B981] hover:bg-slate-50'
               }`}
             >
@@ -252,11 +243,7 @@ export const Header: React.FC = () => {
             <Link
               to="/admin/login"
               aria-label="Portail Sécurisé"
-              className={`p-2 rounded-xl transition-colors border ${
-                isHome
-                  ? 'text-[#F3E3C3] hover:text-white hover:bg-white/10 border-white/15'
-                  : 'text-slate-600 hover:text-[#0B1B3D] hover:bg-slate-100 border-slate-200'
-              }`}
+              className="p-2 rounded-xl transition-colors border text-slate-600 hover:text-[#0B1B3D] hover:bg-slate-100 border-slate-200"
               title="Portail Administration"
             >
               <Lock className="w-4 h-4" />
@@ -264,7 +251,7 @@ export const Header: React.FC = () => {
 
             <Link
               to="/contact"
-              className="inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-bold bg-[#10B981] hover:bg-[#059669] text-[#0B2B2A] hover:text-white transition-all shadow-sm hover:shadow-md active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[#F2B134]"
+              className="inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-bold bg-[#10B981] hover:bg-[#059669] text-white transition-all shadow-sm hover:shadow-md active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[#10B981]"
             >
               <span>Démarrer un Projet</span>
               <ArrowRight className="ml-1.5 w-4 h-4" />
@@ -275,11 +262,7 @@ export const Header: React.FC = () => {
           <div className="flex items-center space-x-2 lg:hidden">
             <Link
               to="/admin/login"
-              className={`p-2 rounded-xl border ${
-                isHome
-                  ? 'text-[#F3E3C3] bg-white/5 border-white/15'
-                  : 'text-slate-600 hover:text-[#0B1B3D] bg-slate-50 border-slate-200'
-              }`}
+              className="p-2 rounded-xl border text-slate-600 hover:text-[#0B1B3D] bg-slate-50 border-slate-200"
               aria-label="Accès Administration"
             >
               <Lock className="w-4 h-4" />
@@ -287,11 +270,7 @@ export const Header: React.FC = () => {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-2.5 rounded-xl border focus:outline-none ${
-                isHome
-                  ? 'text-[#F3E3C3] bg-white/5 border-white/15'
-                  : 'text-[#0B1B3D] hover:text-[#10B981] bg-slate-50 border-slate-200'
-              }`}
+              className="p-2.5 rounded-xl border focus:outline-none text-[#0B1B3D] hover:text-[#10B981] bg-slate-50 border-slate-200"
               aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

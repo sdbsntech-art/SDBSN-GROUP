@@ -1,189 +1,190 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Clock, ArrowRight, ShieldAlert, CheckCircle2, MessageCircle, ExternalLink, X } from 'lucide-react';
+import { 
+  ArrowRight, 
+  ShieldCheck, 
+  CheckCircle2, 
+  MessageCircle, 
+  Maximize2, 
+  X, 
+  Sparkles,
+  Terminal,
+  FileCheck2,
+  Building
+} from 'lucide-react';
 import { getWhatsAppUrl } from '../../lib/whatsapp';
 
-export interface TechDemoSolution {
+export interface TechSolutionItem {
   id: string;
-  episode: string;
+  reference: string;
   title: string;
   department: string;
   targetAudience: string;
   category: string;
-  categoryColor: 'emerald' | 'navy';
-  duration: string;
-  views: string;
+  categoryIcon: React.ReactNode;
   thumbnail: string;
+  fullImage: string;
   techTags: string[];
-  youtubeId: string;
-  youtubeUrl: string;
-  videoSourceAuthor: string;
-  videoTopic: string;
-  summary: string;
-  metric: string;
-  inHousePillar: string;
+  challenge: string;
+  architectureSolution: string;
+  keyFeatures: string[];
+  measurableMetric: string;
+  compliancePillar: string;
 }
 
-const TECH_DEMO_SOLUTIONS: TechDemoSolution[] = [
+const TECH_SOLUTIONS: TechSolutionItem[] = [
   {
     id: 'solution-legaltech',
-    episode: 'DÉMO #01',
+    reference: 'SOL-01',
     title: 'Plateforme LegalTech, Parapheur & Signature Électronique Certifiée',
     department: 'Pôle Ingénierie LegalTech Alkeb.lab',
-    targetAudience: 'Cabinets d\'Avocats, Études Notariales & Directions Juridiques',
+    targetAudience: 'Cabinets d\'Avocats, Notaires, Banques & Directions Juridiques',
     category: 'LegalTech & Dématérialisation',
-    categoryColor: 'emerald',
-    duration: '03:45 min',
-    views: 'Architecture LegalTech',
-    thumbnail: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80',
-    techTags: ['Loi 2008-08', 'Signature SHA-256', 'GED Chiffrée', 'Coffre-fort AES-256'],
-    youtubeId: 'CqEsIDrEASs',
-    youtubeUrl: 'https://www.youtube.com/watch?v=CqEsIDrEASs',
-    videoSourceAuthor: 'Rootstack Technology Insights (Licence libre de diffusion API)',
-    videoTopic: 'Architecture des technologies juridiques et automatisation documentaire',
-    summary: 'Présentation des principes d\'architecture logicielle développés en interne chez Alkeb.lab : gestion électronique de documents (GED) juridique, archivage à valeur probante conforme à la loi sénégalaise n° 2008-08, et signature électronique sécurisée par empreinte cryptographique SHA-256.',
-    metric: 'Traçabilité probatoire 100% infalsifiable & réduction drastique des délais administratifs',
-    inHousePillar: 'Conception logicielle souveraine conforme aux règles déontologiques et réglementations OHADA & Sénégal.'
+    categoryIcon: <FileCheck2 className="w-4 h-4 text-[#10B981]" />,
+    thumbnail: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=900&q=80',
+    fullImage: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1600&q=85',
+    techTags: ['Loi 2008-08 Sénégal', 'Signature SHA-256', 'GED Chiffrée', 'Coffre-fort AES-256', 'Horodatage'],
+    challenge: 'Lenteur des circuits de signature physique, risques d\'altération des actes juridiques et dispersion des contrats non sécurisés.',
+    architectureSolution: 'Conception d\'un parapheur électronique souverain avec authentification forte multi-facteurs, calcul d\'empreinte cryptographique SHA-256 scellée et coffre-fort numérique à valeur probante conforme au droit sénégalais et OHADA.',
+    keyFeatures: [
+      'Génération et validation de signatures électroniques certifiées',
+      'Circuits de paraphe séquentiels ou parallèles automatisés',
+      'Archivage sécurisé infalsifiable avec piste d\'audit probatoire',
+      'Gestion électronique des actes et pièces contractuelles confidentielles'
+    ],
+    measurableMetric: 'Réduction de 85% des délais de signature & traçabilité juridique 100% opposable',
+    compliancePillar: 'Conformité stricte à la Loi n° 2008-08 sur les transactions électroniques et aux exigences déontologiques du barreau et du notariat.'
   },
   {
     id: 'solution-cybersecurity',
-    episode: 'DÉMO #02',
+    reference: 'SOL-02',
     title: 'Suite Cybersécurité Offensive, Audit de Code & Résilience des SI',
     department: 'Laboratoire Cybersécurité Alkeb.lab',
-    targetAudience: 'Banques, Fintechs, Opérateurs & Systèmes d\'Information Critiques',
+    targetAudience: 'Fintechs, Établissements Bancaires, Opérateurs Télécoms & SI Critiques',
     category: 'Cybersécurité & Défense',
-    categoryColor: 'navy',
-    duration: '05:30 min',
-    views: 'Audit & Pentesting',
-    thumbnail: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80',
-    techTags: ['Pentesting OWASP', 'Audit Code Stat/Dyn', 'Durcissement Cloud', 'Chiffrement TLS 1.3'],
-    youtubeId: 'xUmf-aGC5qc',
-    youtubeUrl: 'https://www.youtube.com/watch?v=xUmf-aGC5qc',
-    videoSourceAuthor: 'Lumiverse Security Lab (Licence libre de diffusion API)',
-    videoTopic: 'Défense des flux financiers, détection des menaces et résilience des plateformes bancaires',
-    summary: 'Méthodologie d\'audit et d\'évaluation technique appliquée par Alkeb.lab : détection des vecteurs d\'intrusion selon les standards OWASP, tests de pénétration des endpoints, sécurisation des API transactionnelles et surveillance continue de la conformité.',
-    metric: 'Neutralisation préventive de 100% des vulnérabilités critiques identifiées',
-    inHousePillar: 'Missions d\'audit exécutées sous convention formelle d\'autorisation écrite avec protocole d\'accord préalable.'
+    categoryIcon: <ShieldCheck className="w-4 h-4 text-[#10B981]" />,
+    thumbnail: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80',
+    fullImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=85',
+    techTags: ['Pentesting OWASP', 'Audit Code Stat/Dyn', 'Durcissement Cloud', 'Chiffrement TLS 1.3', 'SOC Défensif'],
+    challenge: 'Exposition accrue aux cyberattaques, vulnérabilités applicatives non détectées et impératifs de conformité réglementaire bancaire (BCEAO, CDP).',
+    architectureSolution: 'Mise en œuvre d\'audits d\'intrusion exhaustifs en boîte noire et boîte grise, tests de résistance des API financières, analyses de code statique/dynamique et accompagnement au durcissement des infrastructures cloud.',
+    keyFeatures: [
+      'Tests d\'intrusion des réseaux, serveurs et endpoints critiques',
+      'Audit approfondi du code source pour éliminer les failles OWASP Top 10',
+      'Revue de configuration des bases de données et services cloud',
+      'Rapport d\'expertise avec plan d\'action de remédiation priorisé'
+    ],
+    measurableMetric: 'Élimination préventive de 100% des vulnérabilités critiques identifiées',
+    compliancePillar: 'Toutes les missions sont réalisées sous mandat contractuel formel et protocole d\'accord préalable d\'autorisation écrite.'
   },
   {
     id: 'solution-software-saas',
-    episode: 'DÉMO #03',
-    title: 'Développement d\'Applications Web, Mobiles PWA & Plateformes SaaS',
+    reference: 'SOL-03',
+    title: 'Applications Web Métiers, Mobiles PWA & Plateformes SaaS',
     department: 'Pôle Développement Applicatif Alkeb.lab',
-    targetAudience: 'Startups à fort volume, Entreprises en expansion & PME',
+    targetAudience: 'Grandes Entreprises, Startups à fort trafic, PME & Acteurs Logistiques',
     category: 'Ingénierie Logicielle',
-    categoryColor: 'emerald',
-    duration: '04:12 min',
-    views: 'Architecture SaaS Cloud',
-    thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
-    techTags: ['React / TypeScript', 'Node.js Microservices', 'PWA Offline-First', 'PostgreSQL / APIs'],
-    youtubeId: 'oFRfMkxCoss',
-    youtubeUrl: 'https://www.youtube.com/watch?v=oFRfMkxCoss',
-    videoSourceAuthor: 'Uplatz Enterprise Architecture (Licence libre de diffusion API)',
-    videoTopic: 'Conception d\'architectures cloud distribuées pour plateformes métiers à fort trafic',
-    summary: 'Démonstration des modèles d\'ingénierie logicielle conçus chez Alkeb.lab : découplage micro-services, applications progressives (PWA) synchronisées hors-ligne, persistance des états en temps réel et performances optimisées pour les environnements réseau africains.',
-    metric: 'Temps de réponse inférieur à 200ms sur réseaux mobiles & évolutivité prouvée',
-    inHousePillar: 'Code source proprietary ou open-source audité, zéro dépendance opaque, tests automatisés continus.'
+    categoryIcon: <Terminal className="w-4 h-4 text-[#10B981]" />,
+    thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80',
+    fullImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=85',
+    techTags: ['React / TypeScript', 'Microservices Node.js', 'PWA Offline-First', 'PostgreSQL / Supabase', 'Docker / CI-CD'],
+    challenge: 'Inadéquation des logiciels génériques avec les contraintes opérationnelles de terrain et instabilité de la connectivité mobile.',
+    architectureSolution: 'Développement d\'architectures modernes découplées avec mise en cache locale intelligente (Offline-First via Service Workers), garantissant une accessibilité continue même hors ligne avec synchronisation automatique lors du retour réseau.',
+    keyFeatures: [
+      'Interfaces réactives ultra-rapides optimisées pour mobile et desktop',
+      'Mode hors-ligne résilient avec persistance sécurisée en base locale',
+      'APIs REST et GraphQL documentées et protégées par tokens chiffrés',
+      'Déploiement continu automatisé et observabilité en temps réel'
+    ],
+    measurableMetric: 'Temps de réponse inférieur à 200ms sur réseaux mobiles 3G/4G',
+    compliancePillar: 'Code source proprietary audité, zéro boîte noire, propriété intellectuelle intégrale transférée au client.'
   },
   {
     id: 'solution-consulting-govtech',
-    episode: 'DÉMO #04',
+    reference: 'SOL-04',
     title: 'Schéma Directeur SI, Modernisation Institutionnelle & Urbanisation',
     department: 'Pôle Conseil & Architecture SI Alkeb.lab',
-    targetAudience: 'Institutions Publiques, Agences d\'État & Organisations Régionales',
+    targetAudience: 'Institutions Publiques, Agences Nationales & Directions Générales',
     category: 'Conseil & Urbanisation SI',
-    categoryColor: 'navy',
-    duration: '04:40 min',
-    views: 'Modernisation & GovTech',
-    thumbnail: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80',
-    techTags: ['Schéma Directeur', 'Interopérabilité SI', 'Gouvernance Données', 'Portail Usagers'],
-    youtubeId: 'f-ugxtNzbCY',
-    youtubeUrl: 'https://www.youtube.com/watch?f-ugxtNzbCY',
-    videoSourceAuthor: 'techUK Digital Insights (Licence libre de diffusion API)',
-    videoTopic: 'Impact et méthodologies de transformation numérique des organisations et services publics',
-    summary: 'Approche stratégique éprouvée de Alkeb.lab pour moderniser les processus administratifs : cartographie des systèmes hérités (legacy), dématérialisation des démarches citoyennes, gouvernance sécurisée des données et conduite du changement.',
-    metric: 'Dématérialisation complète des flux documentaires et satisfaction usagers certifiée',
-    inHousePillar: 'Gouvernance alignée sur la souveraineté numérique et le strict respect des lois de protection des données.'
+    categoryIcon: <Building className="w-4 h-4 text-[#10B981]" />,
+    thumbnail: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=900&q=80',
+    fullImage: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1600&q=85',
+    techTags: ['Schéma Directeur', 'Interopérabilité SI', 'Gouvernance Données', 'Portail Démarches', 'Sécurité Souveraine'],
+    challenge: 'Systèmes d\'information fragmentés, doublons administratifs et manque de visibilité stratégique sur l\'évolution technologique.',
+    architectureSolution: 'Cartographie globale des processus métiers et des flux de données existants, élaboration du schéma directeur informatique pluriannuel et accompagnement méthodologique à la transformation numérique souveraine.',
+    keyFeatures: [
+      'Audit de maturité numérique et urbanisation des systèmes hérités (legacy)',
+      'Conception de portails de télé-services unifiés pour usagers et agents',
+      'Cadre d\'interopérabilité sécurisé entre applications et bases institutionnelles',
+      'Feuille de route stratégique budgétée et gouvernance de la donnée'
+    ],
+    measurableMetric: 'Dématérialisation fluide des démarches et maîtrise complète des coûts IT',
+    compliancePillar: 'Gouvernance alignée sur les orientations nationales de souveraineté numérique et le strict respect des lois de protection des données.'
   }
 ];
 
 export const TechDemosSection: React.FC = () => {
-  const [activeSolution, setActiveSolution] = useState<TechDemoSolution | null>(null);
+  const [selectedSolution, setSelectedSolution] = useState<TechSolutionItem | null>(null);
 
   return (
     <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white text-[#0B1B3D] relative border-b border-slate-200">
       <div className="max-w-7xl mx-auto">
         
-        {/* En-tête */}
+        {/* En-tête de section */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
           <span className="inline-flex items-center space-x-2 text-xs font-mono uppercase tracking-widest text-[#059669] px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 font-bold">
-            <Play className="w-3 h-3 fill-current" />
-            <span>Démonstrations Techniques &amp; Savoir-Faire</span>
+            <Sparkles className="w-3.5 h-3.5 text-[#10B981]" />
+            <span>Architecture &amp; Solutions en Pratique</span>
           </span>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0B1B3D] tracking-tight font-display">
-            Nos Solutions &amp; Démonstrations en Vidéo
+            Aperçu Concret de nos Solutions Logicielles
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Explorez les architectures logicielles, standards de sécurité et méthodologies appliqués par Alkeb.lab dans la conception de ses plateformes métiers.
+            Découvrez nos réalisations, architectures de pointe et cas d&apos;usage développés par Alkeb.lab pour accompagner les acteurs institutionnels et privés.
           </p>
         </div>
 
-        {/* Grille des solutions avec animation au survol */}
+        {/* Grille des solutions avec photos claires */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {TECH_DEMO_SOLUTIONS.map((sol) => (
+          {TECH_SOLUTIONS.map((sol) => (
             <div
               key={sol.id}
               className="bg-white rounded-2xl border border-slate-200 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden group cursor-pointer"
-              onClick={() => setActiveSolution(sol)}
+              onClick={() => setSelectedSolution(sol)}
             >
+              {/* Photo du cas d'usage */}
               <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
                 <img
                   src={sol.thumbnail}
                   alt={sol.title}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-95"
-                  width="800"
-                  height="500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-95"
+                  width="900"
+                  height="560"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B3D]/85 via-[#0B1B3D]/25 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B3D]/80 via-transparent to-transparent" />
                 
-                {/* Badge Épisode */}
+                {/* Référence */}
                 <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-[#0B1B3D]/90 text-white text-[10px] font-mono font-bold flex items-center gap-1.5 shadow-xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
-                  {sol.episode}
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
+                  {sol.reference}
                 </span>
 
-                {/* Badge HD */}
-                <span className="absolute top-3 right-3 px-2 py-0.5 rounded-md bg-red-600/90 text-white text-[10px] font-bold tracking-wider uppercase shadow-xs">
-                  Vidéo Démo HD
+                {/* Badge Fiche Photo */}
+                <span className="absolute top-3 right-3 px-2 py-0.5 rounded-md bg-white/90 text-[#0B1B3D] text-[10px] font-bold tracking-wider uppercase shadow-xs flex items-center gap-1">
+                  <Maximize2 className="w-3 h-3 text-[#10B981]" />
+                  <span>Détails &amp; Image</span>
                 </span>
-
-                {/* Durée */}
-                <span className="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/80 text-white text-[10px] font-mono flex items-center gap-1">
-                  <Clock className="w-3 h-3 text-[#10B981]" />
-                  {sol.duration}
-                </span>
-
-                {/* Bouton Play */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-[#10B981] group-hover:bg-[#059669] text-white flex items-center justify-center shadow-xl group-hover:scale-115 transition-all duration-200 pl-0.5 border-2 border-white/40">
-                    <Play className="w-5 h-5 fill-current" />
-                  </div>
-                </div>
               </div>
 
-              {/* Contenu */}
+              {/* Contenu textuel */}
               <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
                 <div>
-                  <div className="flex items-center justify-between text-xs mb-2">
-                    <span className={`font-mono text-[11px] font-bold uppercase ${
-                      sol.categoryColor === 'emerald' ? 'text-[#059669]' : 'text-[#0B1B3D]'
-                    }`}>
+                  <div className="flex items-center space-x-1.5 text-xs mb-2 text-[#059669] font-bold">
+                    {sol.categoryIcon}
+                    <span className="font-mono text-[11px] uppercase truncate">
                       {sol.category}
-                    </span>
-                    <span className="text-slate-400 flex items-center gap-1 text-[10px] font-mono">
-                      {sol.views}
                     </span>
                   </div>
 
@@ -191,8 +192,8 @@ export const TechDemosSection: React.FC = () => {
                     {sol.title}
                   </h3>
 
-                  <p className="text-[11px] text-slate-500 mt-1 line-clamp-1">
-                    Cible : {sol.targetAudience}
+                  <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">
+                    <strong>Cible :</strong> {sol.targetAudience}
                   </p>
                 </div>
 
@@ -202,14 +203,17 @@ export const TechDemosSection: React.FC = () => {
                       {tag}
                     </span>
                   ))}
+                  <span className="px-2 py-0.5 rounded bg-emerald-50 text-[10px] font-mono text-[#059669] font-bold">
+                    +{sol.techTags.length - 2}
+                  </span>
                 </div>
 
                 <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#10B981] group-hover:text-[#059669]">
-                  <span className="flex items-center gap-1 text-[11px] text-slate-700 font-semibold truncate max-w-[170px]">
+                  <span className="text-[11px] text-slate-700 font-semibold truncate max-w-[170px]">
                     {sol.department}
                   </span>
                   <span className="flex items-center gap-1 text-xs">
-                    <span>Démo</span>
+                    <span>Explorer</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
@@ -220,21 +224,21 @@ export const TechDemosSection: React.FC = () => {
         </div>
 
         {/* Notice déontologique */}
-        <div className="mt-8 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-500 leading-relaxed text-center sm:text-left flex items-start gap-3">
-          <ShieldAlert className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+        <div className="mt-8 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 leading-relaxed text-center sm:text-left flex items-start gap-3">
+          <ShieldCheck className="w-4 h-4 text-[#10B981] flex-shrink-0 mt-0.5" />
           <p>
-            <strong>Transparence &amp; Déontologie :</strong> Les capsules vidéo ci-dessus sont des démonstrations présentées à titre pédagogique pour illustrer les principes d&apos;ingénierie que Alkeb.lab applique. L&apos;ensemble de nos solutions, progiciels et plateformes sont conçus, développés et sécurisés sur-mesure dans nos laboratoires à Dakar pour chaque client et partenaire.
+            <strong>Transparence &amp; Rigueur :</strong> Les solutions et réalisations ci-dessus illustrent les méthodologies logicielles et normes de sécurité appliquées par Alkeb.lab. Toutes nos plateformes sont personnalisées et développées dans nos laboratoires à Dakar selon le cahier des charges de chaque client.
           </p>
         </div>
 
         {/* Bannière d'appel à l'action */}
-        <div className="mt-8 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-emerald-50 via-white to-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-5">
+        <div className="mt-8 p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-5">
           <div className="space-y-1 text-center sm:text-left">
             <h3 className="text-base sm:text-lg font-bold text-[#0B1B3D] font-display">
-              Vous souhaitez déployer l&apos;une de ces solutions pour votre structure ?
+              Vous avez un projet similaire ou souhaitez une démonstration personnalisée ?
             </h3>
             <p className="text-xs sm:text-sm text-slate-600">
-              Nos ingénieurs et consultants vous accompagnent du cadrage fonctionnel jusqu&apos;à la mise en production sécurisée.
+              Nos ingénieurs et architectes étudient vos besoins et vous présentent une architecture adaptée.
             </p>
           </div>
 
@@ -247,7 +251,7 @@ export const TechDemosSection: React.FC = () => {
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
             <a
-              href={getWhatsAppUrl('Bonjour, j\'ai vu vos solutions techniques et je souhaite une étude pour mon projet.')}
+              href={getWhatsAppUrl('Bonjour Alkeb.lab, je souhaite échanger sur vos réalisations et solutions pour mon projet.')}
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2.5 rounded-xl font-bold text-xs text-[#0B1B3D] bg-white hover:bg-slate-50 border border-slate-300 transition-all shadow-xs flex items-center gap-1.5 focus-visible:ring-2 focus-visible:ring-[#10B981]"
@@ -260,99 +264,134 @@ export const TechDemosSection: React.FC = () => {
 
       </div>
 
-      {/* MODAL YOUTUBE PLEIN ÉCRAN */}
+      {/* MODAL AVEC PHOTO EN GRAND & EXPLICATIONS DÉTAILLÉES */}
       <AnimatePresence>
-        {activeSolution && (
+        {selectedSolution && (
           <div 
-            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-900/85 backdrop-blur-sm animate-in fade-in duration-200"
-            onClick={() => setActiveSolution(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-900/80 backdrop-blur-sm animate-in fade-in duration-200"
+            onClick={() => setSelectedSolution(null)}
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 15 }}
+              initial={{ opacity: 0, scale: 0.96, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 15 }}
+              exit={{ opacity: 0, scale: 0.96, y: 15 }}
               transition={{ duration: 0.25 }}
-              className="bg-white rounded-3xl max-w-3xl w-full border border-slate-200 shadow-2xl overflow-hidden relative max-h-[92vh] flex flex-col text-[#0B1B3D]"
+              className="bg-white rounded-3xl max-w-4xl w-full border border-slate-200 shadow-2xl overflow-hidden relative max-h-[92vh] flex flex-col text-[#0B1B3D]"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Top Bar */}
-              <div className="px-5 py-3.5 bg-[#0B1B3D] text-white flex items-center justify-between gap-3 border-b border-slate-800 flex-shrink-0">
+              <div className="px-5 py-4 bg-[#0B1B3D] text-white flex items-center justify-between gap-3 border-b border-slate-800 flex-shrink-0">
                 <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
-                  <span className="px-2.5 py-1 rounded-md bg-[#10B981] text-[#04231A] text-[11px] font-mono font-bold uppercase flex items-center gap-1.5 shadow-xs">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#04231A] animate-pulse" />
-                    {activeSolution.episode}
+                  <span className="px-2.5 py-1 rounded-md bg-[#10B981] text-[#0B1B3D] text-[11px] font-mono font-bold uppercase shadow-xs">
+                    {selectedSolution.reference}
                   </span>
                   <span className="text-xs text-slate-300 font-medium">
-                    {activeSolution.category}
+                    {selectedSolution.category}
                   </span>
                 </div>
 
                 <button
                   type="button"
-                  onClick={() => setActiveSolution(null)}
+                  onClick={() => setSelectedSolution(null)}
                   className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
-                  aria-label="Fermer la modal"
+                  aria-label="Fermer la fenêtre"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
-              {/* YouTube Player */}
-              <div className="relative aspect-video w-full bg-black flex-shrink-0">
-                <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${activeSolution.youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
-                  title={activeSolution.title}
-                  className="w-full h-full border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
+              {/* Photo du cas d'usage en haute définition */}
+              <div className="relative aspect-[16/8] sm:aspect-[16/7] w-full bg-slate-900 overflow-hidden flex-shrink-0">
+                <img
+                  src={selectedSolution.fullImage}
+                  alt={selectedSolution.title}
+                  className="w-full h-full object-cover"
+                  loading="eager"
                 />
-              </div>
-
-              {/* Modal Body */}
-              <div className="p-5 sm:p-7 space-y-4 text-xs sm:text-sm text-slate-600 overflow-y-auto">
-                <div>
-                  <span className="text-xs font-mono font-bold uppercase text-[#059669] tracking-wider block mb-1">
-                    {activeSolution.department}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B3D]/80 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-4 right-4 text-white">
+                  <span className="text-xs font-mono text-emerald-300 uppercase tracking-wider block font-bold">
+                    {selectedSolution.department}
                   </span>
-                  <h3 className="text-lg sm:text-2xl font-extrabold text-[#0B1B3D] leading-snug font-display">
-                    {activeSolution.title}
+                  <h3 className="text-base sm:text-xl font-bold font-display">
+                    {selectedSolution.title}
                   </h3>
                 </div>
+              </div>
 
-                <p className="text-slate-700 leading-relaxed">
-                  {activeSolution.summary}
-                </p>
+              {/* Corps explicatif complet */}
+              <div className="p-5 sm:p-7 space-y-5 text-xs sm:text-sm text-slate-600 overflow-y-auto">
+                
+                {/* 1. Défi Métier */}
+                <div className="space-y-1.5">
+                  <h4 className="text-xs font-mono uppercase font-bold text-[#0B1B3D] tracking-wider flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-amber-500" />
+                    <span>Le Défi Opérationnel Résolu :</span>
+                  </h4>
+                  <p className="text-slate-700 leading-relaxed bg-amber-50/60 p-3.5 rounded-xl border border-amber-200/60">
+                    {selectedSolution.challenge}
+                  </p>
+                </div>
 
-                <div className="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200/80 flex items-center space-x-3 text-[#064E3B]">
+                {/* 2. Architecture & Solution Alkeb.lab */}
+                <div className="space-y-1.5">
+                  <h4 className="text-xs font-mono uppercase font-bold text-[#0B1B3D] tracking-wider flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-[#10B981]" />
+                    <span>L&apos;Architecture Technique &amp; Méthodologie :</span>
+                  </h4>
+                  <p className="text-slate-700 leading-relaxed bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                    {selectedSolution.architectureSolution}
+                  </p>
+                </div>
+
+                {/* 3. Fonctionnalités Clés */}
+                <div className="space-y-2">
+                  <h4 className="text-xs font-mono uppercase font-bold text-[#0B1B3D] tracking-wider">
+                    Fonctionnalités Principales :
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {selectedSolution.keyFeatures.map((feat, idx) => (
+                      <div key={idx} className="flex items-start space-x-2 p-2.5 rounded-lg bg-emerald-50/40 border border-emerald-100 text-slate-700">
+                        <CheckCircle2 className="w-4 h-4 text-[#10B981] flex-shrink-0 mt-0.5" />
+                        <span className="text-xs">{feat}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 4. Métrique d'impact */}
+                <div className="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center space-x-3 text-[#064E3B]">
                   <CheckCircle2 className="w-5 h-5 text-[#10B981] flex-shrink-0" />
-                  <span className="font-bold text-xs sm:text-sm">{activeSolution.metric}</span>
+                  <span className="font-bold text-xs sm:text-sm">{selectedSolution.measurableMetric}</span>
                 </div>
 
-                <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-200/80 text-[11px] text-amber-800 leading-relaxed">
-                  <strong>Notice de diffusion :</strong> {activeSolution.videoSourceAuthor} — {activeSolution.videoTopic}.
+                {/* 5. Cadre de conformité */}
+                <div className="p-3 rounded-xl bg-slate-100 border border-slate-200 text-[11px] text-slate-700 leading-relaxed">
+                  <strong>Cadre institutionnel :</strong> {selectedSolution.compliancePillar}
                 </div>
 
+                {/* Actions */}
                 <div className="pt-3 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
                   <a
-                    href={getWhatsAppUrl(`Bonjour Alkeb.lab, je souhaite une démonstration personnalisée : ${activeSolution.title}`)}
+                    href={getWhatsAppUrl(`Bonjour Alkeb.lab, je souhaite des informations détaillées sur votre solution : ${selectedSolution.title}`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto px-5 py-2.5 rounded-xl font-bold text-xs bg-[#10B981] hover:bg-[#059669] text-white flex items-center justify-center gap-2 transition-all shadow-sm"
                   >
                     <MessageCircle className="w-4 h-4" />
-                    <span>Demander une Démo sur WhatsApp</span>
+                    <span>Demander une Présentation sur WhatsApp</span>
                   </a>
 
-                  <a
-                    href={activeSolution.youtubeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:w-auto px-4 py-2.5 rounded-xl font-semibold text-xs text-slate-700 hover:text-red-600 bg-slate-100 hover:bg-slate-200 flex items-center justify-center gap-1.5 transition-colors border border-slate-200"
+                  <Link
+                    to="/contact"
+                    className="w-full sm:w-auto px-5 py-2.5 rounded-xl font-bold text-xs text-[#0B1B3D] hover:text-[#059669] bg-white hover:bg-slate-50 flex items-center justify-center gap-1.5 transition-colors border border-slate-300"
+                    onClick={() => setSelectedSolution(null)}
                   >
-                    <ExternalLink className="w-3.5 h-3.5" />
-                    <span>Voir sur YouTube</span>
-                  </a>
+                    <span>Contacter un Consultant</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
+
               </div>
 
             </motion.div>
