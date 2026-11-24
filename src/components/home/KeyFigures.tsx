@@ -17,7 +17,7 @@ const STATS_DATA: StatItem[] = [
   {
     id: 'projects',
     targetNumber: 10,
-    suffix: '',
+    suffix: '+',
     label: 'Projets Déployés',
     sublabel: 'Plateformes web, mobiles & SaaS en production',
     icon: Layers,
