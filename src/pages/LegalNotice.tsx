@@ -8,9 +8,9 @@ export const LegalNoticePage: React.FC = () => {
     <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO 
         title="Mentions Légales & Identification Éditeur | Alkeb.lab"
-        description="Informations légales et réglementaires régissant la plateforme Alkeb.lab conformément à la loi sénégalaise n° 2008-08 sur les transactions électroniques."
+        description="Informations sur l’éditeur, l’hébergement et les conditions d’utilisation de la plateforme Alkeb.lab."
         canonicalPath="/mentions-legales" 
-        keywords="mentions légales Alkeb.lab, éditeur site web Sénégal, loi 2008-08 Sénégal, hébergement web Dakar"
+        keywords="mentions légales Alkeb.lab, éditeur site web Sénégal, hébergement web Dakar"
       />
       <div className="max-w-4xl mx-auto space-y-10">
 
@@ -34,7 +34,7 @@ export const LegalNoticePage: React.FC = () => {
           <ShieldAlert className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
           <div>
             <strong className="text-amber-700 block mb-0.5 font-bold">Note d&apos;information juridique :</strong>
-            Ce document constitue un modèle d&apos;information institutionnelle établi conformément aux obligations d&apos;identification prévues par la législation sénégalaise (notamment la Loi n° 2008-08 sur les transactions électroniques). Les mentions indiquées [À COMPLÉTER] doivent faire l&apos;objet d&apos;une validation formelle auprès des instances compétentes de la structure lors de son immatriculation définitive.
+            Ce document constitue un modèle d&apos;information institutionnelle. Les mentions indiquées [À COMPLÉTER] doivent être validées et complétées avant publication.
           </div>
         </div>
 

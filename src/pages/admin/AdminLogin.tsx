@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { Lock, Mail, ShieldAlert, ArrowRight, ShieldCheck, Database, Info } from 'lucide-react';
 import { BackButton } from '../../components/ui/BackButton';
 import { supabase, isSupabaseConfigured } from '../../lib/supabase';
+import { isAdminEmail } from '../../lib/adminAccess';
 
-const DEFAULT_ADMIN_EMAIL = 'sdbsntech@gmail.com';
+const DEFAULT_ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL?.trim() || '';
 
 export const AdminLoginPage: React.FC = () => {
   const [email, setEmail] = useState(DEFAULT_ADMIN_EMAIL);
@@ -20,6 +21,11 @@ export const AdminLoginPage: React.FC = () => {
 
     try {
       const cleanEmail = email.trim().toLowerCase();
+
+      if (!isAdminEmail(cleanEmail)) {
+        setErrorMessage('Cette adresse n’est pas autorisée à accéder à la console administrateur.');
+        return;
+      }
 
       // 1. Authentification directe via Supabase si configuré
       if (isSupabaseConfigured()) {
@@ -41,16 +47,6 @@ export const AdminLoginPage: React.FC = () => {
         }
 
         if (data.session) {
-          // Stockage du token de session pour compatibilité immédiate
-          localStorage.setItem(
-            'sdbsnx_admin_token',
-            JSON.stringify({
-              email: cleanEmail,
-              userId: data.user?.id,
-              loginAt: Date.now(),
-              provider: 'supabase',
-            })
-          );
           navigate('/admin');
           return;
         }
@@ -128,7 +124,7 @@ export const AdminLoginPage: React.FC = () => {
             <p>
               Connectez-vous avec votre adresse officielle :{' '}
               <code className="text-[#F2B134] bg-white/5 border border-white/10 px-1.5 py-0.5 rounded font-mono font-bold">
-                sdbsntech@gmail.com
+                {DEFAULT_ADMIN_EMAIL || 'Compte configuré dans VITE_ADMIN_EMAIL'}
               </code>
             </p>
           </div>
@@ -145,7 +141,7 @@ export const AdminLoginPage: React.FC = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="sdbsntech@gmail.com"
+                  placeholder={DEFAULT_ADMIN_EMAIL || 'administrateur@exemple.fr'}
                   className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#0B2B2A] border border-white/15 text-[#F3E3C3] placeholder-white/30 text-sm focus:outline-none focus:border-[#10B981] transition-colors"
                 />
               </div>

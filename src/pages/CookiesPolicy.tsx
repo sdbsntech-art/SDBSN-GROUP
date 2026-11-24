@@ -8,14 +8,14 @@ export const CookiesPolicyPage: React.FC = () => {
   const [savedNotice, setSavedNotice] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('sdbsnx_cookie_consent') as any;
+    const consent = localStorage.getItem('alkeb_cookie_consent') as any;
     if (consent === 'accepted' || consent === 'essential_only') {
       setCurrentPreference(consent);
     }
   }, []);
 
   const updatePreference = (pref: 'accepted' | 'essential_only') => {
-    localStorage.setItem('sdbsnx_cookie_consent', pref);
+    localStorage.setItem('alkeb_cookie_consent', pref);
     setCurrentPreference(pref);
     setSavedNotice(true);
     setTimeout(() => setSavedNotice(false), 3000);
@@ -126,14 +126,9 @@ export const CookiesPolicyPage: React.FC = () => {
                 </thead>
                 <tbody className="divide-y divide-slate-200 text-slate-600">
                   <tr>
-                    <td className="p-3 font-mono font-bold text-emerald-600">sdbsnx_cookie_consent</td>
+                    <td className="p-3 font-mono font-bold text-emerald-600">alkeb_cookie_consent</td>
                     <td className="p-3">Mémorise votre choix relatif aux cookies</td>
                     <td className="p-3">12 mois</td>
-                  </tr>
-                  <tr>
-                    <td className="p-3 font-mono font-bold text-emerald-600">sdbsnx_admin_token</td>
-                    <td className="p-3">Maintien de session sécurisée dans l&apos;espace administrateur (chiffré)</td>
-                    <td className="p-3">Session</td>
                   </tr>
                 </tbody>
               </table>

@@ -55,6 +55,15 @@ export const ContactPage: React.FC = () => {
       return;
     }
 
+    if (
+      formData.fullName.trim().length < 2 ||
+      formData.subject.trim().length < 3 ||
+      formData.description.trim().length < 20
+    ) {
+      setErrorMsg('Veuillez saisir des informations suffisamment précises : nom, objet et description.');
+      return;
+    }
+
     setLoading(true);
     setErrorMsg(null);
 
@@ -262,6 +271,7 @@ export const ContactPage: React.FC = () => {
                     <input
                       type="text"
                       required
+                      maxLength={100}
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                       placeholder="Ex: Ibrahima Diallo"
@@ -276,6 +286,7 @@ export const ContactPage: React.FC = () => {
                     <input
                       type="email"
                       required
+                      maxLength={254}
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="Ex: i.diallo@entreprise.com"
@@ -289,6 +300,7 @@ export const ContactPage: React.FC = () => {
                     </label>
                     <input
                       type="tel"
+                      maxLength={30}
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+221 ..."
@@ -302,6 +314,7 @@ export const ContactPage: React.FC = () => {
                     </label>
                     <input
                       type="text"
+                      maxLength={150}
                       value={formData.organization}
                       onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
                       placeholder="Ex: Société / Cabinet / Institution"
@@ -346,6 +359,7 @@ export const ContactPage: React.FC = () => {
                     <input
                       type="text"
                       required
+                      maxLength={150}
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       placeholder="Ex: Déploiement portail dématérialisation / Audit"
@@ -360,6 +374,7 @@ export const ContactPage: React.FC = () => {
                   </label>
                   <textarea
                     required
+                    maxLength={4000}
                     rows={5}
                     value={formData.description}
                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}

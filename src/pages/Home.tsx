@@ -68,7 +68,7 @@ export const HomePage: React.FC = () => {
         {/* Pôles & Cartes de Services (cascade, élévation et bordure émeraude) */}
         <ServicesSection />
 
-        {/* Pôle Spécialisé LegalTech & Signature Certifiée (Loi 2008-08) */}
+        {/* Pôle LegalTech et cadre des transactions électroniques */}
         <LegalTechSection />
 
         {/* Démonstrations Techniques & Capsules Vidéo HD avec modal YouTube */}

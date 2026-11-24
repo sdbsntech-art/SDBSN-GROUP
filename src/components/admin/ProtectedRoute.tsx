@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { supabase, isSupabaseConfigured } from '../../lib/supabase';
+import { isAdminEmail } from '../../lib/adminAccess';
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -15,57 +16,37 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
 
     const checkAuth = async () => {
       try {
-        if (isSupabaseConfigured()) {
-          const { data } = await supabase.auth.getSession();
-          if (data.session) {
-            if (isMounted) {
-              setIsAuthenticated(true);
-              setLoading(false);
-            }
-            return;
-          }
-        }
+        if (!isSupabaseConfigured()) return;
 
-        // Vérification locale
-        const localToken = localStorage.getItem('sdbsnx_admin_token');
-        if (localToken) {
-          if (isMounted) {
-            setIsAuthenticated(true);
-            setLoading(false);
-          }
-          return;
-        }
+        const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
+        if (sessionError) throw sessionError;
+        if (!sessionData.session) return;
 
-        if (isMounted) {
-          setIsAuthenticated(false);
-          setLoading(false);
-        }
-      } catch {
-        if (isMounted) {
-          setIsAuthenticated(false);
-          setLoading(false);
-        }
+        const { data: userData, error: userError } = await supabase.auth.getUser();
+        if (userError) throw userError;
+
+        if (isMounted) setIsAuthenticated(isAdminEmail(userData.user?.email));
+      } catch (error) {
+        console.error('Unable to verify Supabase admin session:', error);
+        if (isMounted) setIsAuthenticated(false);
+      } finally {
+        if (isMounted) setLoading(false);
       }
     };
 
-    checkAuth();
+    void checkAuth();
 
-    // Écouteur d'état auth Supabase
-    let authListener: any = null;
-    if (isSupabaseConfigured()) {
-      const { data } = supabase.auth.onAuthStateChange((_event, session) => {
-        if (isMounted) {
-          setIsAuthenticated(Boolean(session));
-        }
-      });
-      authListener = data.subscription;
-    }
+    const { data } = isSupabaseConfigured()
+      ? supabase.auth.onAuthStateChange((_event, session) => {
+          if (isMounted) {
+            setIsAuthenticated(Boolean(session && isAdminEmail(session.user.email)));
+          }
+        })
+      : { data: { subscription: null } };
 
     return () => {
       isMounted = false;
-      if (authListener) {
-        authListener.unsubscribe();
-      }
+      data.subscription?.unsubscribe();
     };
   }, []);
 

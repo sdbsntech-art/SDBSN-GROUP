@@ -6,7 +6,7 @@ export const CookieBanner: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('sdbsnx_cookie_consent');
+    const consent = localStorage.getItem('alkeb_cookie_consent');
     if (!consent) {
       const timer = setTimeout(() => setIsVisible(true), 1200);
       return () => clearTimeout(timer);
@@ -14,12 +14,12 @@ export const CookieBanner: React.FC = () => {
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem('sdbsnx_cookie_consent', 'accepted');
+    localStorage.setItem('alkeb_cookie_consent', 'accepted');
     setIsVisible(false);
   };
 
   const handleDecline = () => {
-    localStorage.setItem('sdbsnx_cookie_consent', 'essential_only');
+    localStorage.setItem('alkeb_cookie_consent', 'essential_only');
     setIsVisible(false);
   };
 

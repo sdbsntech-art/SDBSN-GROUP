@@ -16,8 +16,8 @@ interface StatItem {
 const STATS_DATA: StatItem[] = [
   {
     id: 'projects',
-    targetNumber: 50,
-    suffix: '+',
+    targetNumber: 10,
+    suffix: '',
     label: 'Projets Déployés',
     sublabel: 'Plateformes web, mobiles & SaaS en production',
     icon: Layers,
@@ -37,8 +37,8 @@ const STATS_DATA: StatItem[] = [
     targetNumber: 2008,
     prefix: 'Loi ',
     suffix: '-08',
-    label: 'Conformité Juridique',
-    sublabel: 'Transactions électroniques & dématérialisation probatoire',
+    label: 'Référence juridique',
+    sublabel: 'Loi sénégalaise du 25 janvier 2008 sur les transactions électroniques',
     icon: Award,
     accentColor: 'emerald',
   },

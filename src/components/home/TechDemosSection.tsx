@@ -37,24 +37,24 @@ const TECH_SOLUTIONS: TechSolutionItem[] = [
   {
     id: 'solution-legaltech',
     reference: 'SOL-01',
-    title: 'Plateforme LegalTech, Parapheur & Signature Électronique Certifiée',
+    title: 'Plateforme LegalTech, Parapheur & Signature Électronique',
     department: 'Pôle Ingénierie LegalTech Alkeb.lab',
     targetAudience: 'Cabinets d\'Avocats, Notaires, Banques & Directions Juridiques',
     category: 'LegalTech & Dématérialisation',
     categoryIcon: <FileCheck2 className="w-4 h-4 text-[#10B981]" />,
     thumbnail: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=900&q=80',
     fullImage: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1600&q=85',
-    techTags: ['Loi 2008-08 Sénégal', 'Signature SHA-256', 'GED Chiffrée', 'Coffre-fort AES-256', 'Horodatage'],
+    techTags: ['Référence : loi sénégalaise 2008-08', 'Empreinte SHA-256', 'GED Chiffrée', 'Coffre-fort AES-256', 'Horodatage'],
     challenge: 'Lenteur des circuits de signature physique, risques d\'altération des actes juridiques et dispersion des contrats non sécurisés.',
-    architectureSolution: 'Conception d\'un parapheur électronique souverain avec authentification forte multi-facteurs, calcul d\'empreinte cryptographique SHA-256 scellée et coffre-fort numérique à valeur probante conforme au droit sénégalais et OHADA.',
+    architectureSolution: 'Conception d\'un parapheur électronique avec authentification, calcul d\'empreinte cryptographique SHA-256 et archivage numérique. Les exigences juridiques applicables sont à évaluer selon le contexte du projet.',
     keyFeatures: [
-      'Génération et validation de signatures électroniques certifiées',
+      'Génération et suivi des signatures électroniques',
       'Circuits de paraphe séquentiels ou parallèles automatisés',
-      'Archivage sécurisé infalsifiable avec piste d\'audit probatoire',
+      'Archivage sécurisé avec journal des opérations',
       'Gestion électronique des actes et pièces contractuelles confidentielles'
     ],
-    measurableMetric: 'Réduction de 85% des délais de signature & traçabilité juridique 100% opposable',
-    compliancePillar: 'Conformité stricte à la Loi n° 2008-08 sur les transactions électroniques et aux exigences déontologiques du barreau et du notariat.'
+    measurableMetric: 'Suivi des signatures et traçabilité des étapes de validation',
+    compliancePillar: 'La loi n° 2008-08 du 25 janvier 2008 concerne les transactions électroniques. Son application dépend des actes et du service concernés.'
   },
   {
     id: 'solution-cybersecurity',
