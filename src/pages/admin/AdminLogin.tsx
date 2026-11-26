@@ -182,7 +182,7 @@ export const AdminLoginPage: React.FC = () => {
 
           <div className="text-center pt-2 border-t border-white/10">
             <p className="text-[11px] text-[#F3E3C3]/60">
-              Chiffrement TLS 1.3 • Supabase GoTrue Authentication
+              Authentification administrateur via Supabase
             </p>
           </div>
         </div>

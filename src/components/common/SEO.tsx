@@ -11,8 +11,8 @@ export interface SEOProps {
   noindex?: boolean;
 }
 
-const BASE_URL = 'https://alkeb.lab';
-const DEFAULT_IMAGE = 'https://alkeb.lab/alkeb-social.png';
+const BASE_URL = 'https://alkeb-lab.site';
+const DEFAULT_IMAGE = `${BASE_URL}/alkeb-social.png`;
 
 export const SEO: React.FC<SEOProps> = ({
   title,

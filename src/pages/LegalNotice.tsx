@@ -7,10 +7,10 @@ export const LegalNoticePage: React.FC = () => {
   return (
     <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO 
-        title="Mentions Légales & Identification Éditeur | Alkeb.lab"
-        description="Informations sur l’éditeur, l’hébergement et les conditions d’utilisation de la plateforme Alkeb.lab."
+        title="Mentions légales | Alkeb.lab"
+        description="Identité de l’éditeur, hébergement du site et gestion du nom de domaine Alkeb.lab."
         canonicalPath="/mentions-legales" 
-        keywords="mentions légales Alkeb.lab, éditeur site web Sénégal, hébergement web Dakar"
+        keywords="mentions légales Alkeb.lab, éditeur Sénégal, hébergement du site"
       />
       <div className="max-w-4xl mx-auto space-y-10">
 
@@ -34,7 +34,7 @@ export const LegalNoticePage: React.FC = () => {
           <ShieldAlert className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
           <div>
             <strong className="text-amber-700 block mb-0.5 font-bold">Note d&apos;information juridique :</strong>
-            Ce document constitue un modèle d&apos;information institutionnelle. Les mentions indiquées [À COMPLÉTER] doivent être validées et complétées avant publication.
+            Les informations ci-dessous ont été communiquées par l&apos;éditeur. L&apos;activité est déclarée comme exercée à titre individuel et sans RCCM/NINEA attribués. Faites vérifier les obligations d&apos;immatriculation et le contenu de ces mentions par un professionnel compétent au Sénégal.
           </div>
         </div>
 
@@ -46,17 +46,16 @@ export const LegalNoticePage: React.FC = () => {
               1. Éditeur de la Plateforme
             </h2>
             <p>
-              Le site internet officiel accessible à l&apos;adresse <span className="text-emerald-600 font-semibold">https://alkeb.lab</span> est édité par la structure commerciale et technologique :
+              Le site internet officiel accessible à l&apos;adresse <span className="text-emerald-600 font-semibold">https://alkeb-lab.site</span> est édité à titre individuel par :
             </p>
             <ul className="list-disc pl-5 space-y-1.5 text-[#0B1B3D]/80">
-              <li><strong>Nom commercial :</strong> Alkeb.lab</li>
-              <li><strong>Forme juridique :</strong> [À COMPLÉTER — ex: SARL / SAS / En cours d&apos;immatriculation]</li>
-              <li><strong>Numéro d&apos;immatriculation (RCCM) :</strong> [À COMPLÉTER]</li>
-              <li><strong>Numéro d&apos;Identification Fiscale (NINEA) :</strong> [À COMPLÉTER]</li>
-              <li><strong>Siège social / Adresse professionnelle :</strong> Dakar, Sénégal</li>
-              <li><strong>Contact électronique :</strong> contact@sdbsnx.site</li>
+              <li><strong>Éditeur :</strong> Seydou Bakhayokho, activité exercée à titre individuel</li>
+              <li><strong>Noms utilisés :</strong> ALKEB-LAB et SDBSNX (site : Alkeb.lab)</li>
+              <li><strong>Immatriculation :</strong> RCCM et NINEA non attribués, selon les informations communiquées par l&apos;éditeur</li>
+              <li><strong>Adresse d&apos;activité :</strong> activité exercée en ligne depuis Pikine, Sénégal</li>
+              <li><strong>Contact électronique :</strong> z.b.private.contact@gmail.com</li>
               <li><strong>Ligne directe / WhatsApp :</strong> +221 76 624 24 58</li>
-              <li><strong>Responsable de la publication :</strong> La Direction de Alkeb.lab</li>
+              <li><strong>Responsable de la publication :</strong> Seydou Bakhayokho</li>
             </ul>
           </section>
 
@@ -65,14 +64,17 @@ export const LegalNoticePage: React.FC = () => {
               2. Hébergement de la Plateforme
             </h2>
             <p>
-              L&apos;infrastructure technique et applicative est hébergée auprès des prestataires certifiés suivants :
+              Le site est hébergé par Vercel. Le nom de domaine et sa configuration DNS sont gérés chez LWS. Ces prestataires ont des rôles distincts :
             </p>
             <ul className="list-disc pl-5 space-y-1.5 text-[#0B1B3D]/80">
               <li>
-                <strong>Frontend et Fonctions Serverless :</strong> Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis. (Réseau de distribution mondial et haute disponibilité).
+                <strong>Hébergement du site :</strong> Vercel Inc. (États-Unis). <a className="text-emerald-700 underline" href="https://vercel.com/legal/terms" target="_blank" rel="noopener noreferrer">Informations légales de Vercel</a>.
               </li>
               <li>
-                <strong>Acheminement des Formulaires :</strong> Web3Forms (Acheminement chiffré TLS 1.3 vers la messagerie professionnelle sécurisée de Alkeb.lab).
+                <strong>Nom de domaine et DNS :</strong> LWS (Ligne Web Services), SAS au capital de 500 000 €, 10 rue Penthièvre, 75008 Paris, France. RCS Paris B 851 993 683 00024. <a className="text-emerald-700 underline" href="https://www.lws.fr/a_propos_infos.php" target="_blank" rel="noopener noreferrer">Informations légales de LWS</a>.
+              </li>
+              <li>
+                <strong>Acheminement des formulaires :</strong> Web3Forms.
               </li>
             </ul>
           </section>

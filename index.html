@@ -4,46 +4,90 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Google Tag Manager / Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PRB7KNS7"></script>
+    <!-- Google Tag Manager loads only after analytics consent -->
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() { window.dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        functionality_storage: 'denied',
+        personalization_storage: 'denied',
+        security_storage: 'granted'
+      });
+
+      (function () {
+        var tagManagerLoaded = false;
+
+        function applyCookieConsent(consent) {
+          var accepted = consent === 'accepted';
+          gtag('consent', 'update', {
+            analytics_storage: accepted ? 'granted' : 'denied',
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            functionality_storage: 'denied',
+            personalization_storage: 'denied'
+          });
+
+          if (!accepted || tagManagerLoaded) return;
+
+          tagManagerLoaded = true;
+          window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PRB7KNS7';
+          document.head.appendChild(script);
+        }
+
+        window.addEventListener('alkeb:cookie-consent-change', function (event) {
+          applyCookieConsent(event.detail);
+        });
+
+        try {
+          applyCookieConsent(window.localStorage.getItem('alkeb_cookie_consent'));
+        } catch (error) {
+          console.warn('Unable to read cookie consent; analytics remains disabled.', error);
+        }
+      })();
     </script>
-    <!-- End Google Tag Manager / Google Analytics -->
+    <!-- End Google Tag Manager -->
     
     <!-- Primary SEO Meta Tags -->
-    <title>Alkeb.lab — Solutions numériques, LegalTech & cybersécurité au Sénégal</title>
-    <meta name="title" content="Alkeb.lab — Solutions numériques, LegalTech & cybersécurité au Sénégal" />
-    <meta name="description" content="Alkeb.lab accompagne les organisations au Sénégal avec des solutions LegalTech, de cybersécurité, de développement web et mobile, et de conseil numérique." />
+    <title>Alkeb.lab | LegalTech, informatique et services web au Sénégal</title>
+    <meta name="title" content="Alkeb.lab | LegalTech, informatique et services web au Sénégal" />
+    <meta name="description" content="Alkeb.lab accompagne les entreprises au Sénégal : logiciels LegalTech, services informatiques, cybersécurité, création de sites web et applications mobiles." />
     <meta name="author" content="Alkeb.lab" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="google-site-verification" content="EWfiuky82_615_OOtbP_W0zhj4W5MRVCI7gl1_CHiXU" />
-    <link rel="canonical" href="https://alkeb.lab/" />
+    <link rel="canonical" href="https://alkeb-lab.site/" />
     <meta name="theme-color" content="#10B981" />
 
     <!-- Open Graph / Facebook / LinkedIn / WhatsApp Sharing -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_SN" />
     <meta property="og:site_name" content="Alkeb.lab" />
-    <meta property="og:url" content="https://alkeb.lab/" />
-    <meta property="og:title" content="Alkeb.lab — Solutions numériques au Sénégal" />
-    <meta property="og:description" content="LegalTech, cybersécurité, développement web et mobile, et conseil numérique au Sénégal." />
-    <meta property="og:image" content="https://alkeb.lab/alkeb-social.png" />
-    <meta property="og:image:secure_url" content="https://alkeb.lab/alkeb-social.png" />
+    <meta property="og:url" content="https://alkeb-lab.site/" />
+    <meta property="og:title" content="Alkeb.lab | LegalTech, informatique et services web au Sénégal" />
+    <meta property="og:description" content="Logiciels LegalTech, services informatiques, cybersécurité, sites web et applications mobiles au Sénégal." />
+    <meta property="og:image" content="https://alkeb-lab.site/alkeb-social.png" />
+    <meta property="og:image:secure_url" content="https://alkeb-lab.site/alkeb-social.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Alkeb.lab — Solutions numériques au Sénégal" />
+    <meta property="og:image:alt" content="Alkeb.lab — LegalTech et services numériques au Sénégal" />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://alkeb.lab/" />
-    <meta name="twitter:title" content="Alkeb.lab — Solutions numériques au Sénégal" />
-    <meta name="twitter:description" content="LegalTech, cybersécurité, développement web et mobile, et conseil numérique au Sénégal." />
-    <meta name="twitter:image" content="https://alkeb.lab/alkeb-social.png" />
-    <meta name="twitter:image:alt" content="Alkeb.lab — Solutions numériques au Sénégal" />
+    <meta name="twitter:url" content="https://alkeb-lab.site/" />
+    <meta name="twitter:title" content="Alkeb.lab | LegalTech, informatique et services web au Sénégal" />
+    <meta name="twitter:description" content="Logiciels LegalTech, services informatiques, cybersécurité, sites web et applications mobiles au Sénégal." />
+    <meta name="twitter:image" content="https://alkeb-lab.site/alkeb-social.png" />
+    <meta name="twitter:image:alt" content="Alkeb.lab — LegalTech et services numériques au Sénégal" />
 
     <!-- Favicon & Browser Tab Icons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/alkeb-icon-32.png" />
@@ -60,13 +104,14 @@
       {
         "@context": "https://schema.org",
         "@type": ["Organization", "ProfessionalService"],
+        "@id": "https://alkeb-lab.site/#organization",
         "name": "Alkeb.lab",
-        "url": "https://alkeb.lab",
-        "logo": "https://alkeb.lab/logo/alkeb-logo.png",
-        "image": "https://alkeb.lab/alkeb-social.png",
+        "url": "https://alkeb-lab.site",
+        "logo": "https://alkeb-lab.site/logo/alkeb-logo.png",
+        "image": "https://alkeb-lab.site/alkeb-social.png",
         "slogan": "Innover • Développer • Inspirer",
-        "description": "Agence de solutions numériques de pointe : Développement Web & Mobile, Audits de Cybersécurité, Plateformes LegalTech et Conseil Technologique.",
-        "email": "contact@sdbsnx.site",
+        "description": "Alkeb.lab propose au Sénégal des logiciels LegalTech, des services informatiques, des audits de cybersécurité, la création de sites web et d'applications mobiles ainsi que du conseil technologique.",
+        "email": "z.b.private.contact@gmail.com",
         "telephone": "+221766242458",
         "address": {
           "@type": "PostalAddress",
@@ -83,44 +128,53 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Suite LegalTech & Parapheur Électronique",
-                "description": "Outils de dématérialisation, de signature électronique et de gestion documentaire pour cabinets d'avocats et notariats."
+                "name": "Logiciels LegalTech et gestion juridique",
+                "description": "Outils de gestion électronique de documents, suivi de dossiers et automatisation de workflows pour les professionnels du droit."
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Cybersécurité Offensive & Audits de Sécurité",
-                "description": "Tests d'intrusion (pentesting), audits de code, durcissement des systèmes et remédiation des vulnérabilités."
+                "name": "Cybersécurité et audit de sécurité informatique",
+                "description": "Évaluations de sécurité autorisées, audit de configuration et de code, recommandations et accompagnement à la remédiation."
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Développement Web & Mobile Cloud-Native",
-                "description": "Conception d'applications SaaS, architectures progressives (PWA) et plateformes métiers sur-mesure."
+                "name": "Création de sites web et développement d'applications",
+                "description": "Conception de sites internet, applications web et mobiles, plateformes SaaS et logiciels métiers sur mesure."
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Conseil Technologique & Modernisation SI",
-                "description": "Schémas directeurs, urbanisation des systèmes d'information et conduite du changement numérique."
+                "name": "Conseil informatique et transformation numérique",
+                "description": "Conseil en systèmes d'information, architecture technique, cadrage de projets et modernisation des outils numériques."
               }
             }
           ]
         }
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Alkeb.lab",
+        "alternateName": "Alkeb",
+        "url": "https://alkeb-lab.site/",
+        "inLanguage": "fr-SN",
+        "publisher": {
+          "@id": "https://alkeb-lab.site/#organization"
+        }
+      }
+    </script>
   </head>
   <body class="bg-white text-[#0B1B3D] font-sans antialiased selection:bg-[#10B981] selection:text-white min-h-screen">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRB7KNS7"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>

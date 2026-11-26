@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ShieldCheck, Layers, Award, Users } from 'lucide-react';
+import { ShieldCheck, Layers } from 'lucide-react';
 
 interface StatItem {
   id: string;
@@ -18,37 +18,18 @@ const STATS_DATA: StatItem[] = [
     id: 'projects',
     targetNumber: 10,
     suffix: '+',
-    label: 'Projets Déployés',
-    sublabel: 'Plateformes web, mobiles & SaaS en production',
+    label: 'Projets',
+    sublabel: 'Projets web, mobiles et solutions numériques',
     icon: Layers,
     accentColor: 'emerald',
   },
   {
-    id: 'security',
-    targetNumber: 100,
-    suffix: '%',
-    label: 'Données Souveraines',
-    sublabel: 'Hébergement sécurisé & conformité CDP / RGPD',
+    id: 'services',
+    targetNumber: 4,
+    suffix: '',
+    label: 'Domaines de service',
+    sublabel: 'LegalTech, informatique, cybersécurité et développement web',
     icon: ShieldCheck,
-    accentColor: 'navy',
-  },
-  {
-    id: 'compliance',
-    targetNumber: 2008,
-    prefix: 'Loi ',
-    suffix: '-08',
-    label: 'Référence juridique',
-    sublabel: 'Loi sénégalaise du 25 janvier 2008 sur les transactions électroniques',
-    icon: Award,
-    accentColor: 'emerald',
-  },
-  {
-    id: 'clients',
-    targetNumber: 99,
-    suffix: '.9%',
-    label: 'Disponibilité & SLA',
-    sublabel: 'Surveillance et résilience continue des architectures',
-    icon: Users,
     accentColor: 'navy',
   },
 ];
@@ -118,18 +99,17 @@ export const KeyFigures: React.FC = () => {
         {/* En-tête */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 space-y-2">
           <span className="inline-block px-3.5 py-1 rounded-full text-xs font-mono uppercase tracking-widest text-[#059669] bg-emerald-50 border border-emerald-200 font-bold">
-            Impact Mesurable &amp; Rigueur
+            Alkeb.lab en chiffres
           </span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1B3D] font-display">
-            Des chiffres qui attestent de notre engagement.
+            Des services numériques concrets.
           </h2>
           <p className="text-xs sm:text-sm text-slate-600">
-            Chaque réalisation d&apos;Alkeb.lab vise la pérennité, la sécurité absolue et la souveraineté technologique.
+            Découvrez les projets et domaines d&apos;intervention d&apos;Alkeb.lab.
           </p>
         </div>
 
-        {/* Grille des 4 chiffres clés en cascade avec animation au scroll */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 max-w-3xl mx-auto gap-5">
           {STATS_DATA.map((item, index) => {
             const Icon = item.icon;
             const isEmerald = item.accentColor === 'emerald';

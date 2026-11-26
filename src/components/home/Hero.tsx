@@ -192,13 +192,13 @@ export const Hero: React.FC = () => {
             {/* Mini statistiques de réassurance */}
             <div className="pt-4 border-t border-slate-200/80 flex flex-wrap items-center gap-6 text-xs text-slate-500 font-medium">
               <div>
-                <span className="font-extrabold text-[#0B1B3D] text-base block font-display">+50 Projets</span>
+                <span className="font-extrabold text-[#0B1B3D] text-base block font-display">10+ Projets</span>
                 <span>Déployés avec succès</span>
               </div>
               <div className="h-7 w-px bg-slate-200" />
               <div>
-                <span className="font-extrabold text-[#10B981] text-base block font-display">100% Souverain</span>
-                <span>Données hébergées en sécurité</span>
+                <span className="font-extrabold text-[#10B981] text-base block font-display">4 domaines</span>
+                <span>LegalTech, cyber, web et conseil IT</span>
               </div>
               <div className="h-7 w-px bg-slate-200" />
               <div>
@@ -246,7 +246,7 @@ export const Hero: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-[#0B1B3D]">Security by Design</p>
-                    <p className="text-[11px] text-slate-500">Audits certifiés &amp; dématérialisation</p>
+                    <p className="text-[11px] text-slate-500">Audit de sécurité &amp; outils numériques</p>
                   </div>
                 </div>
 
@@ -272,8 +272,8 @@ export const Hero: React.FC = () => {
                 <Zap className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-xs font-extrabold text-[#0B1B3D]">Performances 99.9%</p>
-                <p className="text-[10px] text-slate-500 font-medium">Haute disponibilité &amp; résilience</p>
+                <p className="text-xs font-extrabold text-[#0B1B3D]">Solutions numériques</p>
+                <p className="text-[10px] text-slate-500 font-medium">Conçues selon vos besoins</p>
               </div>
             </motion.div>
 

@@ -15,11 +15,13 @@ export const CookieBanner: React.FC = () => {
 
   const handleAccept = () => {
     localStorage.setItem('alkeb_cookie_consent', 'accepted');
+    window.dispatchEvent(new CustomEvent('alkeb:cookie-consent-change', { detail: 'accepted' }));
     setIsVisible(false);
   };
 
   const handleDecline = () => {
     localStorage.setItem('alkeb_cookie_consent', 'essential_only');
+    window.dispatchEvent(new CustomEvent('alkeb:cookie-consent-change', { detail: 'essential_only' }));
     setIsVisible(false);
   };
 
@@ -34,7 +36,7 @@ export const CookieBanner: React.FC = () => {
         </div>
         
         <p className="text-xs text-slate-600 leading-relaxed">
-          Alkeb.lab utilise des cookies essentiels au bon fonctionnement de la plateforme et à la sécurité de vos sessions. Aucun cookie publicitaire intrusif n&apos;est déposé sans votre accord.
+          Les outils de mesure chargés via Google Tag Manager restent désactivés tant que vous n&apos;avez pas accepté. Vous pouvez choisir de conserver uniquement le stockage essentiel.
         </p>
 
         <div className="flex items-center justify-between pt-1">
@@ -58,7 +60,7 @@ export const CookieBanner: React.FC = () => {
               className="px-3.5 py-1.5 text-xs font-bold text-white bg-[#10B981] hover:bg-[#059669] rounded-lg transition-colors shadow-xs flex items-center"
             >
               <Check className="w-3 h-3 mr-1" />
-              Accepter
+              Mesure d&apos;audience
             </button>
           </div>
         </div>

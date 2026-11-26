@@ -40,7 +40,7 @@ export const ServiceDetailPage: React.FC = () => {
   return (
     <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO 
-        title={`${service.title} | Expertises Alkeb.lab`}
+        title={`${service.title} au Sénégal | Alkeb.lab`}
         description={service.shortDescription}
         canonicalPath={`/services/${service.slug}`}
         keywords={`${service.title}, ${service.categoryName}, Alkeb.lab Sénégal, services numériques Dakar, expertise informatique`}
@@ -52,7 +52,7 @@ export const ServiceDetailPage: React.FC = () => {
           provider: {
             '@type': 'Organization',
             name: 'Alkeb.lab',
-            url: 'https://alkeb.lab'
+            url: 'https://alkeb-lab.site'
           },
           areaServed: {
             '@type': 'Country',

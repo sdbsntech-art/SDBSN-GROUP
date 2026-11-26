@@ -106,7 +106,7 @@ export const AboutPage: React.FC = () => {
               </div>
               <h4 className="text-base font-bold text-[#0B1B3D]">La Transformation Numérique</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Moderniser les processus traditionnels et accompagner les équipes vers des flux 100% digitalisés.
+                Moderniser les processus traditionnels et accompagner les équipes vers des flux de travail plus numériques.
               </p>
             </div>
 

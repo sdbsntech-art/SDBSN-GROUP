@@ -44,7 +44,7 @@ const TECH_SOLUTIONS: TechSolutionItem[] = [
     categoryIcon: <FileCheck2 className="w-4 h-4 text-[#10B981]" />,
     thumbnail: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=900&q=80',
     fullImage: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1600&q=85',
-    techTags: ['Référence : loi sénégalaise 2008-08', 'Empreinte SHA-256', 'GED Chiffrée', 'Coffre-fort AES-256', 'Horodatage'],
+    techTags: ['Cadre légal à valider', 'Empreinte SHA-256', 'GED Chiffrée', 'Coffre-fort AES-256', 'Horodatage'],
     challenge: 'Lenteur des circuits de signature physique, risques d\'altération des actes juridiques et dispersion des contrats non sécurisés.',
     architectureSolution: 'Conception d\'un parapheur électronique avec authentification, calcul d\'empreinte cryptographique SHA-256 et archivage numérique. Les exigences juridiques applicables sont à évaluer selon le contexte du projet.',
     keyFeatures: [
@@ -54,7 +54,7 @@ const TECH_SOLUTIONS: TechSolutionItem[] = [
       'Gestion électronique des actes et pièces contractuelles confidentielles'
     ],
     measurableMetric: 'Suivi des signatures et traçabilité des étapes de validation',
-    compliancePillar: 'La loi n° 2008-08 du 25 janvier 2008 concerne les transactions électroniques. Son application dépend des actes et du service concernés.'
+    compliancePillar: 'Les règles applicables aux signatures électroniques sont à vérifier selon le service et les actes concernés.'
   },
   {
     id: 'solution-cybersecurity',
@@ -66,7 +66,7 @@ const TECH_SOLUTIONS: TechSolutionItem[] = [
     categoryIcon: <ShieldCheck className="w-4 h-4 text-[#10B981]" />,
     thumbnail: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80',
     fullImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=85',
-    techTags: ['Pentesting OWASP', 'Audit Code Stat/Dyn', 'Durcissement Cloud', 'Chiffrement TLS 1.3', 'SOC Défensif'],
+    techTags: ['Pentesting OWASP', 'Audit Code Stat/Dyn', 'Durcissement Cloud', 'Sécurité des applications', 'SOC Défensif'],
     challenge: 'Exposition accrue aux cyberattaques, vulnérabilités applicatives non détectées et impératifs de conformité réglementaire bancaire (BCEAO, CDP).',
     architectureSolution: 'Mise en œuvre d\'audits d\'intrusion exhaustifs en boîte noire et boîte grise, tests de résistance des API financières, analyses de code statique/dynamique et accompagnement au durcissement des infrastructures cloud.',
     keyFeatures: [
@@ -75,7 +75,7 @@ const TECH_SOLUTIONS: TechSolutionItem[] = [
       'Revue de configuration des bases de données et services cloud',
       'Rapport d\'expertise avec plan d\'action de remédiation priorisé'
     ],
-    measurableMetric: 'Élimination préventive de 100% des vulnérabilités critiques identifiées',
+    measurableMetric: 'Rapport d’audit et plan de remédiation priorisé',
     compliancePillar: 'Toutes les missions sont réalisées sous mandat contractuel formel et protocole d\'accord préalable d\'autorisation écrite.'
   },
   {

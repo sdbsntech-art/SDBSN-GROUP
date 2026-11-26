@@ -42,7 +42,7 @@ export const LegalTechSection: React.FC = () => {
               Gestion des signatures électroniques d&apos;actes, contrats et protocoles, avec suivi des étapes de validation et horodatage selon les besoins du projet.
             </p>
             <div className="pt-2 border-t border-slate-100 flex flex-wrap gap-1.5">
-              <span className="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-mono font-semibold text-slate-700">Référence : loi 2008-08</span>
+              <span className="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-mono font-semibold text-slate-700">Cadre légal à vérifier selon l&apos;usage</span>
               <span className="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-mono font-semibold text-slate-700">SHA-256</span>
               <span className="px-2 py-0.5 rounded bg-emerald-50 text-[10px] font-mono font-semibold text-emerald-700">Multi-signataires</span>
             </div>
@@ -72,10 +72,10 @@ export const LegalTechSection: React.FC = () => {
               <Lock className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-bold text-[#0B1B3D] group-hover:text-[#10B981] transition-colors font-display">
-              Coffre-Fort &amp; Valeur Probante
+              Archivage numérique sécurisé
             </h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Archivage chiffré de bout en bout (AES-256). Garantie d&apos;intégrité numérique sans risque d&apos;altération ni de fuite, avec journal d&apos;audit des consultations certifié.
+              Options de stockage chiffré, contrôle des accès et journal des opérations, selon l&apos;architecture définie pour chaque projet.
             </p>
             <div className="pt-2 border-t border-slate-100 flex flex-wrap gap-1.5">
               <span className="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-mono font-semibold text-slate-700">AES-256</span>
@@ -110,13 +110,13 @@ export const LegalTechSection: React.FC = () => {
             <div className="space-y-3 max-w-2xl">
               <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-white/10 text-[#6EE7B7] text-xs font-mono uppercase font-bold">
                 <ShieldCheck className="w-4 h-4 text-[#10B981]" />
-                <span>Référence juridique sénégalaise</span>
+                <span>Cadre réglementaire</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-extrabold leading-tight font-display">
                 Un cadre réglementaire à évaluer pour chaque projet
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                La loi sénégalaise n° 2008-08 du 25 janvier 2008 porte sur les transactions électroniques. Son applicabilité et les exigences relatives aux données personnelles doivent être évaluées selon le service et les actes concernés.
+                Les règles applicables dépendent du service et des actes concernés. Une validation juridique locale est à prévoir avant toute mise en production.
               </p>
             </div>
 

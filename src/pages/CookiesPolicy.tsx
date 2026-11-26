@@ -8,7 +8,7 @@ export const CookiesPolicyPage: React.FC = () => {
   const [savedNotice, setSavedNotice] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('alkeb_cookie_consent') as any;
+    const consent = localStorage.getItem('alkeb_cookie_consent');
     if (consent === 'accepted' || consent === 'essential_only') {
       setCurrentPreference(consent);
     }
@@ -16,6 +16,7 @@ export const CookiesPolicyPage: React.FC = () => {
 
   const updatePreference = (pref: 'accepted' | 'essential_only') => {
     localStorage.setItem('alkeb_cookie_consent', pref);
+    window.dispatchEvent(new CustomEvent('alkeb:cookie-consent-change', { detail: pref }));
     setCurrentPreference(pref);
     setSavedNotice(true);
     setTimeout(() => setSavedNotice(false), 3000);
@@ -25,7 +26,7 @@ export const CookiesPolicyPage: React.FC = () => {
     <div className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-50 text-[#0B1B3D]">
       <SEO 
         title="Politique relative aux Cookies & Traceurs | Alkeb.lab"
-        description="Gestion des cookies et du stockage local sur la plateforme Alkeb.lab. Respect strict de la vie privée sans traceurs intrusifs."
+        description="Choix et gestion du stockage local et des outils de mesure d'audience sur la plateforme Alkeb.lab."
         canonicalPath="/politique-cookies" 
         keywords="cookies Alkeb.lab, traceurs web, consentement cookies Sénégal, respect de la vie privée"
       />
@@ -36,13 +37,13 @@ export const CookiesPolicyPage: React.FC = () => {
         {/* Header */}
         <div className="space-y-4">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-md bg-emerald-50 border border-emerald-200 text-xs font-mono text-emerald-700 uppercase font-bold">
-            <span>Gestion des Traceurs &amp; Confidentialité</span>
+            <span>Consentement &amp; Stockage local</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-[#0B1B3D] tracking-tight font-display">
             Politique Relative aux Cookies
           </h1>
           <p className="text-slate-500 text-sm">
-            Transparence totale sur les technologies de stockage local et cookies techniques.
+            Les outils de mesure chargés via Google Tag Manager sont désactivés avant votre accord.
           </p>
         </div>
 
@@ -58,7 +59,11 @@ export const CookiesPolicyPage: React.FC = () => {
                 <p className="text-xs text-slate-500">
                   État enregistré :{' '}
                   <span className="font-semibold text-emerald-600 uppercase font-mono">
-                    {currentPreference === 'accepted' ? 'Tous les cookies acceptés' : 'Cookies strictement nécessaires uniquement'}
+                        {currentPreference === 'accepted'
+                          ? 'Mesure d’audience acceptée'
+                          : currentPreference === 'essential_only'
+                            ? 'Stockage essentiel uniquement'
+                            : 'Aucun choix enregistré'}
                   </span>
                 </p>
               </div>
@@ -91,7 +96,7 @@ export const CookiesPolicyPage: React.FC = () => {
                   : 'bg-slate-50 text-[#0B1B3D] hover:text-emerald-700 border-slate-200 hover:bg-slate-100'
               }`}
             >
-              Accepter tous les cookies (Essentiels &amp; Mesures)
+              Autoriser la mesure d&apos;audience
             </button>
           </div>
         </div>
@@ -128,7 +133,7 @@ export const CookiesPolicyPage: React.FC = () => {
                   <tr>
                     <td className="p-3 font-mono font-bold text-emerald-600">alkeb_cookie_consent</td>
                     <td className="p-3">Mémorise votre choix relatif aux cookies</td>
-                    <td className="p-3">12 mois</td>
+                    <td className="p-3">Jusqu&apos;à suppression du stockage du navigateur</td>
                   </tr>
                 </tbody>
               </table>
@@ -137,10 +142,10 @@ export const CookiesPolicyPage: React.FC = () => {
 
           <section className="space-y-3">
             <h3 className="text-lg font-bold text-[#0B1B3D] font-display">
-              3. Absence de Traceurs Publicitaires Tiers
+              3. Mesure d&apos;audience via Google Tag Manager
             </h3>
             <p>
-              Fidèle à son engagement pour la souveraineté numérique et le respect de la vie privée, <strong>Alkeb.lab ne dépose aucun cookie publicitaire tiers, ni tracker de reciblage commercial</strong> sur vos appareils.
+              Google Tag Manager n&apos;est chargé qu&apos;après votre choix « Accepter ». Le conteneur peut ensuite exécuter les balises configurées par l&apos;éditeur. Le paramétrage du conteneur doit respecter les préférences enregistrées ici.
             </p>
           </section>
 

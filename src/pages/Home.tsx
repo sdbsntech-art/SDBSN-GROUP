@@ -44,8 +44,8 @@ export const HomePage: React.FC = () => {
       
       {/* 1. SEO & Métadonnées complètes */}
       <SEO
-        title="Alkeb.lab — Solutions numériques, LegalTech & cybersécurité au Sénégal"
-        description="Alkeb.lab accompagne les organisations au Sénégal avec des solutions LegalTech souveraines, des audits de cybersécurité, du développement web et mobile, et du conseil numérique."
+        title="Alkeb.lab | LegalTech, informatique et services web au Sénégal"
+        description="Alkeb.lab accompagne les entreprises au Sénégal : logiciels LegalTech, services informatiques, cybersécurité, création de sites web et applications mobiles."
         canonicalPath="/"
       />
 

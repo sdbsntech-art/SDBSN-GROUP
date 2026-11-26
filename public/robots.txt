@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://alkeb.lab/sitemap.xml
+Sitemap: https://alkeb-lab.site/sitemap.xml

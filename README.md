@@ -1,12 +1,12 @@
-# SDBSNX — Official Digital Platform
+# Alkeb.lab — Plateforme numérique
 
 > **"BUILDING THE FUTURE. SECURING WHAT MATTERS."**  
 > *"We build meaningful digital solutions through innovation, integrity and excellence."*  
-> **SDBSNX — DIGITAL INNOVATION. SECURITY. EXCELLENCE.**
+> **Alkeb.lab — DIGITAL INNOVATION. SECURITY. EXCELLENCE.**
 
 ---
 
-Plateforme numérique institutionnelle haut de gamme de **SDBSNX**, agence de solutions numériques axée sur la transformation digitale, la cybersécurité défensive, les solutions LegalTech et le conseil stratégique en Afrique et à l'international.
+Plateforme numérique d'**Alkeb.lab**, spécialisée dans les solutions LegalTech, les services informatiques, la cybersécurité, le développement web et mobile, et le conseil technologique au Sénégal et en Afrique.
 
 ---
 
@@ -20,8 +20,8 @@ Plateforme numérique institutionnelle haut de gamme de **SDBSNX**, agence de so
   - *THE SDBSNX CORE VALUES* : Composant interactif présentant les 7 valeurs cardinales (Integrity First, Service Before Self, Excellence in All We Do, Discipline & Rigor, Accountability, Innovation with Purpose, Confidentiality & Trust).
   - *THE STANDARD WE LIVE BY* : Les 10 maximes d'action et de gouvernance.
 - **Section Contact & Web3Forms** : Formulaire professionnel complet avec protection anti-spam (honeypot), génération d'un numéro officiel `SDB-YYYY-XXXX`, acheminement direct par **Web3Forms API** vers la messagerie officielle.
-- **Espace Administrateur Sécurisé (`/admin`)** : Tableau de bord, consultation des demandes, historique local, modification des statuts (*New, In Review, In Progress, Completed, Archived*), recherche multicritères et suppression.
-- **Conformité Juridique Sénégalaise** : Mentions légales, Politique de confidentialité conforme à la **Loi n° 2008-12**, Gestionnaire de préférences de cookies et Conditions Générales d'Utilisation.
+- **Espace Administrateur (`/admin`)** : Authentification Supabase et accès limité aux adresses configurées dans `VITE_ADMIN_EMAIL` ou `VITE_ADMIN_EMAILS`.
+- **Informations juridiques** : Mentions légales, politique de confidentialité, gestionnaire de préférences de cookies et conditions d'utilisation. Les obligations applicables doivent être validées selon l'activité et les traitements concernés.
 - **Progressive Web App (PWA)** : Manifest, Service Worker avec mode déconnecté pour les pages publiques.
 
 ---
@@ -91,7 +91,7 @@ npm run build   # Génère le bundle de production optimisé dans /dist
 ## 🔐 Identifiants et Accès Administrateur
 
 - **Portail d'Administration** : `/admin/login`
-- **Connexion** : `admin@sdbsnx.site` avec un mot de passe d'au moins 8 caractères.
+- **Connexion** : compte Supabase avec une adresse autorisée par `VITE_ADMIN_EMAIL` ou `VITE_ADMIN_EMAILS`.
 
 ---
 
