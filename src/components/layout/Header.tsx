@@ -5,7 +5,6 @@ import {
   X, 
   ChevronDown, 
   ArrowRight, 
-  Lock, 
   Scale, 
   Shield, 
   Code, 
@@ -43,6 +42,17 @@ export const Header: React.FC = () => {
     };
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMobileMenuOpen(false);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [mobileMenuOpen]);
+
   // Close menus on route change
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -53,15 +63,16 @@ export const Header: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
-        isScrolled || mobileMenuOpen
-          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm py-3'
-          : 'bg-white/90 backdrop-blur-md border-b border-slate-100 py-3.5'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-[70] transition-all duration-200 ${
+          isScrolled || mobileMenuOpen
+            ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm py-3'
+            : 'bg-white/90 backdrop-blur-md border-b border-slate-100 py-3.5'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between">
           
           {/* Logo with modern crisp container */}
           <Link to="/" className="flex items-center space-x-3 group flex-shrink-0">
@@ -241,15 +252,6 @@ export const Header: React.FC = () => {
           {/* Action CTAs Desktop */}
           <div className="hidden lg:flex items-center space-x-3">
             <Link
-              to="/admin/login"
-              aria-label="Portail Sécurisé"
-              className="p-2 rounded-xl transition-colors border text-slate-600 hover:text-[#0B1B3D] hover:bg-slate-100 border-slate-200"
-              title="Portail Administration"
-            >
-              <Lock className="w-4 h-4" />
-            </Link>
-
-            <Link
               to="/contact"
               className="inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-bold bg-[#10B981] hover:bg-[#059669] text-white transition-all shadow-sm hover:shadow-md active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[#10B981]"
             >
@@ -260,33 +262,34 @@ export const Header: React.FC = () => {
 
           {/* Mobile buttons */}
           <div className="flex items-center space-x-2 lg:hidden">
-            <Link
-              to="/admin/login"
-              className="p-2 rounded-xl border text-slate-600 hover:text-[#0B1B3D] bg-slate-50 border-slate-200"
-              aria-label="Accès Administration"
-            >
-              <Lock className="w-4 h-4" />
-            </Link>
-
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl border focus:outline-none text-[#0B1B3D] hover:text-[#10B981] bg-slate-50 border-slate-200"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-[#0B1B3D] shadow-sm transition-colors hover:border-emerald-300 hover:text-[#059669] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981] focus-visible:ring-offset-2"
               aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
 
+          </div>
         </div>
-      </div>
+      </header>
 
       {/* ========================================================================= */}
-      {/* MOBILE FULL-SCREEN DRAWER (Clean, Force-N Style)                          */}
+      {/* MOBILE NAVIGATION DRAWER                                                  */}
       {/* ========================================================================= */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[56px] sm:top-[64px] z-50 bg-white flex flex-col border-t border-slate-200 lg:hidden">
-          
-          <div className="flex-1 overflow-y-auto overscroll-contain px-4 py-5 space-y-6 pb-28">
+        <div
+          id="mobile-navigation"
+          className="fixed inset-x-0 bottom-0 top-[65px] sm:top-[69px] md:top-[73px] z-[60] bg-white text-[#0B1B3D] shadow-2xl border-t border-slate-200 lg:hidden"
+        >
+          <nav
+            aria-label="Navigation mobile"
+            className="h-full overflow-y-auto overscroll-contain bg-slate-50 px-4 sm:px-6 py-5 pb-8"
+          >
+            <div className="mx-auto max-w-2xl space-y-6">
             
             {/* Quick Primary Links */}
             <div className="grid grid-cols-2 gap-2.5">
@@ -435,8 +438,8 @@ export const Header: React.FC = () => {
               </div>
             </div>
 
-            {/* Bottom Actions inside drawer */}
-            <div className="pt-2 space-y-3 pb-6">
+            {/* Bottom action */}
+            <div className="pt-2 pb-2">
               <Link
                 to="/contact"
                 onClick={() => setMobileMenuOpen(false)}
@@ -444,20 +447,11 @@ export const Header: React.FC = () => {
               >
                 Démarrer un Projet →
               </Link>
-
-              <Link
-                to="/admin/login"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center space-x-2 py-2.5 rounded-xl text-xs font-semibold text-slate-600 hover:text-[#0B1B3D] bg-slate-50 border border-slate-200"
-              >
-                <Lock className="w-3.5 h-3.5" />
-                <span>Portail Administrateur Sécurisé</span>
-              </Link>
             </div>
-
-          </div>
+            </div>
+          </nav>
         </div>
       )}
-    </header>
+    </>
   );
 };

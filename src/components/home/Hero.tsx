@@ -220,7 +220,7 @@ export const Hero: React.FC = () => {
               
               <div className="relative aspect-[4/3] sm:aspect-[16/11] overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80"
+                  src="/images/hero-team.jpg"
                   alt="Équipe d'ingénieurs et talents technologiques africains Alkeb.lab"
                   className="w-full h-full object-cover object-top sm:object-center group-hover:scale-105 transition-transform duration-700"
                   width="1200"

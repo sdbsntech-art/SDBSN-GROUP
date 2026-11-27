@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Mail, MapPin, ArrowUpRight, Lock, MessageCircle } from 'lucide-react';
+import { ShieldCheck, Mail, MapPin, ArrowUpRight, MessageCircle } from 'lucide-react';
 import { WHATSAPP_CONFIG, getWhatsAppUrl } from '../../lib/whatsapp';
 
 export const Footer: React.FC = () => {
@@ -161,15 +161,6 @@ export const Footer: React.FC = () => {
               <li>
                 <Link to="/conditions-utilisation" className="hover:text-[#10B981] transition-colors">
                   Conditions d&apos;Utilisation
-                </Link>
-              </li>
-              <li className="pt-2">
-                <Link
-                  to="/admin/login"
-                  className="inline-flex items-center text-xs text-slate-400 hover:text-[#10B981] transition-colors font-medium"
-                >
-                  <Lock className="w-3 h-3 mr-1" />
-                  Espace d&apos;administration sécurisé
                 </Link>
               </li>
             </ul>
